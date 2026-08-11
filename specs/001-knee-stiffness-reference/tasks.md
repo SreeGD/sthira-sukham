@@ -19,8 +19,14 @@ called out in Phase 5.
 ## Status — 2026-08-11
 
 **110 of 111 tasks complete.** `pnpm verify` passes end to end: 67 pages built, content policy
-clean, zero external origins, 32 unit tests, 260 e2e tests (including axe in both themes at two
-viewports).
+clean, zero external origins, **91 unit tests**, **260 e2e tests** (axe in both themes at two
+viewports), lint clean.
+
+The 91 unit tests include 13 that shell out to the real Astro content pipeline, because the
+guarantee being tested — "the build refuses unsafe content" — cannot be established by mocking the
+schema. One of them asserts the *negative* finding from research.md D10: a dangling reference
+passes the schema. If a future Astro upgrade starts catching it, that test failing is the signal to
+revisit the docs.
 
 Two things are deliberately short of the spec target and stated plainly rather than marked done:
 
@@ -79,7 +85,7 @@ authored before the schemas exist, or it gets written against nothing.
 - [X] T017 [P] Define the `stiffnessSources` collection schema in `src/content.config.ts`
 - [X] T018 [P] Define the `stiffnessPatterns` collection schema in `src/content.config.ts` — deliberately **no** `symptoms` field (Principle I structural guard)
 - [X] T019 Add conditional `superRefine` rules in `src/content.config.ts`: tradition attribution for non-clinical modalities, `presentsAsKneeStiffness` for hip/ankle muscles, full stiffness triad for contractile structures, non-empty `regressions ∪ progressions` with no self-reference, and `modifications` for yoga/Pilates
-- [X] T020 [P] Write schema-rejection unit tests in `tests/unit/schemas.test.ts` asserting the build rejects: empty `sources`, empty `stopIf`, empty `contraindications`, unknown `evidenceLabel`, missing `traditionalName` on a yoga record, and a hip muscle missing `presentsAsKneeStiffness`
+- [X] T020 [P] Write schema-rejection unit tests in `tests/unit/schemas.test.ts` (runs real `astro sync` per case) asserting the build rejects: empty `sources`, empty `stopIf`, empty `contraindications`, unknown `evidenceLabel`, missing `traditionalName` on a yoga record, and a hip muscle missing `presentsAsKneeStiffness`
 
 ### Seed vocabularies
 
@@ -98,8 +104,8 @@ authored before the schemas exist, or it gets written against nothing.
 
 - [X] T028 Implement cross-collection policy checks in `scripts/validate-content.ts`: every record sourced, every FR-012/FR-013 muscle present, every muscle targeted or carrying `noExercisesNote`, all four modalities present with none exceeding 60%, all eight FR-004 red-flag signs present, six stiffness sources and four patterns present, no orphaned sources, no reference cycles
 - [X] T029 [P] Implement the build-output scan in `scripts/check-no-external-origins.ts` failing on any external origin in a fetching position (`src`, `<link href>`, `@import`, `url()`, `fetch`, `XMLHttpRequest`) while permitting citation URLs rendered as reader-facing text
-- [X] T030 [P] Write unit tests for the policy functions in `tests/unit/validate-content.test.ts` using fixture collections
-- [X] T031 [P] Write unit tests for the origin scanner in `tests/unit/check-origins.test.ts` covering both the failing and permitted cases
+- [X] T030 [P] Write unit tests for the policy functions in `tests/unit/content-policy.test.ts` using fixture collections (rules extracted to `scripts/content-policy.ts` so they are testable without the filesystem)
+- [X] T031 [P] Write unit tests for the origin scanner in `tests/unit/origin-scanner.test.ts` covering both the failing and permitted cases (scanner extracted to `scripts/origin-scanner.ts`)
 
 **Checkpoint**: Schemas reject invalid content, tokens and layout exist, gates run. Content authoring can begin.
 
