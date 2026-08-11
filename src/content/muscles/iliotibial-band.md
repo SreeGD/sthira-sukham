@@ -5,6 +5,7 @@ abbreviations: [ITB, IT band]
 region: knee
 group: Non-contractile structures
 isContractile: false
+diagramZone: thigh-outer
 order: 63
 roleInKneeMotion: >-
   Not a muscle. A thick band of connective tissue running down the outside of the thigh from

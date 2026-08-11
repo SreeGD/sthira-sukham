@@ -1,0 +1,198 @@
+---
+/*
+ * The knee as two joints, side view, knee facing left.
+ *
+ * The single point this needs to make: the hinge between femur and tibia and the
+ * kneecap running in its groove are different joints that fail differently. Everything
+ * else stays schematic — a more complete anatomical picture would bury the distinction
+ * the drawing exists to show.
+ *
+ * Text lives in the HTML caption rather than inside the SVG, keyed by numbered markers.
+ * SVG text does not reflow, cannot wrap, and clips silently when it outgrows the
+ * viewBox; HTML text scales with the reader's font size and stays selectable.
+ */
+---
+
+<figure class="diagram">
+  <svg viewBox="0 0 300 280" role="img" aria-labelledby="kj-title kj-desc" class="diagram__svg">
+    <title id="kj-title">The two joints of the knee</title>
+    <desc id="kj-desc">
+      A side view of a slightly bent knee. The rounded end of the thigh bone meets the flat top of
+      the shin bone at marker one, the main weight-bearing hinge. In front of it, at marker two,
+      the kneecap sits in a groove on the front of the thigh bone. The quadriceps tendon runs down
+      over the kneecap and attaches to the shin below.
+    </desc>
+
+    <g aria-hidden="true">
+      <!-- Femur: a narrow shaft ending in a wider rounded condyle, so the
+           articulating surface reads as distinct from the bone above it -->
+      <path d="M 146 18 L 172 18 L 172 152 L 146 152 Z" class="kj-bone" />
+      <circle cx="159" cy="170" r="32" class="kj-bone" />
+
+      <!-- Tibia: flat plateau with a visible joint space above it -->
+      <path d="M 138 216 L 184 216 L 181 264 L 141 264 Z" class="kj-bone" />
+      <path d="M 134 216 L 188 216" class="kj-plateau" />
+      <!-- The joint space itself, called out -->
+      <path d="M 136 207 L 187 207" class="kj-space" />
+
+      <!-- Trochlear groove: the track on the front of the condyle -->
+      <path d="M 130 148 Q 122 170 130 192" class="kj-groove" />
+
+      <!-- Patella, clear of the condyle so the space between them is visible -->
+      <path
+        d="M 108 144 Q 96 150 94 166 Q 96 182 108 188 Q 118 179 118 166 Q 118 153 108 144 Z"
+        class="kj-patella"
+      />
+
+      <!-- Quadriceps tendon above, patellar tendon below -->
+      <path d="M 116 30 Q 100 100 100 148" class="kj-tendon" />
+      <path d="M 100 184 Q 110 204 134 220" class="kj-tendon" />
+
+      <!-- Markers sit OUTSIDE the anatomy with leaders, so nothing is obscured -->
+      <line x1="211" y1="208" x2="190" y2="210" class="kj-leader" />
+      <circle cx="224" cy="208" r="13" class="kj-marker" />
+      <text x="224" y="208" class="kj-num" text-anchor="middle" dominant-baseline="central">1</text>
+
+      <line x1="73" y1="166" x2="90" y2="166" class="kj-leader" />
+      <circle cx="60" cy="166" r="13" class="kj-marker" />
+      <text x="60" y="166" class="kj-num" text-anchor="middle" dominant-baseline="central">2</text>
+
+      <!-- Short structure labels only; anything longer belongs in the caption -->
+      <text x="192" y="72" class="kj-part">thigh bone</text>
+      <text x="196" y="252" class="kj-part">shin bone</text>
+      <text x="92" y="44" class="kj-part" text-anchor="end">quadriceps</text>
+      <text x="92" y="58" class="kj-part" text-anchor="end">tendon</text>
+      <line x1="86" y1="188" x2="94" y2="176" class="kj-leader" />
+      <text x="84" y="192" class="kj-part" text-anchor="end">kneecap</text>
+    </g>
+  </svg>
+
+  <figcaption>
+    <ol class="kj-key">
+      <li>
+        <span class="kj-key__num" aria-hidden="true">1</span>
+        <span
+          ><strong>Tibiofemoral joint</strong> — the main hinge, and what carries your weight.
+          Arthritic change and most limits on bending and straightening happen here.</span
+        >
+      </li>
+      <li>
+        <span class="kj-key__num" aria-hidden="true">2</span>
+        <span
+          ><strong>Patellofemoral joint</strong> — the kneecap in its groove. Front-of-knee
+          stiffness, the sort that is worse on stairs and after sitting, usually belongs here.</span
+        >
+      </li>
+    </ol>
+    <p class="kj-note">
+      Two joints sharing one space, failing in different ways. Work aimed at one does little for
+      the other.
+    </p>
+  </figcaption>
+</figure>
+
+<style>
+  .diagram {
+    margin: 0 0 var(--s-5);
+    padding: var(--s-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    background: var(--c-diagram-bg);
+    max-width: var(--measure);
+  }
+  .diagram__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  .kj-bone {
+    fill: var(--c-diagram-fill);
+    stroke: var(--c-diagram-stroke);
+    stroke-width: 2;
+    stroke-linejoin: round;
+  }
+  .kj-patella {
+    fill: var(--c-diagram-active-fill);
+    stroke: var(--c-diagram-active);
+    stroke-width: 2.5;
+  }
+  .kj-groove {
+    fill: none;
+    stroke: var(--c-diagram-active);
+    stroke-width: 2;
+    stroke-dasharray: 4 3;
+  }
+  .kj-space {
+    stroke: var(--c-diagram-active);
+    stroke-width: 2;
+    stroke-dasharray: 3 3;
+    opacity: 0.8;
+  }
+  .kj-plateau {
+    stroke: var(--c-diagram-stroke);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+  }
+  .kj-tendon {
+    fill: none;
+    stroke: var(--c-diagram-stroke);
+    stroke-width: 5;
+    stroke-linecap: round;
+    opacity: 0.7;
+  }
+  .kj-marker {
+    fill: var(--c-diagram-bg);
+    stroke: var(--c-diagram-active);
+    stroke-width: 2.5;
+  }
+  .kj-num {
+    fill: var(--c-diagram-active);
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--f-body);
+  }
+  .kj-leader {
+    stroke: var(--c-diagram-stroke);
+    stroke-width: 1.25;
+  }
+  .kj-part {
+    fill: var(--c-diagram-label);
+    font-size: 11px;
+    font-family: var(--f-body);
+  }
+
+  .kj-key {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-4) 0 var(--s-3);
+    font-size: var(--f-size-sm);
+  }
+  .kj-key li {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+  }
+  .kj-key li + li {
+    margin-top: var(--s-3);
+  }
+  .kj-key__num {
+    flex: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--c-diagram-active);
+    border-radius: 50%;
+    color: var(--c-diagram-active);
+    font-weight: 700;
+    font-size: var(--f-size-xs);
+  }
+  .kj-note {
+    margin: 0;
+    font-size: var(--f-size-sm);
+    color: var(--c-text-muted);
+  }
+</style>

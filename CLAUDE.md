@@ -49,6 +49,21 @@ pnpm verify           # all of the above — this is the gate
 - **Colour is never the sole carrier of meaning** — evidence labels and difficulty pair colour with
   text and a shape token.
 
+## Diagrams
+
+Inline SVG in `src/components/diagrams/`. `LegLocator` draws all 19 muscle pages from
+one asset, keyed by the record's `diagramZone`. Zone vocabulary lives in
+`src/lib/diagram-zones.ts` — imported by both the schema and the component, because a
+zone that is authorable but undrawable is the failure mode.
+
+- **Explanatory text belongs in the HTML caption, not inside the SVG.** SVG text clips
+  silently past the viewBox and does not reflow. There is a test comparing every text
+  node's bbox to its viewBox; it exists because the first draft clipped its 0° label.
+- Lateral is the LEFT of the front figure and the RIGHT of the back figure. Viewed from
+  behind, the sides swap — getting it wrong puts the glutes and IT band on opposite
+  sides of the same leg.
+- Astro components cannot `export` values; shared vocabularies go in `src/lib/`.
+
 ## Workflow
 
 Spec Kit. `/speckit-tasks` → `/speckit-implement`. Constitution check is part of every plan.

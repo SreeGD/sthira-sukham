@@ -5,6 +5,7 @@ abbreviations: []
 region: knee
 group: Non-contractile structures
 isContractile: false
+diagramZone: knee-front
 order: 61
 roleInKneeMotion: >-
   Not a muscle and cannot pull. It encloses the joint, holds the lubricating fluid in, and

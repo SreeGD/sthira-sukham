@@ -3,6 +3,7 @@ import { glob, file } from 'astro/loaders';
 import { parse as parseYaml } from 'yaml';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { DIAGRAM_ZONES } from './lib/diagram-zones.ts';
 
 /**
  * The validation gate (Constitution Principles II, III, IV).
@@ -153,6 +154,7 @@ const muscles = defineCollection({
       region: z.enum(REGIONS),
       group: z.string().optional(),
       isContractile: z.boolean(),
+      diagramZone: z.enum(DIAGRAM_ZONES),
       order: z.number().int().default(100),
       roleInKneeMotion: z.string().min(1),
       stiffnessContribution: z.object({

@@ -97,6 +97,7 @@ describe('sourcing (FR-033, Principle II)', () => {
 commonName: probe
 region: knee
 isContractile: true
+diagramZone: thigh-front
 roleInKneeMotion: none
 stiffnessContribution:
   whenTight: none
@@ -157,6 +158,7 @@ describe('muscle completeness (FR-014, FR-016)', () => {
 commonName: probe
 region: hip
 isContractile: true
+diagramZone: hip-front
 roleInKneeMotion: none
 stiffnessContribution:
   whenTight: none
@@ -178,6 +180,7 @@ sources: [neumann-kinesiology-2016]`,
 commonName: probe
 region: knee
 isContractile: true
+diagramZone: thigh-front
 roleInKneeMotion: none
 stiffnessContribution:
   whenTight: none

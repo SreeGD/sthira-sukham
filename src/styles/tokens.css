@@ -42,6 +42,15 @@
 
   --c-focus: #0b6bcb;
 
+  /* Diagrams. Inactive structures sit back; the highlighted one comes forward.
+     Both must clear 3:1 against --c-surface for non-text contrast (WCAG 1.4.11). */
+  --c-diagram-bg: #f2efea;
+  --c-diagram-fill: #ddd7cd;
+  --c-diagram-stroke: #8e8578;
+  --c-diagram-active: #175d4f;
+  --c-diagram-active-fill: #bcded3;
+  --c-diagram-label: #3d382f;
+
   /* Typography — a scale that stays legible at arm's length on a phone */
   --f-body: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --f-size-base: 1.0625rem; /* 17px — instructions are read mid-exercise */
@@ -90,6 +99,13 @@
     --c-warn-text: #f4d3ab; /* 9.4:1 on --c-warn-bg */
 
     --c-focus: #6fb4ff;
+
+    --c-diagram-bg: #1b1e21;
+    --c-diagram-fill: #333a40;
+    --c-diagram-stroke: #79838c;
+    --c-diagram-active: #5fc9ae;
+    --c-diagram-active-fill: #23453c;
+    --c-diagram-label: #c4ccd2;
   }
 }
 
@@ -115,4 +131,11 @@
   --c-warn-text: #f4d3ab;
 
   --c-focus: #6fb4ff;
+
+  --c-diagram-bg: #1b1e21;
+  --c-diagram-fill: #333a40;
+  --c-diagram-stroke: #79838c;
+  --c-diagram-active: #5fc9ae;
+  --c-diagram-active-fill: #23453c;
+  --c-diagram-label: #c4ccd2;
 }

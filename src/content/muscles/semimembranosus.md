@@ -5,6 +5,7 @@ abbreviations: [SM]
 region: knee
 group: Hamstrings
 isContractile: true
+diagramZone: thigh-back
 order: 23
 roleInKneeMotion: >-
   Bends the knee, rotates the lower leg inward, extends the hip, and pulls the back of the

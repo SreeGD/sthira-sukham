@@ -5,6 +5,7 @@ abbreviations: []
 region: knee
 group: Non-contractile structures
 isContractile: false
+diagramZone: knee-front
 order: 62
 roleInKneeMotion: >-
   Not a muscle. Sheets of fibrous tissue either side of the kneecap that hold it in its

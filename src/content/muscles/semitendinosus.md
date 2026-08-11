@@ -5,6 +5,7 @@ abbreviations: [ST]
 region: knee
 group: Hamstrings
 isContractile: true
+diagramZone: thigh-back
 order: 22
 roleInKneeMotion: Bends the knee, rotates the lower leg inward, and extends the hip.
 stiffnessContribution:

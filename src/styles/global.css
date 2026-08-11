@@ -522,3 +522,20 @@ html[data-ack='1'] .gated {
 html[data-ack='1'] [data-testid='red-flag-gate'] {
   display: none;
 }
+
+/* Muscle intro: text and locator side by side above 46rem, stacked below. */
+.muscle-intro {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+@media (min-width: 46rem) {
+  .muscle-intro {
+    grid-template-columns: 1fr auto;
+    gap: var(--s-6);
+  }
+}
+.muscle-intro > div > p {
+  margin-bottom: 0;
+}

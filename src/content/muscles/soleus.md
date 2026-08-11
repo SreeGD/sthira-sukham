@@ -5,6 +5,7 @@ abbreviations: []
 region: ankle
 group: Calf
 isContractile: true
+diagramZone: calf
 order: 32
 roleInKneeMotion: >-
   None directly — it does not cross the knee. It points the foot down, and its influence on

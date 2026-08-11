@@ -68,6 +68,32 @@ Every citation must be one you have actually opened. `title`, `authorOrBody`, `y
 locator (`url`, `doi`, or `isbn`) are all required, because a citation nobody can find is
 indistinguishable from an invented one.
 
+## Diagrams
+
+Three, all originally authored inline SVG in `src/components/diagrams/`:
+
+| Diagram | Where | What it shows |
+|---|---|---|
+| `KneeJoints` | `/understanding/mechanics/` | The tibiofemoral hinge and the patellofemoral joint as separate things |
+| `RangeOfMotionArc` | `/understanding/mechanics/` | Flexion range with the thresholds daily activities need |
+| `LegLocator` | every `/muscles/[id]/` | Front and back views with the structure's zone highlighted |
+
+Three constraints shaped them, and they are worth knowing before editing:
+
+- **No external assets.** Inline SVG only — the isolation gate fails on any fetched
+  origin, and stock medical imagery is barred by the constitution's content standards.
+- **Nothing is carried by the picture alone.** Every diagram has a text equivalent:
+  numbered markers explained in an HTML caption, bands listed with their degree ranges,
+  the highlighted zone named in words. Colour is always paired with shape, dash pattern,
+  or text (SC-011). `tests/e2e/diagrams.spec.ts` asserts the equivalence.
+- **Explanatory text lives in HTML, not SVG.** SVG text does not wrap, does not scale
+  with the reader's font size, and clips silently when it outgrows the viewBox — which it
+  did in the first draft. There is a test that catches that specific failure by comparing
+  every text node's bounding box against its viewBox.
+
+`LegLocator` serves all 19 muscle pages from one drawing: the zone comes from the
+record's `diagramZone` field, so adding a muscle needs no new artwork.
+
 ## How it is built
 
 Astro 7 (static) with content collections, three Preact islands, hand-written CSS. TypeScript

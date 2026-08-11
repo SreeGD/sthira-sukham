@@ -5,6 +5,7 @@ abbreviations: [glute med]
 region: hip
 group: Hip
 isContractile: true
+diagramZone: hip-side
 order: 54
 roleInKneeMotion: >-
   No direct action. It holds the pelvis level in single-leg stance and controls inward

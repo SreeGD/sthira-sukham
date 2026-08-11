@@ -5,6 +5,7 @@ abbreviations: []
 region: hip
 group: Hip
 isContractile: true
+diagramZone: thigh-inner
 order: 52
 roleInKneeMotion: >-
   Mostly none directly. Gracilis is the exception — it crosses the knee and helps bend and

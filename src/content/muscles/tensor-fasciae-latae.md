@@ -5,6 +5,7 @@ abbreviations: [TFL]
 region: hip
 group: Hip
 isContractile: true
+diagramZone: hip-side
 order: 51
 roleInKneeMotion: >-
   No direct action on the knee. It tensions the iliotibial band, which does cross the knee,

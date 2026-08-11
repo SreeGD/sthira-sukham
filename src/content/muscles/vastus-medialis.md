@@ -5,6 +5,7 @@ abbreviations: [VM, VMO]
 region: knee
 group: Quadriceps
 isContractile: true
+diagramZone: thigh-inner
 order: 13
 roleInKneeMotion: >-
   Straightens the knee. Its lowest fibres — the obliquus, the VMO — run almost horizontally

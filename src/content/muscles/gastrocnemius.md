@@ -5,6 +5,7 @@ abbreviations: [gastroc]
 region: ankle
 group: Calf
 isContractile: true
+diagramZone: calf
 order: 31
 roleInKneeMotion: >-
   Points the foot down, and — because its two heads originate above the knee on the thigh

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceList from '../../components/SourceList.astro';
+import KneeJoints from '../../components/diagrams/KneeJoints.astro';
+import RangeOfMotionArc from '../../components/diagrams/RangeOfMotionArc.astro';
 
 const refs = [
   { collection: 'sources' as const, id: 'neumann-kinesiology-2016' },
@@ -17,6 +19,7 @@ const refs = [
 
   <section class="section prose">
     <h2>It is two joints, not one</h2>
+    <KneeJoints />
     <p>
       What we call the knee is really two joints sharing a space, and they fail in different
       ways.
@@ -69,6 +72,7 @@ const refs = [
       More useful than the maximum is what everyday activities actually demand. Research
       measuring knee motion across daily tasks found:
     </p>
+    <RangeOfMotionArc />
     <dl class="definition-list">
       <dt>Walking on level ground and on slopes</dt>
       <dd>Under 90° of flexion.</dd>

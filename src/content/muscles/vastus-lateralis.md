@@ -5,6 +5,7 @@ abbreviations: [VL]
 region: knee
 group: Quadriceps
 isContractile: true
+diagramZone: thigh-outer
 order: 12
 roleInKneeMotion: Straightens the knee, pulling the kneecap upward and slightly outward.
 stiffnessContribution:

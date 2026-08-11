@@ -5,6 +5,7 @@ abbreviations: [glute min]
 region: hip
 group: Hip
 isContractile: true
+diagramZone: hip-side
 order: 55
 roleInKneeMotion: No direct action. It assists gluteus medius in stabilising the pelvis and controlling thigh rotation.
 stiffnessContribution:

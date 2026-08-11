@@ -1,0 +1,276 @@
+---
+/*
+ * Knee flexion range, with the thresholds everyday activities actually need.
+ *
+ * This visualises numbers that are already stated and cited in the prose — it does
+ * not introduce a claim of its own. The bands come from Rowe et al. (2000), which
+ * measured knee motion across daily tasks; the arc geometry is computed from that
+ * data rather than hand-drawn, so the picture cannot drift away from the figures.
+ *
+ * Geometry: the femur is fixed pointing up from the joint centre. The tibia swings
+ * from 0° (straight, pointing down) toward the buttock. A point at flexion θ sits at
+ * centre + r·(sin θ, cos θ) — θ=0 is straight down, θ=90 is horizontal.
+ */
+
+interface Band {
+  from: number;
+  to: number;
+  label: string;
+}
+
+// Rowe et al. 2000: gait and slopes need <90°, stairs and chairs 90–120°, a bath ~135°.
+const BANDS: Band[] = [
+  { from: 0, to: 90, label: 'Walking, slopes' },
+  { from: 90, to: 120, label: 'Stairs, chairs' },
+  { from: 120, to: 135, label: 'Bath, squat' },
+];
+
+// 110° is the actionable number — enough for stairs and chairs. Drawn as a distinct
+// marker rather than another degree label, which would crowd 90 and 135.
+const GOAL = 110;
+
+/*
+ * Geometry note: every point of a 0–135° sweep lies at x >= CX, so the drawing is
+ * inherently right-weighted and CX sits well left of centre. The viewBox must also
+ * clear the OUTERMOST element, which is the 0° label at CY + LABEL_R — getting that
+ * wrong silently clips it rather than erroring.
+ */
+const CX = 84;
+const CY = 132;
+const R_ARC = 80;
+const LABEL_R = 98;
+const LIMB = 66;
+
+const rad = (deg: number) => (deg * Math.PI) / 180;
+const pt = (deg: number, r: number) => ({
+  x: CX + r * Math.sin(rad(deg)),
+  y: CY + r * Math.cos(rad(deg)),
+});
+
+/** Arc path between two flexion angles. Sweep 0 because θ increases anticlockwise here. */
+function arc(from: number, to: number, r: number) {
+  const a = pt(from, r);
+  const b = pt(to, r);
+  return `M ${a.x.toFixed(1)} ${a.y.toFixed(1)} A ${r} ${r} 0 ${to - from > 180 ? 1 : 0} 0 ${b.x.toFixed(1)} ${b.y.toFixed(1)}`;
+}
+
+const tibia = pt(GOAL, LIMB);
+const labelAnchor = (deg: number) => pt(deg, LABEL_R);
+const goalInner = pt(GOAL, R_ARC - 12);
+const goalOuter = pt(GOAL, R_ARC + 12);
+---
+
+<figure class="diagram">
+  <svg
+    viewBox="0 0 240 258"
+    role="img"
+    aria-labelledby="rom-title rom-desc"
+    class="diagram__svg"
+  >
+    <title id="rom-title">Knee flexion range and what daily activities need</title>
+    <desc id="rom-desc">
+      An arc showing knee bend from 0 degrees, fully straight, to about 138 degrees. Walking and
+      slopes need under 90 degrees. Stairs and chairs need 90 to 120 degrees. Getting into a bath
+      needs about 135 degrees. Around 110 degrees is a commonly described rehabilitation goal.
+    </desc>
+
+    <g aria-hidden="true">
+      <!-- Bands. Each is also labelled in text below, so the segmentation is never
+           carried by position or colour alone. -->
+      {
+        BANDS.map((band, i) => (
+          <path
+            d={arc(band.from, band.to, R_ARC)}
+            class={`rom-band rom-band--${i}`}
+            fill="none"
+            stroke-linecap="butt"
+          />
+        ))
+      }
+
+      <!-- Ticks at the scale points and band edges -->
+      {
+        [0, 45, 90, 120, 135].map((deg) => {
+          const a = pt(deg, R_ARC - 7);
+          const b = pt(deg, R_ARC + 7);
+          return (
+            <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} class="rom-tick" />
+          );
+        })
+      }
+
+      <!-- Degree labels -->
+      {
+        [0, 90, 135].map((deg) => {
+          const p = labelAnchor(deg);
+          return (
+            <text x={p.x} y={p.y} class="rom-degree" text-anchor="middle" dominant-baseline="middle">
+              {deg}°
+            </text>
+          );
+        })
+      }
+
+      <!-- The 110° goal marker -->
+      <line
+        x1={goalInner.x}
+        y1={goalInner.y}
+        x2={goalOuter.x}
+        y2={goalOuter.y}
+        class="rom-marker"
+      />
+
+      <!-- The limb itself: femur fixed, tibia drawn mid-flexion -->
+      <line x1={CX} y1={CY} x2={CX} y2={CY - LIMB} class="rom-bone" />
+      <line x1={CX} y1={CY} x2={CX} y2={CY + LIMB} class="rom-bone rom-bone--ghost" />
+      <line x1={CX} y1={CY} x2={tibia.x} y2={tibia.y} class="rom-bone rom-bone--moving" />
+      <circle cx={CX} cy={CY} r="7" class="rom-joint" />
+      <text x={CX - 10} y={CY - LIMB + 4} class="rom-bonelabel" text-anchor="end">thigh</text>
+      <text x={CX - 10} y={CY + LIMB - 2} class="rom-bonelabel" text-anchor="end">shin at 0°</text>
+    </g>
+  </svg>
+
+  <figcaption>
+    <ol class="rom-key">
+      {
+        BANDS.map((band, i) => (
+          <li>
+            <span class={`rom-key__swatch rom-key__swatch--${i}`} aria-hidden="true" />
+            <strong>
+              {band.from}–{band.to}°
+            </strong>{' '}
+            {band.label}
+          </li>
+        ))
+      }
+    </ol>
+    <p class="rom-note">
+      <span class="rom-goal-key" aria-hidden="true"></span> The solid limb sits at <strong>110°</strong>,
+      a commonly described rehabilitation goal — enough for stairs and chairs, which is most of what
+      independence rests on. Measured across everyday tasks by Rowe et al. (2000), cited below.
+    </p>
+  </figcaption>
+</figure>
+
+<style>
+  .diagram {
+    margin: 0 0 var(--s-5);
+    padding: var(--s-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    background: var(--c-diagram-bg);
+    max-width: var(--measure);
+  }
+  .diagram__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 24rem;
+    margin-inline: auto;
+  }
+
+  /* Bands differ by width AND dash pattern as well as tone, so the three are
+     distinguishable in greyscale and to a colour-blind reader (SC-011). */
+  .rom-band {
+    stroke: var(--c-diagram-active);
+    stroke-width: 13;
+  }
+  .rom-band--0 {
+    opacity: 0.95;
+  }
+  .rom-band--1 {
+    opacity: 0.6;
+    stroke-dasharray: 9 4;
+  }
+  .rom-band--2 {
+    opacity: 0.35;
+    stroke-dasharray: 3 4;
+  }
+
+  .rom-tick {
+    stroke: var(--c-diagram-stroke);
+    stroke-width: 1.5;
+  }
+  .rom-marker {
+    stroke: var(--c-diagram-label);
+    stroke-width: 2.5;
+  }
+  .rom-degree {
+    fill: var(--c-diagram-label);
+    font-size: 13px;
+    font-family: var(--f-body);
+  }
+  .rom-bonelabel {
+    fill: var(--c-diagram-label);
+    font-size: 11px;
+    font-family: var(--f-body);
+  }
+  .rom-bone {
+    stroke: var(--c-diagram-stroke);
+    stroke-width: 7;
+    stroke-linecap: round;
+  }
+  .rom-bone--ghost {
+    opacity: 0.3;
+    stroke-dasharray: 4 6;
+  }
+  .rom-bone--moving {
+    stroke: var(--c-diagram-active);
+  }
+  .rom-joint {
+    fill: var(--c-diagram-bg);
+    stroke: var(--c-diagram-active);
+    stroke-width: 3;
+  }
+
+  .rom-key {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-4) 0 var(--s-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-4);
+    font-size: var(--f-size-sm);
+  }
+  .rom-key li {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+  }
+  .rom-key__swatch {
+    width: 1.5rem;
+    height: 0.6rem;
+    border-radius: 2px;
+    background: var(--c-diagram-active);
+    flex: none;
+  }
+  .rom-key__swatch--1 {
+    opacity: 0.6;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--c-diagram-active) 0 6px,
+      transparent 6px 9px
+    );
+  }
+  .rom-key__swatch--2 {
+    opacity: 0.45;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--c-diagram-active) 0 2px,
+      transparent 2px 5px
+    );
+  }
+  .rom-goal-key {
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    vertical-align: -0.1em;
+    background: var(--c-diagram-label);
+    margin-right: 0.15em;
+  }
+  .rom-note {
+    margin: 0;
+    font-size: var(--f-size-sm);
+    color: var(--c-text-muted);
+  }
+</style>

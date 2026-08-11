@@ -5,6 +5,7 @@ abbreviations: []
 region: hip
 group: Hip
 isContractile: true
+diagramZone: hip-front
 order: 56
 roleInKneeMotion: >-
   No direct action on the knee. It is the main hip flexor, and it determines whether the hip

@@ -5,6 +5,7 @@ abbreviations: [VI]
 region: knee
 group: Quadriceps
 isContractile: true
+diagramZone: thigh-front
 order: 14
 roleInKneeMotion: Straightens the knee. Sits directly on the thigh bone beneath rectus femoris.
 stiffnessContribution:

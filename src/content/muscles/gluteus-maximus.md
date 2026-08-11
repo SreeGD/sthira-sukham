@@ -5,6 +5,7 @@ abbreviations: [glute max]
 region: hip
 group: Hip
 isContractile: true
+diagramZone: hip-back
 order: 53
 roleInKneeMotion: >-
   No direct action. It extends and outwardly rotates the hip, and part of it inserts into

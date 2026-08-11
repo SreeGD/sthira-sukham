@@ -5,6 +5,7 @@ abbreviations: [BF]
 region: knee
 group: Hamstrings
 isContractile: true
+diagramZone: thigh-back
 order: 21
 roleInKneeMotion: >-
   Bends the knee and rotates the lower leg outward. Its long head also extends the hip,

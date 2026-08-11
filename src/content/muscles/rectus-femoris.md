@@ -5,6 +5,7 @@ abbreviations: [RF]
 region: knee
 group: Quadriceps
 isContractile: true
+diagramZone: thigh-front
 order: 11
 roleInKneeMotion: >-
   Straightens the knee, and is the only quadriceps head that also flexes the hip — it

@@ -5,6 +5,7 @@ abbreviations: []
 region: knee
 group: Deep knee
 isContractile: true
+diagramZone: knee-back
 order: 41
 roleInKneeMotion: >-
   Rotates the shin inward relative to the thigh to unlock a fully straightened knee, letting
