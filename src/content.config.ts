@@ -132,6 +132,9 @@ const redFlags = defineCollection({
     id: z.string(),
     sign: z.string().min(1),
     description: z.string().min(1),
+    // Loaders do not promise authored order, so ordering is explicit. The sequence
+    // is deliberate: the signs that most clearly mean "stop now" come first.
+    order: z.number().int().default(100),
     sources: z.array(reference('sources')).min(1),
   }),
 });

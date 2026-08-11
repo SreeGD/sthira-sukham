@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SourceList from '../components/SourceList.astro';
 import { getCollection } from 'astro:content';
 
-const redFlags = await getCollection('redFlags');
+const redFlags = (await getCollection('redFlags')).sort((a, b) => a.data.order - b.data.order);
 const sourceRefs = [
   ...new Map(
     redFlags.flatMap((f) => f.data.sources).map((ref) => [ref.id, ref]),

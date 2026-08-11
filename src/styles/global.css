@@ -486,6 +486,10 @@ html[data-js] .nojs-only {
 }
 .danger-list h3 {
   color: inherit;
+  /* Only the first heading hugs the top; "Stop if" needs air after the list above it. */
+  margin-top: var(--s-4);
+}
+.danger-list > h3:first-child {
   margin-top: 0;
 }
 .danger-list ul {

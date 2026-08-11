@@ -12,7 +12,7 @@ import { getCollection } from 'astro:content';
  * is always in the DOM.
  */
 
-const redFlags = await getCollection('redFlags');
+const redFlags = (await getCollection('redFlags')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section class="gate" aria-labelledby="gate-heading" data-testid="red-flag-gate">
