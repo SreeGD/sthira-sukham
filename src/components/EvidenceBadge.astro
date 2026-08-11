@@ -1,0 +1,35 @@
+---
+import { getEntry } from 'astro:content';
+
+/*
+ * SC-011 / FR-022: evidence strength must be readable without colour.
+ *
+ * Three carriers, deliberately redundant: the glyph (shape), the label (text), and
+ * the title (assistive tech). Remove any one and the other two still convey it.
+ */
+
+interface Props {
+  ref: { collection: 'evidenceLabels'; id: string };
+}
+const { ref } = Astro.props;
+const entry = await getEntry(ref);
+
+const GLYPHS: Record<string, string> = {
+  'filled-circle-triple': '●●●',
+  'filled-circle-double': '●●○',
+  'filled-circle-single': '●○○',
+  'open-circle': '○○○',
+};
+const glyph = entry ? (GLYPHS[entry.data.shapeToken] ?? '○○○') : '○○○';
+---
+
+{
+  entry && (
+    <span class="evidence" title={entry.data.definition}>
+      <span class="evidence__glyph" aria-hidden="true">
+        {glyph}
+      </span>
+      <span>Evidence: {entry.data.label}</span>
+    </span>
+  )
+}

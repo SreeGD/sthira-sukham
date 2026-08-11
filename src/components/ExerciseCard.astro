@@ -1,0 +1,47 @@
+---
+import EvidenceBadge from './EvidenceBadge.astro';
+
+const MODALITY_LABEL: Record<string, string> = {
+  'clinical-rom': 'Range of motion',
+  yoga: 'Yoga',
+  pilates: 'Pilates',
+  'taichi-qigong': 'Tai chi / qigong',
+};
+
+interface Props {
+  id: string;
+  name: string;
+  traditionalName?: string;
+  modality: string;
+  difficulty: string;
+  equipment: string[];
+  evidenceLabel: { collection: 'evidenceLabels'; id: string };
+}
+const { id, name, traditionalName, modality, difficulty, equipment, evidenceLabel } = Astro.props;
+const needsKit = equipment.filter((e) => e !== 'none');
+---
+
+<li>
+  <a class="card stack" href={`/exercises/${id}/`}>
+    <h3>{name}</h3>
+    {traditionalName && <p class="card__traditional">{traditionalName}</p>}
+    <p class="tag-row">
+      <span class="tag">{MODALITY_LABEL[modality] ?? modality}</span>
+      <span class="tag">{difficulty}</span>
+      <span class="tag">{needsKit.length === 0 ? 'no equipment' : needsKit.join(', ')}</span>
+    </p>
+    <EvidenceBadge ref={evidenceLabel} />
+  </a>
+</li>
+
+<style>
+  .card__traditional {
+    margin: 0;
+    font-style: italic;
+    color: var(--c-text-muted);
+    font-size: var(--f-size-sm);
+  }
+  h3 {
+    margin: 0;
+  }
+</style>

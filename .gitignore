@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.astro/
+coverage/
+test-results/
+playwright-report/
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Agent folders may hold credentials or private artifacts (Spec Kit security note)
+.claude/settings.local.json

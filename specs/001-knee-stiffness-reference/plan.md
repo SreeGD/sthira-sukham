@@ -12,10 +12,11 @@ restrictors, and a filterable library of ~40–60 exercises drawn from clinical 
 yoga, Pilates, and tai chi/qigong — cross-linked so a reader moves freely between "which muscle"
 and "what to do about it".
 
-The technical approach is chosen almost entirely by the constitution. **Astro 5 with content
-collections** makes the two hardest requirements native rather than additive: Zod schemas fail the
-build on invalid or unsourced content (Principle II/III), and `reference()` fails the build on any
-unresolved cross-reference (FR-036). Static output with three Preact islands makes "no runtime
+The technical approach is chosen almost entirely by the constitution. **Astro 7 with content
+collections** makes the hardest requirement native rather than additive: Zod schemas fail the build
+on invalid or unsourced content (Principle II/III). Referential integrity (FR-036) turned out
+*not* to be covered by `reference()` — see research.md D10 — and is enforced by
+`scripts/validate-content.ts` as a required gate instead. Static output with three Preact islands makes "no runtime
 network calls" (Principle V) a structural property rather than a discipline. The red-flag gate uses
 a blocking inline script stamping `<html>` before first paint, so it holds on direct deep links
 without a content flash — and, critically, **fails safe** when JavaScript is unavailable.
@@ -24,7 +25,7 @@ without a content flash — and, critically, **fails safe** when JavaScript is u
 
 **Language/Version**: TypeScript 5.x on Node 22.22.3
 
-**Primary Dependencies**: Astro 5 (static output, Content Layer API) · `@astrojs/preact` + Preact
+**Primary Dependencies**: Astro 7.2 (static output, Content Layer API) · `@astrojs/preact` + Preact
 (three islands only) · Zod (via Astro content collections) · Vitest · Playwright ·
 `@axe-core/playwright`
 
@@ -63,7 +64,7 @@ red-flag items. ~16 routes. Single language (English). ~70 content records total
 |---|---|---|
 | **I. Educational, Never Prescriptive** (NON-NEGOTIABLE) | Gate server-rendered on every exercise-bearing route, revealed by a pre-paint attribute stamp; fails safe without JS. FR-003 framing has no dismissal mechanism in the markup. Schema requires `contraindications` + `stopIf` on every exercise with no override. `StiffnessPattern` deliberately has **no** `symptoms` field, so there is nothing a symptom checker could consume. | e2e deep-link matrix (SC-001, SC-002); build failure on missing safety fields; no-JS manual check in quickstart |
 | **II. Every Claim Is Sourced** | `sources: ref[]` required and non-empty on every claim-bearing collection; `Source` requires `url` or `doi`; sources rendered in the UI, not just held in data. | Build fails on empty `sources`; policy script flags orphans (SC-003) |
-| **III. Content Is Data, Not Markup** | All content in `src/content/`; pages render from collections; `reference()` enforces referential integrity; MDX deliberately rejected so components cannot leak into content. | SC-015 procedure: add a muscle + exercise with zero changes outside `src/content/` |
+| **III. Content Is Data, Not Markup** | All content in `src/content/`; pages render from collections; `validate-content.ts` enforces referential integrity (Astro does not — D10); MDX deliberately rejected so components cannot leak into content. | SC-015 verified: added a muscle + exercise, both surfaced in pages, filters, search, and cross-links with zero files changed outside `src/content/` |
 | **IV. Modality Honesty** | `traditionalName` + `tradition` required for all non-clinical modalities; `evidenceLabel` a closed reference set with reader-facing definitions and a required non-colour `shapeToken`; `Source.tier` makes practice-literature citations machine-visible so a traditional citation behind a mechanistic claim is reviewable. | Build fails on missing attribution; greyscale check (SC-011); content review |
 | **V. Local-First, Zero Backend** | Static output, no server, no auth. Search index embedded rather than fetched — Pagefind rejected specifically to keep offline behaviour unarguable. All assets bundled. | `check:isolation` over `dist/` + offline navigation (SC-012); storage inspection (SC-013) |
 | **VI. Usable Mid-Exercise** | CSS custom-property token layer with both `prefers-color-scheme` and explicit-toggle theme paths; landmarks and heading order; filter result count in a polite live region; reduced-motion suppression. | axe in both themes (SC-010); keyboard-only traversal (SC-009); 360px check (SC-014) |

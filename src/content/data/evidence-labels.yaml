@@ -1,0 +1,45 @@
+# The closed evidence vocabulary (Constitution Principle IV, FR-037).
+#
+# These four terms describe HOW WELL STUDIED a movement is for knee stiffness —
+# not how useful it is, and not how much a tradition values it. A movement can be
+# genuinely helpful and honestly labelled "traditional practice"; the label is a
+# statement about the evidence base, and the definitions below say so plainly so a
+# reader is not left to infer a ranking of worth.
+#
+# `shapeToken` is the non-colour carrier required by SC-011 — evidence strength must
+# survive a greyscale screen and a colour-blind reader.
+
+- id: well-studied
+  label: Well studied
+  definition: >-
+    Supported by multiple controlled trials or systematic reviews in people with knee
+    problems. There is reasonable confidence that this movement does what it is described
+    as doing.
+  rank: 1
+  shapeToken: filled-circle-triple
+
+- id: moderate-evidence
+  label: Some evidence
+  definition: >-
+    Supported by a smaller number of studies, studies in related populations, or research
+    on the underlying mechanism rather than on the movement itself. Reasonable grounds,
+    less certainty.
+  rank: 2
+  shapeToken: filled-circle-double
+
+- id: mechanistic-rationale
+  label: Mechanistic rationale
+  definition: >-
+    Little or no direct study of this movement, but a clear anatomical reason to expect the
+    described effect. Commonly used in clinical practice on that basis.
+  rank: 3
+  shapeToken: filled-circle-single
+
+- id: traditional-practice
+  label: Traditional practice
+  definition: >-
+    Long-established within its own tradition, with little or no clinical research behind
+    the specific claims that tradition makes for it. Included because it is widely practised
+    and described honestly here as tradition rather than as demonstrated physiology.
+  rank: 4
+  shapeToken: open-circle

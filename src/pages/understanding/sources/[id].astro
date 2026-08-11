@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SourceList from '../../../components/SourceList.astro';
+import { getCollection, getEntries, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('stiffnessSources');
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const structures = entry.data.relatedStructures.length
+  ? await getEntries(entry.data.relatedStructures)
+  : [];
+---
+<BaseLayout title={entry.data.clinicalTerm} description={entry.data.plainLanguageGloss}>
+  <p><a href="/understanding/sources/">← Sources of stiffness</a></p>
+  <h1>{entry.data.clinicalTerm}</h1>
+  <p class="lede">{entry.data.plainLanguageGloss}</p>
+  <div class="prose"><Content /></div>
+
+  {structures.length > 0 && (
+    <section class="section">
+      <h2>Structures typically involved</h2>
+      <ul class="grid">
+        {structures.map((m) => (
+          <li>
+            <a class="card" href={`/muscles/${m.id}/`}>
+              <strong>{m.data.anatomicalName}</strong>
+              <p class="card__traditional">{m.data.commonName}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <SourceList refs={entry.data.sources} />
+</BaseLayout>

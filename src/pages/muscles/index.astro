@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const muscles = (await getCollection('muscles')).sort((a, b) => a.data.order - b.data.order);
+const groups = [...new Set(muscles.map((m) => m.data.group ?? 'Other'))];
+const REGION_NOTE: Record<string, string> = {
+  hip: 'Hip',
+  ankle: 'Ankle',
+  knee: 'Knee',
+};
+---
+<BaseLayout
+  title="Muscles & structures"
+  description="The muscles and structures that govern how freely the knee moves."
+>
+  <h1>Muscles &amp; structures</h1>
+  <p class="lede">
+    {muscles.length} structures, each with what it does at the knee and how it contributes to
+    stiffness. Several of them are not at the knee at all.
+  </p>
+
+  <div class="callout">
+    <p>
+      <strong>Why the hip and ankle are here.</strong> Muscles crossing the hip and the ankle
+      change what the knee has to do. Restriction at either gets felt at the joint in between —
+      which is why a knee that feels stiff is so often reporting a problem it did not create.
+    </p>
+  </div>
+
+  {groups.map((group) => (
+    <section class="section">
+      <h2>{group}</h2>
+      <ul class="grid">
+        {muscles
+          .filter((m) => (m.data.group ?? 'Other') === group)
+          .map((m) => (
+            <li>
+              <a class="card stack" href={`/muscles/${m.id}/`}>
+                <h3>{m.data.anatomicalName}</h3>
+                <p class="card__traditional">{m.data.commonName}</p>
+                <p class="tag-row">
+                  <span class="tag">{REGION_NOTE[m.data.region]}</span>
+                  {!m.data.isContractile && <span class="tag">not a muscle</span>}
+                  {m.data.abbreviations.map((a) => <span class="tag">{a}</span>)}
+                </p>
+              </a>
+            </li>
+          ))}
+      </ul>
+    </section>
+  ))}
+</BaseLayout>

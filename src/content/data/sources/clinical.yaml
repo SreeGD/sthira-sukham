@@ -1,0 +1,35 @@
+# Clinical-body guidance and peer-reviewed clinical literature.
+#
+# Every entry here has been checked against the issuing body or publisher — title,
+# author/body, year, and locator. Constitution Principle II: a citation nobody can
+# locate is not a citation. Do not add an entry you have not opened.
+
+- id: nice-ng226-osteoarthritis-2022
+  title: 'Osteoarthritis in over 16s: diagnosis and management (NICE guideline NG226)'
+  authorOrBody: National Institute for Health and Care Excellence (NICE)
+  year: 2022
+  url: https://www.nice.org.uk/guidance/ng226
+  tier: clinical-body
+
+- id: aaos-knee-arthritis
+  title: Arthritis of the Knee
+  authorOrBody: American Academy of Orthopaedic Surgeons (OrthoInfo)
+  year: 2024
+  url: https://www.orthoinfo.org/en/diseases--conditions/arthritis-of-the-knee/
+  tier: clinical-body
+
+- id: cochrane-exercise-knee-oa-2024
+  title: Exercise for osteoarthritis of the knee
+  authorOrBody: 'Lawford BJ, Bennell KL, Allison K, Schwartz S, Hinman RS (Cochrane Database of Systematic Reviews)'
+  year: 2024
+  doi: 10.1002/14651858.CD004376.pub4
+  tier: peer-reviewed
+
+- id: rowe-knee-functional-rom-2000
+  title: >-
+    Knee joint kinematics in gait and other functional activities measured using flexible
+    electrogoniometry: how much knee motion is sufficient for normal daily life?
+  authorOrBody: 'Rowe PJ, Myles CM, Walker C, Nutton R (Gait & Posture 12(2):143–155)'
+  year: 2000
+  doi: 10.1016/S0966-6362(00)00060-6
+  tier: peer-reviewed

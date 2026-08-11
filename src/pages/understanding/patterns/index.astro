@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const patterns = (await getCollection('stiffnessPatterns')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Stiffness patterns" description="Four commonly described general presentations of knee stiffness.">
+  <h1>Commonly described patterns</h1>
+  <p class="lede">
+    Four presentations that come up often in discussions of knee stiffness, described generally.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>These are not a checklist to sort yourself into.</strong> They overlap, more than
+      one can be true at once, and telling them apart is a clinical judgement based on examining
+      the knee. They are here so the vocabulary makes sense, not so you can arrive at a
+      diagnosis.
+    </p>
+  </div>
+  <ul class="grid">
+    {patterns.map((p) => (
+      <li><a class="card" href={`/understanding/patterns/${p.id}/`}><h2>{p.data.name}</h2></a></li>
+    ))}
+  </ul>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import { getEntries } from 'astro:content';
+
+/* FR-034: sources are visible to the reader, not just present in the data. */
+
+interface Props {
+  refs: { collection: 'sources'; id: string }[];
+  heading?: string;
+}
+const { refs, heading = 'Sources' } = Astro.props;
+const sources = refs.length > 0 ? await getEntries(refs) : [];
+
+const TIER_LABEL: Record<string, string> = {
+  'clinical-body': 'Clinical guidance',
+  'peer-reviewed': 'Peer-reviewed',
+  'anatomy-text': 'Reference text',
+  'practice-literature': 'Practice literature',
+};
+
+function locator(d: { url?: string; doi?: string; isbn?: string }) {
+  if (d.doi) return { label: `doi:${d.doi}`, href: `https://doi.org/${d.doi}` };
+  if (d.url) return { label: d.url.replace(/^https?:\/\//, ''), href: d.url };
+  if (d.isbn) return { label: `ISBN ${d.isbn}`, href: null };
+  return null;
+}
+---
+
+{
+  sources.length > 0 && (
+    <section class="sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">{heading}</h2>
+      <ol>
+        {sources.map((s) => {
+          const l = locator(s.data);
+          return (
+            <li>
+              <span class="tag">{TIER_LABEL[s.data.tier] ?? s.data.tier}</span>{' '}
+              {s.data.authorOrBody} ({s.data.year}). <cite>{s.data.title}</cite>
+              {s.data.edition && <> ({s.data.edition} ed.)</>}.{' '}
+              {l &&
+                (l.href ? (
+                  <a href={l.href} rel="noopener noreferrer">
+                    {l.label}
+                  </a>
+                ) : (
+                  <span>{l.label}</span>
+                ))}
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  )
+}

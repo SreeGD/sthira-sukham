@@ -1,0 +1,39 @@
+---
+/*
+ * FR-003 framing.
+ *
+ * There is deliberately NO dismissal mechanism here — no close button, no
+ * data attribute, no storage key. Nothing to click means nothing to persist means
+ * nothing that can hide it. The requirement is that this cannot be permanently
+ * dismissed; the cheapest way to guarantee that is to give it no dismissal path
+ * at all. Do not add one.
+ */
+---
+
+<aside class="framing" aria-label="About this information">
+  <p>
+    <strong>General information, not advice for your knee.</strong> These movements are described
+    as they are commonly taught. Whether any of them suits your knee depends on what is actually
+    going on in it — which needs a clinician or physiotherapist, not a website.
+    <a href="/safety/">When to see one</a>.
+  </p>
+</aside>
+
+<style>
+  .framing {
+    padding: var(--s-3) var(--s-4);
+    border-left: 4px solid var(--c-warn-border);
+    background: var(--c-warn-bg);
+    color: var(--c-warn-text);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--s-5);
+  }
+  .framing p {
+    margin: 0;
+    font-size: var(--f-size-sm);
+  }
+  .framing a {
+    color: inherit;
+    font-weight: 600;
+  }
+</style>

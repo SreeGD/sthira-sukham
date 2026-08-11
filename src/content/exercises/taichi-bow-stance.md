@@ -1,0 +1,39 @@
+---
+name: Adapted bow stance
+traditionalName: Gong Bu (bow stance)
+tradition: Tai chi (a fundamental stance across styles)
+modality: taichi-qigong
+targets: [gluteus-maximus, iliopsoas, adductor-group, soleus]
+goal: [strength, motor-control]
+instructions:
+  - Step one foot forward into a comfortable stride, front foot pointing ahead and back foot turned out about 45 degrees.
+  - Keep both heels on the floor and your torso upright over your hips.
+  - Shift your weight slowly forward onto the front leg, letting the front knee bend while keeping it above the middle of the foot.
+  - Shift slowly back onto the rear leg, letting the front knee straighten but not lock. Repeat, then change sides.
+dosage: Commonly practised as 8 to 12 slow shifts per side.
+difficulty: intermediate
+regressions: [taichi-knee-over-toe, anjaneyasana]
+contraindications:
+  - Balance problems without support within reach
+  - Knee pain in a lunge position
+  - Recent hip or knee surgery without clearance
+stopIf:
+  - Knee pain on the front leg as you shift forward
+  - The front knee drifts inward past your control
+  - Groin pain on the back leg
+equipment: [none, chair]
+evidenceLabel: moderate-evidence
+sources: [wang-taichi-knee-oa-2016, neumann-kinesiology-2016]
+---
+
+The bow stance is where tai chi's weight shifting meets a split stance, and it is close to
+what walking actually asks of you — one leg loading while the other unloads, with the pelvis
+staying level throughout.
+
+Keeping the back heel down is what makes this more than a lunge. It holds the back ankle in
+dorsiflexion for the whole shift, so soleus and the hip flexor on that side are lengthened
+under load rather than simply stretched. Lifting the heel makes the stance easier and removes
+most of what it was for.
+
+The stride length is your dial. A short stance is gentle; a longer one demands considerably
+more from the back hip and calf. Start shorter than you think you need.

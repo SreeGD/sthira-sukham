@@ -1,0 +1,134 @@
+---
+import GatedLayout from '../../layouts/GatedLayout.astro';
+import ExerciseCard from '../../components/ExerciseCard.astro';
+import ExerciseFilters from '../../islands/ExerciseFilters.tsx';
+import { getCollection } from 'astro:content';
+
+const [exercises, muscles, labels] = await Promise.all([
+  getCollection('exercises'),
+  getCollection('muscles'),
+  getCollection('evidenceLabels'),
+]);
+
+const MODALITY_LABEL: Record<string, string> = {
+  'clinical-rom': 'Range of motion',
+  yoga: 'Yoga',
+  pilates: 'Pilates',
+  'taichi-qigong': 'Tai chi / qigong',
+};
+const GOAL_LABEL: Record<string, string> = {
+  mobility: 'Mobility',
+  strength: 'Strength',
+  'motor-control': 'Control',
+};
+const EQUIPMENT_LABEL: Record<string, string> = {
+  none: 'None needed',
+  wall: 'A wall',
+  chair: 'A chair',
+  towel: 'A towel',
+  cushion: 'A cushion',
+  strap: 'A strap or belt',
+  'resistance-band': 'A resistance band',
+  'stationary-bike': 'A stationary bike',
+  reformer: 'A reformer',
+};
+const GLYPHS: Record<string, string> = {
+  'filled-circle-triple': '●●●',
+  'filled-circle-double': '●●○',
+  'filled-circle-single': '●○○',
+  'open-circle': '○○○',
+};
+
+const labelById = new Map(labels.map((l) => [l.id, l.data]));
+const muscleById = new Map(muscles.map((m) => [m.id, m.data]));
+
+// Serialised into the island. Display strings are resolved here so the island needs
+// no content API and stays a rendering shell.
+const forIsland = exercises.map((e) => {
+  const label = labelById.get(e.data.evidenceLabel.id);
+  const kit = e.data.equipment.filter((x) => x !== 'none');
+  return {
+    id: e.id,
+    name: e.data.name,
+    traditionalName: e.data.traditionalName,
+    modality: e.data.modality,
+    targets: e.data.targets.map((t) => t.id),
+    goal: e.data.goal,
+    difficulty: e.data.difficulty,
+    equipment: e.data.equipment,
+    modalityLabel: MODALITY_LABEL[e.data.modality] ?? e.data.modality,
+    evidenceLabelText: label?.label ?? 'Unknown',
+    evidenceGlyph: label ? (GLYPHS[label.shapeToken] ?? '○○○') : '○○○',
+    equipmentText: kit.length === 0 ? 'no equipment' : kit.map((k) => EQUIPMENT_LABEL[k] ?? k).join(', '),
+  };
+});
+
+// Only offer values that exist in the content.
+const present = (fn: (e: (typeof exercises)[number]) => string[]) =>
+  [...new Set(exercises.flatMap(fn))];
+
+const dimensions = [
+  {
+    key: 'modality' as const,
+    legend: 'Tradition',
+    options: present((e) => [e.data.modality]).map((v) => ({ value: v, label: MODALITY_LABEL[v] ?? v })),
+  },
+  {
+    key: 'goal' as const,
+    legend: 'Goal',
+    options: present((e) => e.data.goal).map((v) => ({ value: v, label: GOAL_LABEL[v] ?? v })),
+  },
+  {
+    key: 'difficulty' as const,
+    legend: 'Difficulty',
+    options: ['beginner', 'intermediate', 'advanced']
+      .filter((d) => exercises.some((e) => e.data.difficulty === d))
+      .map((v) => ({ value: v, label: v[0]!.toUpperCase() + v.slice(1) })),
+  },
+  {
+    key: 'equipment' as const,
+    legend: 'Equipment',
+    options: present((e) => e.data.equipment).map((v) => ({ value: v, label: EQUIPMENT_LABEL[v] ?? v })),
+  },
+  {
+    key: 'muscle' as const,
+    legend: 'Targets',
+    options: present((e) => e.data.targets.map((t) => t.id))
+      .map((v) => ({ value: v, label: muscleById.get(v)?.anatomicalName ?? v }))
+      .sort((a, b) => a.label.localeCompare(b.label)),
+  },
+];
+---
+<GatedLayout
+  title="Exercise library"
+  heading="Exercise library"
+  lede={`${exercises.length} movements drawn from four traditions. Every one lists what it targets, what it is for, when not to do it, and how well studied it is.`}
+  description="Movements for knee stiffness across clinical range-of-motion work, yoga, Pilates, and tai chi."
+>
+
+  {/* Interactive version. */}
+  <div class="js-only">
+    <ExerciseFilters client:load exercises={forIsland} dimensions={dimensions} />
+  </div>
+
+  {/*
+    Server-rendered fallback. Without JavaScript the reader gets the complete library —
+    degraded (no filtering) but entirely usable, per contracts/routes.md.
+  */}
+  <div class="nojs-only">
+    <p class="filters-results__count"><strong>{exercises.length}</strong> exercises</p>
+    <ul class="grid">
+      {exercises.map((e) => (
+        <ExerciseCard
+          id={e.id}
+          name={e.data.name}
+          traditionalName={e.data.traditionalName}
+          modality={e.data.modality}
+          difficulty={e.data.difficulty}
+          equipment={e.data.equipment}
+          evidenceLabel={e.data.evidenceLabel}
+        />
+      ))}
+    </ul>
+  </div>
+</GatedLayout>

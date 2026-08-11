@@ -1,0 +1,26 @@
+---
+import GatedLayout from '../../layouts/GatedLayout.astro';
+import { getCollection } from 'astro:content';
+const routines = (await getCollection('routines')).sort((a, b) => a.data.order - b.data.order);
+---
+<GatedLayout
+  title="Routines"
+  heading="Routines"
+  lede="Three sequences assembled from the exercise library, each with the reasoning behind its order. They are examples of how movements fit together, not programmes prescribed for you."
+  description="Ready-made sequences with the reasoning behind their order."
+>
+  <ul class="grid">
+    {routines.map((r) => (
+      <li>
+        <a class="card stack" href={`/routines/${r.id}/`}>
+          <h2>{r.data.title}</h2>
+          <p>{r.data.purpose}</p>
+          <p class="tag-row">
+            <span class="tag">about {r.data.approxDurationMinutes} min</span>
+            <span class="tag">{r.data.steps.length} movements</span>
+          </p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</GatedLayout>

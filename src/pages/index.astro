@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const [muscles, exercises, routines] = await Promise.all([
+  getCollection('muscles'),
+  getCollection('exercises'),
+  getCollection('routines'),
+]);
+---
+
+<BaseLayout
+  title="Understanding stiff knees"
+  description="A general educational reference on knee stiffness: how the joint works, which muscles are involved, and the movements commonly used to address them."
+>
+  <h1>Why is my knee stiff?</h1>
+  <p class="lede">
+    A general reference on how the knee works, which muscles govern how freely it moves, and the
+    movements commonly used to address them — drawn from clinical range-of-motion work, yoga,
+    Pilates, and tai chi.
+  </p>
+
+  <div class="callout">
+    <h2>This cannot assess your knee</h2>
+    <p>
+      Everything here is general information. It does not know anything about your knee and
+      cannot tell you what is wrong with it — that is what a clinician or physiotherapist is
+      for. Some knee symptoms need looking at rather than stretching:
+      <a href="/safety/">read which ones first</a>.
+    </p>
+  </div>
+
+  <section class="section">
+    <h2>Start here</h2>
+    <ul class="grid">
+      <li>
+        <a class="card stack" href="/understanding/">
+          <h3>Understanding stiffness</h3>
+          <p>
+            What the knee actually does, the six different physical reasons it stiffens, and how
+            much movement daily life needs.
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class="card stack" href="/muscles/">
+          <h3>Muscles &amp; structures</h3>
+          <p>
+            {muscles.length} muscles and structures, what each does at the knee, and how it
+            contributes when tight, weak, or switched off.
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class="card stack" href="/exercises/">
+          <h3>Exercise library</h3>
+          <p>
+            {exercises.length} movements across four traditions, filterable by muscle, goal,
+            difficulty, and what equipment you have.
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class="card stack" href="/routines/">
+          <h3>Routines</h3>
+          <p>{routines.length} ready-made sequences, with the reasoning behind their order.</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section prose">
+    <h2>One thing worth knowing up front</h2>
+    <p>
+      A stiff-feeling knee is frequently not a knee problem. The hip and the ankle both change
+      what the knee has to do, and restriction at either one gets felt at the joint in between.
+      That is why this reference spends as much time on <a href="/muscles/iliopsoas/">hip
+      flexors</a>, <a href="/muscles/gluteus-medius/">gluteal muscles</a>, and
+      <a href="/muscles/soleus/">the calf</a> as it does on the knee itself.
+    </p>
+  </section>
+</BaseLayout>

@@ -15,7 +15,9 @@ human-readable form — where the two disagree, the Zod schema wins and this doc
 1. **No unsourced claim ships.** Every claim-bearing record requires ≥1 resolvable `Source`.
 2. **No unsafe exercise ships.** An exercise without `contraindications`, `stopIf`, and
    `evidenceLabel` fails the build. There is no "publish anyway" path.
-3. **No dead cross-reference ships.** Every `reference()` resolves at build time or the build fails.
+3. **No dead cross-reference ships.** Every reference resolves or `pnpm validate` fails. Note this
+   is enforced by the policy script, *not* by Astro's `reference()`, which checks id shape only —
+   see research.md D10.
 4. **No open-vocabulary drift.** `modality`, `goal`, `difficulty`, `equipment`, `region`, and
    `tier` are closed enums; `evidenceLabel` is a closed reference set.
 5. **Adding content requires no code change.** Dropping a conforming file into the collection
@@ -134,7 +136,7 @@ supports *what the tradition holds and how the pose is performed*; the JOSPT ref
 | Instructions | `exercises` | `instructions.length ≥ 2` |
 | Proximal attribution | `muscles` | `region ∈ {hip, ankle}` → `presentsAsKneeStiffness` required |
 | Stiffness triad | `muscles` | `isContractile` → all of `whenTight`/`whenWeak`/`whenInhibited` |
-| Citation locatability | `sources` | at least one of `url`, `doi` |
+| Citation locatability | `sources` | at least one of `url`, `doi`, `isbn` |
 | Non-colour encoding | `evidenceLabels` | `shapeToken` required |
 | Step resolution | `routines` | `steps.length ≥ 1`, all exercise references resolve |
 

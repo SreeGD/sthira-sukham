@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SourceList from '../components/SourceList.astro';
+import { getCollection } from 'astro:content';
+
+const redFlags = await getCollection('redFlags');
+const sourceRefs = [
+  ...new Map(
+    redFlags.flatMap((f) => f.data.sources).map((ref) => [ref.id, ref]),
+  ).values(),
+];
+---
+
+<BaseLayout
+  title="When to see a clinician"
+  description="Signs that a knee needs assessment rather than exercise."
+>
+  <h1>When to stop and see a clinician</h1>
+
+  <p class="lede">
+    Most stiff knees are safe to move gently. These are the signs that mean something else may
+    be going on, and that a clinician should look at the knee before you start working on it.
+  </p>
+
+  <div class="danger-list">
+    <h3>See someone if any of these apply</h3>
+    <ul>
+      {redFlags.map((flag) => (
+        <li><strong>{flag.data.sign}.</strong> {flag.data.description}</li>
+      ))}
+    </ul>
+  </div>
+
+  <section class="section prose">
+    <h2>Why this list exists</h2>
+    <p>
+      Stiffness from tight muscles, an unused range, or arthritic change generally responds well
+      to being moved. The signs above point to different situations — a mechanical block, an
+      inflamed or infected joint, an acute injury — where moving the knee is not the right first
+      step and may make things worse.
+    </p>
+    <p>
+      None of that means a knee with one of these signs is necessarily serious. It means the
+      question cannot be answered by a website, and someone should examine it.
+    </p>
+
+    <h2>Also worth remembering</h2>
+    <p>
+      If you have had knee surgery, your surgeon or physiotherapist may have set specific limits
+      on how far to bend or straighten it. Those instructions are based on your knee and your
+      procedure. Where anything here conflicts with them, follow the instructions you were given.
+    </p>
+    <p>
+      And if something here is making your knee consistently worse rather than better, that is
+      reason enough to stop and ask someone, whether or not it appears on the list above.
+    </p>
+  </section>
+
+  <SourceList refs={sourceRefs} />
+</BaseLayout>

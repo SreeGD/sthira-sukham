@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+import ThemeToggle from '../islands/ThemeToggle.tsx';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+
+const NAV = [
+  { href: '/understanding/', label: 'Understanding' },
+  { href: '/muscles/', label: 'Muscles' },
+  { href: '/exercises/', label: 'Exercises' },
+  { href: '/routines/', label: 'Routines' },
+  { href: '/search/', label: 'Search' },
+];
+
+const isCurrent = (href: string) => path === href || path.startsWith(href);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · FixKnee</title>
+    {description && <meta name="description" content={description} />}
+    <!--
+      Pre-paint state stamp. This runs BLOCKING in <head>, before first paint, and
+      does two things:
+
+        1. Theme  — avoids a flash of the wrong theme.
+        2. Ack    — stamps data-ack when the reader has already seen the red-flag
+                    guidance, which is what reveals gated content in GatedLayout.
+
+      The ack half is safety-critical (Principle I). Note the direction: this script
+      REVEALS content. If it never runs — JS disabled, script error, slow parse — the
+      attribute is absent and the gate stays visible. Failing safe is the entire point;
+      do not invert this into a script that hides the gate.
+    -->
+    <script is:inline>
+      (function () {
+        const d = document.documentElement;
+        // data-js lets CSS swap server-rendered fallbacks for interactive versions.
+        // Absent => the static fallback stays visible, which is the degraded-but-usable path.
+        d.setAttribute('data-js', '1');
+        try {
+          const t = localStorage.getItem('fixknee:theme');
+          if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
+          if (localStorage.getItem('fixknee:red-flags-ack') === '1') d.setAttribute('data-ack', '1');
+        } catch {
+          /* Storage unavailable (private mode, blocked). Gate stays shut. Correct. */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="site-header__brand" href="/">FixKnee</a>
+        <nav class="site-nav" aria-label="Main">
+          {
+            NAV.map((item) => (
+              <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+        {/* FR-002: reachable in one interaction from every screen. */}
+        <a class="safety-link" href="/safety/">
+          <span aria-hidden="true">▲</span> When to see a clinician
+        </a>
+        <div class="js-only"><ThemeToggle client:idle /></div>
+      </div>
+    </header>
+
+    <main id="main" class="shell">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <p>
+          FixKnee is general educational information about how the knee works. It is not medical
+          advice, it cannot assess your knee, and it is no substitute for a clinician or
+          physiotherapist who can. See <a href="/safety/">when to see a clinician</a>.
+        </p>
+        <p>Runs entirely on your device. Nothing you do here is recorded or sent anywhere.</p>
+      </div>
+    </footer>
+  </body>
+</html>

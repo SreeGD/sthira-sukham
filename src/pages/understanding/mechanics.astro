@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceList from '../../components/SourceList.astro';
+
+const refs = [
+  { collection: 'sources' as const, id: 'neumann-kinesiology-2016' },
+  { collection: 'sources' as const, id: 'rowe-knee-functional-rom-2000' },
+  { collection: 'sources' as const, id: 'aaos-knee-arthritis' },
+];
+---
+
+<BaseLayout
+  title="How the knee moves"
+  description="The two joints of the knee, what locking means, and how much range daily activities need."
+>
+  <h1>How the knee moves</h1>
+
+  <section class="section prose">
+    <h2>It is two joints, not one</h2>
+    <p>
+      What we call the knee is really two joints sharing a space, and they fail in different
+      ways.
+    </p>
+    <p>
+      The <strong>tibiofemoral joint</strong> is the one people picture: the thigh bone meeting
+      the shin bone. It is the main hinge, and it carries your weight. Arthritic change and
+      most of what limits bending and straightening happen here.
+    </p>
+    <p>
+      The <strong>patellofemoral joint</strong> is the kneecap running in a groove on the front
+      of the thigh bone. The kneecap acts as a pulley, holding the quadriceps tendon away from
+      the joint so the muscle has better leverage. Front-of-knee stiffness — the sort that is
+      worse on stairs and after sitting — usually belongs to this joint rather than the hinge.
+    </p>
+    <p>
+      They are worth separating because they respond to different things. Work aimed at the
+      hinge does little for the kneecap, and the other way round.
+    </p>
+  </section>
+
+  <section class="section prose">
+    <h2>A straight knee is locked, not just straight</h2>
+    <p>
+      The last few degrees of straightening are not simply the end of the range. As the knee
+      approaches full extension, the joint surfaces rotate slightly against each other into a
+      close-packed position — the joint's most stable configuration. This is what lets you stand
+      for long periods without your quadriceps working hard: the skeleton is holding you up.
+    </p>
+    <p>
+      That lock has to be released before the knee can bend again, and
+      <a href="/muscles/popliteus/">a small muscle behind the knee</a> does it by rotating the
+      shin inward a few degrees.
+    </p>
+    <p>
+      This is why losing the last part of straightening matters more than the number of degrees
+      suggests. A knee that will not fully straighten never reaches its locked position, so the
+      quadriceps works during every second of standing. The knee feels tired as well as stiff,
+      and the tiredness is real.
+    </p>
+  </section>
+
+  <section class="section prose">
+    <h2>How much movement do you actually need?</h2>
+    <p>
+      Range of motion is measured in degrees of flexion, starting from a fully straight knee at
+      0°. A healthy adult knee typically bends to around 135–140°.
+    </p>
+    <p>
+      More useful than the maximum is what everyday activities actually demand. Research
+      measuring knee motion across daily tasks found:
+    </p>
+    <dl class="definition-list">
+      <dt>Walking on level ground and on slopes</dt>
+      <dd>Under 90° of flexion.</dd>
+      <dt>Stairs, and getting in and out of chairs</dt>
+      <dd>Roughly 90–120°, with lower chairs demanding more.</dd>
+      <dt>Getting into a bath</dt>
+      <dd>Around 135° — close to the full available range.</dd>
+    </dl>
+    <p>
+      The same work measured an active range averaging 138° in a healthy older group, and
+      suggested about 110° of flexion as a sensible goal when rehabilitating a knee — enough for
+      stairs and chairs, which is most of what independence rests on.
+    </p>
+    <p>
+      This is worth knowing because it reframes the target. The useful question is usually not
+      "how do I get all my movement back" but "which activity is this stopping me doing, and how
+      much would that need".
+    </p>
+  </section>
+
+  <section class="section prose">
+    <h2>Where the restriction actually sits</h2>
+    <p>
+      A knee can be short of range for several unrelated reasons, and they feel different. A
+      restriction that eases as you warm up and varies day to day is behaving like muscle. One
+      that arrives at the same firm point every time regardless is behaving like
+      <a href="/understanding/sources/capsular-restriction/">passive tissue</a>. One that feels
+      like fullness or pressure rather than tightness is behaving like
+      <a href="/understanding/sources/effusion/">fluid</a>.
+    </p>
+    <p>
+      And frequently the restriction is not at the knee at all. See
+      <a href="/understanding/sources/">the six sources of stiffness</a> for the rest.
+    </p>
+  </section>
+
+  <SourceList refs={refs} />
+</BaseLayout>

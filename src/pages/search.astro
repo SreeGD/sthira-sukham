@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Search from '../islands/Search.tsx';
+import { getCollection } from 'astro:content';
+import { buildSearchIndex } from '../lib/search-index.ts';
+
+const [muscles, exercises] = await Promise.all([
+  getCollection('muscles'),
+  getCollection('exercises'),
+]);
+// Built here, embedded in the page. Nothing is fetched at runtime (research.md D4).
+const index = buildSearchIndex(muscles, exercises);
+---
+<BaseLayout title="Search" description="Search muscles and exercises by name.">
+  <h1>Search</h1>
+  <p class="lede">
+    Muscles by anatomical name, common name, or abbreviation. Exercises by either their English
+    or traditional name.
+  </p>
+
+  <div class="js-only"><Search client:load index={index} /></div>
+
+  <div class="nojs-only">
+    <p>Search needs JavaScript. Everything is reachable by browsing instead:</p>
+    <ul class="grid">
+      <li><a class="card" href="/muscles/"><strong>All {muscles.length} muscles &amp; structures</strong></a></li>
+      <li><a class="card" href="/exercises/"><strong>All {exercises.length} exercises</strong></a></li>
+    </ul>
+  </div>
+</BaseLayout>

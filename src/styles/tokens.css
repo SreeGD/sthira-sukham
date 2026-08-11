@@ -1,0 +1,118 @@
+/*
+ * Design tokens (Constitution Principle VI).
+ *
+ * Three theme states, and all three must be handled:
+ *   1. Explicit light  -> :root[data-theme="light"]  (inherits the bare :root block)
+ *   2. Explicit dark   -> :root[data-theme="dark"]
+ *   3. System default  -> no attribute; only prefers-color-scheme separates them
+ *
+ * The dark media block is guarded against an explicit light choice so the toggle
+ * wins in BOTH directions. Never give a colour its only definition inside a media
+ * or attribute block.
+ *
+ * Contrast: every foreground/background pair below meets WCAG 2.1 AA (4.5:1 for body
+ * text, 3:1 for large text and UI boundaries). Keeping them in one file is what makes
+ * that auditable at a glance — see tests/e2e/accessibility.spec.ts for enforcement.
+ */
+
+:root {
+  /* Surfaces */
+  --c-bg: #fbfaf8;
+  --c-surface: #ffffff;
+  --c-surface-sunken: #f2efea;
+  --c-border: #d6d0c7;
+  --c-border-strong: #a8a094;
+
+  /* Text — on --c-bg / --c-surface */
+  --c-text: #1c1a17; /* 15.8:1 on --c-bg */
+  --c-text-muted: #5a5349; /* 7.2:1  on --c-bg */
+  --c-text-faint: #756d61; /* 4.8:1  on --c-bg */
+
+  /* Accent — the single hue that carries interaction */
+  --c-accent: #175d4f;
+  --c-accent-hover: #0f4539;
+  --c-accent-contrast: #ffffff;
+  --c-accent-subtle: #e3efeb;
+
+  /* Safety. Deliberately distinct from accent: this is the one colour in the app
+     that must never be mistaken for ordinary navigation. */
+  --c-warn-bg: #fdf3e7;
+  --c-warn-border: #b3651a;
+  --c-warn-text: #6b3a09; /* 8.1:1 on --c-warn-bg */
+
+  --c-focus: #0b6bcb;
+
+  /* Typography — a scale that stays legible at arm's length on a phone */
+  --f-body: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --f-size-base: 1.0625rem; /* 17px — instructions are read mid-exercise */
+  --f-size-sm: 0.9375rem;
+  --f-size-xs: 0.8125rem;
+  --f-size-lg: 1.25rem;
+  --f-size-xl: 1.5rem;
+  --f-size-2xl: 2rem;
+  --f-lh-body: 1.65;
+  --f-lh-tight: 1.25;
+
+  /* Space */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+
+  --radius: 0.5rem;
+  --radius-sm: 0.25rem;
+  --measure: 68ch;
+}
+
+/* System dark, unless the reader explicitly chose light. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --c-bg: #16181a;
+    --c-surface: #1e2124;
+    --c-surface-sunken: #121416;
+    --c-border: #363b40;
+    --c-border-strong: #545c63;
+
+    --c-text: #eceef0; /* 14.2:1 on --c-bg */
+    --c-text-muted: #b3bac0; /* 8.6:1  on --c-bg */
+    --c-text-faint: #8d959c; /* 5.1:1  on --c-bg */
+
+    --c-accent: #5fc9ae;
+    --c-accent-hover: #86dcc5;
+    --c-accent-contrast: #08211c;
+    --c-accent-subtle: #1b2f2a;
+
+    --c-warn-bg: #2b2115;
+    --c-warn-border: #d98b3f;
+    --c-warn-text: #f4d3ab; /* 9.4:1 on --c-warn-bg */
+
+    --c-focus: #6fb4ff;
+  }
+}
+
+/* Explicit dark wins over system light. */
+:root[data-theme='dark'] {
+  --c-bg: #16181a;
+  --c-surface: #1e2124;
+  --c-surface-sunken: #121416;
+  --c-border: #363b40;
+  --c-border-strong: #545c63;
+
+  --c-text: #eceef0;
+  --c-text-muted: #b3bac0;
+  --c-text-faint: #8d959c;
+
+  --c-accent: #5fc9ae;
+  --c-accent-hover: #86dcc5;
+  --c-accent-contrast: #08211c;
+  --c-accent-subtle: #1b2f2a;
+
+  --c-warn-bg: #2b2115;
+  --c-warn-border: #d98b3f;
+  --c-warn-text: #f4d3ab;
+
+  --c-focus: #6fb4ff;
+}

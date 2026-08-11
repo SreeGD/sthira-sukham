@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import RedFlagGate from '../components/RedFlagGate.astro';
+import ClinicianFraming from '../components/ClinicianFraming.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Rendered as the page h1, outside the gate. A title reveals no instructions. */
+  heading: string;
+  lede?: string;
+}
+const { title, description, heading, lede } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  {/*
+    Both branches are server-rendered into every gated page. CSS decides which is
+    visible, based on the data-ack attribute stamped pre-paint in BaseLayout.
+
+    The default state — no attribute — shows the gate and hides the content. That
+    means a reader with JS disabled, a failed script, or blocked storage sees the
+    SAFETY content, not the exercises. Every degradation path lands on the safe side.
+  */}
+  <h1>{heading}</h1>
+  {lede && <p class="lede">{lede}</p>}
+
+  <RedFlagGate />
+
+  <div class="gated" data-testid="gated-content">
+    <ClinicianFraming />
+    <slot />
+  </div>
+</BaseLayout>
+

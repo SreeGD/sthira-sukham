@@ -1,0 +1,22 @@
+# Evidence for movement drawn from yoga, Pilates, and tai chi.
+#
+# Principle IV note: these are peer-reviewed studies OF traditional practices, not
+# practice literature itself. They support claims about what the movement DOES.
+# Claims about what a tradition HOLDS need practice-literature sources, and none has
+# been verified for this project yet — so no content currently makes such a claim.
+# Add a practice-literature entry only after opening the actual text and confirming
+# its edition and ISBN.
+
+- id: wang-taichi-knee-oa-2016
+  title: 'Comparative Effectiveness of Tai Chi Versus Physical Therapy for Knee Osteoarthritis: A Randomized Trial'
+  authorOrBody: 'Wang C, Schmid CH, Iversen MD, et al. (Annals of Internal Medicine 165(2):77–86)'
+  year: 2016
+  doi: 10.7326/M15-2143
+  tier: peer-reviewed
+
+- id: yoga-knee-oa-meta-2024
+  title: 'The impact of Yoga on patients with knee osteoarthritis: A systematic review and meta-analysis of randomized controlled trials'
+  authorOrBody: 'Zhu Y, et al. (PLOS ONE 19(5):e0303641)'
+  year: 2024
+  doi: 10.1371/journal.pone.0303641
+  tier: peer-reviewed

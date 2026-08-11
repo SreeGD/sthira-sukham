@@ -12,7 +12,13 @@ properties* rather than things we bolt on and hope stay true.
 
 ## D1. Framework
 
-**Decision**: Astro 5, static output (`output: 'static'`), with the Content Layer API.
+**Decision**: Astro 7 (installed: 7.2.0), static output (`output: 'static'`), with the Content
+Layer API.
+
+> **Corrected during implementation.** This was written as "Astro 5" against a stale view of the
+> release line. Astro 7 is current, and the Content Layer API (`defineCollection`, `z`,
+> `reference`, `glob()`, `file()`) works unchanged — verified by probe before any code was built
+> on it. See also D10, which corrects a load-bearing claim below.
 
 **Rationale**: Astro is the only mainstream option where the constitution's hardest requirements
 are built-in rather than additive:
@@ -20,8 +26,9 @@ are built-in rather than additive:
 - **Content collections with Zod schemas** are the native content model. `src/content.config.ts`
   defines a schema per collection; invalid frontmatter **fails the build**. That is FR-038 and
   SC-003 for free, enforced by the framework rather than by a lint step someone can skip.
-- **`reference()`** validates cross-collection references at build time. An exercise pointing at a
-  nonexistent muscle ID stops the build. That is FR-036 and SC-004, natively.
+- ~~**`reference()`** validates cross-collection references at build time.~~ **This claim was
+  wrong — see D10.** `reference()` validates id *shape*, not existence. FR-036/SC-004 are enforced
+  by `scripts/validate-content.ts` instead.
 - **Zero JS by default.** Pages ship as HTML; JavaScript arrives only where an island is
   explicitly declared. Principle V's "no runtime network calls" is far easier to *keep* true when
   three components ship JS and the other twenty ship none.
@@ -33,7 +40,7 @@ are built-in rather than additive:
 |---|---|
 | Next.js static export | Ships a React runtime and hydration payload on every route for an app that is ~90% static prose. Content validation would be hand-rolled. |
 | Vite + React SPA | Client-side routing makes the deep-link red-flag gate (FR-001) harder, hurts no-JS resilience, and requires building the entire content pipeline and validation gate from scratch. |
-| Eleventy | Excellent static generator, but no typed content validation or reference integrity. We would rebuild in userland exactly what Astro gives natively — the highest-risk part of the constitution. |
+| Eleventy | Excellent static generator, but no typed content validation. Astro still wins on schema validation; the reference-integrity advantage turned out to be smaller than assumed (D10). |
 | Plain HTML/CSS, hand-authored | Directly violates Principle III: content would live in markup. |
 
 ---
@@ -209,13 +216,50 @@ index. If the index grows past a few tens of KB as content expands, revisit D4 �
 
 ---
 
+## D10. What the build actually enforces — measured, not assumed
+
+**Finding**: Astro's content layer enforces *less* than the plan assumed. Measured directly before
+building on it:
+
+| Failure mode | `astro build` exit |
+|---|---|
+| Record missing a required field | **1** — fails, with file and field named |
+| Record violating a `superRefine` rule | **1** — fails |
+| `reference()` pointing at a nonexistent id | **0** — **builds clean** |
+
+`reference()` validates that a value is a well-formed id. Resolution is *lazy* — it happens when
+something calls `getEntry()`, so an unreferenced dangling id is never checked at all.
+
+**Consequence**: FR-036 and SC-004 cannot rely on the framework. Referential integrity is enforced
+by `scripts/validate-content.ts`, which resolves every reference across every collection and exits
+non-zero on the first dangling one. That script is a required step in `pnpm verify`, not an
+optional lint.
+
+**Why this matters beyond the fix**: the original plan named build-time reference integrity as a
+*primary reason to choose Astro*. Half that justification was wrong. The framework choice still
+holds — Zod schema validation genuinely does fail the build, which is the larger half — but the
+lesson is that a constitutional guarantee should be verified against the tool, not inferred from
+its documentation. Both properties are now covered by tests
+(`tests/unit/validate-content.test.ts`), so a future upgrade that changes either behaviour is
+caught rather than silently trusted.
+
+## D11. Test server
+
+**Decision**: a ~60-line static server (`scripts/serve-dist.ts`) serves `dist/` for e2e runs,
+rather than `astro preview`.
+
+**Rationale**: Astro 7's `preview` daemonises — it detects an existing instance and exits, which
+Playwright's `webServer` reads as "the server died". Beyond that lifecycle friction, serving the
+built directory directly makes it unambiguous that tests exercise the artifact that ships. It also
+handles both output shapes Astro emits (`page/index.html` and bare `404.html`).
+
 ## Resolved unknowns
 
 All Technical Context items are resolved; no `NEEDS CLARIFICATION` markers remain.
 
 | Unknown | Resolution |
 |---|---|
-| Language / framework | TypeScript 5.x on Node 22, Astro 5 static |
+| Language / framework | TypeScript on Node 22, Astro 7 static |
 | Content storage | Markdown + YAML frontmatter (`glob()`); YAML data files (`file()`) |
 | Interactivity | Preact, 3 islands |
 | Search | Embedded build-time JSON index, client-side matching |

@@ -1,0 +1,11 @@
+# Anatomy and kinesiology reference texts.
+#
+# Books are located by ISBN rather than URL — publisher pages move, ISBNs do not.
+
+- id: neumann-kinesiology-2016
+  title: 'Kinesiology of the Musculoskeletal System: Foundations for Rehabilitation'
+  authorOrBody: Neumann DA (Elsevier)
+  year: 2016
+  edition: 3rd
+  isbn: '9780323287531'
+  tier: anatomy-text

@@ -1,0 +1,134 @@
+---
+import GatedLayout from '../../layouts/GatedLayout.astro';
+import SourceList from '../../components/SourceList.astro';
+import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import { getCollection, getEntries, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('exercises');
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const [targets, regressions, progressions, label] = await Promise.all([
+  getEntries(d.targets),
+  d.regressions.length ? getEntries(d.regressions) : Promise.resolve([]),
+  d.progressions.length ? getEntries(d.progressions) : Promise.resolve([]),
+  getEntry(d.evidenceLabel),
+]);
+
+const MODALITY_LABEL: Record<string, string> = {
+  'clinical-rom': 'Clinical range of motion',
+  yoga: 'Yoga',
+  pilates: 'Pilates',
+  'taichi-qigong': 'Tai chi / qigong',
+};
+const GOAL_LABEL: Record<string, string> = {
+  mobility: 'Mobility',
+  strength: 'Strength',
+  'motor-control': 'Motor control',
+};
+const kit = d.equipment.filter((e) => e !== 'none');
+---
+<GatedLayout
+  title={d.name}
+  heading={d.name}
+  description={`${d.name} — ${MODALITY_LABEL[d.modality]}`}
+>
+  {d.traditionalName && (
+    <p class="lede">
+      <em>{d.traditionalName}</em>{d.tradition && <> — {d.tradition}</>}
+    </p>
+  )}
+
+  <p class="tag-row">
+    <span class="tag">{MODALITY_LABEL[d.modality] ?? d.modality}</span>
+    {d.goal.map((g) => <span class="tag">{GOAL_LABEL[g] ?? g}</span>)}
+    <span class="tag">{d.difficulty}</span>
+    <span class="tag">{kit.length === 0 ? 'no equipment' : kit.join(', ')}</span>
+    <EvidenceBadge ref={d.evidenceLabel} />
+  </p>
+
+  {label && (
+    <p class="prose"><small>“{label.data.label}” means: {label.data.definition}</small></p>
+  )}
+
+  <section class="section">
+    <h2>How to do it</h2>
+    <ol class="steps">{d.instructions.map((step) => <li>{step}</li>)}</ol>
+    <p><strong>Typical dosage.</strong> {d.dosage}</p>
+  </section>
+
+  {d.modifications.length > 0 && (
+    <section class="section">
+      <h2>Modifications for a restricted knee</h2>
+      <ul>{d.modifications.map((m) => <li>{m}</li>)}</ul>
+      {d.props.length > 0 && (
+        <>
+          <h3>Props that help</h3>
+          <ul>{d.props.map((p) => <li>{p}</li>)}</ul>
+        </>
+      )}
+    </section>
+  )}
+
+  {/* FR-006. These two are why this exercise is allowed to exist at all. */}
+  <section class="section">
+    <div class="danger-list">
+      <h3>Do not do this if</h3>
+      <ul>{d.contraindications.map((c) => <li>{c}</li>)}</ul>
+      <h3>Stop if</h3>
+      <ul>{d.stopIf.map((s) => <li>{s}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>What is actually happening</h2>
+    <Content />
+  </section>
+
+  <section class="section" data-testid="exercise-targets">
+    <h2>What this targets</h2>
+    <ul class="grid">
+      {targets.map((m) => (
+        <li>
+          <a class="card" href={`/muscles/${m.id}/`}>
+            <strong>{m.data.anatomicalName}</strong>
+            <p class="card__traditional">{m.data.commonName}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {(regressions.length > 0 || progressions.length > 0) && (
+    <section class="section">
+      <h2>If this is too hard or too easy</h2>
+      {regressions.length > 0 && (
+        <>
+          <h3>Easier</h3>
+          <ul class="grid">
+            {regressions.map((e) => (
+              <li><a class="card" href={`/exercises/${e.id}/`}><strong>{e.data.name}</strong></a></li>
+            ))}
+          </ul>
+        </>
+      )}
+      {progressions.length > 0 && (
+        <>
+          <h3>Harder</h3>
+          <ul class="grid">
+            {progressions.map((e) => (
+              <li><a class="card" href={`/exercises/${e.id}/`}><strong>{e.data.name}</strong></a></li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
+  )}
+
+  <SourceList refs={d.sources} />
+</GatedLayout>

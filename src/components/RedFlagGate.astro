@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+
+/*
+ * The red-flag gate (Constitution Principle I, FR-001).
+ *
+ * This is a plain Astro component, NOT an island, and that is deliberate: it must be
+ * present in server-rendered HTML so it is on screen at first paint. A hydrated
+ * component would arrive after paint, which is exactly the flash FR-001 forbids.
+ *
+ * Visibility is controlled by CSS in GatedLayout keyed on html[data-ack]. This markup
+ * is always in the DOM.
+ */
+
+const redFlags = await getCollection('redFlags');
+---
+
+<section class="gate" aria-labelledby="gate-heading" data-testid="red-flag-gate">
+  <div class="gate__inner">
+    <h2 id="gate-heading">Before you start moving</h2>
+
+    <p class="lede">
+      Most stiff knees are safe to move gently. Some are not. Read this list first — it takes
+      about a minute, and you will only be asked once.
+    </p>
+
+    <h3>Stop and see a clinician if any of these apply</h3>
+    <ul class="gate__flags">
+      {
+        redFlags.map((flag) => (
+          <li>
+            <strong>{flag.data.sign}.</strong> {flag.data.description}
+          </li>
+        ))
+      }
+    </ul>
+
+    <p>
+      These are signs that something other than ordinary stiffness may be going on. Exercise is
+      not the right first step for any of them, and a clinician needs to look at the knee.
+    </p>
+
+    <p>
+      Nothing on this site can assess your knee. It describes how knees work in general and what
+      movements are commonly used. Deciding what is right for <em>your</em> knee is a
+      conversation with a clinician or physiotherapist.
+    </p>
+
+    <button class="button" type="button" data-gate-ack>
+      I have read this — show the movement content
+    </button>
+
+    <p class="gate__note">
+      <a href="/safety/">This list stays available</a> from every page, and you can come back to
+      it any time.
+    </p>
+  </div>
+</section>
+
+<style>
+  .gate {
+    padding: var(--s-5);
+    border: 2px solid var(--c-warn-border);
+    border-radius: var(--radius);
+    background: var(--c-warn-bg);
+    color: var(--c-warn-text);
+  }
+  .gate__inner {
+    max-width: var(--measure);
+  }
+  .gate h2,
+  .gate h3 {
+    color: inherit;
+  }
+  .gate .lede {
+    color: inherit;
+  }
+  .gate__flags {
+    padding-left: var(--s-5);
+  }
+  .gate__flags li + li {
+    margin-top: var(--s-3);
+  }
+  .gate__note {
+    margin-top: var(--s-4);
+    font-size: var(--f-size-sm);
+  }
+  .gate__note a,
+  .gate a {
+    color: inherit;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // Acknowledgement is a single device-local flag (SC-013). It records that a
+  // notice was displayed — it says nothing about the reader.
+  document.querySelector('[data-gate-ack]')?.addEventListener('click', () => {
+    try {
+      localStorage.setItem('fixknee:red-flags-ack', '1');
+    } catch {
+      /* Storage blocked: reveal for this page view only, re-gate next visit. */
+    }
+    document.documentElement.setAttribute('data-ack', '1');
+    document.getElementById('main')?.focus();
+  });
+</script>

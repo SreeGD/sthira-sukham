@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const sources = (await getCollection('stiffnessSources')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Sources of stiffness" description="The six physically different reasons a knee stiffens.">
+  <h1>The six sources of stiffness</h1>
+  <p class="lede">
+    Stiffness is a symptom, not a cause. These are the physically distinct situations that
+    produce it — they feel different, and they respond to different things.
+  </p>
+  <ul class="grid">
+    {sources.map((s) => (
+      <li>
+        <a class="card stack" href={`/understanding/sources/${s.id}/`}>
+          <h2>{s.data.clinicalTerm}</h2>
+          <p>{s.data.plainLanguageGloss}</p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

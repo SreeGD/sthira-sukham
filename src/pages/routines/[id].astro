@@ -1,0 +1,51 @@
+---
+import GatedLayout from '../../layouts/GatedLayout.astro';
+import SourceList from '../../components/SourceList.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('routines');
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const steps = await Promise.all(
+  d.steps.map(async (step) => ({ note: step.note, exercise: await getEntry(step.exercise) })),
+);
+const kit = d.equipment.filter((e) => e !== 'none');
+---
+<GatedLayout title={d.title} heading={d.title} lede={d.purpose} description={d.purpose}>
+  <p class="tag-row">
+    <span class="tag">about {d.approxDurationMinutes} minutes</span>
+    <span class="tag">{kit.length === 0 ? 'no equipment' : kit.join(', ')}</span>
+  </p>
+
+  <div class="prose"><Content /></div>
+
+  <section class="section">
+    <h2>The sequence</h2>
+    <ol class="steps">
+      {steps.map(({ exercise, note }) => (
+        <li>
+          <a href={`/exercises/${exercise!.id}/`}><strong>{exercise!.data.name}</strong></a>
+          {exercise!.data.traditionalName && <span class="card__traditional"> — {exercise!.data.traditionalName}</span>}
+          {note && <p>{note}</p>}
+        </li>
+      ))}
+    </ol>
+    <p>
+      Open each movement for its full instructions, and for when not to do it. Those matter more
+      than the order.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Why this order</h2>
+    <p class="prose">{d.orderRationale}</p>
+  </section>
+
+  <SourceList refs={d.sources} />
+</GatedLayout>

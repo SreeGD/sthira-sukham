@@ -3,9 +3,10 @@
 **Date**: 2026-08-11 | **Feature**: `001-knee-stiffness-reference`
 
 Eight entities across seven collections. Every entity that makes a claim references `Source`;
-every exercise references `Muscle` and `EvidenceLabel`. All references are by stable string ID and
-are validated at build time via Astro's `reference()` — an unresolved reference fails the build
-(FR-036, SC-004).
+every exercise references `Muscle` and `EvidenceLabel`. All references are by stable string ID.
+Astro's `reference()` validates id *shape* only; existence is enforced by
+`scripts/validate-content.ts`, a required step in `pnpm verify` (FR-036, SC-004 — see
+research.md D10).
 
 ## Entity relationship overview
 
@@ -198,9 +199,11 @@ would consume, and its absence is a structural guard, not an oversight.
 | `year` | number | ✔ | (FR-033) |
 | `url` | url | cond | Required unless `doi` present (FR-033) |
 | `doi` | string | cond | |
+| `isbn` | string | cond | Reference texts have no DOI or stable URL; ISBN is what locates them |
+| `edition` | string | | |
 | `tier` | enum | ✔ | `clinical-body` \| `peer-reviewed` \| `anatomy-text` \| `practice-literature` |
 
-**Validation**: at least one of `url`/`doi`. `tier` drives how the citation is presented and makes
+**Validation**: at least one of `url`/`doi`/`isbn`. `tier` drives how the citation is presented and makes
 Principle IV's practice-literature distinction machine-visible.
 
 ---
