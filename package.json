@@ -15,7 +15,8 @@
     "test:e2e": "playwright test",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "verify": "pnpm build && pnpm validate && pnpm check:isolation && pnpm test && pnpm test:e2e"
+    "verify": "pnpm build && pnpm validate && pnpm check:isolation && pnpm test && pnpm test:e2e",
+    "smoke:dev": "tsx scripts/smoke-dev.ts"
   },
   "dependencies": {
     "@astrojs/preact": "^6.0.2",

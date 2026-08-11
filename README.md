@@ -35,6 +35,7 @@ That single command is what "does this still hold together" means here. It runs:
 | `pnpm check:isolation` | No external origins in fetching positions anywhere in `dist/` |
 | `pnpm test` | Filtering, search, cross-link logic (Vitest) |
 | `pnpm test:e2e` | Gate behaviour, filters, keyboard, accessibility in both themes (Playwright + axe) |
+| `pnpm smoke:dev` | Every route renders on a running dev server (see below) |
 
 ## Adding content
 
@@ -119,6 +120,12 @@ script reveals the exercise content by stamping `<html data-ack>`. With JavaScri
 gate stays up. Inverting this — hiding the gate by default and showing it with JS — would pass most
 tests and be a Principle I violation in production. `tests/e2e/red-flag-gate.spec.ts` has a
 JS-disabled test specifically to catch it.
+
+**The dev server is stricter than the build in places.** A duplicated JSX attribute once
+built and tested clean while throwing a TypeError in `pnpm dev` — and dev is what people
+actually use. `pnpm smoke:dev` requests every route from a running dev server and fails on
+Astro's error overlay. It is not part of `pnpm verify` because it needs a server already
+running; run it after `pnpm dev` when you have changed components.
 
 **Referential integrity is not free.** Astro's `reference()` validates id shape, not existence —
 a dangling reference builds clean. `scripts/validate-content.ts` is what actually enforces it, and

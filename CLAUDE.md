@@ -63,6 +63,9 @@ zone that is authorable but undrawable is the failure mode.
   behind, the sides swap — getting it wrong puts the glutes and IT band on opposite
   sides of the same leg.
 - Astro components cannot `export` values; shared vocabularies go in `src/lib/`.
+- **`pnpm verify` runs against `dist/`, so dev-only failures are invisible to it.** A
+  duplicated JSX attribute once built and tested clean while throwing in `pnpm dev`. After
+  changing components, start the dev server and run `pnpm smoke:dev`.
 
 ## Workflow
 

@@ -29,6 +29,14 @@ interface Props {
 const { position, variant = 'full' } = Astro.props;
 
 
+if (!position || !POSITION_FIGURES[position]) {
+  throw new Error(
+    `PositionFigure got an invalid startPosition: ${JSON.stringify(position)}. ` +
+      `Expected one of ${Object.keys(POSITION_FIGURES).join(', ')}. ` +
+      `Either the exercise record is missing startPosition, or a call site is not passing it through.`,
+  );
+}
+
 const fig = POSITION_FIGURES[position];
 const label = POSITION_LABEL[position];
 const titleId = `pos-${position}-${variant}`;
