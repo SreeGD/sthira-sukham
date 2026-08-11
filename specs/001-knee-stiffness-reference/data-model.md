@@ -183,7 +183,12 @@ would consume, and its absence is a structural guard, not an oversight.
 
 ## 6. Source
 
-**Collection**: `sources` · single YAML file, `file()` loader · **flat list**
+**Collection**: `sources` · YAML files under `src/content/data/sources/`, one per domain
+(`clinical.yaml`, `anatomy.yaml`, `practice-literature.yaml`) · **flat list, merged at load**
+
+> Split by domain rather than held in one file so that parallel content-authoring work never
+> contends on a single file. A single `sources.yaml` would serialize every authoring task behind
+> one write. IDs remain globally unique across all files; the policy script enforces this.
 
 | Field | Type | Req | Notes |
 |---|---|---|---|

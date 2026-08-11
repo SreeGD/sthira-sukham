@@ -32,7 +32,7 @@ human-readable form — where the two disagree, the Zod schema wins and this doc
 | `routines` | `glob()` | `src/content/routines/*.md` | Markdown + frontmatter |
 | `stiffnessSources` | `glob()` | `src/content/stiffness-sources/*.md` | Markdown + frontmatter |
 | `stiffnessPatterns` | `glob()` | `src/content/stiffness-patterns/*.md` | Markdown + frontmatter |
-| `sources` | `file()` | `src/content/data/sources.yaml` | YAML list |
+| `sources` | multi-file | `src/content/data/sources/*.yaml` | YAML lists, merged; IDs globally unique |
 | `evidenceLabels` | `file()` | `src/content/data/evidence-labels.yaml` | YAML list |
 | `redFlags` | `file()` | `src/content/data/red-flags.yaml` | YAML list |
 
