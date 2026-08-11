@@ -3,6 +3,7 @@ name: Adapted bow stance
 traditionalName: Gong Bu (bow stance)
 tradition: Tai chi (a fundamental stance across styles)
 modality: taichi-qigong
+startPosition: standing
 targets: [gluteus-maximus, iliopsoas, adductor-group, soleus]
 goal: [strength, motor-control]
 instructions:

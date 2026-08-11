@@ -3,6 +3,7 @@ name: Reclining hand-to-big-toe pose
 traditionalName: Supta Padangusthasana
 tradition: Hatha yoga
 modality: yoga
+startPosition: supine
 targets: [biceps-femoris, semitendinosus, semimembranosus, gastrocnemius]
 goal: [mobility]
 instructions:

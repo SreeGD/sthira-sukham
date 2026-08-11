@@ -3,6 +3,7 @@ name: Slow side-stepping
 traditionalName: Yun Shou stepping (cloud hands footwork)
 tradition: Tai chi (Yang-style form)
 modality: taichi-qigong
+startPosition: standing
 targets: [gluteus-medius, gluteus-minimus, adductor-group, tensor-fasciae-latae]
 goal: [motor-control]
 instructions:

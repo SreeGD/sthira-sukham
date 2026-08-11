@@ -1,6 +1,7 @@
 ---
 name: Terminal knee extension
 modality: clinical-rom
+startPosition: supine
 targets: [vastus-medialis, vastus-lateralis, vastus-intermedius]
 goal: [strength, motor-control]
 instructions:

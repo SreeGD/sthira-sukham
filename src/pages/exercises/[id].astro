@@ -2,6 +2,7 @@
 import GatedLayout from '../../layouts/GatedLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import PositionFigure from '../../components/diagrams/PositionFigure.astro';
 import { getCollection, getEntries, getEntry, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -58,8 +59,13 @@ const kit = d.equipment.filter((e) => e !== 'none');
 
   <section class="section">
     <h2>How to do it</h2>
-    <ol class="steps">{d.instructions.map((step) => <li>{step}</li>)}</ol>
-    <p><strong>Typical dosage.</strong> {d.dosage}</p>
+    <div class="how-to">
+      <div>
+        <ol class="steps">{d.instructions.map((step) => <li>{step}</li>)}</ol>
+        <p><strong>Typical dosage.</strong> {d.dosage}</p>
+      </div>
+      <PositionFigure position={d.startPosition} />
+    </div>
   </section>
 
   {d.modifications.length > 0 && (

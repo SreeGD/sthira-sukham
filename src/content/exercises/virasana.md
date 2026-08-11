@@ -3,6 +3,7 @@ name: Hero pose
 traditionalName: Virasana
 tradition: Hatha yoga
 modality: yoga
+startPosition: kneeling
 targets: [rectus-femoris, vastus-lateralis, vastus-medialis, vastus-intermedius]
 goal: [mobility]
 instructions:

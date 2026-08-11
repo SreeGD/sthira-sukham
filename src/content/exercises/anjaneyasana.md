@@ -3,6 +3,7 @@ name: Low lunge
 traditionalName: Anjaneyasana
 tradition: Hatha yoga
 modality: yoga
+startPosition: kneeling
 targets: [iliopsoas, rectus-femoris, gluteus-maximus]
 goal: [mobility]
 instructions:

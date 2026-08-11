@@ -3,6 +3,7 @@ name: Weight shifting
 traditionalName: Zhan Zhuang weight transfer
 tradition: Tai chi (Yang-style foundational practice)
 modality: taichi-qigong
+startPosition: standing
 targets: [gluteus-medius, gluteus-minimus, soleus, adductor-group]
 goal: [motor-control, strength]
 instructions:

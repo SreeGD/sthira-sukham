@@ -1,0 +1,55 @@
+---
+import {
+  GROUND,
+  POSITION_FIGURES,
+  POSITION_LABEL,
+  type StartPosition,
+} from '../../lib/positions.ts';
+
+/*
+ * The position an exercise starts in.
+ *
+ * One drawing per position rather than one per exercise: the figure comes from the
+ * record's `startPosition`, so a new exercise gets its diagram without new artwork
+ * (Principle III). Same approach as the muscle locator.
+ *
+ * Schematic on purpose. It answers "am I on the floor or on my feet" at a glance,
+ * which is the question a reader scanning the library actually has. The instructions
+ * carry the detail; this carries the shape.
+ *
+ * Ground line at y=76 for every figure, so positions read as comparable rather than
+ * as unrelated drawings.
+ */
+
+interface Props {
+  position: StartPosition;
+  /** `full` on detail pages, `inline` for the compact card badge. */
+  variant?: 'full' | 'inline';
+}
+const { position, variant = 'full' } = Astro.props;
+
+
+const fig = POSITION_FIGURES[position];
+const label = POSITION_LABEL[position];
+const titleId = `pos-${position}-${variant}`;
+---
+
+<figure class:list={['position', variant === 'inline' && 'position--inline']}>
+  <svg viewBox="0 0 120 88" role="img" aria-labelledby={titleId} class="position__svg">
+    <title id={titleId}>Starting position: {label.toLowerCase()}</title>
+
+    <g aria-hidden="true">
+      <line x1="8" y1={GROUND} x2="112" y2={GROUND} class="pos-ground" />
+      {
+        position === 'standing-supported' && (
+          <line x1="20" y1="12" x2="20" y2={GROUND} class="pos-support" />
+        )
+      }
+      {fig.limbs.map((d) => <path d={d} class="pos-limb" fill="none" />)}
+      <path d={fig.body} class="pos-body" fill="none" />
+      <circle cx={fig.head[0]} cy={fig.head[1]} r="7" class="pos-head" />
+    </g>
+  </svg>
+  <figcaption>{label}</figcaption>
+</figure>
+

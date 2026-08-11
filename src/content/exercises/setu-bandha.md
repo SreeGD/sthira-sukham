@@ -3,6 +3,7 @@ name: Bridge pose
 traditionalName: Setu Bandha Sarvangasana
 tradition: Hatha yoga
 modality: yoga
+startPosition: supine
 targets: [gluteus-maximus, biceps-femoris, semitendinosus, semimembranosus]
 goal: [strength, motor-control]
 instructions:

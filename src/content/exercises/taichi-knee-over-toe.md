@@ -3,6 +3,7 @@ name: Knee-over-toe tracking
 traditionalName: Knee alignment in stance work
 tradition: Tai chi (a principle applied throughout the forms)
 modality: taichi-qigong
+startPosition: standing
 targets: [vastus-medialis, gluteus-medius, gluteus-minimus]
 goal: [motor-control]
 instructions:

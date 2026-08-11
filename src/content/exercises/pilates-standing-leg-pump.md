@@ -3,6 +3,7 @@ name: Standing leg pump
 traditionalName: Standing Footwork
 tradition: Pilates (adapted from the reformer repertoire)
 modality: pilates
+startPosition: standing-supported
 targets: [vastus-medialis, vastus-lateralis, gastrocnemius, soleus]
 goal: [strength, motor-control]
 instructions:

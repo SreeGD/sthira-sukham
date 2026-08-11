@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { waitForIsland } from './helpers.ts';
 
 /*
  * Diagrams (Principle VI).
@@ -92,5 +93,53 @@ test.describe('mechanics diagrams', () => {
       }),
     );
     expect(overflow).toEqual([]);
+  });
+});
+
+test.describe('exercise position figures', () => {
+  const ONE_PER_POSITION = {
+    supine: 'heel-slide',
+    prone: 'prone-hang',
+    'side-lying': 'pilates-clam',
+    seated: 'patellar-mobilisation',
+    kneeling: 'balasana',
+    quadruped: 'adho-mukha-svanasana',
+    standing: 'utkatasana',
+    'standing-supported': 'step-down',
+  } as const;
+
+  for (const [position, id] of Object.entries(ONE_PER_POSITION)) {
+    test(`${id} shows the ${position} figure with a text label`, async ({ page }) => {
+      await page.goto(`/exercises/${id}/`);
+      await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+      await page.reload();
+      const fig = page.locator('figure.position').first();
+      await expect(fig).toBeVisible();
+      // The label is what carries the meaning; the drawing supports it.
+      await expect(fig.locator('figcaption')).toHaveText(/\w/);
+      await expect(fig.getByRole('img')).toHaveAccessibleName(/Starting position:/);
+    });
+  }
+
+  test('every exercise has a position figure', async ({ page }) => {
+    await page.goto('/exercises/');
+    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.reload();
+    const cards = page.locator('.nojs-only .grid > li');
+    const total = await cards.count();
+    expect(total).toBeGreaterThanOrEqual(40);
+    expect(await page.locator('.nojs-only .position').count()).toBe(total);
+  });
+
+  test('the filtered island renders the same figure as the static fallback', async ({ page }) => {
+    await page.goto('/exercises/');
+    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.reload();
+    await waitForIsland(page, 'ExerciseFilters');
+    // Both views draw from src/lib/positions.ts; if they diverge this catches it.
+    await expect(page.locator('.js-only .position').first()).toBeVisible();
+    const islandLabels = await page.locator('.js-only .position__label').allInnerTexts();
+    const staticLabels = await page.locator('.nojs-only .position figcaption').allInnerTexts();
+    expect(islandLabels.sort()).toEqual(staticLabels.sort());
   });
 });

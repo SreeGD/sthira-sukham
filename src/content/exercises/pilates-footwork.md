@@ -3,6 +3,7 @@ name: Footwork
 traditionalName: Footwork
 tradition: Pilates (reformer repertoire, adapted for the mat)
 modality: pilates
+startPosition: supine
 targets: [vastus-medialis, vastus-lateralis, soleus, gluteus-maximus]
 goal: [strength, motor-control]
 instructions:

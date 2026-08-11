@@ -3,6 +3,7 @@ name: Pilates bridging
 traditionalName: Shoulder Bridge
 tradition: Pilates (mat repertoire)
 modality: pilates
+startPosition: supine
 targets: [gluteus-maximus, biceps-femoris, semitendinosus]
 goal: [strength, motor-control]
 instructions:

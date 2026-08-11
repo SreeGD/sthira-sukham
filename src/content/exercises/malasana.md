@@ -3,6 +3,7 @@ name: Garland pose, the deep squat
 traditionalName: Malasana
 tradition: Hatha yoga
 modality: yoga
+startPosition: standing
 targets: [adductor-group, soleus, gluteus-maximus]
 goal: [mobility]
 instructions:

@@ -4,6 +4,7 @@ import { parse as parseYaml } from 'yaml';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { DIAGRAM_ZONES } from './lib/diagram-zones.ts';
+import { START_POSITIONS } from './lib/positions.ts';
 
 /**
  * The validation gate (Constitution Principles II, III, IV).
@@ -211,6 +212,8 @@ const exercises = defineCollection({
       traditionalName: z.string().optional(),
       tradition: z.string().optional(),
       modality: z.enum(MODALITIES),
+      // Closed vocabulary so the position diagram can render every exercise (FR-020).
+      startPosition: z.enum(START_POSITIONS),
       targets: z.array(reference('muscles')).min(1),
       goal: z.array(z.enum(GOALS)).min(1),
       instructions: z.array(z.string().min(1)).min(2),

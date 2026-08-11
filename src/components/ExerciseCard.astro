@@ -1,5 +1,7 @@
 ---
 import EvidenceBadge from './EvidenceBadge.astro';
+import PositionFigure from './diagrams/PositionFigure.astro';
+import type { StartPosition } from '../lib/positions.ts';
 
 const MODALITY_LABEL: Record<string, string> = {
   'clinical-rom': 'Range of motion',
@@ -15,9 +17,11 @@ interface Props {
   modality: string;
   difficulty: string;
   equipment: string[];
+  startPosition: StartPosition;
   evidenceLabel: { collection: 'evidenceLabels'; id: string };
 }
-const { id, name, traditionalName, modality, difficulty, equipment, evidenceLabel } = Astro.props;
+const { id, name, traditionalName, modality, difficulty, equipment, startPosition, evidenceLabel } =
+  Astro.props;
 const needsKit = equipment.filter((e) => e !== 'none');
 ---
 
@@ -30,11 +34,20 @@ const needsKit = equipment.filter((e) => e !== 'none');
       <span class="tag">{difficulty}</span>
       <span class="tag">{needsKit.length === 0 ? 'no equipment' : needsKit.join(', ')}</span>
     </p>
-    <EvidenceBadge ref={evidenceLabel} />
+    <span class="card__meta">
+      <PositionFigure position={startPosition} variant="inline" />
+      <EvidenceBadge ref={evidenceLabel} />
+    </span>
   </a>
 </li>
 
 <style>
+  .card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    align-items: center;
+  }
   .card__traditional {
     margin: 0;
     font-style: italic;

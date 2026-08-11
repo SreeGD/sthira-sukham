@@ -3,6 +3,7 @@ name: Side-lying leg series
 traditionalName: Side Leg Series
 tradition: Pilates (mat repertoire)
 modality: pilates
+startPosition: side-lying
 targets: [gluteus-medius, gluteus-minimus, tensor-fasciae-latae, adductor-group]
 goal: [strength, motor-control]
 instructions:

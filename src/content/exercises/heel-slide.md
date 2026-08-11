@@ -1,6 +1,7 @@
 ---
 name: Heel slide
 modality: clinical-rom
+startPosition: supine
 targets: [rectus-femoris, vastus-intermedius, joint-capsule]
 goal: [mobility]
 instructions:

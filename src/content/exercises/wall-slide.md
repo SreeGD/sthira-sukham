@@ -1,6 +1,7 @@
 ---
 name: Wall slide
 modality: clinical-rom
+startPosition: supine
 targets: [rectus-femoris, vastus-medialis, vastus-intermedius, joint-capsule]
 goal: [mobility]
 instructions:

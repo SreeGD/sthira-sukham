@@ -1,6 +1,7 @@
 ---
 name: Straight-leg calf stretch
 modality: clinical-rom
+startPosition: standing-supported
 targets: [gastrocnemius]
 goal: [mobility]
 instructions:

@@ -1,6 +1,7 @@
 ---
 name: Bent-knee calf stretch
 modality: clinical-rom
+startPosition: standing-supported
 targets: [soleus]
 goal: [mobility]
 instructions:

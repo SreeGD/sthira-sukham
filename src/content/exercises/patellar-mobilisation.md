@@ -1,6 +1,7 @@
 ---
 name: Patellar mobilisation
 modality: clinical-rom
+startPosition: seated
 targets: [retinaculum]
 goal: [mobility]
 instructions:

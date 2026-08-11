@@ -3,6 +3,7 @@ name: Slow loaded bending and straightening
 traditionalName: Song Yao (slow sinking practice)
 tradition: Tai chi (foundational stance practice)
 modality: taichi-qigong
+startPosition: standing
 targets: [rectus-femoris, vastus-lateralis, vastus-medialis, vastus-intermedius, popliteus]
 goal: [strength, motor-control]
 instructions:

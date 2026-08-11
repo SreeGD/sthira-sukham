@@ -3,6 +3,7 @@ name: Leg slides
 traditionalName: Leg Slides
 tradition: Pilates (mat repertoire)
 modality: pilates
+startPosition: supine
 targets: [iliopsoas, rectus-femoris, vastus-intermedius]
 goal: [motor-control]
 instructions:

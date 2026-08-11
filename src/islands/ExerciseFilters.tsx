@@ -1,5 +1,11 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
 import {
+  GROUND,
+  POSITION_FIGURES,
+  POSITION_LABEL,
+  type StartPosition,
+} from '../lib/positions.ts';
+import {
   applyFilters,
   facetCounts,
   filtersFromSearchParams,
@@ -28,10 +34,33 @@ interface DimensionConfig {
 /** Display fields carried alongside the filterable ones so the island needs no content API. */
 export interface DisplayExercise extends FilterableExercise {
   traditionalName?: string;
+  startPosition: StartPosition;
   modalityLabel: string;
   evidenceLabelText: string;
   evidenceGlyph: string;
   equipmentText: string;
+}
+
+/* Renders the same figure as PositionFigure.astro, from the same geometry. */
+function PositionBadge({ position }: { position: StartPosition }) {
+  const fig = POSITION_FIGURES[position];
+  const label = POSITION_LABEL[position];
+  return (
+    <span class="position position--inline">
+      <svg viewBox="0 0 120 88" role="img" aria-label={`Starting position: ${label.toLowerCase()}`} class="position__svg">
+        <line x1="8" y1={GROUND} x2="112" y2={GROUND} class="pos-ground" />
+        {position === 'standing-supported' && (
+          <line x1="20" y1="12" x2="20" y2={GROUND} class="pos-support" />
+        )}
+        {fig.limbs.map((d) => (
+          <path key={d} d={d} class="pos-limb" fill="none" />
+        ))}
+        <path d={fig.body} class="pos-body" fill="none" />
+        <circle cx={fig.head[0]} cy={fig.head[1]} r="7" class="pos-head" />
+      </svg>
+      <span class="position__label">{label}</span>
+    </span>
+  );
 }
 
 interface Props {
@@ -148,11 +177,14 @@ export default function ExerciseFilters({ exercises, dimensions }: Props) {
                     <span class="tag">{e.difficulty}</span>
                     <span class="tag">{e.equipmentText}</span>
                   </p>
-                  <span class="evidence">
-                    <span class="evidence__glyph" aria-hidden="true">
-                      {e.evidenceGlyph}
+                  <span class="card__meta">
+                    <PositionBadge position={e.startPosition} />
+                    <span class="evidence">
+                      <span class="evidence__glyph" aria-hidden="true">
+                        {e.evidenceGlyph}
+                      </span>
+                      <span>Evidence: {e.evidenceLabelText}</span>
                     </span>
-                    <span>Evidence: {e.evidenceLabelText}</span>
                   </span>
                 </a>
               </li>

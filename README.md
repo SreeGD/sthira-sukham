@@ -77,6 +77,7 @@ Three, all originally authored inline SVG in `src/components/diagrams/`:
 | `KneeJoints` | `/understanding/mechanics/` | The tibiofemoral hinge and the patellofemoral joint as separate things |
 | `RangeOfMotionArc` | `/understanding/mechanics/` | Flexion range with the thresholds daily activities need |
 | `LegLocator` | every `/muscles/[id]/` | Front and back views with the structure's zone highlighted |
+| `PositionFigure` | every `/exercises/[id]/` and every card | The starting position — lying, kneeling, standing, and so on |
 
 Three constraints shaped them, and they are worth knowing before editing:
 
@@ -91,8 +92,18 @@ Three constraints shaped them, and they are worth knowing before editing:
   did in the first draft. There is a test that catches that specific failure by comparing
   every text node's bounding box against its viewBox.
 
-`LegLocator` serves all 19 muscle pages from one drawing: the zone comes from the
-record's `diagramZone` field, so adding a muscle needs no new artwork.
+Both `LegLocator` and `PositionFigure` are **one drawing serving every record**: the zone
+or position comes from a content field (`diagramZone`, `startPosition`), so adding a muscle
+or an exercise needs no new artwork. `PositionFigure`'s geometry lives in
+`src/lib/positions.ts` because the Astro component and the Preact filter island both render
+it, and duplicated paths would let the two views drift.
+
+**Why not photographs or licensed illustrations?** For anatomy they would be possible —
+openly-licensed sources exist. For exercises they effectively do not: there is no
+permissively-licensed image set covering these specific 44 movements, and images found by
+search are almost always copyrighted regardless of where they appear. The constitution
+requires illustration to be originally authored or carry a recorded redistribution licence,
+and Principle V requires it bundled rather than fetched.
 
 ## How it is built
 
@@ -124,9 +135,10 @@ it is a required step in `pnpm verify`.
 ## Status
 
 The application is complete and all gates pass. The content library is **seeded rather than
-exhaustive**: 19 muscles and structures (the full catalogue the spec requires), 24 exercises across
-all four modalities, 3 routines, 6 stiffness sources, 4 patterns, 8 red flags.
+exhaustive**: 19 muscles and structures (the full catalogue the spec requires), **44 exercises**
+across all four modalities (clinical 13, yoga 11, Pilates 10, tai chi 10), 3 routines, 6 stiffness
+sources, 4 patterns, 8 red flags.
 
-The spec targets 40–60 exercises. Expanding toward that is content work, not code work — every
-mechanism it needs already exists and is tested. The constraint is sourcing: each new record needs
-citations that have actually been checked.
+That is inside the spec's 40–60 target. Further expansion is content work, not code work. The
+constraint remains sourcing: every record needs citations that have actually been checked, and the
+build refuses records that lack them.

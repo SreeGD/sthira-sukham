@@ -3,6 +3,7 @@ name: Downward-facing dog
 traditionalName: Adho Mukha Svanasana
 tradition: Hatha yoga
 modality: yoga
+startPosition: quadruped
 targets: [gastrocnemius, biceps-femoris, semitendinosus, semimembranosus]
 goal: [mobility]
 instructions:

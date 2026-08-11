@@ -52,6 +52,7 @@ const forIsland = exercises.map((e) => {
     name: e.data.name,
     traditionalName: e.data.traditionalName,
     modality: e.data.modality,
+    startPosition: e.data.startPosition,
     targets: e.data.targets.map((t) => t.id),
     goal: e.data.goal,
     difficulty: e.data.difficulty,
@@ -126,6 +127,7 @@ const dimensions = [
           modality={e.data.modality}
           difficulty={e.data.difficulty}
           equipment={e.data.equipment}
+          startPosition={e.data.startPosition}
           evidenceLabel={e.data.evidenceLabel}
         />
       ))}

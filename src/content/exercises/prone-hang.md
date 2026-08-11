@@ -1,6 +1,7 @@
 ---
 name: Prone hang
 modality: clinical-rom
+startPosition: prone
 targets: [biceps-femoris, semitendinosus, semimembranosus, popliteus, joint-capsule]
 goal: [mobility]
 instructions:
