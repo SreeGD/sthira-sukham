@@ -34,7 +34,7 @@ test('journey: acknowledge the gate with the keyboard', async ({ page }) => {
 
 test('journey: operate every filter dimension with the keyboard', async ({ page }) => {
   await page.goto('/exercises/');
-  await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+  await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
   await page.reload();
   await waitForIsland(page, 'ExerciseFilters');
 
@@ -63,7 +63,7 @@ test('journey: search with the keyboard', async ({ page }) => {
 
 test('journey: follow a routine to an exercise with the keyboard', async ({ page }) => {
   await page.goto('/routines/morning-mobility/');
-  await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+  await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
   await page.reload();
   const step = page.locator('.steps > li').first().getByRole('link').first();
   await step.focus();

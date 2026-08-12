@@ -3,7 +3,7 @@ import { waitForIsland } from './helpers.ts';
 
 async function ack(page: Page, url: string) {
   await page.goto(url);
-  await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+  await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
   await page.goto(url);
 }
 
@@ -172,7 +172,7 @@ test.describe('search (US6)', () => {
 test.describe('instruction format', () => {
   test('every step carries a label naming what it is for', async ({ page }) => {
     await page.goto('/exercises/heel-slide/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
     const steps = page.locator('.steps--labelled > li');
     expect(await steps.count()).toBeGreaterThanOrEqual(2);
@@ -185,7 +185,7 @@ test.describe('instruction format', () => {
 
   test('routine figures are separate fields, not a prose sentence', async ({ page }) => {
     await page.goto('/exercises/step-down/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
     const routine = page.locator('.routine');
     for (const label of ['Repetitions', 'Sets', 'Frequency']) {

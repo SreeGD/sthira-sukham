@@ -97,7 +97,7 @@ const redFlags = (await getCollection('redFlags')).sort((a, b) => a.data.order -
   // notice was displayed — it says nothing about the reader.
   document.querySelector('[data-gate-ack]')?.addEventListener('click', () => {
     try {
-      localStorage.setItem('fixknee:red-flags-ack', '1');
+      localStorage.setItem('sthira:red-flags-ack', '1');
     } catch {
       /* Storage blocked: reveal for this page view only, re-gate next visit. */
     }

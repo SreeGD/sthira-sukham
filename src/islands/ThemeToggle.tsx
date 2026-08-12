@@ -18,10 +18,10 @@ export default function ThemeToggle() {
     setTheme(next);
     try {
       if (next === 'system') {
-        localStorage.removeItem('fixknee:theme');
+        localStorage.removeItem('sthira:theme');
         document.documentElement.removeAttribute('data-theme');
       } else {
-        localStorage.setItem('fixknee:theme', next);
+        localStorage.setItem('sthira:theme', next);
         document.documentElement.setAttribute('data-theme', next);
       }
     } catch {

@@ -32,8 +32,8 @@ async function scan(page: Page, url: string, theme: 'light' | 'dark') {
   await page.goto(url);
   await page.evaluate(
     ([t]) => {
-      localStorage.setItem('fixknee:red-flags-ack', '1');
-      localStorage.setItem('fixknee:theme', t as string);
+      localStorage.setItem('sthira:red-flags-ack', '1');
+      localStorage.setItem('sthira:theme', t as string);
     },
     [theme],
   );

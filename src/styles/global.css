@@ -687,3 +687,18 @@ html[data-ack='1'] [data-testid='red-flag-gate'] {
     align-items: start;
   }
 }
+
+/* The title is Sanskrit and does not explain itself; the gloss carries the meaning
+   without demanding a click. Hidden below 30rem, where the header is already tight. */
+.site-header__gloss {
+  display: none;
+  font-weight: 400;
+  font-size: var(--f-size-xs);
+  color: var(--c-text-muted);
+  font-style: italic;
+}
+@media (min-width: 30rem) {
+  .site-header__gloss {
+    display: block;
+  }
+}

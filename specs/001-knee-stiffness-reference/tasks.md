@@ -97,7 +97,7 @@ authored before the schemas exist, or it gets written against nothing.
 - [X] T023 [P] Define the light/dark custom-property token layer in `src/styles/tokens.css` on bare `:root`, `@media (prefers-color-scheme: dark)` guarded against explicit light, and `:root[data-theme="dark"]`, with all pairs meeting WCAG 2.1 AA contrast
 - [X] T024 [P] Write base styles, typography scale legible at 360px, focus-visible rings, and `prefers-reduced-motion` suppression in `src/styles/global.css`
 - [X] T025 Create `src/layouts/BaseLayout.astro` with `banner`/`navigation`/`main`/`contentinfo` landmarks, a first-in-tab-order skip link, and the pre-paint inline script stamping theme and ack state on `<html>`
-- [X] T026 [P] Create the `ThemeToggle` island in `src/islands/ThemeToggle.tsx` persisting to `fixknee:theme`
+- [X] T026 [P] Create the `ThemeToggle` island in `src/islands/ThemeToggle.tsx` persisting to `sthira:theme`
 - [X] T027 [P] Create `src/components/SourceList.astro` rendering citations visibly with tier indication (FR-034)
 
 ### Quality gate scripts
@@ -201,7 +201,7 @@ with JS enabled, and shows the gate with JS disabled.
 
 - [X] T060 [US4] Create `src/components/RedFlagGate.astro` as a server-rendered Astro component (not an island) rendering all red flags plus the acknowledgement action
 - [X] T061 [US4] Create `src/components/ClinicianFraming.astro` stating this is general education and a clinician is the right source for personal assessment, with **no dismissal mechanism in the markup** (FR-003)
-- [X] T062 [US4] Extend the pre-paint script in `src/layouts/BaseLayout.astro` to stamp `data-ack` on `<html>` from `fixknee:red-flags-ack` before first paint
+- [X] T062 [US4] Extend the pre-paint script in `src/layouts/BaseLayout.astro` to stamp `data-ack` on `<html>` from `sthira:red-flags-ack` before first paint
 - [X] T063 [US4] Create `src/layouts/GatedLayout.astro` composing BaseLayout, RedFlagGate, and ClinicianFraming, with CSS keyed on `html[data-ack]` such that **the gate is visible by default and content is revealed by the attribute** (fail-safe — see `research.md` D5)
 - [X] T064 [US4] Add a persistent safety affordance reaching `/safety/` in one interaction to `src/layouts/BaseLayout.astro` (FR-002)
 - [X] T065 [US4] Create the full red-flag guidance route at `src/pages/safety.astro`
@@ -304,7 +304,7 @@ count; every exercise opens to full detail; muscle ↔ exercise links resolve in
 - [X] T102 [P] Write the axe accessibility sweep across every route in both light and dark themes in `tests/e2e/accessibility.spec.ts` (SC-010, SC-011)
 - [X] T103 [P] Write keyboard-only traversal tests for all four primary journeys in `tests/e2e/keyboard.spec.ts` (SC-009)
 - [X] T104 [P] Write a 360px viewport test asserting no horizontal page scroll on any route in `tests/e2e/responsive.spec.ts` (SC-014)
-- [X] T105 [P] Write a storage-inspection test in `tests/e2e/privacy.spec.ts` asserting only `fixknee:red-flags-ack` and `fixknee:theme` are ever written (SC-013)
+- [X] T105 [P] Write a storage-inspection test in `tests/e2e/privacy.spec.ts` asserting only `sthira:red-flags-ack` and `sthira:theme` are ever written (SC-013)
 - [X] T106 Create the 404 route with a path back to browsing at `src/pages/404.astro`
 - [X] T107 Run `pnpm check:isolation` against a real build and resolve any external origin found (SC-012, FR-040)
 - [X] T108 Verify the SC-015 extensibility property by adding one muscle and one exercise and confirming they surface everywhere with zero changes outside `src/content/`

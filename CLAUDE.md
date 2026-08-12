@@ -1,4 +1,4 @@
-# FixKnee
+# Sthira Sukham
 
 A statically built, locally run educational reference on stiff knee pain: joint mechanics, the
 muscles involved, and an exercise library drawn from clinical range-of-motion work, yoga, Pilates,

@@ -3,7 +3,7 @@ import { waitForIsland } from './helpers.ts';
 
 async function openLibrary(page: Page, query = '') {
   await page.goto('/exercises/');
-  await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+  await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
   await page.goto(`/exercises/${query}`);
   await expect(page.getByTestId('gated-content')).toBeVisible();
   await waitForIsland(page, 'ExerciseFilters');

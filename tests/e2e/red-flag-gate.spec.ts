@@ -92,7 +92,7 @@ test.describe('after acknowledging', () => {
     await firstVisit(page, '/exercises/');
     await page.getByRole('button', { name: /show the movement content/i }).click();
     const keys = await page.evaluate(() => Object.keys(localStorage).sort());
-    expect(keys).toEqual(['fixknee:red-flags-ack']);
+    expect(keys).toEqual(['sthira:red-flags-ack']);
   });
 });
 
@@ -127,7 +127,7 @@ test.describe('safety reachability (FR-002, SC-002)', () => {
 test.describe('clinician framing (FR-003)', () => {
   test('renders on gated routes with no dismissal control in the DOM', async ({ page }) => {
     await page.goto('/exercises/heel-slide/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
 
     const framing = page.getByRole('complementary', { name: /about this information/i });

@@ -37,7 +37,7 @@ fail on.
 For every gated route:
 
 1. Server-rendered HTML contains **both** the gate and the content. Nothing is fetched.
-2. A blocking inline script in `<head>` reads `fixknee:red-flags-ack` and stamps
+2. A blocking inline script in `<head>` reads `sthira:red-flags-ack` and stamps
    `data-ack="1"` on `<html>` before first paint.
 3. CSS keyed on `html[data-ack]` reveals content; its absence reveals the gate. **No flash of
    exercise content in either direction.**

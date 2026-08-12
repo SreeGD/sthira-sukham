@@ -29,13 +29,33 @@ Templates requiring updates:
      task types are emitted per-feature
 
 Deferred TODOs: none
+
+---
+AMENDMENT 1.0.1 (2026-08-12)
+Version change: 1.0.0 → 1.0.1 (PATCH — naming only; no principle added, removed or redefined)
+
+Project renamed FixKnee → Sthira Sukham.
+
+Rationale: "FixKnee" was wrong in two ways that mattered. It promised a fix, which sits
+badly beside Principle I's prohibition on prescriptive claims; and it named a single joint
+just as the reference prepares to cover the hip and the ankle. "Sthira sukham" is from Yoga
+Sūtra 2.46 — sthira sukham āsanam, "the posture should be steady and comfortable" — which is
+what every goal in this reference is a version of, and which promises nothing clinical.
+
+Scope of change: display name, package name, and the two device-local storage key prefixes
+(fixknee: → sthira:). Renaming the storage keys re-gates anyone who had already acknowledged
+the red-flag guidance; that is acceptable because it fails toward showing safety content,
+never away from it. The project DIRECTORY is deliberately unchanged.
+
+Templates requiring updates: ✅ none — no principle text changed.
 -->
 
-# FixKnee Constitution
+# Sthira Sukham Constitution
 
-FixKnee is a locally-run, interactive educational reference on stiff knee pain: the joint
-mechanics and muscles involved, and the range-of-motion, yoga, Pilates, and tai chi practices
-that address them. It is a general reference — it does not personalize, diagnose, or track.
+Sthira Sukham (*sthira sukham āsanam*, Yoga Sūtra 2.46 — "the posture should be steady and
+comfortable") is a locally-run, interactive educational reference on stiff joints: the mechanics
+and muscles involved, and the range-of-motion, yoga, Pilates, and tai chi practices that address
+them. It is a general reference — it does not personalize, diagnose, or track.
 
 ## Core Principles
 
@@ -187,4 +207,4 @@ naming which principles the feature touches and how it satisfies them. Principle
 are blocking and MUST NOT be waived by the complexity-justification path available to other
 principles.
 
-**Version**: 1.0.0 | **Ratified**: 2026-08-11 | **Last Amended**: 2026-08-11
+**Version**: 1.0.1 | **Ratified**: 2026-08-11 | **Last Amended**: 2026-08-12

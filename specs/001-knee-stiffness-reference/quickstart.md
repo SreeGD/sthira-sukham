@@ -2,7 +2,7 @@
 
 **Feature**: `001-knee-stiffness-reference` | **Date**: 2026-08-11
 
-How to run FixKnee and how to prove it satisfies the spec. Every success criterion below is either
+How to run Sthira Sukham and how to prove it satisfies the spec. Every success criterion below is either
 automated or has an explicit manual procedure — none is left to "looks right".
 
 ## Prerequisites
@@ -136,8 +136,8 @@ Then the empirical check, which is the one that actually matters:
 2. Open DevTools → Network, disable network / go offline.
 3. Navigate every section.
    **Expected**: identical behaviour, zero failed requests, zero requests to any external host.
-4. Check Application → Storage. **Expected**: exactly two keys, `fixknee:red-flags-ack` and
-   `fixknee:theme`, and nothing else (SC-013).
+4. Check Application → Storage. **Expected**: exactly two keys, `sthira:red-flags-ack` and
+   `sthira:theme`, and nothing else (SC-013).
 
 ## Validating content extensibility (SC-015)
 

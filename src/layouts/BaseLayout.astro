@@ -27,7 +27,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(href);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · FixKnee</title>
+    <title>{title} · Sthira Sukham</title>
     {description && <meta name="description" content={description} />}
     <!--
       Pre-paint state stamp. This runs BLOCKING in <head>, before first paint, and
@@ -49,9 +49,9 @@ const isCurrent = (href: string) => path === href || path.startsWith(href);
         // Absent => the static fallback stays visible, which is the degraded-but-usable path.
         d.setAttribute('data-js', '1');
         try {
-          const t = localStorage.getItem('fixknee:theme');
+          const t = localStorage.getItem('sthira:theme');
           if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
-          if (localStorage.getItem('fixknee:red-flags-ack') === '1') d.setAttribute('data-ack', '1');
+          if (localStorage.getItem('sthira:red-flags-ack') === '1') d.setAttribute('data-ack', '1');
         } catch {
           /* Storage unavailable (private mode, blocked). Gate stays shut. Correct. */
         }
@@ -63,7 +63,10 @@ const isCurrent = (href: string) => path === href || path.startsWith(href);
 
     <header class="site-header">
       <div class="shell site-header__inner">
-        <a class="site-header__brand" href="/">FixKnee</a>
+        <a class="site-header__brand" href="/">
+          Sthira Sukham
+          <span class="site-header__gloss">steady and comfortable</span>
+        </a>
         <nav class="site-nav" aria-label="Main">
           {
             NAV.map((item) => (
@@ -88,7 +91,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(href);
     <footer class="site-footer">
       <div class="shell">
         <p>
-          FixKnee is general educational information about how the knee works. It is not medical
+          Sthira Sukham is general educational information about how the knee works. It is not medical
           advice, it cannot assess your knee, and it is no substitute for a clinician or
           physiotherapist who can. See <a href="/safety/">when to see a clinician</a>.
         </p>

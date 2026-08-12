@@ -6,7 +6,7 @@
 
 **Status**: Draft
 
-**Input**: User description: "FixKnee — an interactive, locally-run web app that serves as a general educational reference for stiff knee pain: knee joint mechanics, the muscles involved, common stiffness patterns, and an exercise library drawn from clinical range-of-motion work, yoga, Pilates, and tai chi/qigong. Cross-linked muscle and exercise pages, filterable library, curated routines, red-flag safety guidance, search. Static, local, no backend, no accounts, no tracking. Out of scope: symptom checkers, personalized programs, diagnosis, progress tracking, accounts, video hosting, community features."
+**Input**: User description: "Sthira Sukham — an interactive, locally-run web app that serves as a general educational reference for stiff knee pain: knee joint mechanics, the muscles involved, common stiffness patterns, and an exercise library drawn from clinical range-of-motion work, yoga, Pilates, and tai chi/qigong. Cross-linked muscle and exercise pages, filterable library, curated routines, red-flag safety guidance, search. Static, local, no backend, no accounts, no tracking. Out of scope: symptom checkers, personalized programs, diagnosis, progress tracking, accounts, video hosting, community features."
 
 ## User Scenarios & Testing *(mandatory)*
 

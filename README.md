@@ -1,4 +1,4 @@
-# FixKnee
+# Sthira Sukham
 
 A locally-run, static educational reference on stiff knee pain: how the knee joint works, the
 muscles and structures that govern how freely it moves, and the movements commonly used to address

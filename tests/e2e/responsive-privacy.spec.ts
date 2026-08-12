@@ -13,7 +13,7 @@ test.describe('360px viewport (SC-014)', () => {
   for (const route of ROUTES) {
     test(`${route} has no horizontal page scroll`, async ({ page }) => {
       await page.goto(route);
-      await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+      await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
       await page.reload();
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
@@ -24,7 +24,7 @@ test.describe('360px viewport (SC-014)', () => {
 
   test('exercise instructions are legible without zooming', async ({ page }) => {
     await page.goto('/exercises/heel-slide/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
     const size = await page
       .locator('.steps li')
@@ -51,7 +51,7 @@ test.describe('privacy (SC-013, FR-041)', () => {
     const session = await page.evaluate(() => Object.keys(sessionStorage));
     const cookies = await page.context().cookies();
 
-    expect(local).toEqual(['fixknee:red-flags-ack', 'fixknee:theme']);
+    expect(local).toEqual(['sthira:red-flags-ack', 'sthira:theme']);
     expect(session).toEqual([]);
     expect(cookies).toEqual([]);
   });

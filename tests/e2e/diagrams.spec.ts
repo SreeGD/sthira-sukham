@@ -99,7 +99,7 @@ test.describe('mechanics diagrams', () => {
 test.describe('at a glance panel', () => {
   test('leads with short steps and the three things that matter', async ({ page }) => {
     await page.goto('/exercises/step-down/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
     const glance = page.locator('.glance');
     await expect(glance).toContainText('The one thing that matters');
@@ -113,7 +113,7 @@ test.describe('at a glance panel', () => {
 
   test('appears above the detailed instructions, not below', async ({ page }) => {
     await page.goto('/exercises/heel-slide/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
     const order = await page.evaluate(() => {
       const g = document.querySelector('.glance');
@@ -139,7 +139,7 @@ test.describe('exercise position figures', () => {
   for (const [position, id] of Object.entries(ONE_PER_POSITION)) {
     test(`${id} names its ${position} position and shows where to feel it`, async ({ page }) => {
       await page.goto(`/exercises/${id}/`);
-      await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+      await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
       await page.reload();
       const glance = page.locator('.glance');
       await expect(glance).toBeVisible();
@@ -153,7 +153,7 @@ test.describe('exercise position figures', () => {
 
   test('every exercise has a position figure', async ({ page }) => {
     await page.goto('/exercises/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
     const cards = page.locator('.nojs-only .grid > li');
     const total = await cards.count();
@@ -163,7 +163,7 @@ test.describe('exercise position figures', () => {
 
   test('the filtered island renders the same figure as the static fallback', async ({ page }) => {
     await page.goto('/exercises/');
-    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
     await page.reload();
     await waitForIsland(page, 'ExerciseFilters');
     // Both views draw from src/lib/positions.ts; if they diverge this catches it.

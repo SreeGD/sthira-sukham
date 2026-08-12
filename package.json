@@ -1,9 +1,9 @@
 {
-  "name": "fixknee",
+  "name": "sthira-sukham",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "A local, static educational reference for stiff knee pain: mechanics, muscles, and movement.",
+  "description": "A local, static educational reference for stiff joints: mechanics, muscles, and movement.",
   "packageManager": "pnpm@10.27.0",
   "scripts": {
     "dev": "astro dev",

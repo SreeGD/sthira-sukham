@@ -248,8 +248,8 @@ Two values only, both device-local, neither describing the reader (SC-013, FR-04
 
 | Key | Values | Purpose |
 |---|---|---|
-| `fixknee:red-flags-ack` | `"1"` \| absent | Acknowledgement flag (FR-001, FR-002) |
-| `fixknee:theme` | `"light"` \| `"dark"` \| absent | Theme preference (FR-045) |
+| `sthira:red-flags-ack` | `"1"` \| absent | Acknowledgement flag (FR-001, FR-002) |
+| `sthira:theme` | `"light"` \| `"dark"` \| absent | Theme preference (FR-045) |
 
 Absent is the safe default in both cases: no ack → gate shows; no theme → follow system.
 

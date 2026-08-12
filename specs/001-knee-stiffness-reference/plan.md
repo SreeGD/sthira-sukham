@@ -6,7 +6,7 @@
 
 ## Summary
 
-FixKnee is a statically built, locally run educational reference on stiff knee pain: joint
+Sthira Sukham is a statically built, locally run educational reference on stiff knee pain: joint
 mechanics and the six physical sources of stiffness, a catalogue of ~19 muscles and non-contractile
 restrictors, and a filterable library of ~40–60 exercises drawn from clinical range-of-motion work,
 yoga, Pilates, and tai chi/qigong — cross-linked so a reader moves freely between "which muscle"
