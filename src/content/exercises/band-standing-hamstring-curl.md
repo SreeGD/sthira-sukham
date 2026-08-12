@@ -26,8 +26,9 @@ instructions:
     detail: Bend the knee to draw the heel back toward your buttock against the band.
   - label: Straighten under control
     detail: Straighten slowly, controlling the band rather than letting it pull the leg back down.
+      Complete your repetitions on this leg, then change legs and repeat.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 10 to 15 repetitions per side, one to three sets.
@@ -51,6 +52,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: unilateral
 ---
 
 The hamstrings get plenty of stretching attention in most knee programmes and very little

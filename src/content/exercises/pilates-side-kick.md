@@ -21,17 +21,18 @@ feelItIn: The front and back of the hip alternately.
 commonMistake: Rocking the pelvis to get a longer swing.
 instructions:
   - label: Stack the hips
-    detail: Lie on your side with hips stacked, lower knee bent for stability, top leg straight and
-      in line with your body.
+    detail: Lie on your side with one hip directly above the other, lower knee bent for stability,
+      top leg straight and in line with your body.
   - label: Lift the top leg
     detail: Lift the top leg to hip height and hold it there.
   - label: Swing it forward
     detail: Swing the leg forward as far as you can without the pelvis tipping, then back behind you
       the same way.
   - label: Swing it behind
-    detail: Keep the torso completely still. The leg moves; nothing else does.
+    detail: Keep the torso completely still. The leg moves; nothing else does. Complete your swings
+      on this side, then roll over and repeat with the other leg on top.
 dosage:
-  reps: 8 to 12 repetitions
+  reps: 8 to 12 repetitions per side
   sets: 1 to 2 sets per session
   frequency: Once daily
   note: Commonly described as 8 to 10 swings per side.
@@ -60,6 +61,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - nascimento-hip-knee-pfp-2018
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Hip movement in two directions with the pelvis instructed not to participate — which is a

@@ -35,6 +35,17 @@ const GOAL_LABEL: Record<string, string> = {
 };
 const kit = d.equipment.filter((e) => e !== 'none');
 
+const EQUIPMENT_LABEL: Record<string, string> = {
+  wall: 'a wall',
+  chair: 'a chair',
+  towel: 'a towel',
+  cushion: 'a cushion or folded blanket',
+  strap: 'a strap, belt or long towel',
+  'resistance-band': 'a resistance band',
+  'stationary-bike': 'a stationary bike',
+  reformer: 'a reformer',
+};
+
 /* Zones come from the targets, deduplicated and capped: lighting up six regions
    communicates less than lighting up two. */
 const feelZones = [...new Set(targets.map((m) => m.data.diagramZone))].slice(0, 3);
@@ -74,6 +85,15 @@ const feelZones = [...new Set(targets.map((m) => m.data.diagramZone))].slice(0, 
 
   <section class="section">
     <h2>How to perform it correctly</h2>
+    <p class="needs">
+      <strong>Before you start:</strong>{' '}
+      {
+        kit.length === 0
+          ? 'nothing to gather — this needs no equipment.'
+          : `gather ${kit.map((k) => EQUIPMENT_LABEL[k] ?? k).join(', ').toLowerCase()}.`
+      }
+      {d.props.length > 0 && <> {d.props.join(' ')}</>}
+    </p>
     <ol class="steps steps--labelled">
       {
         d.instructions.map((step) => (

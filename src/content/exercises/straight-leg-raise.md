@@ -26,9 +26,10 @@ instructions:
   - label: Raise the straight leg
     detail: Keeping the knee locked, raise the straight leg to about the height of the opposite knee.
   - label: Lower under control
-    detail: Lower slowly. If the knee bends on the way up or down, the lift is too high.
+    detail: Lower slowly. If the knee bends on the way up or down, the lift is too high. Complete
+      your repetitions on this leg, then repeat with the other.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 10 to 15 repetitions, one to three sets, once daily.
@@ -51,6 +52,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - aaos-knee-arthritis
+laterality: unilateral
 ---
 
 The step up from a quad set: the same locked-straight knee, now carrying the weight of the

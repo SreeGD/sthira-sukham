@@ -50,6 +50,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - aaos-knee-arthritis
+laterality: bilateral
 ---
 
 The heel slide is usually the first knee-bending exercise anyone is given, and its value is

@@ -27,9 +27,9 @@ instructions:
     detail: Stand with that foot flat and straighten the knee against the band, tightening the thigh.
   - label: Return under control
     detail: Hold the straight position briefly, then let the band draw the knee slowly back into the
-      bend.
+      bend. Complete your repetitions on this leg, then change legs and repeat.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 10 to 15 repetitions, two or three sets, once daily.
@@ -53,6 +53,7 @@ sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
   - aaos-knee-arthritis
+laterality: unilateral
 ---
 
 The standing version of terminal knee extension, with a band supplying resistance where the

@@ -65,6 +65,7 @@ sources:
   - yoga-knee-oa-meta-2024
   - cochrane-exercise-knee-oa-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The bridge is one of the few ways to ask the gluteus maximus to extend the hip without also

@@ -2,26 +2,30 @@
 name: Ankle alphabet
 modality: clinical-rom
 startPosition: seated
-targets: [tibialis-anterior, peroneals, tibialis-posterior, gastrocnemius]
-goal: [mobility]
+targets:
+  - tibialis-anterior
+  - peroneals
+  - tibialis-posterior
+  - gastrocnemius
+goal:
+  - mobility
 quickSteps:
   - Sit with one leg out, foot free of the floor.
   - Draw letter A in the air with your big toe.
   - Work through the alphabet, moving only the ankle.
   - Keep the shin still throughout.
-keyPoint: >-
-  Move only the ankle. If the whole leg swings, the shin is doing the drawing and the ankle is
-  not moving at all.
+keyPoint: Move only the ankle. If the whole leg swings, the shin is doing the drawing and the
+  ankle is not moving at all.
 feelItIn: The ankle moving through directions it rarely visits.
-commonMistake: >-
-  Swinging the leg from the hip to make bigger letters, which looks like more range and is less.
+commonMistake: Swinging the leg from the hip to make bigger letters, which looks like more range and is less.
 instructions:
   - label: Get into position
     detail: Sit on a chair or the floor with one leg extended so the foot hangs free of the ground.
   - label: Steady the shin
     detail: Rest your hands on the thigh, or hold the shin lightly, so the leg cannot swing.
   - label: Draw the letters
-    detail: Using your big toe as a pen, draw each letter of the alphabet in the air, as large as the ankle alone allows.
+    detail: Using your big toe as a pen, draw each letter of the alphabet in the air, as large as
+      the ankle alone allows.
   - label: Work both sides
     detail: Complete the alphabet, then change legs. Stop early if the ankle starts to ache.
 dosage:
@@ -30,7 +34,8 @@ dosage:
   frequency: 2 to 3 times a day
   note: Commonly described as a general early ankle mobility drill.
 difficulty: beginner
-progressions: [ankle-controlled-inversion-eversion]
+progressions:
+  - ankle-controlled-inversion-eversion
 contraindications:
   - Recent ankle fracture or surgery where your surgeon has restricted movement
   - Acute swelling with heat or redness
@@ -38,9 +43,14 @@ stopIf:
   - Sharp pain rather than a stretch or a working sensation
   - Swelling increases afterwards
   - Pins and needles in the foot
-equipment: [chair, none]
+equipment:
+  - chair
+  - none
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, hemmerich-adl-kinematics-2006]
+sources:
+  - neumann-kinesiology-2016
+  - hemmerich-adl-kinematics-2006
+laterality: unilateral
 ---
 
 The ankle moves in more directions than most people ask of it, and the alphabet is a way of

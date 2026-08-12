@@ -64,6 +64,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 A resting position in most yoga classes, and a deep knee bend under body weight — which

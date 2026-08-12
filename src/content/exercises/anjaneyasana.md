@@ -25,8 +25,9 @@ instructions:
   - label: Pad the back knee
     detail: Pad the back knee with a folded blanket.
   - label: Tuck the tailbone
-    detail: Tuck your tailbone slightly under, so the front of the back hip lengthens rather than
-      the lower back arching.
+    detail: Draw your tailbone down and slightly forward, as if shortening the distance between your
+      tailbone and your navel. You should feel the front of the back hip lengthen rather than
+      your lower back arch.
   - label: Ease forward and hold
     detail: Ease your weight gently forward until you feel a stretch at the front of the back hip.
       Hold, then swap sides.
@@ -64,6 +65,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 This is the counterpart to everything sitting does to you. Hours in a chair hold the hip

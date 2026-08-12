@@ -59,6 +59,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: bilateral
 ---
 
 Hip extension with the hip already straight, which is a position the glutes rarely get asked

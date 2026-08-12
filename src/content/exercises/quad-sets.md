@@ -53,6 +53,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - aaos-knee-arthritis
+laterality: bilateral
 ---
 
 The smallest useful thing you can ask a knee to do, and often the first.

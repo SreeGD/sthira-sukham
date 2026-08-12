@@ -22,17 +22,19 @@ feelItIn: The side of the top hip.
 commonMistake: Rolling the hip backward to lift higher.
 instructions:
   - label: Stack the hips
-    detail: Lie on your side with your hips stacked directly over one another and your head supported.
+    detail: Lie on your side with your one hip directly above the other, not rolled forward or back
+      and your head supported.
   - label: Set the top leg
     detail: Bend the lower leg for stability and keep the top leg straight, in line with your body.
   - label: Lift to hip height
     detail: Lift the top leg to about hip height, leading with the heel and keeping the toes
       pointing forward rather than up to the ceiling.
   - label: Lower under control
-    detail: Lower slowly. Keep the top hip stacked — rolling backward means another muscle has taken
-      over.
+    detail: Lower slowly. Keep the top hip directly above the lower one — rolling backward means
+      another muscle has taken over. Complete your lifts on this side, then roll over and repeat
+      with the other leg on top.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 10 to 15 repetitions per side.
@@ -61,6 +63,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: unilateral
 ---
 
 This is the most direct way to reach gluteus medius, and gluteus medius is the muscle that

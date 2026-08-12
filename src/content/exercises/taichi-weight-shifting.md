@@ -54,6 +54,7 @@ evidenceLabel: moderate-evidence
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The foundational tai chi practice, and the one that most directly addresses the hip control

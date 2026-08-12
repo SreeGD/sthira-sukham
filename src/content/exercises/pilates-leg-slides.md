@@ -20,10 +20,11 @@ feelItIn: The deep abdomen working to keep you still.
 commonMistake: Letting the back arch as the leg straightens. Shorten the slide.
 instructions:
   - label: Find neutral spine
-    detail: Lie on your back with both knees bent, feet flat, spine in its natural resting curve.
+    detail: Lie on your back with both knees bent, feet flat, a natural small hollow under your
+      lower back.
   - label: Slide one heel out
-    detail: Find and keep that neutral spine position — neither flattened into the floor nor arched
-      away from it.
+    detail: Keep the natural hollow under your lower back — neither pressed flat into the floor nor
+      arched away from it.
   - label: Keep the pelvis still
     detail: Slide one heel slowly along the floor until the leg is straight, without letting the
       pelvis tip or the back change shape.
@@ -31,7 +32,7 @@ instructions:
     detail: Slide it slowly back. The pelvis staying still is the exercise; the leg is only how you
       challenge it.
 dosage:
-  reps: 8 to 12 repetitions
+  reps: 8 to 12 repetitions per side
   sets: 1 to 2 sets per session
   frequency: Once daily
   note: Commonly described as 5 to 10 slides per leg, moving slowly, once daily.
@@ -58,6 +59,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: unilateral
 ---
 
 This looks like almost nothing and is harder than it looks, which is characteristic of the

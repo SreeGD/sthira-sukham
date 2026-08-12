@@ -54,6 +54,7 @@ evidenceLabel: moderate-evidence
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Walking taken apart and done at a fraction of the speed, which turns an automatic movement

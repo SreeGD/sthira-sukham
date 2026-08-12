@@ -31,9 +31,10 @@ instructions:
       away from the wall.
   - label: Bend back slowly
     detail: Bend slowly back to the start, controlling the return rather than collapsing into it.
-      Watch that the knees do not drift inward.
+      Watch that the knees do not drift inward. Complete your repetitions on this leg, then
+      repeat with the other.
 dosage:
-  reps: 8 to 12 repetitions
+  reps: 8 to 12 repetitions per side
   sets: 1 to 2 sets per session
   frequency: Once daily
   note: Commonly described as 8 to 12 slow repetitions, one or two sets.
@@ -61,6 +62,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: bilateral
 ---
 
 Reformer footwork adapted to a wall. The reformer version has a spring providing resistance;

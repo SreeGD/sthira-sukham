@@ -28,9 +28,10 @@ instructions:
     detail: Press the foot away from you until the leg is nearly straight, against the band's
       resistance.
   - label: Bend back in slowly
-    detail: Bend the knee back in slowly, letting the band pull only as fast as you allow.
+    detail: Bend the knee back in slowly, letting the band pull only as fast as you allow. Complete
+      your repetitions on this leg, then swap the band to the other foot and repeat.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 10 to 15 repetitions per side, one to three sets.
@@ -53,6 +54,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: unilateral
 ---
 
 A leg press without a leg press machine, and one of the few ways to load the quadriceps

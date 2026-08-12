@@ -55,6 +55,7 @@ sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: bilateral
 ---
 
 Slow controlled bending under body weight, which trains the quadriceps through a range rather

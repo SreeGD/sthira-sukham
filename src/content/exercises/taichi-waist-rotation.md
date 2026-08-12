@@ -54,6 +54,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Rotation is the direction most people never deliberately move in, and the hip is built for

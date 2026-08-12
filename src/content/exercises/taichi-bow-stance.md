@@ -33,7 +33,7 @@ instructions:
     detail: Shift slowly back onto the rear leg, letting the front knee straighten but not lock.
       Repeat, then change sides.
 dosage:
-  reps: 8 to 12 slow cycles
+  reps: 8 to 12 slow cycles per side
   sets: 1 to 2 sets per session
   frequency: Once daily
   note: Commonly practised as 8 to 12 slow shifts per side.
@@ -56,6 +56,7 @@ evidenceLabel: moderate-evidence
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 The bow stance is where tai chi's weight shifting meets a split stance, and it is close to

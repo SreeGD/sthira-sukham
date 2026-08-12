@@ -53,6 +53,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - rowe-knee-functional-rom-2000
+laterality: bilateral
 ---
 
 Straightening gets less attention than bending, and it is often the more consequential loss.

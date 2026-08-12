@@ -68,6 +68,7 @@ sources:
   - yoga-knee-oa-meta-2024
   - nascimento-hip-knee-pfp-2018
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 A sustained single-leg-dominant hold with the hip in an open position — quadriceps endurance

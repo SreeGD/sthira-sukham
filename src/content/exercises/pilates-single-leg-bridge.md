@@ -31,7 +31,7 @@ instructions:
   - label: Replace and swap
     detail: Hold briefly, replace the foot, and change sides. Lower the hips at the end.
 dosage:
-  reps: 8 to 12 repetitions
+  reps: 8 to 12 repetitions per side
   sets: 1 to 2 sets per session
   frequency: Once daily
   note: Commonly described as 6 to 10 alternating lifts, one to two sets.
@@ -62,6 +62,7 @@ sources:
   - nascimento-hip-knee-pfp-2018
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: unilateral
 ---
 
 A bridge that asks one hip to do the work of two, which is what walking asks on every step.

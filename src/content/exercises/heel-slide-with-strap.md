@@ -25,8 +25,10 @@ instructions:
     detail: Use the strap to draw the heel a small amount further, to a firm stretch rather than pain.
   - label: Release and return
     detail: Hold, then release the strap tension and let the leg slide back out under control.
+      Complete your repetitions on this leg, then repeat with the other. Complete your
+      repetitions on this leg, then move the strap to the other foot and repeat.
 dosage:
-  reps: 10 to 20 repetitions
+  reps: 10 to 20 repetitions per side
   sets: 1 to 3 sets per session
   frequency: 2 to 3 times a day
   hold: 5 seconds at the end of range
@@ -50,6 +52,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - aaos-knee-arthritis
+laterality: unilateral
 ---
 
 The same movement as the plain heel slide, with a strap adding a small amount of assistance

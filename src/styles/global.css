@@ -767,3 +767,12 @@ html[data-ack='1'] [data-testid='red-flag-gate'] {
   color: var(--c-text-muted);
   max-width: var(--measure);
 }
+
+/* What to gather, before the steps rather than discovered inside them. */
+.needs {
+  padding: var(--s-2) var(--s-3);
+  border-left: 3px solid var(--c-accent);
+  background: var(--c-accent-subtle);
+  border-radius: var(--radius-sm);
+  max-width: var(--measure);
+}

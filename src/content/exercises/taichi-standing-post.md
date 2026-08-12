@@ -25,7 +25,8 @@ instructions:
   - label: Set your feet
     detail: Stand with your feet shoulder-width apart and parallel, weight even between them.
   - label: Soften the knees slightly
-    detail: Soften the knees very slightly — a few degrees, not a squat — and let the tailbone drop.
+    detail: Soften the knees very slightly — a few degrees, not a squat — and let your tailbone drop
+      toward the floor, as if the base of your spine were heavy.
   - label: Settle the arms
     detail: Let your arms hang, or hold them lightly in front of you as though resting on a large ball.
   - label: Stand and breathe
@@ -55,6 +56,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Standing still with the knees slightly unlocked, for minutes at a time. It is the most

@@ -203,6 +203,32 @@ export function checkContent(c: Collections): PolicyResult {
     if (!exercise.data.evidenceLabel) fail(`${exercise.file}: evidenceLabel is required (FR-037).`);
   }
 
+  // 4b. Clarity of instruction. A unilateral movement whose steps never mention the
+  //     other side leaves a reader doing one leg and stopping — found six times in an
+  //     audit, which is what prompted the explicit `laterality` field.
+  for (const exercise of c.exercises) {
+    if (exercise.data.laterality !== 'unilateral') continue;
+    const steps = Array.isArray(exercise.data.instructions)
+      ? (exercise.data.instructions as Array<Record<string, unknown>>)
+          .map((s) => String(s.detail ?? ''))
+          .join(' ')
+      : '';
+    const quick = Array.isArray(exercise.data.quickSteps)
+      ? (exercise.data.quickSteps as string[]).join(' ')
+      : '';
+    const SWITCHES =
+      /swap|other (side|leg|foot|arm|knee|hip)|change (sides|legs)|each side|per side/i;
+    if (!SWITCHES.test(steps + ' ' + quick)) {
+      fail(
+        `${exercise.file}: is unilateral but its steps never say to change sides — a reader will do one side and stop.`,
+      );
+    }
+    const dose = exercise.data.dosage as Record<string, unknown> | undefined;
+    if (dose && !/per side|each side|both sides/i.test(String(dose.reps ?? ''))) {
+      fail(`${exercise.file}: is unilateral but its repetition count does not say "per side".`);
+    }
+  }
+
   // 5. Required muscle coverage (FR-012, FR-013).
   for (const [group, required] of Object.entries(REQUIRED_MUSCLE_GROUPS)) {
     for (const id of required) {

@@ -43,6 +43,7 @@ equipment:
 evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Straightening the back knee is what makes this a gastrocnemius stretch specifically, because

@@ -70,6 +70,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Virasana asks for deep knee flexion under body weight, and that combination makes it the

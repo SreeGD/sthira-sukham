@@ -62,6 +62,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The least eventful pose in yoga and, for a knee that habitually locks backward, one of the

@@ -65,6 +65,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 A hip opener done lying down, with the floor holding the pelvis so the stretch cannot quietly

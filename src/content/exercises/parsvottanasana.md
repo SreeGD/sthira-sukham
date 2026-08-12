@@ -27,7 +27,8 @@ instructions:
   - label: Square the hips forward
     detail: Keep a soft bend in the front knee rather than locking it straight.
   - label: Hinge over the front leg
-    detail: Hinge forward over the front leg from the hips, keeping the spine long.
+    detail: Lead with your chest and tip forward over the front leg, bending at the hip crease
+      rather than rounding your back.
   - label: Support the hands and hold
     detail: Rest your hands on blocks or a chair. Hold, then press through the back foot to come up.
       Change sides.
@@ -65,6 +66,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 A one-legged hamstring stretch with the pelvis squared, which makes it more specific than a

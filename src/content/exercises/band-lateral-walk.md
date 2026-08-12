@@ -54,6 +54,7 @@ evidenceLabel: moderate-evidence
 sources:
   - nascimento-hip-knee-pfp-2018
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Gluteus medius worked standing and under load, which is closer to its actual job than

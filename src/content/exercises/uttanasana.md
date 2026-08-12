@@ -23,7 +23,8 @@ instructions:
   - label: Set your stance
     detail: Stand with your feet hip-width apart and your knees clearly bent.
   - label: Bend the knees clearly
-    detail: Hinge forward from the hips, letting your upper body hang down toward the floor.
+    detail: Tip forward by folding at the hip crease — not by rounding your back — and let your
+      upper body hang toward the floor.
   - label: Hinge from the hips
     detail: Let your head and arms hang heavy. Keep the knees bent — this is not a straight-leg pose
       to begin with.
@@ -62,6 +63,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The most commonly performed hamstring stretch there is, and the one most commonly performed

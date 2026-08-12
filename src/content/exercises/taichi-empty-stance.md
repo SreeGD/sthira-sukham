@@ -31,7 +31,7 @@ instructions:
   - label: Hold, then swap
     detail: Hold, then change sides. The front foot should be able to lift without you shifting.
 dosage:
-  reps: Continuous practice
+  reps: Continuous practice per side
   sets: 1 set per session
   frequency: Once daily
   hold: 2 to 5 minutes
@@ -56,6 +56,7 @@ evidenceLabel: moderate-evidence
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Almost all the weight on one bent leg, held still. It is the quietest-looking hard thing in

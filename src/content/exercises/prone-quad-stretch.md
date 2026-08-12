@@ -27,6 +27,8 @@ instructions:
       thigh.
   - label: Keep the hip down
     detail: Keep the hips pressed down — if the hip lifts, ease off. Hold, then release slowly.
+      Complete your repetitions on this leg, then repeat with the other. Release slowly, then
+      repeat on the other side.
 dosage:
   reps: 3 repetitions per side
   sets: 1 set per session
@@ -50,6 +52,7 @@ equipment:
 evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Face down with the hip straight is what makes this reach rectus femoris rather than only

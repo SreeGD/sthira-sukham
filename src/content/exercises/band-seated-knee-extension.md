@@ -27,8 +27,9 @@ instructions:
     detail: Straighten the knee against the band, stopping short of locking out sharply.
   - label: Lower against the pull
     detail: Lower slowly against the band's pull. The lowering is where most of the work is.
+      Complete your repetitions on this side, then swap and repeat with the other leg.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 10 to 15 repetitions per side, one to three sets.
@@ -51,6 +52,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: unilateral
 ---
 
 Straightforward quadriceps strengthening through a range, with the load easy to adjust by

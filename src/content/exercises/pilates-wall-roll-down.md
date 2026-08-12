@@ -29,7 +29,8 @@ instructions:
     detail: Let your arms hang. Go only as far as you can while keeping the knees soft and the
       movement controlled.
   - label: Restack on the way up
-    detail: Roll back up the same way, restacking the spine from the bottom.
+    detail: Roll back up the same way, setting your spine down one part at a time from the bottom
+      upward.
 dosage:
   reps: 8 to 12 repetitions
   sets: 1 to 2 sets per session
@@ -60,6 +61,7 @@ props:
 evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The wall turns a vague instruction into a concrete one. "Roll down one vertebra at a time"

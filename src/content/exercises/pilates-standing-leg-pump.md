@@ -62,6 +62,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: bilateral
 ---
 
 Loaded work in standing, which is where the knee actually has to function. Lying-down

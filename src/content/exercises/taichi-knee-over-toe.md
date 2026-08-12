@@ -53,6 +53,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Tai chi treats knee alignment as a principle running through every posture rather than as a

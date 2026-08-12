@@ -47,6 +47,7 @@ equipment:
 evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Bending the back knee takes gastrocnemius out of the picture, leaving soleus — the deeper

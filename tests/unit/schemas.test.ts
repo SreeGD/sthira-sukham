@@ -46,6 +46,7 @@ afterEach(() => {
 const VALID_EXERCISE = `name: Probe
 modality: clinical-rom
 startPosition: supine
+laterality: bilateral
 targets: [rectus-femoris]
 goal: [mobility]
 quickSteps:

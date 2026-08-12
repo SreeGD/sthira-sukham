@@ -66,6 +66,7 @@ sources:
   - yoga-knee-oa-meta-2024
   - cochrane-exercise-knee-oa-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 A sustained quadriceps hold, which makes it one of the few yoga positions that is squarely

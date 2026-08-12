@@ -250,6 +250,13 @@ const exercises = defineCollection({
       modality: z.enum(MODALITIES),
       // Closed vocabulary so the position diagram can render every exercise (FR-020).
       startPosition: z.enum(START_POSITIONS),
+      /*
+       * Whether the movement is done one side at a time. Explicit rather than inferred
+       * from the prose, because the audit that prompted this found six unilateral
+       * exercises that never told the reader to change sides — a defect no amount of
+       * careful writing prevents, but a gate does. See scripts/content-policy.ts.
+       */
+      laterality: z.enum(['unilateral', 'bilateral']),
       targets: z.array(reference('muscles')).min(1),
       goal: z.array(z.enum(GOALS)).min(1),
       /*

@@ -60,6 +60,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The gentlest position in this library, and the one most likely to be available on a bad day.

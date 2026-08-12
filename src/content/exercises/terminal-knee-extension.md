@@ -27,9 +27,11 @@ instructions:
     detail: Hold the fully straight position for a few seconds, feeling the muscle just above and
       inside the kneecap tighten.
   - label: Lower under control
-    detail: Lower the heel slowly back down.
+    detail: Lower the heel slowly back down. Complete your repetitions on this leg, then repeat with
+      the other. Complete your repetitions on this leg, then move the roll under the other knee
+      and repeat.
 dosage:
-  reps: 10 to 20 repetitions
+  reps: 10 to 20 repetitions per side
   sets: 1 to 3 sets per session
   frequency: 2 to 3 times a day
   hold: 5 seconds at the end of range
@@ -53,6 +55,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - aaos-knee-arthritis
+laterality: unilateral
 ---
 
 The last fifteen degrees of knee straightening are disproportionately important and

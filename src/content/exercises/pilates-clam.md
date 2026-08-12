@@ -21,16 +21,18 @@ feelItIn: The side of the top hip.
 commonMistake: Rolling the pelvis back to lift the knee higher. That is not more range.
 instructions:
   - label: Lie on your side
-    detail: Lie on your side with your hips stacked, knees bent to about a right angle and heels in
-      line with your back.
+    detail: Lie on your side with one hip directly above the other, knees bent to about a right
+      angle and heels in line with your back.
   - label: Set the knees and heels
     detail: Rest your head on your lower arm and place your top hand on the floor in front for balance.
   - label: Lift the top knee
     detail: Keeping your heels touching and your pelvis completely still, lift the top knee.
   - label: Lower slowly
     detail: Lower slowly. If your top hip rolls backward, the lift has gone past your range.
+      Complete your repetitions on this side, then roll over and repeat with the other leg on
+      top.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 10 to 15 repetitions per side, one to two sets.
@@ -57,6 +59,7 @@ evidenceLabel: moderate-evidence
 sources:
   - nascimento-hip-knee-pfp-2018
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 The most commonly prescribed gluteus medius exercise there is, and one of the most commonly

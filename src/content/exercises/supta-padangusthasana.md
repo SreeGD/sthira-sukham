@@ -29,7 +29,8 @@ instructions:
     detail: Straighten the raised leg only as far as it goes without the pelvis rolling backward or
       the other leg lifting.
   - label: Hold, then lower
-    detail: Hold, breathing steadily, then bend the knee and lower the leg under control.
+    detail: Hold, breathing steadily, then bend the knee and lower the leg under control. Lower the
+      leg with a bent knee, then repeat on the other side.
 dosage:
   reps: 2 to 3 repetitions per side
   sets: 1 set per session
@@ -65,6 +66,7 @@ evidenceLabel: moderate-evidence
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Mechanically this is a supine hamstring stretch with the pelvis stabilised by the floor,

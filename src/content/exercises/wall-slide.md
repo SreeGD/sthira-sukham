@@ -52,6 +52,7 @@ equipment:
 evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 A heel slide turned through ninety degrees so gravity works for you instead of against you.

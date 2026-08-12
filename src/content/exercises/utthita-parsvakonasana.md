@@ -65,6 +65,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Warrior II with a side bend added, which loads the front leg for longer while asking the back

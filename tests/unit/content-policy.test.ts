@@ -267,3 +267,43 @@ describe('the chain (feature 002: SC-101, SC-102)', () => {
     expect(problems(c).join()).toMatch(/stiffness sources for this joint/);
   });
 });
+
+describe('instruction clarity', () => {
+  const uni = () => {
+    const c = valid();
+    c.exercises[0]!.data.laterality = 'unilateral';
+    c.exercises[0]!.data.instructions = [{ label: 'Do it', detail: 'Lift the top leg.' }];
+    c.exercises[0]!.data.quickSteps = ['Lift the top leg.'];
+    c.exercises[0]!.data.dosage = { reps: '10 repetitions', sets: '1 set', frequency: 'Daily' };
+    return c;
+  };
+
+  it('rejects a unilateral exercise whose steps never mention the other side', () => {
+    // Found six of these in a real audit — a reader does one leg and stops, which
+    // halves the exercise silently.
+    expect(problems(uni()).join()).toMatch(/never say to change sides/);
+  });
+
+  it('accepts it once the steps send the reader to the other side', () => {
+    const c = uni();
+    c.exercises[0]!.data.instructions = [
+      { label: 'Do it', detail: 'Lift the top leg, then roll over and repeat on the other side.' },
+    ];
+    c.exercises[0]!.data.dosage = { reps: '10 per side', sets: '1 set', frequency: 'Daily' };
+    expect(problems(c).join()).not.toMatch(/change sides/);
+  });
+
+  it('rejects a unilateral exercise whose reps do not say per side', () => {
+    const c = uni();
+    c.exercises[0]!.data.instructions = [
+      { label: 'Do it', detail: 'Lift the top leg, then swap sides.' },
+    ];
+    expect(problems(c).join()).toMatch(/does not say "per side"/);
+  });
+
+  it('does not impose either rule on bilateral exercises', () => {
+    const c = uni();
+    c.exercises[0]!.data.laterality = 'bilateral';
+    expect(problems(c).join()).not.toMatch(/change sides|per side/);
+  });
+});

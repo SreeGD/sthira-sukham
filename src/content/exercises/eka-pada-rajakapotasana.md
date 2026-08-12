@@ -69,6 +69,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 Included with more caution than anything else in this library, because it is both very common

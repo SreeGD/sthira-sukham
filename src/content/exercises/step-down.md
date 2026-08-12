@@ -29,9 +29,9 @@ instructions:
     detail: Touch the heel down lightly without transferring weight onto it.
   - label: Push back up
     detail: Push back up through the standing leg. The lowering is the part that matters — take it
-      slowly.
+      slowly. Complete your repetitions standing on this leg, then swap and stand on the other.
 dosage:
-  reps: 10 to 15 repetitions
+  reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session
   frequency: Once daily
   note: Commonly described as 8 to 12 repetitions per side, one to three sets.
@@ -55,6 +55,7 @@ sources:
   - nascimento-hip-knee-pfp-2018
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: unilateral
 ---
 
 Going downstairs is where stiff and painful knees most often complain, and this is that

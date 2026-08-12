@@ -23,9 +23,10 @@ instructions:
   - label: Glide it side to side
     detail: Glide it gently toward the inside of the knee and hold for a few seconds, then release.
   - label: Glide it up and down
-    detail: Repeat gliding it outward, then upward toward the thigh, then downward.
+    detail: Repeat gliding it outward, then upward toward the thigh, then downward. Complete your
+      repetitions on this side, then swap and repeat with the other leg.
 dosage:
-  reps: 10 to 20 repetitions
+  reps: 10 to 20 repetitions per side
   sets: 1 to 3 sets per session
   frequency: 2 to 3 times a day
   hold: 5 seconds at the end of range
@@ -46,6 +47,7 @@ equipment:
 evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 The kneecap has to glide in its groove for the knee to bend and straighten. When the tissue

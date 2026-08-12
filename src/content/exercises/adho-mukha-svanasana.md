@@ -65,6 +65,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Downward dog reaches the whole back line of the leg at once — hamstrings and calves together

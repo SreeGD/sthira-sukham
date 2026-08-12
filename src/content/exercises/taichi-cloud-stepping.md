@@ -54,6 +54,7 @@ evidenceLabel: moderate-evidence
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 Weight shifting with a step added, which raises the demand considerably because there is a

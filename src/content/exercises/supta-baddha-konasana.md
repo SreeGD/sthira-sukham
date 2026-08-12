@@ -63,6 +63,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The seated bound angle taken to the floor, which removes the need to hold yourself upright and

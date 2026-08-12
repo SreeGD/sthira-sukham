@@ -64,6 +64,7 @@ evidenceLabel: traditional-practice
 sources:
   - yoga-knee-oa-meta-2024
   - neumann-kinesiology-2016
+laterality: unilateral
 ---
 
 A wide-stance stretch that reaches the back and inner thigh of the front leg at once.

@@ -56,6 +56,7 @@ sources:
   - cochrane-exercise-knee-oa-2024
   - aaos-knee-arthritis
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 A bike takes the knee through its bending range repeatedly, under almost no load, with the

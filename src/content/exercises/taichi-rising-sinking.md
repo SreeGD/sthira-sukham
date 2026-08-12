@@ -53,6 +53,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - wang-taichi-knee-oa-2016
   - neumann-kinesiology-2016
+laterality: bilateral
 ---
 
 The opening movement of most tai chi forms, and a good first thing to do with a knee that

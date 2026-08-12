@@ -60,6 +60,7 @@ evidenceLabel: mechanistic-rationale
 sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
+laterality: bilateral
 ---
 
 The same shape as the yoga bridge with a different intention, and the difference is
