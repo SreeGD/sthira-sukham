@@ -20,8 +20,8 @@ feelItIn: The front of the back hip.
 commonMistake: Feeling it in the low back, which means the tuck is missing.
 instructions:
   - label: Step into the lunge
-    detail: From kneeling, step one foot forward so that shin is roughly vertical, with the back
-      knee resting on the floor.
+    detail: From kneeling, step either foot forward — you will do both sides so that shin is roughly
+      vertical, with the back knee resting on the floor.
   - label: Pad the back knee
     detail: Pad the back knee with a folded blanket.
   - label: Tuck the tailbone

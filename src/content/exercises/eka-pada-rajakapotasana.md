@@ -21,8 +21,8 @@ feelItIn: Deep in the buttock of the front leg.
 commonMistake: Skipping the cushion. This is the pose that most often injures knees in yoga.
 instructions:
   - label: Bring the knee forward
-    detail: From hands and knees, bring one knee forward and place it behind the same-side wrist,
-      letting the shin angle across in front of you.
+    detail: From hands and knees, bring either knee forward — you will do both sides and place it
+      behind the same-side wrist, letting the shin angle across in front of you.
   - label: Extend the back leg
     detail: Slide the other leg straight back behind you, with the top of that foot on the floor.
   - label: Support the front hip

@@ -15,9 +15,11 @@ import type { DiagramZone } from '../../lib/diagram-zones.ts';
  * what governs a knee is not at the knee. Six of the ten zones are hip or ankle.
  */
 
+type Joint = 'knee' | 'hip' | 'ankle';
+
 interface Props {
   /** Which joint to draw the map for. Defaults to the knee. */
-  joint?: 'knee' | 'hip' | 'ankle';
+  joint?: Joint;
 }
 const { joint = 'knee' } = Astro.props;
 
@@ -37,11 +39,14 @@ const jointEntry = (await getCollection('joints')).find((j) => j.id === joint)!;
 
 interface ZoneSpec {
   zone: DiagramZone;
-  /** Short group name shown on the figure. Two or three words maximum. */
-  group: string;
-  /** What this group does to the knee, in one line. */
-  action: string;
-  /** Whether the structure acts on the knee directly or via another joint. */
+  /*
+   * Label and action are per joint, because neither transfers. Only rectus femoris of
+   * the quadriceps crosses the hip, so labelling the front-of-thigh region
+   * "Quadriceps" on the hip map claims three muscles act there that do not. And a
+   * group's action at the knee says nothing about what it does at the hip.
+   */
+  group: Partial<Record<Joint, string>> & { knee: string };
+  action: Partial<Record<Joint, string>> & { knee: string };
   reach: 'direct' | 'referred';
   /* Numbered marker position, and where its leader touches the figure.
      Numbers, not words: SVG text does not wrap and clips silently past the viewBox,
@@ -54,112 +59,112 @@ interface ZoneSpec {
 const ZONES: ZoneSpec[] = [
   {
     zone: 'hip-front',
-    group: 'Hip flexors',
-    action: 'Bends the hip. Tight, and you stand with a bent knee all day.',
+    group: { knee: 'Hip flexors', hip: 'Hip flexors' },
+    action: { knee: "Bends the hip. Tight, and you stand with a bent knee all day.", hip: "Bends the hip. Tight, and the hip will not straighten fully." },
     reach: 'referred',
-    marker: [126, 44],
-    leader: [138, 44, 258, 44],
+    marker: [218, 44],
+    leader: [230, 44, 350, 44],
   },
   {
     zone: 'thigh-front',
-    group: 'Quadriceps',
-    action: 'Straightens the knee.',
+    group: { knee: 'Quadriceps', hip: 'Rectus femoris' },
+    action: { knee: "Straightens the knee.", hip: "The one quadriceps head that crosses the hip and helps bend it." },
     reach: 'direct',
-    marker: [126, 92],
-    leader: [138, 92, 280, 108],
+    marker: [218, 92],
+    leader: [230, 92, 372, 108],
   },
   {
     zone: 'thigh-inner',
-    group: 'Adductors',
-    action: 'Draws the thigh in. Tight, and the knee falls inward under load.',
+    group: { knee: 'Inner quad · adductors', hip: 'Adductors' },
+    action: { knee: "Draws the thigh in. Tight, and the knee falls inward under load.", hip: "Draw the thigh inward. Tight, and the leg will not move far out to the side." },
     reach: 'referred',
-    marker: [126, 134],
-    leader: [138, 134, 294, 130],
+    marker: [218, 134],
+    leader: [230, 134, 386, 130],
   },
   {
     zone: 'thigh-outer',
-    group: 'IT band',
-    action: 'Transmits hip tension to the outer knee.',
+    group: { knee: 'Outer quad · IT band', hip: 'IT band' },
+    action: { knee: "Transmits hip tension to the outer knee.", hip: "Carries tension generated at the hip down the outer thigh." },
     reach: 'referred',
-    marker: [126, 176],
-    leader: [138, 176, 266, 140],
+    marker: [218, 176],
+    leader: [230, 176, 358, 140],
   },
   {
     zone: 'knee-front',
-    group: 'Capsule',
-    action: 'Passive tissue. Restricts range; cannot be strengthened.',
+    group: { knee: 'Capsule · retinaculum' },
+    action: { knee: "Passive tissue. Restricts range; cannot be strengthened." },
     reach: 'direct',
-    marker: [126, 220],
-    leader: [138, 220, 270, 190],
+    marker: [218, 220],
+    leader: [230, 220, 362, 190],
   },
   {
     zone: 'hip-back',
-    group: 'Glute max',
-    action: 'Straightens the hip. Weak, and the hamstrings take over.',
+    group: { knee: 'Glute max', hip: 'Glute max · deep rotators' },
+    action: { knee: "Straightens the hip. Weak, and the hamstrings take over.", hip: "Straighten the hip and turn the thigh outward." },
     reach: 'referred',
-    marker: [500, 44],
-    leader: [488, 44, 458, 40],
+    marker: [592, 44],
+    leader: [580, 44, 550, 40],
   },
   {
     zone: 'hip-side',
-    group: 'Glute med/min',
-    action: 'Holds the pelvis level. Weak, and the thigh rolls inward.',
+    group: { knee: 'Glute med/min', hip: 'Glute med/min · TFL' },
+    action: { knee: "Holds the pelvis level. Weak, and the thigh rolls inward.", hip: "Hold the pelvis level when you stand on one leg." },
     reach: 'referred',
-    marker: [500, 86],
-    leader: [488, 86, 462, 52],
+    marker: [592, 86],
+    leader: [580, 86, 554, 52],
   },
   {
     zone: 'thigh-back',
-    group: 'Hamstrings',
-    action: 'Bends the knee. Tight, and it will not straighten fully.',
+    group: { knee: 'Hamstrings', hip: 'Hamstrings' },
+    action: { knee: "Bends the knee. Tight, and it will not straighten fully.", hip: "Extend the hip. Tight, and the pelvis tips backward when you bend forward." },
     reach: 'direct',
-    marker: [500, 130],
-    leader: [488, 130, 446, 112],
+    marker: [592, 130],
+    leader: [580, 130, 538, 112],
   },
   {
     zone: 'knee-back',
-    group: 'Popliteus',
-    action: 'Unlocks a fully straight knee so it can start bending.',
+    group: { knee: 'Popliteus' },
+    action: { knee: "Unlocks a fully straight knee so it can start bending." },
     reach: 'direct',
-    marker: [500, 178],
-    leader: [488, 178, 460, 188],
+    marker: [592, 178],
+    leader: [580, 178, 552, 188],
   },
   {
     zone: 'shin',
-    group: 'Shin',
-    action: 'Lifts the foot. Weak, and the toes catch as the leg swings through.',
+    group: { knee: 'Shin', ankle: 'Shin' },
+    action: { knee: "Lifts the foot. Weak, and the toes catch as the leg swings through.", ankle: "Lifts the foot. Weak, and the toes catch as the leg swings through." },
     reach: 'direct',
-    marker: [126, 262],
-    leader: [138, 262, 268, 250],
+    marker: [218, 262],
+    leader: [230, 262, 360, 250],
   },
   {
     zone: 'lower-leg-outer',
-    group: 'Outer lower leg',
-    action: 'Stops the ankle rolling over. Slow to respond after a sprain.',
+    group: { knee: 'Outer lower leg', ankle: 'Outer lower leg' },
+    action: { knee: "Stops the ankle rolling over. Slow to respond after a sprain.", ankle: "Stops the ankle rolling over. Slow to respond after a sprain." },
     reach: 'direct',
-    marker: [500, 262],
-    leader: [488, 262, 282, 250],
+    marker: [592, 262],
+    leader: [580, 262, 374, 250],
   },
   {
     zone: 'foot',
-    group: 'Sole of the foot',
-    action: 'Stiffens the foot into a lever for push-off.',
+    group: { knee: 'Sole of the foot', ankle: 'Sole of the foot' },
+    action: { knee: "Stiffens the foot into a lever for push-off.", ankle: "Stiffens the foot into a lever for push-off." },
     reach: 'direct',
-    marker: [126, 296],
-    leader: [138, 296, 268, 296],
+    marker: [218, 296],
+    leader: [230, 296, 360, 296],
   },
   {
     zone: 'calf',
-    group: 'Calf',
-    action: 'Points the foot. Tight, and the shin cannot travel forward.',
+    group: { knee: 'Calf', ankle: 'Calf' },
+    action: { knee: "Points the foot. Tight, and the shin cannot travel forward.", ankle: "Points the foot down. Tight, and the shin cannot travel forward over it." },
     reach: 'referred',
-    marker: [500, 232],
-    leader: [488, 232, 454, 236],
+    marker: [592, 232],
+    leader: [580, 232, 546, 236],
   },
 ];
 
 /** Shapes mirror LegLocator's, shifted right to leave room for labels either side. */
-const DX = 208;
+const DX = 300;
 const SHAPES: Record<DiagramZone, string> = {
   'hip-front': `M ${50 + DX} 26 Q ${50 + DX} 20 ${56 + DX} 20 L ${96 + DX} 20 Q ${102 + DX} 20 ${102 + DX} 26 L ${102 + DX} 62 L ${50 + DX} 62 Z`,
   'thigh-front': `M ${68 + DX} 64 L ${84 + DX} 64 L ${82 + DX} 168 L ${70 + DX} 168 Z`,
@@ -181,6 +186,9 @@ const BASE = [`M ${214 + DX} 288 L ${235 + DX} 288 L ${254 + DX} 302 L ${214 + D
 const inZone = (zone: DiagramZone) => muscles.filter((m) => m.data.diagramZone === zone);
 
 /* Only zones with a structure influencing this joint are drawn. */
+const label = (z: ZoneSpec) => z.group[joint] ?? z.group.knee;
+const actionText = (z: ZoneSpec) => z.action[joint] ?? z.action.knee;
+
 const activeZones = ZONES.filter((z) => inZone(z.zone).length > 0).map((z) => {
   const members = inZone(z.zone);
   // Solid if anything in the zone acts on this joint directly; hatched only when the
@@ -192,7 +200,7 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
 ---
 
 <figure class="diagram action-map">
-  <svg viewBox="0 0 620 332" role="img" aria-labelledby="map-title map-desc" class="diagram__svg">
+  <svg viewBox="0 0 800 332" role="img" aria-labelledby="map-title map-desc" class="diagram__svg">
     <title id="map-title">What each muscle group does to the knee</title>
     <desc id="map-desc">
       Front and back views of a leg showing the regions that influence this joint. The front shows the hip flexors,
@@ -231,7 +239,7 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
               text-anchor={z.marker[0] < 300 ? 'end' : 'start'}
               dominant-baseline="central"
             >
-              {z.group}
+              {label(z)}
             </text>
           </>
         ))
@@ -243,11 +251,24 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
 
   <figcaption>
     <p class="map-lede">
-      <strong>
-        {referredCount} of these {activeZones.length} act on {jointEntry.data.name.toLowerCase()}{' '}
-        indirectly
-      </strong>, through a neighbouring joint. That is why so much of this reference is about
-      muscles that are nowhere near the joint that hurts.
+      {
+        referredCount === 0 ? (
+          <>
+            Everything shown here acts on {jointEntry.data.name.toLowerCase()} directly. What it
+            does to the joints <em>above</em> it is on each structure's own page — restriction
+            here is felt further up the chain.
+          </>
+        ) : (
+          <>
+            <strong>
+              {referredCount} of these {activeZones.length}{' '}
+              {referredCount === 1 ? 'acts' : 'act'} on {jointEntry.data.name.toLowerCase()}{' '}
+              indirectly
+            </strong>, through a neighbouring joint. That is why so much of this reference is
+            about muscles that are nowhere near the joint that hurts.
+          </>
+        )
+      }
     </p>
 
     <ol class="map-key">
@@ -261,9 +282,11 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
               </span>
               <span class={`map-key__dot map-key__dot--${z.reach}`} aria-hidden="true" />
               <span>
-                <strong>{z.group}.</strong> {z.action}{' '}
+                <strong>{label(z)}.</strong> {actionText(z)}{' '}
                 <span class="map-key__reach">
-                  {z.reach === 'direct' ? 'Acts on the knee directly.' : 'Acts through another joint.'}
+                  {z.reach === 'direct'
+                    ? `Acts on ${jointEntry.data.name.toLowerCase()} directly.`
+                    : 'Acts through another joint.'}
                 </span>
                 <br />
                 {members.map((m, i) => (
@@ -279,8 +302,8 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
       }
     </ol>
     <p class="map-note">
-      Solid regions act on the knee directly; hatched regions act through the hip or the ankle
-      ({referredCount} of {activeZones.length}).
+      Solid regions act on {jointEntry.data.name.toLowerCase()} directly; hatched regions act
+      through a neighbouring joint ({referredCount} of {activeZones.length}).
     </p>
   </figcaption>
 </figure>

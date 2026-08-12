@@ -15,7 +15,7 @@ quickSteps:
   - Lie on your back, strap round one foot.
   - Raise that leg, knee softly bent.
   - Straighten only as far as the pelvis stays down.
-  - Hold, then lower with a bent knee.
+  - Hold, then lower and swap sides.
 keyPoint: A straight leg is not the goal. A hamstring under gentle tension is.
 feelItIn: The back of the raised thigh.
 commonMistake: Straightening hard until the pelvis rolls back. Then it is a back stretch.
@@ -29,8 +29,9 @@ instructions:
     detail: Straighten the raised leg only as far as it goes without the pelvis rolling backward or
       the other leg lifting.
   - label: Hold, then lower
-    detail: Hold, breathing steadily, then bend the knee and lower the leg under control. Lower the
-      leg with a bent knee, then repeat on the other side.
+    detail: Hold, breathing steadily.
+  - label: Come out and change sides
+    detail: Bend the knee, lower the leg under control, then repeat on the other side.
 dosage:
   reps: 2 to 3 repetitions per side
   sets: 1 set per session

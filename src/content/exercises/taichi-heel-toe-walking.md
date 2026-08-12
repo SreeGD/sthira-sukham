@@ -22,7 +22,8 @@ feelItIn: The side of the hip of the standing leg.
 commonMistake: Walking normally but slower, instead of controlling each transfer.
 instructions:
   - label: Start on one leg
-    detail: Stand with your weight on one leg, near a wall or worktop you can touch if needed.
+    detail: Stand with your weight on either leg — you will alternate as you walk, near a wall or
+      worktop you can touch if needed.
   - label: Place the heel unweighted
     detail: Step the other foot forward and place the heel down lightly, with no weight on it yet.
   - label: Roll the weight forward

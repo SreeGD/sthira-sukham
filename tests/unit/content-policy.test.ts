@@ -321,3 +321,27 @@ describe('illustration format', () => {
     expect(problems(c).join()).toMatch(/should be WebP/);
   });
 });
+
+describe('starting side', () => {
+  it('rejects a unilateral step one that does not say which side to begin on', () => {
+    const c = valid();
+    c.exercises[0]!.data.laterality = 'unilateral';
+    c.exercises[0]!.data.instructions = [
+      { label: 'Set up', detail: 'Stand on one leg.' },
+      { label: 'Finish', detail: 'Repeat on the other side.' },
+    ];
+    c.exercises[0]!.data.dosage = { reps: '10 per side', sets: '1', frequency: 'Daily' };
+    expect(problems(c).join()).toMatch(/without saying which side/);
+  });
+
+  it('accepts it once the side is named', () => {
+    const c = valid();
+    c.exercises[0]!.data.laterality = 'unilateral';
+    c.exercises[0]!.data.instructions = [
+      { label: 'Set up', detail: 'Stand on one leg — start with the stiffer side.' },
+      { label: 'Finish', detail: 'Repeat on the other side.' },
+    ];
+    c.exercises[0]!.data.dosage = { reps: '10 per side', sets: '1', frequency: 'Daily' };
+    expect(problems(c).join()).not.toMatch(/without saying which side/);
+  });
+});

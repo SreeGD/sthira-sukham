@@ -19,7 +19,8 @@ feelItIn: The outer or inner side of the lower leg, depending on the direction.
 commonMistake: Turning the whole leg from the hip instead of tilting the foot at the ankle.
 instructions:
   - label: Get into position
-    detail: Sit with one leg extended and loop a resistance band around the ball of the foot.
+    detail: Sit with the leg you are working on extended — start with the stiffer ankle if one is
+      worse and loop a resistance band around the ball of the foot.
   - label: Anchor the band
     detail: Anchor the free end to one side — to a table leg, or held by the opposite hand — so the
       pull is sideways.

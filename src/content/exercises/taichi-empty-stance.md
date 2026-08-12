@@ -22,7 +22,8 @@ feelItIn: The back thigh and the side of that hip.
 commonMistake: Leaving a third of your weight on the front foot without realising.
 instructions:
   - label: Step one foot forward
-    detail: Stand with feet about shoulder-width apart, then step one foot a short way forward.
+    detail: Stand with feet about shoulder-width apart, then step either foot a short way forward —
+      you will do both sides.
   - label: Shift onto the back leg
     detail: Shift almost all your weight onto the back leg, bending that knee, and rest only the toe
       or ball of the front foot lightly on the floor.

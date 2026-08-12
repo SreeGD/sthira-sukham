@@ -22,8 +22,8 @@ feelItIn: The back of the front thigh, and the front of the back hip.
 commonMistake: Locking the front knee, which drives it into hyperextension under load.
 instructions:
   - label: Step into the stance
-    detail: Stand with one foot a stride in front of the other, back foot turned out slightly, hips
-      facing forward.
+    detail: Stand with either foot a stride in front of the other — you will do both sides, back
+      foot turned out slightly, hips facing forward.
   - label: Square the hips forward
     detail: Keep a soft bend in the front knee rather than locking it straight.
   - label: Hinge over the front leg

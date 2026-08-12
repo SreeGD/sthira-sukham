@@ -22,8 +22,8 @@ feelItIn: The front thigh, and the back hip and calf lengthening.
 commonMistake: Lifting the back heel to make the shift easier.
 instructions:
   - label: Step into the stance
-    detail: Step one foot forward into a comfortable stride, front foot pointing ahead and back foot
-      turned out about 45 degrees.
+    detail: Step either foot forward — you will do both sides into a comfortable stride, front foot
+      pointing ahead and back foot turned out about 45 degrees.
   - label: Keep both heels down
     detail: Keep both heels on the floor and your torso upright over your hips.
   - label: Shift forward slowly

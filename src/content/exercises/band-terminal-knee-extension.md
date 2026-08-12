@@ -25,9 +25,11 @@ instructions:
     detail: Step back until the band is taut, pulling the knee gently forward into a slight bend.
   - label: Straighten against the band
     detail: Stand with that foot flat and straighten the knee against the band, tightening the thigh.
+  - label: Hold
+    detail: Hold the fully straight position for two or three seconds, keeping the thigh muscle tight.
   - label: Return under control
-    detail: Hold the straight position briefly, then let the band draw the knee slowly back into the
-      bend. Complete your repetitions on this leg, then change legs and repeat.
+    detail: Let the band draw the knee slowly back into the bend. Do not let it snap back. Complete
+      your repetitions on this leg, then swap and repeat with the other.
 dosage:
   reps: 10 to 15 repetitions per side
   sets: 1 to 3 sets per session

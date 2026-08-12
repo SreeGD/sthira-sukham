@@ -223,6 +223,23 @@ export function checkContent(c: Collections): PolicyResult {
         `${exercise.file}: is unilateral but its steps never say to change sides — a reader will do one side and stop.`,
       );
     }
+    /*
+     * Step one must say which side to begin on. "Step one foot forward" leaves a reader
+     * with one stiff knee genuinely unsure whether to work that side or both — found in
+     * ten exercises during a clarity audit.
+     */
+    const firstStep = Array.isArray(exercise.data.instructions)
+      ? String((exercise.data.instructions as Array<Record<string, unknown>>)[0]?.detail ?? '')
+      : '';
+    if (
+      /\bone (leg|foot|knee|side|arm)\b/i.test(firstStep) &&
+      !/(stiff|affected|working|painful|either|whichever|stronger)/i.test(firstStep)
+    ) {
+      fail(
+        `${exercise.file}: step one says "one leg/foot" without saying which side to start on.`,
+      );
+    }
+
     const dose = exercise.data.dosage as Record<string, unknown> | undefined;
     if (dose && !/per side|each side|both sides/i.test(String(dose.reps ?? ''))) {
       fail(`${exercise.file}: is unilateral but its repetition count does not say "per side".`);

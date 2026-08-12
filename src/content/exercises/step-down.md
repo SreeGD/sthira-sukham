@@ -20,8 +20,8 @@ feelItIn: The front of the standing thigh, and the side of that hip.
 commonMistake: Starting too high. Begin with a single book.
 instructions:
   - label: Get into position
-    detail: Stand on a low step with one foot, the other foot free over the edge, holding a rail or
-      wall for balance.
+    detail: Stand on a low step with the leg you are working on — start with the stronger side to
+      learn the movement, the other foot free over the edge, holding a rail or wall for balance.
   - label: Lower slowly
     detail: Bend the standing knee slowly to lower the free heel toward the floor, keeping the knee
       tracking over the middle of the foot.

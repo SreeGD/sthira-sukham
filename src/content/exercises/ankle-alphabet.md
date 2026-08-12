@@ -20,7 +20,8 @@ feelItIn: The ankle moving through directions it rarely visits.
 commonMistake: Swinging the leg from the hip to make bigger letters, which looks like more range and is less.
 instructions:
   - label: Get into position
-    detail: Sit on a chair or the floor with one leg extended so the foot hangs free of the ground.
+    detail: Sit on a chair or the floor with the leg you are working on extended — start with the
+      stiffer ankle if one is worse so the foot hangs free of the ground.
   - label: Steady the shin
     detail: Rest your hands on the thigh, or hold the shin lightly, so the leg cannot swing.
   - label: Draw the letters

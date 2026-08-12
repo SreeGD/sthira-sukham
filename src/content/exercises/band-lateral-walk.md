@@ -21,8 +21,8 @@ instructions:
   - label: Position the band
     detail: Place a looped resistance band around both legs, just above the knees to begin with.
   - label: Set your stance
-    detail: Stand with feet hip-width apart, knees softly bent, and push the knees gently outward
-      against the band.
+    detail: Stand with feet hip-width apart, knees softly bent, and push the knees gently apart,
+      away from each other, so the band is under tension against the band.
   - label: Step sideways
     detail: Step sideways with one foot, keeping tension on the band, then bring the other foot to
       follow — without letting the feet touch.

@@ -20,8 +20,8 @@ feelItIn: The front of the thigh and the buttock.
 commonMistake: Letting the band snap the knee back in.
 instructions:
   - label: Loop the band around your foot
-    detail: Lie on your back and loop a resistance band around the arch of one foot, holding both
-      ends in your hands.
+    detail: Lie on your back and loop a resistance band around the arch of the foot on the side you
+      are working — start with the stiffer leg if one is worse, holding both ends in your hands.
   - label: Draw the knee in
     detail: Draw that knee toward your chest so the band is taut.
   - label: Press the foot away
