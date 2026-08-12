@@ -36,6 +36,15 @@ const goal = d.goal ? await getEntry(d.goal) : undefined;
 
   <div class="prose"><Content /></div>
 
+  <p class="sheet-cta-wrap">
+    <a class="button" href={`/routines/${entry.id}/sheet/`}>
+      Open the one-page sheet
+    </a>
+    <span class="sheet-cta-note">
+      Every movement's steps and cautions inline — nothing to click while you are moving.
+    </span>
+  </p>
+
   <section class="section">
     <h2>The sequence</h2>
     <ol class="steps">

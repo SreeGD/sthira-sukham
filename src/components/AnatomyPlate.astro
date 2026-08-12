@@ -37,7 +37,7 @@ const { illustration: i } = Astro.props;
   <figcaption>
     <p class="plate__caption">{i.caption}</p>
     <p class="plate__credit">
-      {i.credit}, {i.year}. <span class="plate__licence">{i.licence}</span> —
+      {i.credit}, {i.year}. <span class="plate__licence">{i.licence}</span> —{' '}
       <a href={i.sourceUrl} target="_blank" rel="noopener noreferrer">source<span
           aria-hidden="true">↗</span></a>
     </p>

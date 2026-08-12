@@ -1,0 +1,231 @@
+---
+import GatedLayout from '../../../layouts/GatedLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+import { POSITION_LABEL } from '../../../lib/positions.ts';
+
+/*
+ * The whole sequence on one page.
+ *
+ * The routine page lists steps and links out for the detail, which means following it
+ * requires navigating away and back for every movement — exactly what someone on a mat
+ * cannot do. This page carries everything needed to perform the sequence: short steps,
+ * the key point, and the stop-criteria, inline for every movement.
+ *
+ * Safety is NOT abbreviated here. Timings and prose get compressed; stop-criteria are
+ * reproduced in full, because this is the page someone actually has open while moving
+ * and it must not be the one where the cautions were left out for space.
+ */
+
+export async function getStaticPaths() {
+  const routines = await getCollection('routines');
+  return routines.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+
+const steps = await Promise.all(
+  d.steps.map(async (step) => ({ note: step.note, exercise: await getEntry(step.exercise) })),
+);
+const goal = d.goal ? await getEntry(d.goal) : undefined;
+
+/* Aggregate the kit so it can be gathered once, before starting, rather than discovered
+   halfway through. */
+const equipment = [
+  ...new Set(steps.flatMap((s) => s.exercise!.data.equipment).filter((e) => e !== 'none')),
+].sort();
+
+const MODALITY_LABEL: Record<string, string> = {
+  'clinical-rom': 'Range of motion',
+  yoga: 'Yoga',
+  pilates: 'Pilates',
+  'taichi-qigong': 'Tai chi',
+};
+---
+
+<GatedLayout
+  title={`${d.title} — full sequence`}
+  heading={`${d.title}: full sequence`}
+  lede="Everything needed to follow this session on one page. Nothing here requires opening another."
+  description={`The complete ${d.title} sequence on a single page.`}
+>
+  <p class="sheet-nav">
+    <a href={`/routines/${entry.id}/`}>← Back to the routine</a>
+    {goal && (<> · <a href={`/start/${goal.id}/`}>Goal: {goal.data.title}</a></>)}
+  </p>
+
+  <div class="sheet-meta">
+    <p class="tag-row">
+      <span class="tag">about {d.approxDurationMinutes} minutes</span>
+      <span class="tag">{steps.length} movements</span>
+      <span class="tag">{equipment.length === 0 ? 'no equipment' : equipment.join(', ')}</span>
+    </p>
+  </div>
+
+  <div class="callout sheet-warn">
+    <p>
+      <strong>Stop and see a clinician</strong> if your knee locks, gives way, will not take
+      weight, is hot or swollen, or hurts after a fall. Each movement below lists its own
+      reasons to stop — those are not optional extras.{' '}
+      <a href="/safety/">Full list</a>.
+    </p>
+  </div>
+
+  <ol class="sheet">
+    {
+      steps.map(({ exercise, note }, i) => {
+        const e = exercise!.data;
+        const kit = e.equipment.filter((x) => x !== 'none');
+        return (
+          <li class="sheet-step">
+            <div class="sheet-step__head">
+              <span class="sheet-step__num" aria-hidden="true">{i + 1}</span>
+              <div>
+                <h2>
+                  {e.name}
+                  {e.traditionalName && <span class="sheet-step__trad"> · {e.traditionalName}</span>}
+                </h2>
+                <p class="sheet-step__meta">
+                  {POSITION_LABEL[e.startPosition]} · {MODALITY_LABEL[e.modality] ?? e.modality}
+                  {kit.length > 0 && <> · {kit.join(', ')}</>}
+                  {note && <> · <strong>{note.split('.')[0]}</strong></>}
+                </p>
+              </div>
+            </div>
+
+            <ol class="sheet-step__steps">
+              {e.quickSteps.map((s) => <li>{s}</li>)}
+            </ol>
+
+            <p class="sheet-step__key"><strong>Key:</strong> {e.keyPoint}</p>
+            <p class="sheet-step__feel"><strong>Feel it in:</strong> {e.feelItIn}</p>
+
+            <div class="sheet-step__stop">
+              <strong>Stop if:</strong>
+              <ul>{e.stopIf.map((s) => <li>{s}</li>)}</ul>
+            </div>
+
+            <p class="sheet-step__more">
+              <a href={`/exercises/${exercise!.id}/`}>Full detail, cautions and sources →</a>
+            </p>
+          </li>
+        );
+      })
+    }
+  </ol>
+
+  <p class="sheet-foot">
+    General educational information, not advice for your knee. Whether any of this suits you is
+    a question for a clinician or physiotherapist.
+  </p>
+</GatedLayout>
+
+<style>
+  .sheet-nav {
+    font-size: var(--f-size-sm);
+  }
+  .sheet-meta {
+    margin-bottom: var(--s-4);
+  }
+  .sheet {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+  .sheet-step {
+    padding: var(--s-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    background: var(--c-surface);
+    margin-bottom: var(--s-4);
+    /* Never split a movement across a page boundary when printed — half a set of
+       stop-criteria is worse than none. */
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .sheet-step__head {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+    margin-bottom: var(--s-3);
+  }
+  .sheet-step__num {
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--c-accent);
+    color: var(--c-accent-contrast);
+    font-weight: 700;
+  }
+  .sheet-step h2 {
+    margin: 0;
+    font-size: var(--f-size-lg);
+  }
+  .sheet-step__trad {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--c-text-muted);
+    font-size: var(--f-size-sm);
+  }
+  .sheet-step__meta {
+    margin: var(--s-1) 0 0;
+    font-size: var(--f-size-sm);
+    color: var(--c-text-muted);
+  }
+  .sheet-step__steps {
+    margin: 0 0 var(--s-3);
+    padding-left: var(--s-5);
+    font-size: var(--f-size-base);
+  }
+  .sheet-step__steps li + li {
+    margin-top: var(--s-1);
+  }
+  .sheet-step__key,
+  .sheet-step__feel {
+    margin: 0 0 var(--s-2);
+    font-size: var(--f-size-sm);
+  }
+  .sheet-step__stop {
+    padding: var(--s-2) var(--s-3);
+    border-left: 4px solid var(--c-warn-border);
+    background: var(--c-warn-bg);
+    color: var(--c-warn-text);
+    border-radius: var(--radius-sm);
+    font-size: var(--f-size-sm);
+  }
+  .sheet-step__stop ul {
+    margin: var(--s-1) 0 0;
+    padding-left: var(--s-4);
+  }
+  .sheet-step__more {
+    margin: var(--s-3) 0 0;
+    font-size: var(--f-size-xs);
+  }
+  .sheet-foot {
+    margin-top: var(--s-5);
+    font-size: var(--f-size-sm);
+    color: var(--c-text-muted);
+  }
+
+  /* Print: drop the chrome, keep every movement and every caution. */
+  @media print {
+    .sheet-nav,
+    .sheet-step__more {
+      display: none;
+    }
+    .sheet-step {
+      border-color: #999;
+      background: none;
+    }
+    .sheet-warn,
+    .sheet-step__stop {
+      border: 1px solid #000;
+      background: none;
+      color: #000;
+    }
+  }
+</style>

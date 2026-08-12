@@ -702,3 +702,18 @@ html[data-ack='1'] [data-testid='red-flag-gate'] {
     display: block;
   }
 }
+
+/* Route to the one-page sheet. Prominent because following a sequence by clicking
+   into each movement and back is not something anyone does mid-session. */
+.sheet-cta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  margin-bottom: var(--s-5);
+}
+.sheet-cta-note {
+  font-size: var(--f-size-sm);
+  color: var(--c-text-muted);
+  max-width: 26rem;
+}
