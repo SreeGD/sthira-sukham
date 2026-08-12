@@ -17,9 +17,6 @@ stiffnessContribution:
     they should, and the knee ends up doing work the hip should have done.
   whenInhibited: Frequently quiet in people who sit a great deal — strong enough on testing, but
     not recruited during actual movement.
-presentsAsKneeStiffness: When glute max is not extending the hip, the hamstrings do more of it.
-  They stay short and busy, and shortened hamstrings resist the knee straightening fully. The
-  felt symptom is tightness behind the knee; the origin is a hip that is not doing its job.
 plainLanguageGloss: The large muscle of your buttock, which drives your hip backward when you stand up or climb.
 sources:
   - neumann-kinesiology-2016
@@ -32,6 +29,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._349.png
+jointInfluences:
+  - joint: hip
+    action: direct
+    presentsAs: Weakness leaves hip extension to the hamstrings, and tightness limits deep hip
+      bending so squatting is restricted.
+  - joint: knee
+    action: indirect
+    presentsAs: Does not cross the knee. When it is not extending the hip, the hamstrings take over
+      — and hamstrings kept permanently busy resist the knee straightening fully.
 ---
 
 The most powerful hip extensor, and the muscle most reliably underused in people who sit for

@@ -1,9 +1,19 @@
 ---
+joint: knee
 name: Osteoarthritic pattern
 order: 10
-typicallyInvolves: [joint-capsule, rectus-femoris, vastus-medialis]
-relatedSources: [arthritic-change, effusion, capsular-restriction]
-sources: [nice-ng226-osteoarthritis-2022, aaos-knee-arthritis, cochrane-exercise-knee-oa-2024]
+typicallyInvolves:
+  - joint-capsule
+  - rectus-femoris
+  - vastus-medialis
+relatedSources:
+  - arthritic-change
+  - effusion
+  - capsular-restriction
+sources:
+  - nice-ng226-osteoarthritis-2022
+  - aaos-knee-arthritis
+  - cochrane-exercise-knee-oa-2024
 ---
 
 The picture usually described here is stiffness that is worst first thing in the morning

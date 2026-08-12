@@ -2,13 +2,29 @@
 title: Walk for many hours, on uneven ground
 shortLabel: Long walk
 order: 90
-needs: >-
-  Little range, but a great deal of endurance — hip muscles holding the pelvis level for many
-  thousands of steps, and a calf still pushing off at hour six as well as at hour one.
+needs: Little range, but a great deal of endurance — hip muscles holding the pelvis level for
+  many thousands of steps, and a calf still pushing off at hour six as well as at hour one.
 romNote: Level walking needs under 90 degrees of knee bend, which most stiff knees already have.
-targets: [gluteus-medius, gluteus-minimus, gluteus-maximus, soleus, gastrocnemius, vastus-medialis, tensor-fasciae-latae]
-emphasis: [strength, motor-control]
-sources: [rowe-knee-functional-rom-2000, cochrane-exercise-knee-oa-2024, nascimento-hip-knee-pfp-2018, neumann-kinesiology-2016]
+targets:
+  - gluteus-medius
+  - gluteus-minimus
+  - gluteus-maximus
+  - soleus
+  - gastrocnemius
+  - vastus-medialis
+  - tensor-fasciae-latae
+emphasis:
+  - strength
+  - motor-control
+sources:
+  - rowe-knee-functional-rom-2000
+  - cochrane-exercise-knee-oa-2024
+  - nascimento-hip-knee-pfp-2018
+  - neumann-kinesiology-2016
+dependsOnJoints:
+  - hip
+  - ankle
+  - knee
 ---
 
 A parikrama of several hours is an endurance event, and it is worth preparing for as one.

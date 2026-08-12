@@ -70,6 +70,7 @@ export function loadSources(): Record_[] {
 
 export function loadAll() {
   return {
+    joints: loadMarkdownCollection('joints'),
     functionalGoals: loadMarkdownCollection('functional-goals'),
     muscles: loadMarkdownCollection('muscles'),
     exercises: loadMarkdownCollection('exercises'),

@@ -116,6 +116,10 @@ stiffnessContribution:
   whenWeak: none
   whenInhibited: none
 plainLanguageGloss: probe
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: probe influence
 sources: []`,
     );
     expect(syncError()).toMatch(/sources/);
@@ -162,7 +166,9 @@ describe('modification guidance (FR-025)', () => {
 });
 
 describe('muscle completeness (FR-014, FR-016)', () => {
-  it('rejects a hip structure that does not explain how it presents as knee stiffness', () => {
+  it('rejects a structure that declares no joint influence (FR-108)', () => {
+    // Supersedes the old FR-016 rule, which only obliged hip and ankle structures to
+    // explain themselves at the knee. Every structure must now state its reach.
     write(
       MUSCLES,
       '__probe',
@@ -177,11 +183,34 @@ stiffnessContribution:
   whenWeak: none
   whenInhibited: none
 plainLanguageGloss: probe
+jointInfluences: []
 sources: [neumann-kinesiology-2016]`,
     );
-    const err = syncError();
-    expect(err).toMatch(/presentsAsKneeStiffness/);
-    expect(err).toMatch(/FR-016/);
+    expect(syncError()).toMatch(/jointInfluences/);
+  });
+
+  it('rejects an influence that does not say how it presents', () => {
+    write(
+      MUSCLES,
+      '__probe',
+      `anatomicalName: Probe muscle
+commonName: probe
+region: knee
+isContractile: true
+diagramZone: thigh-front
+roleInKneeMotion: none
+stiffnessContribution:
+  whenTight: none
+  whenWeak: none
+  whenInhibited: none
+plainLanguageGloss: probe
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: ''
+sources: [neumann-kinesiology-2016]`,
+    );
+    expect(syncError()).toMatch(/presentsAs/);
   });
 
   it('rejects a contractile muscle missing part of the tight/weak/inhibited triad', () => {
@@ -197,6 +226,10 @@ roleInKneeMotion: none
 stiffnessContribution:
   whenTight: none
 plainLanguageGloss: probe
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: probe influence
 sources: [neumann-kinesiology-2016]`,
     );
     expect(syncError()).toMatch(/whenWeak|whenInhibited/);

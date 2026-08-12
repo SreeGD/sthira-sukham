@@ -16,11 +16,6 @@ stiffnessContribution:
   whenWeak: Reduces push-off in walking and calf control when descending stairs.
   whenInhibited: Less prone to inhibition than the quadriceps, but can be guarded after calf or
     Achilles injury.
-presentsAsKneeStiffness: A tight gastrocnemius limits how far the shin can move forward over the
-  foot. Squat, descend stairs, or walk downhill and the body still needs that motion from
-  somewhere, so it is taken from elsewhere — commonly by letting the knee travel differently or
-  the foot roll inward. The knee ends up doing unusual work and feeling stiff, while the actual
-  restriction sits at the ankle.
 plainLanguageGloss: The calf muscle you can see, which starts above the knee and ends at the heel.
 sources:
   - neumann-kinesiology-2016
@@ -33,6 +28,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._388.png
+jointInfluences:
+  - joint: ankle
+    action: direct
+    presentsAs: Limits how far the shin can travel forward over the foot when the knee is straight —
+      the direction nearly every demanding movement needs.
+  - joint: knee
+    action: direct
+    presentsAs: Its two heads originate above the knee on the thigh bone, so tightness resists full
+      knee straightening while the foot is flexed upward.
 ---
 
 Gastrocnemius belongs in a knee reference for one reason: its two heads originate on the

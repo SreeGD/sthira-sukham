@@ -14,11 +14,6 @@ stiffnessContribution:
     precisely the position used for squatting, sitting down, and descending stairs.
   whenWeak: Reduces standing balance and endurance; it is a major postural muscle.
   whenInhibited: Can be guarded after Achilles injury.
-presentsAsKneeStiffness: "Soleus restricts the same movement gastrocnemius does, but with the
-  knee bent — and bent-knee positions are where most of the knee's stiffness is felt. If the
-  shin cannot travel forward, a squat has to be achieved some other way: leaning further
-  forward, lifting the heels, or letting the knees drift. The compensations get felt at the knee
-  while the restriction sits below it."
 plainLanguageGloss: The flat calf muscle underneath the visible one, which does not cross the knee.
 sources:
   - neumann-kinesiology-2016
@@ -31,6 +26,16 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._386.png
+jointInfluences:
+  - joint: ankle
+    action: direct
+    presentsAs: Limits forward travel of the shin over the foot with the knee bent — precisely the
+      position used for squatting, sitting down, and descending stairs.
+  - joint: knee
+    action: indirect
+    presentsAs: Does not cross the knee. When bent-knee ankle range is short, the movement is taken
+      from elsewhere — the heel lifts or the knee drifts — and the compensation is felt at the
+      knee.
 ---
 
 Soleus lies beneath gastrocnemius and, unlike it, does not cross the knee — it runs from the

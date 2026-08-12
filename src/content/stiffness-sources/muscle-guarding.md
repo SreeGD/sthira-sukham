@@ -1,9 +1,14 @@
 ---
+joint: knee
 clinicalTerm: Muscle guarding
 plainLanguageGloss: The muscles are holding the joint still on purpose
 order: 30
-relatedStructures: [rectus-femoris, biceps-femoris, gastrocnemius]
-sources: [neumann-kinesiology-2016]
+relatedStructures:
+  - rectus-femoris
+  - biceps-femoris
+  - gastrocnemius
+sources:
+  - neumann-kinesiology-2016
 ---
 
 Guarding is a protective reflex. When the nervous system reads a joint as vulnerable, it

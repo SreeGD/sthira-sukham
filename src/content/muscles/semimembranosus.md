@@ -27,6 +27,14 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._374.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Restricts full straightening, and because it attaches into the back of the joint
+      capsule, tightness pulls on the capsule directly.
+  - joint: hip
+    action: direct
+    presentsAs: Extends the hip; shortening limits hip flexion.
 ---
 
 Broad and flat where semitendinosus is cord-like, and sitting underneath it.

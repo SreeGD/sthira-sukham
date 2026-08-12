@@ -1,9 +1,14 @@
 ---
+joint: knee
 clinicalTerm: Arthritic change
 plainLanguageGloss: The joint surfaces and their edges have altered
 order: 50
-relatedStructures: [joint-capsule]
-sources: [nice-ng226-osteoarthritis-2022, aaos-knee-arthritis, cochrane-exercise-knee-oa-2024]
+relatedStructures:
+  - joint-capsule
+sources:
+  - nice-ng226-osteoarthritis-2022
+  - aaos-knee-arthritis
+  - cochrane-exercise-knee-oa-2024
 ---
 
 In osteoarthritis the cartilage covering the joint surfaces thins and the bone underneath

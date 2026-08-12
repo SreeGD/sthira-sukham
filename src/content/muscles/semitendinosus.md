@@ -26,6 +26,13 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._371.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Resists full knee straightening.
+  - joint: hip
+    action: direct
+    presentsAs: Pulls the pelvis into a backward tilt when short, limiting forward bending at the hip.
 ---
 
 Named for its unusually long tendon, which you can feel as a distinct cord on the inner side

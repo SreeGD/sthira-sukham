@@ -2,13 +2,23 @@
 title: Sit comfortably for hours
 shortLabel: Sitting
 order: 80
-needs: >-
-  Enough outward rotation at the hip that the knees can rest low without being twisted, plus
-  tolerance for holding one position for a long time. This is a hip requirement far more than a
-  knee one.
-targets: [adductor-group, gluteus-medius, gluteus-minimus, iliopsoas, joint-capsule]
-emphasis: [mobility]
-sources: [neumann-kinesiology-2016, yoga-knee-oa-meta-2024]
+needs: Enough outward rotation at the hip that the knees can rest low without being twisted,
+  plus tolerance for holding one position for a long time. This is a hip requirement far more
+  than a knee one.
+targets:
+  - adductor-group
+  - gluteus-medius
+  - gluteus-minimus
+  - iliopsoas
+  - joint-capsule
+emphasis:
+  - mobility
+sources:
+  - neumann-kinesiology-2016
+  - yoga-knee-oa-meta-2024
+dependsOnJoints:
+  - hip
+  - knee
 ---
 
 Cross-legged sitting is where a great many knees are quietly injured, and almost always for the

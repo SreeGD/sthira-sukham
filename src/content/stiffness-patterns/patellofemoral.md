@@ -1,9 +1,19 @@
 ---
+joint: knee
 name: Patellofemoral pattern
 order: 20
-typicallyInvolves: [vastus-medialis, vastus-lateralis, retinaculum, iliotibial-band, gluteus-medius]
-sources: [neumann-kinesiology-2016, aaos-knee-arthritis]
-relatedSources: [capsular-restriction, muscle-guarding]
+typicallyInvolves:
+  - vastus-medialis
+  - vastus-lateralis
+  - retinaculum
+  - iliotibial-band
+  - gluteus-medius
+sources:
+  - neumann-kinesiology-2016
+  - aaos-knee-arthritis
+relatedSources:
+  - capsular-restriction
+  - muscle-guarding
 ---
 
 This pattern centres on the kneecap and the groove it travels in rather than on the main

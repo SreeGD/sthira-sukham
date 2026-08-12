@@ -31,6 +31,11 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._379.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Weakness or inhibition leaves the inward pull on the kneecap reduced while the
+      outward pull is not, drawing it laterally in its groove.
 ---
 
 The VMO gets more attention than any other muscle around the knee, and the reason is its

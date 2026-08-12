@@ -16,8 +16,13 @@ const ALL_MUSCLE_IDS = Object.values(REQUIRED_MUSCLE_GROUPS).flat();
 function valid(): Collections {
   const sources = [rec('src-1', { id: 'src-1' })];
   const evidenceLabels = [rec('well-studied', { id: 'well-studied' })];
+  const joints = [rec('knee', { sources: ['src-1'] })];
   const muscles = ALL_MUSCLE_IDS.map((id) =>
-    rec(id, { sources: ['src-1'], noExercisesNote: 'covered elsewhere' }),
+    rec(id, {
+      sources: ['src-1'],
+      noExercisesNote: 'covered elsewhere',
+      jointInfluences: [{ joint: 'knee', action: 'direct', presentsAs: 'restricts the knee' }],
+    }),
   );
   const exercises = ['clinical-rom', 'yoga', 'pilates', 'taichi-qigong'].map((modality, i) =>
     rec(`ex-${i}`, {
@@ -32,14 +37,19 @@ function valid(): Collections {
     }),
   );
   return {
+    joints,
     muscles,
     exercises,
     routines: [1, 2, 3].map((n) => rec(`r-${n}`, { steps: [{ exercise: 'ex-0' }], sources: [] })),
-    stiffnessSources: [1, 2, 3, 4, 5, 6].map((n) => rec(`ss-${n}`, { sources: ['src-1'] })),
-    stiffnessPatterns: [1, 2, 3, 4].map((n) => rec(`sp-${n}`, { sources: ['src-1'] })),
+    stiffnessSources: [1, 2, 3, 4, 5, 6].map((n) =>
+      rec(`ss-${n}`, { joint: 'knee', sources: ['src-1'] }),
+    ),
+    stiffnessPatterns: [1, 2, 3, 4].map((n) =>
+      rec(`sp-${n}`, { joint: 'knee', sources: ['src-1'] }),
+    ),
     sources,
     evidenceLabels,
-    redFlags: REQUIRED_RED_FLAGS.map((id) => rec(id, { id, sources: ['src-1'] })),
+    redFlags: REQUIRED_RED_FLAGS.map((id) => rec(id, { id, joints: ['knee'], sources: ['src-1'] })),
   };
 }
 
@@ -148,11 +158,9 @@ describe('required coverage', () => {
   it('rejects wrong fixed counts (FR-009, FR-011, FR-026)', () => {
     const c = valid();
     c.stiffnessSources.pop();
-    c.stiffnessPatterns.pop();
     c.routines.pop();
     const p = problems(c).join();
-    expect(p).toMatch(/Expected 6 stiffness sources/);
-    expect(p).toMatch(/Expected 4 stiffness patterns/);
+    expect(p).toMatch(/expected 6 stiffness sources for this joint/);
     expect(p).toMatch(/at least 3 routines/);
   });
 
@@ -210,5 +218,52 @@ describe('source hygiene', () => {
     const { problems: p, notes } = checkContent(c);
     expect(p).toEqual([]);
     expect(notes.join()).toMatch(/Unreferenced sources.*unused/);
+  });
+});
+
+describe('the chain (feature 002: SC-101, SC-102)', () => {
+  it('rejects a structure declaring no joint influence', () => {
+    const c = valid();
+    c.muscles[0]!.data.jointInfluences = [];
+    expect(problems(c).join()).toMatch(/declares no jointInfluences/);
+  });
+
+  it('rejects an influence pointing at a joint that does not exist', () => {
+    const c = valid();
+    c.muscles[0]!.data.jointInfluences = [
+      { joint: 'elbow', action: 'direct', presentsAs: 'nonsense' },
+    ];
+    expect(problems(c).join()).toMatch(/"elbow" is not a joint/);
+  });
+
+  it('rejects an influence with no mechanism stated', () => {
+    const c = valid();
+    c.muscles[0]!.data.jointInfluences = [{ joint: 'knee', action: 'direct', presentsAs: '' }];
+    expect(problems(c).join()).toMatch(/does not say how it presents/);
+  });
+
+  it('rejects an action that is neither direct nor indirect', () => {
+    const c = valid();
+    c.muscles[0]!.data.jointInfluences = [
+      { joint: 'knee', action: 'sideways', presentsAs: 'x' },
+    ];
+    expect(problems(c).join()).toMatch(/must be direct or indirect/);
+  });
+
+  it('rejects a joint no structure influences', () => {
+    // A joint nothing reaches is a dead page — the reverse of the structure check.
+    const c = valid();
+    c.joints!.push(rec('ankle', { sources: ['src-1'] }));
+    expect(problems(c).join()).toMatch(/no structure influences this joint/);
+  });
+
+  it('rejects a joint with no stiffness sources of its own', () => {
+    const c = valid();
+    c.joints!.push(rec('hip', { sources: ['src-1'] }));
+    c.muscles[0]!.data.jointInfluences = [
+      { joint: 'knee', action: 'direct', presentsAs: 'x' },
+      { joint: 'hip', action: 'direct', presentsAs: 'y' },
+    ];
+    expect(problems(c).join()).toMatch(/stiffness sources for this joint/);
   });
 });

@@ -2,13 +2,26 @@
 title: Go downstairs without holding the rail
 shortLabel: Stairs
 order: 10
-needs: >-
-  Enough bend to clear each step, and quadriceps strong enough to lower you under control
+needs: Enough bend to clear each step, and quadriceps strong enough to lower you under control
   rather than letting you drop. Going down is harder than going up, and needs different work.
 romNote: Stairs and chairs need roughly 90 to 120 degrees of knee bend.
-targets: [vastus-medialis, vastus-lateralis, rectus-femoris, gluteus-medius, soleus]
-emphasis: [strength, motor-control]
-sources: [rowe-knee-functional-rom-2000, nascimento-hip-knee-pfp-2018, cochrane-exercise-knee-oa-2024]
+targets:
+  - vastus-medialis
+  - vastus-lateralis
+  - rectus-femoris
+  - gluteus-medius
+  - soleus
+emphasis:
+  - strength
+  - motor-control
+sources:
+  - rowe-knee-functional-rom-2000
+  - nascimento-hip-knee-pfp-2018
+  - cochrane-exercise-knee-oa-2024
+dependsOnJoints:
+  - knee
+  - hip
+  - ankle
 ---
 
 Descending stairs is the single most common thing people with stiff or painful knees say they

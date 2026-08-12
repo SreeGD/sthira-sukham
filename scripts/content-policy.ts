@@ -23,6 +23,7 @@ import { join } from 'node:path';
 import type { Record_ } from './content-loader.ts';
 
 export interface Collections {
+  joints?: Record_[];
   functionalGoals?: Record_[];
   muscles: Record_[];
   exercises: Record_[];
@@ -69,7 +70,6 @@ export const REQUIRED_MUSCLE_GROUPS: Record<string, string[]> = {
 export const MODALITIES = ['clinical-rom', 'yoga', 'pilates', 'taichi-qigong'];
 export const MAX_MODALITY_SHARE = 0.6;
 const REQUIRED_STIFFNESS_SOURCE_COUNT = 6;
-const REQUIRED_PATTERN_COUNT = 4;
 const MIN_ROUTINES = 3;
 
 const idsOf = (records: Record_[]) => new Set(records.map((r) => r.id));
@@ -177,6 +177,7 @@ export function checkContent(c: Collections): PolicyResult {
     ['stiffness-sources', c.stiffnessSources],
     ['stiffness-patterns', c.stiffnessPatterns],
     ['red-flags', c.redFlags],
+    ['joints', c.joints ?? []],
   ];
   for (const [name, records] of claimBearing) {
     for (const record of records) {
@@ -246,18 +247,98 @@ export function checkContent(c: Collections): PolicyResult {
   }
 
   // 9. Fixed-count collections (FR-009, FR-011, FR-026).
-  if (c.stiffnessSources.length !== REQUIRED_STIFFNESS_SOURCE_COUNT) {
-    fail(
-      `Expected ${REQUIRED_STIFFNESS_SOURCE_COUNT} stiffness sources, found ${c.stiffnessSources.length} (FR-009).`,
-    );
-  }
-  if (c.stiffnessPatterns.length !== REQUIRED_PATTERN_COUNT) {
-    fail(
-      `Expected ${REQUIRED_PATTERN_COUNT} stiffness patterns, found ${c.stiffnessPatterns.length} (FR-011).`,
-    );
+  /*
+   * Feature 001 fixed these at 6 and 4 because there was one joint. Now they are
+   * per-joint: the six physical mechanisms recur at every joint (they are tissue-level,
+   * so they must), while patterns are joint-specific and are only required to exist.
+   */
+  {
+    const jointOfRec = (r: Record_) => {
+      const j = r.data.joint;
+      return typeof j === 'string' ? j : String((j as Record<string, unknown>)?.id ?? j);
+    };
+    for (const joint of c.joints ?? []) {
+      const n = c.stiffnessSources.filter((s) => jointOfRec(s) === joint.id).length;
+      if (n !== REQUIRED_STIFFNESS_SOURCE_COUNT) {
+        fail(
+          `${joint.file}: expected ${REQUIRED_STIFFNESS_SOURCE_COUNT} stiffness sources for this joint, found ${n} (FR-009).`,
+        );
+      }
+      if (c.stiffnessPatterns.filter((s) => jointOfRec(s) === joint.id).length < 1) {
+        fail(`${joint.file}: expected at least one stiffness pattern for this joint (FR-011).`);
+      }
+    }
   }
   if (c.routines.length < MIN_ROUTINES) {
     fail(`Expected at least ${MIN_ROUTINES} routines, found ${c.routines.length} (FR-026).`);
+  }
+
+  // 9b. The chain (feature 002: SC-101, SC-102).
+  //
+  //     Astro's reference() validates id shape but not existence, so every one of these
+  //     new reference types needs checking here — same gap that made this script
+  //     necessary in the first place.
+  {
+    const joints = c.joints ?? [];
+    const jointIds = idsOf(joints);
+
+    const influencesOf = (record: Record_) => {
+      const v = record.data.jointInfluences;
+      return Array.isArray(v) ? (v as Array<Record<string, unknown>>) : [];
+    };
+
+    for (const muscle of c.muscles) {
+      const inf = influencesOf(muscle);
+      if (inf.length === 0) {
+        fail(`${muscle.file}: declares no jointInfluences — every structure must state what it influences (FR-108).`);
+      }
+      for (const i of inf) {
+        const jid = typeof i.joint === 'string' ? i.joint : String((i.joint as Record<string, unknown>)?.id ?? i.joint);
+        if (!jointIds.has(jid)) fail(`${muscle.file}: jointInfluences -> "${jid}" is not a joint.`);
+        if (i.action !== 'direct' && i.action !== 'indirect') {
+          fail(`${muscle.file}: jointInfluences action must be direct or indirect, got "${String(i.action)}".`);
+        }
+        if (!i.presentsAs) fail(`${muscle.file}: a jointInfluence does not say how it presents.`);
+      }
+    }
+
+    checkRefs(joints, 'sources', sourceIds, 'sources');
+    checkRefs(c.functionalGoals ?? [], 'dependsOnJoints', jointIds, 'joints');
+    checkRefs(c.redFlags, 'joints', jointIds, 'joints');
+    for (const rec of [...c.stiffnessSources, ...c.stiffnessPatterns]) {
+      const j = rec.data.joint;
+      const jid = typeof j === 'string' ? j : String((j as Record<string, unknown>)?.id ?? j);
+      if (j !== undefined && !jointIds.has(jid)) fail(`${rec.file}: joint -> "${jid}" does not exist.`);
+    }
+
+    // Every joint must be reachable and furnished, or it is a dead page.
+    const influenced = new Set(
+      c.muscles.flatMap((m) =>
+        influencesOf(m).map((i) =>
+          typeof i.joint === 'string' ? i.joint : String((i.joint as Record<string, unknown>)?.id ?? i.joint),
+        ),
+      ),
+    );
+    const jointOf = (r: Record_) => {
+      const j = r.data.joint;
+      return typeof j === 'string' ? j : String((j as Record<string, unknown>)?.id ?? j);
+    };
+    for (const joint of joints) {
+      if (!influenced.has(joint.id)) fail(`${joint.file}: no structure influences this joint (SC-102).`);
+      if (!c.stiffnessSources.some((s) => jointOf(s) === joint.id)) {
+        fail(`${joint.file}: no stiffness sources for this joint (SC-101).`);
+      }
+      if (!c.stiffnessPatterns.some((s) => jointOf(s) === joint.id)) {
+        fail(`${joint.file}: no stiffness patterns for this joint (SC-101).`);
+      }
+    }
+
+    if (joints.length > 0) {
+      const per = joints
+        .map((j) => `${j.id}=${[...influenced].filter((x) => x === j.id).length ? c.muscles.filter((m) => influencesOf(m).some((i) => (typeof i.joint === 'string' ? i.joint : String((i.joint as Record<string, unknown>)?.id)) === j.id)).length : 0}`)
+        .join(', ');
+      notes.push(`Structures influencing each joint: ${per}`);
+    }
   }
 
   // 10. Illustration provenance (Constitution Content Standards).

@@ -15,10 +15,6 @@ stiffnessContribution:
     knee tends to drift toward the midline under load.
   whenWeak: Reduces control of the thigh in side-to-side movement and single-leg stability.
   whenInhibited: Common after groin strain, which is notoriously slow to settle.
-presentsAsKneeStiffness: Tight adductors draw the thigh inward, so the knee tends to collapse
-  toward the midline when you squat, climb stairs, or stand on one leg. That position changes
-  how the kneecap sits in its groove and loads the inner knee unevenly. The knee reports the
-  problem; the hip is generating it.
 plainLanguageGloss: The group of muscles along your inner thigh that pull your legs together.
 sources:
   - neumann-kinesiology-2016
@@ -31,6 +27,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._356.png
+jointInfluences:
+  - joint: hip
+    action: direct
+    presentsAs: Restricts how far the leg can move out to the side, and limits the outward rotation
+      that cross-legged sitting depends on.
+  - joint: knee
+    action: indirect
+    presentsAs: Mostly does not cross the knee. Tightness draws the thigh inward so the knee
+      collapses toward the midline under load, loading its inner side unevenly.
 ---
 
 Five muscles running along the inner thigh, of which only gracilis actually reaches past the

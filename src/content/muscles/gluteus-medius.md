@@ -16,11 +16,6 @@ stiffnessContribution:
     take a step or stand on one leg. The knee is carried along with it.
   whenInhibited: Very common, and frequently missed because the muscle tests strong lying down
     while failing to fire during actual weight-bearing.
-presentsAsKneeStiffness: This is the clearest example of a hip problem presenting as a knee
-  problem. Gluteus medius controls whether the thigh bone stays put or rotates inward under
-  load. When it does not, the groove the kneecap runs in rotates underneath it — the kneecap has
-  not moved, but its track has. Front-of-knee stiffness follows, and no amount of work at the
-  knee addresses it.
 plainLanguageGloss: The muscle on the side of your hip that stops your pelvis dropping when you stand on one leg.
 sources:
   - neumann-kinesiology-2016
@@ -33,6 +28,16 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._352.png
+jointInfluences:
+  - joint: hip
+    action: direct
+    presentsAs: Weakness lets the pelvis drop on the unsupported side in single-leg stance, which is
+      most of walking.
+  - joint: knee
+    action: indirect
+    presentsAs: Does not cross the knee. It controls whether the thigh bone rotates inward under
+      load; when it does not, the groove the kneecap runs in rotates underneath it — the kneecap
+      has not moved, but its track has.
 ---
 
 If one muscle explains why a knee reference spends this much time on the hip, it is this one.

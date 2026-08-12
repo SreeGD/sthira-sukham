@@ -1,9 +1,18 @@
 ---
+joint: knee
 name: Sedentary and disuse pattern
 order: 40
-typicallyInvolves: [iliopsoas, rectus-femoris, biceps-femoris, gastrocnemius, gluteus-maximus]
-relatedSources: [disuse-shortening, muscle-guarding]
-sources: [neumann-kinesiology-2016]
+typicallyInvolves:
+  - iliopsoas
+  - rectus-femoris
+  - biceps-femoris
+  - gastrocnemius
+  - gluteus-maximus
+relatedSources:
+  - disuse-shortening
+  - muscle-guarding
+sources:
+  - neumann-kinesiology-2016
 ---
 
 The pattern most often described in people with no injury and no diagnosis. Long hours

@@ -2,13 +2,24 @@
 title: Get in and out of a car
 shortLabel: Car
 order: 30
-needs: >-
-  A moderate bend with the leg swinging out to the side, and enough hip movement to let the
+needs: A moderate bend with the leg swinging out to the side, and enough hip movement to let the
   knee travel without the whole body having to turn with it.
 romNote: Getting into and out of a seat sits in the same 90 to 120 degree range as stairs.
-targets: [rectus-femoris, adductor-group, gluteus-medius, biceps-femoris, joint-capsule]
-emphasis: [mobility, motor-control]
-sources: [rowe-knee-functional-rom-2000, neumann-kinesiology-2016]
+targets:
+  - rectus-femoris
+  - adductor-group
+  - gluteus-medius
+  - biceps-femoris
+  - joint-capsule
+emphasis:
+  - mobility
+  - motor-control
+sources:
+  - rowe-knee-functional-rom-2000
+  - neumann-kinesiology-2016
+dependsOnJoints:
+  - hip
+  - knee
 ---
 
 A car seat is low, the doorway is narrow, and the movement asks the leg to bend and rotate at

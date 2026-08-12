@@ -27,6 +27,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._370.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Resists full knee straightening, felt as tightness behind the knee and often as a
+      knee that will not quite straighten.
+  - joint: hip
+    action: direct
+    presentsAs: Its long head extends the hip, so tightness tilts the pelvis backward and limits
+      bending forward at the hip.
 ---
 
 The lateral hamstring, and the one people most often notice, because its tendon stands out

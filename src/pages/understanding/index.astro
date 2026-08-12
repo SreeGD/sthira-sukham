@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import MuscleActionMap from '../../components/diagrams/MuscleActionMap.astro';
 
+const joints = (await getCollection('joints')).sort((a, b) => a.data.order - b.data.order);
 const sources = (await getCollection('stiffnessSources')).sort(
   (a, b) => a.data.order - b.data.order,
 );
@@ -17,6 +18,26 @@ const patterns = (await getCollection('stiffnessPatterns')).sort(
     "Stiff" is a single word covering at least six physically different situations. Which one you
     have determines what helps — so it is worth knowing what they are.
   </p>
+
+  <section class="section">
+    <h2>The three joints</h2>
+    <p>
+      Each has its own mechanics, its own reasons for stiffening, and its own patterns — and each
+      changes what the others have to do.
+    </p>
+    <ul class="grid">
+      {
+        joints.map((j) => (
+          <li>
+            <a class="card stack" href={`/joints/${j.id}/`}>
+              <h3>{j.data.name}</h3>
+              <p>{j.data.plainDescription}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
   <section class="section">
     <h2>Every muscle that acts on the knee, and what it does</h2>

@@ -137,6 +137,8 @@ const redFlags = defineCollection({
     // Loaders do not promise authored order, so ordering is explicit. The sequence
     // is deliberate: the signs that most clearly mean "stop now" come first.
     order: z.number().int().default(100),
+    /** Which joints this sign concerns (FR-120). */
+    joints: z.array(reference('joints')).min(1),
     sources: z.array(reference('sources')).min(1),
   }),
 });
@@ -163,7 +165,25 @@ const muscles = defineCollection({
         whenWeak: z.string().optional(),
         whenInhibited: z.string().optional(),
       }),
-      presentsAsKneeStiffness: z.string().optional(),
+      /*
+       * What this structure influences, and how. Replaces presentsAsKneeStiffness,
+       * which was one-way by construction — it could not say what gastrocnemius does
+       * at the ankle AND at the knee.
+       *
+       * Required, so a half-migrated record fails the build rather than rendering
+       * without its chain (FR-125). `action` is authored, never inferred: gluteus
+       * medius influences the knee without crossing it, and deriving that would need
+       * attachment data these records do not hold (research D3).
+       */
+      jointInfluences: z
+        .array(
+          z.object({
+            joint: reference('joints'),
+            action: z.enum(['direct', 'indirect']),
+            presentsAs: z.string().min(1),
+          }),
+        )
+        .min(1),
       plainLanguageGloss: z.string().min(1),
       noExercisesNote: z.string().optional(),
       /*
@@ -207,16 +227,12 @@ const muscles = defineCollection({
           });
         }
       }
-      // FR-016: the whole point of cataloguing hip and ankle structures is the
-      // referred story. Omitting it makes the entry pointless, so it cannot be omitted.
-      if ((m.region === 'hip' || m.region === 'ankle') && !m.presentsAsKneeStiffness) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          path: ['presentsAsKneeStiffness'],
-          message:
-            'Hip and ankle structures must explain how restriction there presents as knee stiffness (FR-016).',
-        });
-      }
+      /*
+       * The old FR-016 rule required presentsAsKneeStiffness on hip and ankle
+       * structures. It is superseded: jointInfluences is required on EVERY structure,
+       * which is strictly stronger — it obliges a knee structure to state its reach
+       * too, and it can express influence at more than one joint (feature 002, FR-108).
+       */
     }),
 });
 
@@ -325,6 +341,35 @@ const exercises = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
+// joints — knee, hip, ankle as first-class subjects (FR-101)
+//
+// A collection rather than a z.enum because every joint carries sourced claims:
+// mechanics prose and functional range thresholds. Principle II requires those to
+// live in reviewable content, not in TypeScript. References to joints are still
+// validated, via reference('joints').
+// ---------------------------------------------------------------------------
+
+const joints = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/joints' }),
+  schema: z.object({
+    name: z.string().min(1),
+    plainDescription: z.string().min(1),
+    order: z.number().int().default(100),
+    /** Degrees an everyday activity needs. Two minimum, each tied to a named activity. */
+    romThresholds: z
+      .array(
+        z.object({
+          activity: z.string().min(1),
+          degrees: z.string().min(1),
+          note: z.string().optional(),
+        }),
+      )
+      .min(2),
+    sources: z.array(reference('sources')).min(1),
+  }),
+});
+
+// ---------------------------------------------------------------------------
 // functionalGoals — "what do you want to be able to do again?"
 //
 // Principle I boundary, stated here because it is the whole reason this collection
@@ -350,6 +395,8 @@ const functionalGoals = defineCollection({
     /** Degrees of flexion the activity requires, where research gives a figure. */
     romNote: z.string().optional(),
     targets: z.array(reference('muscles')).min(1),
+    /** Which joints this activity depends on (FR-118). */
+    dependsOnJoints: z.array(reference('joints')).min(1),
     emphasis: z.array(z.enum(GOALS)).min(1),
     sources: z.array(reference('sources')).min(1),
   }),
@@ -394,6 +441,7 @@ const routines = defineCollection({
 const stiffnessSources = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/stiffness-sources' }),
   schema: z.object({
+    joint: reference('joints'),
     clinicalTerm: z.string().min(1),
     plainLanguageGloss: z.string().min(1),
     order: z.number().int().default(100),
@@ -413,6 +461,7 @@ const stiffnessSources = defineCollection({
 const stiffnessPatterns = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/stiffness-patterns' }),
   schema: z.object({
+    joint: reference('joints'),
     name: z.string().min(1),
     order: z.number().int().default(100),
     typicallyInvolves: z.array(reference('muscles')).default([]),
@@ -423,6 +472,7 @@ const stiffnessPatterns = defineCollection({
 
 export const collections = {
   sources,
+  joints,
   functionalGoals,
   evidenceLabels,
   redFlags,

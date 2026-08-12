@@ -8,8 +8,10 @@ async function ack(page: Page, url: string) {
 }
 
 test.describe('understanding (US1)', () => {
-  test('presents all six sources of stiffness', async ({ page }) => {
-    await page.goto('/understanding/sources/');
+  test('presents all six sources of stiffness for the knee', async ({ page }) => {
+    // Feature 002 made sources per-joint, so the index lists 18 across three joints.
+    // The knee's six are asserted on the knee joint page.
+    await page.goto('/joints/knee/');
     for (const term of [
       'Capsular restriction',
       'Joint effusion',
@@ -22,8 +24,9 @@ test.describe('understanding (US1)', () => {
     }
   });
 
-  test('presents all four patterns', async ({ page }) => {
-    await page.goto('/understanding/patterns/');
+  test('presents all four knee patterns', async ({ page }) => {
+    // Same framing change: patterns are per-joint now.
+    await page.goto('/joints/knee/');
     for (const name of ['Osteoarthritic', 'Patellofemoral', 'Post-injury', 'Sedentary']) {
       await expect(page.getByRole('heading', { name: new RegExp(name) })).toBeVisible();
     }
@@ -68,11 +71,17 @@ test.describe('muscles (US2)', () => {
     'gluteus-maximus', 'gluteus-medius', 'gluteus-minimus', 'iliopsoas'];
 
   for (const id of PROXIMAL) {
-    test(`${id} explains how it presents as knee stiffness (FR-016)`, async ({ page }) => {
+    test(`${id} states what it does at each joint it influences (FR-108)`, async ({ page }) => {
+      // Supersedes FR-016. The old rule obliged hip and ankle structures to explain
+      // themselves at the knee; every structure now states its full reach, and a
+      // structure crossing two joints says something different about each.
       await page.goto(`/muscles/${id}/`);
       await expect(
-        page.getByRole('heading', { name: 'How this shows up as knee stiffness' }),
+        page.getByRole('heading', { name: 'What it does to each joint' }),
       ).toBeVisible();
+      const influences = page.locator('.influence');
+      expect(await influences.count()).toBeGreaterThanOrEqual(1);
+      await expect(influences.first().locator('a')).toBeVisible();
     });
   }
 

@@ -25,6 +25,11 @@ illustration:
   year: 1918
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gray345.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: A tight lateral retinaculum holds the kneecap slightly outward in its groove,
+      showing as front-of-knee stiffness after sitting with the knee bent.
 ---
 
 The retinaculum is what keeps the kneecap tracking where it should, and it is passive — it

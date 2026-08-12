@@ -16,10 +16,6 @@ stiffnessContribution:
   whenWeak: Reduces hip stability during single-leg stance.
   whenInhibited: Rarely inhibited. More often it is overworking, taking on stabilising duty that
     the glutes are not doing.
-presentsAsKneeStiffness: TFL cannot pull on the knee itself, but it can tighten the IT band that
-  runs down to it. A TFL working overtime — usually compensating for weak gluteus medius — keeps
-  that band taut, and the tension is felt at the outer knee where the band inserts. Treating the
-  knee achieves little when the pull originates at the hip.
 plainLanguageGloss: A small muscle at the front of your hip that acts like a tuning peg for the
   long band running down the outside of your thigh.
 sources:
@@ -33,6 +29,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._350.png
+jointInfluences:
+  - joint: hip
+    action: direct
+    presentsAs: Overworks when gluteus medius is not holding the pelvis level, and tightness limits
+      the leg moving across the body.
+  - joint: knee
+    action: indirect
+    presentsAs: Does not cross the knee. It tensions the iliotibial band, which does — so tension
+      generated at the hip is felt at the outer knee.
 ---
 
 A small muscle with reach well beyond its size, because it does not act on bone directly so

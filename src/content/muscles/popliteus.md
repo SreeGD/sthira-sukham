@@ -27,6 +27,11 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._375.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Restricts the final few degrees of straightening, and weakness makes the knee harder
+      to unlock from full extension — felt as a catch at the very start of bending.
 ---
 
 Small, deep, and responsible for something the knee could not do without it.

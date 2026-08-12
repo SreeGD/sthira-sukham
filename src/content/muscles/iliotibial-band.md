@@ -34,6 +34,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._350.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Runs down to just below the knee and stabilises it laterally; tension carried
+      through it pulls at the outer knee.
+  - joint: hip
+    action: indirect
+    presentsAs: Not a muscle and generates no tension of its own. What it transmits comes from
+      tensor fasciae latae and gluteus maximus above it.
 ---
 
 The IT band is included here mainly to correct a common misunderstanding about it.

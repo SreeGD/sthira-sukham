@@ -1,9 +1,15 @@
 ---
+joint: knee
 clinicalTerm: Adhesion and scar tissue
 plainLanguageGloss: Surfaces that should glide have stuck together
 order: 40
-relatedStructures: [joint-capsule, retinaculum, rectus-femoris]
-sources: [neumann-kinesiology-2016, aaos-knee-arthritis]
+relatedStructures:
+  - joint-capsule
+  - retinaculum
+  - rectus-femoris
+sources:
+  - neumann-kinesiology-2016
+  - aaos-knee-arthritis
 ---
 
 Movement at the knee depends on layers sliding across one another — capsule over bone,

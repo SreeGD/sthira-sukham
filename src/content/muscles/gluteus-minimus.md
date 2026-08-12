@@ -14,10 +14,6 @@ stiffnessContribution:
   whenTight: Uncommon; can contribute to a restricted feeling deep in the hip.
   whenWeak: Adds to the pelvic-drop and inward-thigh-rotation pattern described under gluteus medius.
   whenInhibited: Tends to be inhibited alongside gluteus medius rather than independently.
-presentsAsKneeStiffness: "Through the same route as gluteus medius: less control of thigh
-  rotation means the kneecap groove moves under the kneecap during weight-bearing. Its
-  contribution is smaller and it is rarely the sole cause, but it works with medius rather than
-  separately from it."
 plainLanguageGloss: The smallest and deepest of the three buttock muscles, working with the one above it.
 sources:
   - neumann-kinesiology-2016
@@ -30,6 +26,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._354.png
+jointInfluences:
+  - joint: hip
+    action: direct
+    presentsAs: Works with gluteus medius to stabilise the pelvis; weakness adds to the pelvic-drop
+      pattern.
+  - joint: knee
+    action: indirect
+    presentsAs: Same route as gluteus medius — less control of thigh rotation means the kneecap
+      groove moves under the kneecap during weight-bearing.
 ---
 
 Sitting deepest of the three glutes, minimus is essentially a partner to gluteus medius —

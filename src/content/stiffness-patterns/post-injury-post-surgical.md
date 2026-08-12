@@ -1,9 +1,20 @@
 ---
+joint: knee
 name: Post-injury and post-surgical pattern
 order: 30
-typicallyInvolves: [joint-capsule, retinaculum, rectus-femoris, vastus-medialis]
-relatedSources: [adhesion-and-scar, effusion, muscle-guarding]
-sources: [aaos-knee-arthritis, neumann-kinesiology-2016, rowe-knee-functional-rom-2000]
+typicallyInvolves:
+  - joint-capsule
+  - retinaculum
+  - rectus-femoris
+  - vastus-medialis
+relatedSources:
+  - adhesion-and-scar
+  - effusion
+  - muscle-guarding
+sources:
+  - aaos-knee-arthritis
+  - neumann-kinesiology-2016
+  - rowe-knee-functional-rom-2000
 ---
 
 After a significant injury or an operation, several sources of stiffness usually arrive

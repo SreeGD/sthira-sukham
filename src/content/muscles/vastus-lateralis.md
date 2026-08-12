@@ -26,6 +26,11 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._378.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Adds to the outward pull on the kneecap, which can change how it tracks in its
+      groove — a common contributor to front-of-knee stiffness.
 ---
 
 The largest of the four quadriceps heads. Its line of pull runs slightly outward, which is

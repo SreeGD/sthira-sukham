@@ -1,9 +1,14 @@
 ---
+joint: knee
 clinicalTerm: Capsular restriction
 plainLanguageGloss: The sleeve around the joint has tightened
 order: 10
-relatedStructures: [joint-capsule, retinaculum]
-sources: [neumann-kinesiology-2016, aaos-knee-arthritis]
+relatedStructures:
+  - joint-capsule
+  - retinaculum
+sources:
+  - neumann-kinesiology-2016
+  - aaos-knee-arthritis
 ---
 
 The knee sits inside a fibrous sleeve — the joint capsule — reinforced at the front by

@@ -15,11 +15,6 @@ stiffnessContribution:
   whenWeak: Reduces the ability to lift the thigh, affecting stair climbing and the swing phase of
     walking.
   whenInhibited: Less commonly inhibited than shortened; sitting keeps it short rather than quiet.
-presentsAsKneeStiffness: A hip that cannot fully straighten leaves you standing with it slightly
-  flexed, and the simplest way to stay upright over a flexed hip is to keep the knee slightly
-  bent too. Hold that all day and the knee never visits full extension. The quadriceps works
-  continuously to hold you up, and the knee stiffens in a range it has stopped leaving. The
-  restriction lives at the hip; the symptom appears at the knee.
 plainLanguageGloss: The deep muscle running from your lower spine and pelvis to the top of your
   thigh bone, which lifts your knee toward your chest.
 sources:
@@ -33,6 +28,16 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._346.png
+jointInfluences:
+  - joint: hip
+    action: direct
+    presentsAs: Tightness prevents the hip straightening fully, so you stand and walk with it
+      slightly bent and the pelvis tipped forward.
+  - joint: knee
+    action: indirect
+    presentsAs: Does not cross the knee. A hip that will not straighten leaves you standing with a
+      slightly bent knee all day, so the joint never visits full extension and the quadriceps
+      works continuously.
 ---
 
 The primary casualty of sitting, and the clearest illustration of why a stiff knee is often a

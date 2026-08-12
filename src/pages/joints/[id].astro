@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceList from '../../components/SourceList.astro';
+import { getCollection, getEntries, render } from 'astro:content';
+import { buildJointStructureIndex, structuresAtJoint } from '../../lib/chain.ts';
+
+export async function getStaticPaths() {
+  const joints = await getCollection('joints');
+  return joints.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const muscles = await getCollection('muscles');
+const jointOf = (r: { data: { joint: { id: string } } }) => r.data.joint.id;
+
+const sources = (await getCollection('stiffnessSources'))
+  .filter((s) => jointOf(s) === entry.id)
+  .sort((a, b) => a.data.order - b.data.order);
+const patterns = (await getCollection('stiffnessPatterns'))
+  .filter((p) => jointOf(p) === entry.id)
+  .sort((a, b) => a.data.order - b.data.order);
+
+/* Derived, never stored — the inverse of what each structure declares. */
+const index = buildJointStructureIndex(
+  muscles.map((m) => ({
+    id: m.id,
+    jointInfluences: m.data.jointInfluences.map((i) => ({ ...i, joint: i.joint.id })),
+    entry: m,
+  })),
+);
+const { direct, indirect } = structuresAtJoint(index, entry.id);
+---
+
+<BaseLayout title={d.name} description={d.plainDescription}>
+  <p><a href="/understanding/">← Understanding</a></p>
+
+  <h1>{d.name}</h1>
+  <p class="lede">{d.plainDescription}</p>
+
+  <section class="section prose"><Content /></section>
+
+  <section class="section">
+    <h2>How much movement everyday activities need</h2>
+    <dl class="definition-list">
+      {
+        d.romThresholds.map((r) => (
+          <>
+            <dt>{r.activity}</dt>
+            <dd>
+              {r.degrees}
+              {r.note && <> — {r.note}</>}
+            </dd>
+          </>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section class="section">
+    <h2>Why this joint stiffens</h2>
+    <ul class="grid">
+      {
+        sources.map((s) => (
+          <li>
+            <a class="card stack" href={`/understanding/sources/${s.id}/`}>
+              <h3>{s.data.clinicalTerm}</h3>
+              <p>{s.data.plainLanguageGloss}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Commonly described patterns</h2>
+    <ul class="grid">
+      {
+        patterns.map((p) => (
+          <li>
+            <a class="card" href={`/understanding/patterns/${p.id}/`}>
+              <h3>{p.data.name}</h3>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>What influences this joint</h2>
+    <h3>Acting on it directly</h3>
+    <ul class="grid">
+      {
+        direct.map(({ structure }) => (
+          <li>
+            <a class="card" href={`/muscles/${structure.id}/`}>
+              <strong>{structure.entry.data.anatomicalName}</strong>
+              <p class="card__traditional">{structure.entry.data.commonName}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      indirect.length > 0 && (
+        <>
+          <h3>Acting through another joint</h3>
+          <p>
+            These do not cross {d.name.toLowerCase()}. They change what it has to do by acting
+            somewhere else — which is why working on the joint itself often does not help.
+          </p>
+          <ul class="grid">
+            {indirect.map(({ structure, presentsAs }) => (
+              <li>
+                <a class="card stack" href={`/muscles/${structure.id}/`}>
+                  <strong>{structure.entry.data.anatomicalName}</strong>
+                  <p>{presentsAs}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+  </section>
+
+  <SourceList refs={d.sources} />
+</BaseLayout>

@@ -2,12 +2,25 @@
 title: Sit at a desk without stiffening up
 shortLabel: Desk
 order: 40
-needs: >-
-  Length at the front of the hip and the back of the ankle — the two places that shorten when
-  you hold the same position for hours — plus glutes that switch back on when you stand.
-targets: [iliopsoas, rectus-femoris, soleus, gastrocnemius, gluteus-maximus, gluteus-medius]
-emphasis: [mobility, motor-control]
-sources: [neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+needs: Length at the front of the hip and the back of the ankle — the two places that shorten
+  when you hold the same position for hours — plus glutes that switch back on when you stand.
+targets:
+  - iliopsoas
+  - rectus-femoris
+  - soleus
+  - gastrocnemius
+  - gluteus-maximus
+  - gluteus-medius
+emphasis:
+  - mobility
+  - motor-control
+sources:
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
+dependsOnJoints:
+  - hip
+  - ankle
+  - knee
 ---
 
 The knee stiffens from sitting, but it is rarely where the change happened.

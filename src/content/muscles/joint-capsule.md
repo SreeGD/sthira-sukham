@@ -26,6 +26,11 @@ illustration:
   year: 1918
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gray346.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Tightens after prolonged immobilisation and with arthritic change, restricting range
+      in a firm, springy way that does not ease much with warming up.
 ---
 
 The capsule is passive tissue, which changes what can be done about it. It cannot be

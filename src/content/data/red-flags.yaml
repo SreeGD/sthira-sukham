@@ -1,70 +1,71 @@
-# Signs that warrant assessment by a clinician rather than a stretch (FR-004).
-#
-# All eight signs named in FR-004 are present. scripts/validate-content.ts asserts
-# each id below exists, so deleting one breaks the build rather than quietly
-# shrinking the safety content.
-
 - id: locking
   order: 20
   sign: The knee locks or catches
-  description: >-
-    The knee gets stuck part-way through bending or straightening, or catches sharply and
-    then releases. Something may be physically blocking the joint, and forcing movement
+  description: The knee gets stuck part-way through bending or straightening, or catches sharply
+    and then releases. Something may be physically blocking the joint, and forcing movement
     through a block can do damage.
-  sources: [aaos-knee-arthritis, nice-ng226-osteoarthritis-2022]
-
+  sources:
+    - aaos-knee-arthritis
+    - nice-ng226-osteoarthritis-2022
+  joints: &a1
+    - knee
+    - hip
+    - ankle
 - id: giving-way
   order: 30
   sign: The knee gives way
-  description: >-
-    The leg buckles or collapses under you without warning. This points to instability or
-    to the muscles not firing when needed, and it carries a real risk of falling.
-  sources: [aaos-knee-arthritis]
-
+  description: The leg buckles or collapses under you without warning. This points to instability
+    or to the muscles not firing when needed, and it carries a real risk of falling.
+  sources:
+    - aaos-knee-arthritis
+  joints: *a1
 - id: cannot-bear-weight
   order: 10
   sign: You cannot put weight through the leg
-  description: >-
-    You are unable to stand or walk on the leg, or can only do so with severe pain. This
-    needs assessment before any exercise.
-  sources: [aaos-knee-arthritis, nice-ng226-osteoarthritis-2022]
-
+  description: You are unable to stand or walk on the leg, or can only do so with severe pain.
+    This needs assessment before any exercise.
+  sources:
+    - aaos-knee-arthritis
+    - nice-ng226-osteoarthritis-2022
+  joints: *a1
 - id: hot-swollen-joint
   order: 40
   sign: The knee is hot, red, and swollen
-  description: >-
-    A joint that is visibly swollen and hot to the touch may be infected or acutely
+  description: A joint that is visibly swollen and hot to the touch may be infected or acutely
     inflamed. This is urgent — it is not a stiffness problem and exercise is not the answer.
-  sources: [nice-ng226-osteoarthritis-2022, aaos-knee-arthritis]
-
+  sources:
+    - nice-ng226-osteoarthritis-2022
+    - aaos-knee-arthritis
+  joints: *a1
 - id: fever-with-joint-pain
   order: 50
   sign: Fever alongside knee pain or swelling
-  description: >-
-    Feeling feverish or unwell together with a painful, swollen knee can indicate joint
+  description: Feeling feverish or unwell together with a painful, swollen knee can indicate joint
     infection. Seek medical care promptly.
-  sources: [nice-ng226-osteoarthritis-2022]
-
+  sources:
+    - nice-ng226-osteoarthritis-2022
+  joints: *a1
 - id: sudden-severe-pain
   order: 60
   sign: Sudden severe pain
-  description: >-
-    Pain that comes on abruptly and is severe, particularly with a pop or tearing
+  description: Pain that comes on abruptly and is severe, particularly with a pop or tearing
     sensation, suggests an acute injury rather than progressive stiffness.
-  sources: [aaos-knee-arthritis]
-
+  sources:
+    - aaos-knee-arthritis
+  joints: *a1
 - id: night-pain
   order: 80
   sign: Pain that wakes you at night
-  description: >-
-    Pain that is present at rest or that reliably wakes you from sleep is a different
+  description: Pain that is present at rest or that reliably wakes you from sleep is a different
     pattern from mechanical stiffness and should be assessed.
-  sources: [nice-ng226-osteoarthritis-2022]
-
+  sources:
+    - nice-ng226-osteoarthritis-2022
+  joints: *a1
 - id: pain-after-trauma
   order: 70
   sign: Pain following a fall or injury
-  description: >-
-    Knee pain that began with a specific fall, twist, or blow needs assessment to rule out
-    fracture or ligament injury before you start moving it deliberately.
-  sources: [aaos-knee-arthritis]
+  description: Knee pain that began with a specific fall, twist, or blow needs assessment to rule
+    out fracture or ligament injury before you start moving it deliberately.
+  sources:
+    - aaos-knee-arthritis
+  joints: *a1

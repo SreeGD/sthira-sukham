@@ -6,7 +6,7 @@ import AnatomyPlate from '../../components/AnatomyPlate.astro';
 import ExerciseCard from '../../components/ExerciseCard.astro';
 import RedFlagGate from '../../components/RedFlagGate.astro';
 import ClinicianFraming from '../../components/ClinicianFraming.astro';
-import { getCollection, render } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import { buildMuscleExerciseIndex, exercisesForMuscle } from '../../lib/cross-links.ts';
 
 export async function getStaticPaths() {
@@ -23,6 +23,10 @@ const index = buildMuscleExerciseIndex(
   allExercises.map((e) => ({ id: e.id, targets: e.data.targets.map((t) => t.id), entry: e })),
 );
 const targeting = exercisesForMuscle(index, entry.id).map((x) => x.entry);
+
+const influences = await Promise.all(
+  d.jointInfluences.map(async (i) => ({ ...i, joint: await getEntry(i.joint) })),
+);
 ---
 <BaseLayout title={d.anatomicalName} description={d.plainLanguageGloss}>
   <p><a href="/muscles/">← Muscles &amp; structures</a></p>
@@ -48,14 +52,26 @@ const targeting = exercisesForMuscle(index, entry.id).map((x) => x.entry);
     </div>
   </section>
 
-  {d.presentsAsKneeStiffness && (
-    <section class="section">
-      <div class="callout">
-        <h2>How this shows up as knee stiffness</h2>
-        <p>{d.presentsAsKneeStiffness}</p>
-      </div>
-    </section>
-  )}
+  {/* T228: the full chain, one statement per joint, with indirect influence marked
+      as acting through another joint rather than implied to attach here. */}
+  <section class="section">
+    <h2>What it does to each joint</h2>
+    <ul class="influences">
+      {
+        influences.map(({ joint, action, presentsAs }) => (
+          <li class={`influence influence--${action}`}>
+            <p class="influence__head">
+              <a href={`/joints/${joint!.id}/`}>{joint!.data.name}</a>
+              <span class="tag">
+                {action === 'direct' ? 'acts on it directly' : 'acts through another joint'}
+              </span>
+            </p>
+            <p>{presentsAs}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
   <section class="section">
     <h2>How it contributes to stiffness</h2>

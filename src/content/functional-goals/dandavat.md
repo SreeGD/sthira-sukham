@@ -2,14 +2,29 @@
 title: Offer dandavat without knee pain
 shortLabel: Dandavat
 order: 70
-needs: >-
-  Getting from standing to fully prone and back up again, repeatedly. The knee passes through
-  its whole range under body weight each time, and the way down asks more of the thigh than the
-  way up.
-romNote: Lowering through kneeling passes the knee through its deepest range, around 135 degrees or more.
-targets: [rectus-femoris, vastus-intermedius, vastus-medialis, joint-capsule, soleus, gluteus-maximus]
-emphasis: [mobility, strength]
-sources: [rowe-knee-functional-rom-2000, neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+needs: Getting from standing to fully prone and back up again, repeatedly. The knee passes
+  through its whole range under body weight each time, and the way down asks more of the thigh
+  than the way up.
+romNote: Lowering through kneeling passes the knee through its deepest range, around 135 degrees
+  or more.
+targets:
+  - rectus-femoris
+  - vastus-intermedius
+  - vastus-medialis
+  - joint-capsule
+  - soleus
+  - gluteus-maximus
+emphasis:
+  - mobility
+  - strength
+sources:
+  - rowe-knee-functional-rom-2000
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
+dependsOnJoints:
+  - knee
+  - ankle
+  - hip
 ---
 
 A full prostration is, mechanically, a controlled descent to the floor and a controlled return —

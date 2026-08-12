@@ -1,9 +1,15 @@
 ---
+joint: knee
 clinicalTerm: Disuse shortening
 plainLanguageGloss: Tissue has adapted to the range you actually use
 order: 60
-relatedStructures: [rectus-femoris, iliopsoas, gastrocnemius, biceps-femoris]
-sources: [neumann-kinesiology-2016]
+relatedStructures:
+  - rectus-femoris
+  - iliopsoas
+  - gastrocnemius
+  - biceps-femoris
+sources:
+  - neumann-kinesiology-2016
 ---
 
 Soft tissue adapts to what is asked of it. Spend most of the day with the hips and knees

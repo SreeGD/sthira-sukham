@@ -26,6 +26,11 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._381.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Lies deepest and attaches partly to the joint capsule, so tightness restricts knee
+      bending directly rather than through a long lever.
 ---
 
 The quiet one. Vastus intermedius lies directly against the femur underneath rectus

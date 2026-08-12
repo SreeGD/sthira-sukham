@@ -30,6 +30,15 @@ illustration:
   year: 1902
   licence: Public domain
   sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._376.png
+jointInfluences:
+  - joint: knee
+    action: direct
+    presentsAs: Tightness limits knee bending, most obviously when the hip is straight — which is
+      why the same knee bends further lying on your side than face down.
+  - joint: hip
+    action: direct
+    presentsAs: Crosses the hip as well, so shortening here pulls the pelvis into a forward tilt and
+      resists the hip straightening fully.
 ---
 
 Rectus femoris matters out of proportion to its size because it is the only one of the four
