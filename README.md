@@ -1,5 +1,11 @@
 # Sthira Sukham
 
+[![verify](https://github.com/SreeGD/sthira-sukham/actions/workflows/verify.yml/badge.svg)](https://github.com/SreeGD/sthira-sukham/actions/workflows/verify.yml)
+![no runtime dependencies](https://img.shields.io/badge/runtime-no%20network%2C%20no%20backend-informational)
+![content](https://img.shields.io/badge/content-63%20exercises%20%C2%B7%2025%20structures%20%C2%B7%203%20joints-informational)
+
+> *sthira sukham āsanam* — "the posture should be steady and comfortable." Yoga Sūtra 2.46
+
 A locally-run, static educational reference on stiff joints — knee, hip and ankle as a connected
 chain: how each joint works, the muscles and structures that govern how freely it moves, and the
 movements commonly used to address them, drawn from clinical range-of-motion work, yoga, Pilates,
@@ -15,6 +21,23 @@ It runs entirely on your machine. No server, no accounts, no tracking, no networ
 **It is not medical advice.** It cannot assess your knee and does not try to. It has no symptom
 checker and no personalised programme, deliberately — see [the constitution](.specify/memory/constitution.md),
 Principle I.
+
+## What it looks like
+
+| | |
+|---|---|
+| ![The home page](docs/screenshots/01-home.png) | ![The red-flag gate](docs/screenshots/02-red-flag-gate.png) |
+| **Home.** Four sections, and framing that says up front the reference cannot assess your knee. | **The gate.** Deep-link to any exercise on a first visit and this comes first. It is server-rendered and visible by default — with JavaScript disabled it stays up. |
+| ![An exercise page](docs/screenshots/03-exercise.png) | ![The one-page sheet](docs/screenshots/07-sheet.png) |
+| **An exercise.** Short steps in large type, the one thing that matters, where you should feel it, and the common mistake — with a diagram derived from the exercise's own target muscles. | **The sheet.** A whole routine on one page: every movement's steps and stop-criteria inline, so nothing needs clicking mid-session. |
+| ![The muscle action map](docs/screenshots/04-muscle-map.png) | ![Sources of stiffness](docs/screenshots/08-stiffness-sources.png) |
+| **What acts on a joint.** Generated per joint from the content: solid regions act directly, hatched ones act through a neighbouring joint. | **Why it stiffens.** The six mechanisms sorted by *behaviour* — all six feel like "stiff", so what separates them is whether they ease with movement and vary by day. |
+| ![A muscle page](docs/screenshots/05-anatomy-plate.png) | ![Dark theme](docs/screenshots/09-dark.png) |
+| **A structure.** Where it sits, plus a public-domain plate with its licence and source shown, not merely stored. | **Both themes.** Light and dark are fully supported, and every diagram is drawn from theme tokens rather than a second asset. |
+
+![The exercise library](docs/screenshots/06-library.png)
+
+**The library.** 63 movements across four traditions, filterable by tradition, goal, difficulty, equipment and target structure. With JavaScript disabled it renders the complete list unfiltered — degraded, never broken.
 
 ## Running it
 
