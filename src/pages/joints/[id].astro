@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import MuscleActionMap from '../../components/diagrams/MuscleActionMap.astro';
+import StiffnessSourceMap from '../../components/diagrams/StiffnessSourceMap.astro';
 import { getCollection, render } from 'astro:content';
 import { buildJointStructureIndex, structuresAtJoint } from '../../lib/chain.ts';
 
@@ -62,6 +63,7 @@ const { direct, indirect } = structuresAtJoint(index, entry.id);
 
   <section class="section">
     <h2>Why this joint stiffens</h2>
+    <StiffnessSourceMap joint={entry.id as 'knee' | 'hip' | 'ankle'} />
     <ul class="grid">
       {
         sources.map((s) => (

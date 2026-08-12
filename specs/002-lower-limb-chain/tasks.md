@@ -17,17 +17,19 @@ out in Phase 6, matching the rule feature 001 followed.
 
 ## Status — 2026-08-12
 
-**55 of 58 complete.** `pnpm verify` green: 164 pages, 480 e2e, 103 unit, content policy,
-isolation and lint all passing, plus `pnpm smoke:dev` across 163 dev routes.
+**57 of 58 complete.** `pnpm verify` green: 164 pages, **520 e2e**, 103 unit, content policy,
+isolation and lint all passing, plus `pnpm smoke:dev` across every dev route.
 
-Three remain, all additive rather than blocking:
+Only **T257** remains — the manual passes in `quickstart.md` that need a human: greyscale
+inspection, a screen reader, and the OS reduced-motion setting. Everything automatable in that
+task has been run.
 
-- **T229** — the muscle action map still renders the knee's regions on every joint page rather
-  than that joint's. The joint pages list their structures correctly in text; only the diagram
-  is not yet per-joint.
-- **T251** — no anatomy plates for the six new structures (19 of 25 illustrated). Wikimedia rate
-  limiting made the last batch slow; the provenance machinery is in place and unchanged.
-- **T253, T255, T257** — the responsive/extensibility/manual passes from Phase 7.
+One correction worth recording: T220, T221 and T226 were marked complete before
+`tests/e2e/joints.spec.ts` existed. A later append created the file without imports, which is
+how it surfaced. The assertions are now written.
+
+24 of 25 structures carry an anatomy plate; no public-domain plate was located for the plantar
+fascia.
 
 ## Format: `[ID] [P?] [Story] Description`
 
@@ -161,7 +163,7 @@ every structure influencing it; no dead links either way.
 - [X] T248 [US4] Rebalance so all four modalities stay represented and none exceeds 60% of the expanded library, verified by `pnpm validate` (SC-107)
 - [X] T249 [US4] Add `dependsOnJoints` values to all 9 records in `src/content/functional-goals/` and surface them on `src/pages/start/[id].astro`
 - [X] T250 [P] [US4] E2E test in `tests/e2e/chain.spec.ts` asserting every new structure is targeted by at least one exercise and every new exercise carries its safety fields
-- [ ] T251 [P] [US4] Add public-domain anatomy plates for the new structures following the provenance pattern in `src/components/AnatomyPlate.astro`, or record why none was found
+- [X] T251 [P] [US4] Add public-domain anatomy plates for the new structures following the provenance pattern in `src/components/AnatomyPlate.astro`, or record why none was found
 
 **Checkpoint**: All user stories complete.
 
@@ -170,9 +172,9 @@ every structure influencing it; no dead links either way.
 ## Phase 7: Polish & Cross-Cutting
 
 - [X] T252 [P] Extend the axe sweep in `tests/e2e/accessibility.spec.ts` to every new route, both themes
-- [ ] T253 [P] Extend `tests/e2e/responsive-privacy.spec.ts` to assert no new route scrolls horizontally at 360px (SC-112)
+- [X] T253 [P] Extend `tests/e2e/responsive-privacy.spec.ts` to assert no new route scrolls horizontally at 360px (SC-112)
 - [X] T254 Run `pnpm check:isolation` against a real build and resolve any external origin (SC-113)
-- [ ] T255 Verify SC-114 by adding a structure for the hip and an exercise for it with zero changes outside `src/content/`
+- [X] T255 Verify SC-114 by adding a structure for the hip and an exercise for it with zero changes outside `src/content/`
 - [X] T256 [P] Update `README.md` and `CLAUDE.md` for the three-joint model and the chain
 - [ ] T257 Execute every manual procedure in `quickstart.md`, including the both-directions walk and the JS-disabled gate check
 - [X] T258 Run `pnpm verify` plus `pnpm smoke:dev` and confirm all gates pass

@@ -1,0 +1,159 @@
+---
+import { getCollection } from 'astro:content';
+
+/*
+ * The six sources of stiffness, arranged by how they behave rather than listed.
+ *
+ * A reader cannot tell these apart from definitions alone — they all present as
+ * "my joint is stiff". What distinguishes them is behaviour: whether the restriction
+ * eases as you warm up, and whether it changes from day to day. Those two questions
+ * separate the six into groups a reader can actually apply, which a list cannot.
+ *
+ * This is a presentation of already-sourced content, not a new claim: every source
+ * record carries its own citations and the axes below are described in their bodies.
+ */
+
+interface Props {
+  joint?: 'knee' | 'hip' | 'ankle';
+}
+const { joint = 'knee' } = Astro.props;
+
+const sources = (await getCollection('stiffnessSources'))
+  .filter((s) => s.data.joint.id === joint)
+  .sort((a, b) => a.data.order - b.data.order);
+
+/*
+ * Behaviour per mechanism. Keyed by the shared slug suffix so it holds for every joint —
+ * the six mechanisms are tissue-level and behave the same wherever they occur, which is
+ * exactly why they recur per joint in the first place.
+ */
+const BEHAVIOUR: Record<string, { warmsUp: boolean; varies: boolean; feel: string }> = {
+  'capsular-restriction': { warmsUp: false, varies: false, feel: 'Firm and springy, same point every time' },
+  effusion: { warmsUp: false, varies: true, feel: 'Fullness or pressure rather than tightness' },
+  'muscle-guarding': { warmsUp: true, varies: true, feel: 'Reluctance rather than a wall' },
+  'adhesion-and-scar': { warmsUp: false, varies: false, feel: 'A fixed stop that does not move' },
+  'arthritic-change': { warmsUp: true, varies: true, feel: 'Worst on waking, eases within half an hour' },
+  'disuse-shortening': { warmsUp: true, varies: false, feel: 'A stretch at the end of the range' },
+};
+
+const key = (id: string) => id.replace(/^(knee|hip|ankle)-/, '');
+const rows = sources.map((s) => ({ entry: s, ...BEHAVIOUR[key(s.id)]! }));
+
+const quadrant = (warmsUp: boolean, varies: boolean) =>
+  rows.filter((r) => r.warmsUp === warmsUp && r.varies === varies);
+
+const QUADRANTS = [
+  { warmsUp: true, varies: true, title: 'Eases as you move · varies by day', hint: 'Behaving like muscle or inflammation. Responds to movement and to settling the joint down.' },
+  { warmsUp: true, varies: false, title: 'Eases as you move · steady day to day', hint: 'Behaving like shortened tissue. Responds to regularly visiting the end of the range.' },
+  { warmsUp: false, varies: true, title: 'Does not ease · varies by day', hint: 'Behaving like something occupying space in the joint. The amount changes; the mechanism does not.' },
+  { warmsUp: false, varies: false, title: 'Does not ease · steady day to day', hint: 'Behaving like passive tissue or a mechanical block. Least responsive to stretching, most worth having looked at.' },
+];
+---
+
+<figure class="diagram source-map">
+  <figcaption class="source-map__lede">
+    <p>
+      All six feel like "stiff". What separates them is <strong>how they behave</strong> — whether
+      the restriction eases as you warm up, and whether it changes from day to day. Those two
+      questions do more to tell them apart than any description.
+    </p>
+  </figcaption>
+
+  <div class="source-grid">
+    {
+      QUADRANTS.map((q) => {
+        const members = quadrant(q.warmsUp, q.varies);
+        return (
+          <section class="source-cell">
+            <h3>{q.title}</h3>
+            <p class="source-cell__hint">{q.hint}</p>
+            {members.length === 0 ? (
+              <p class="source-cell__empty">Nothing at this joint behaves this way.</p>
+            ) : (
+              <ul>
+                {members.map((r) => (
+                  <li>
+                    <a href={`/understanding/sources/${r.entry.id}/`}>
+                      <strong>{r.entry.data.clinicalTerm}</strong>
+                    </a>
+                    <span class="source-cell__feel">{r.feel}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        );
+      })
+    }
+  </div>
+
+  <p class="source-map__note">
+    A rough guide, not a test. More than one can be true at once, and telling them apart properly
+    means examining the joint — which is what a clinician does and a website cannot.
+  </p>
+</figure>
+
+<style>
+  .source-map {
+    margin: 0 0 var(--s-6);
+    padding: var(--s-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    background: var(--c-diagram-bg);
+  }
+  .source-map__lede p {
+    margin: 0 0 var(--s-4);
+    max-width: var(--measure);
+  }
+  .source-grid {
+    display: grid;
+    gap: var(--s-3);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 44rem) {
+    .source-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .source-cell {
+    padding: var(--s-3) var(--s-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface);
+  }
+  .source-cell h3 {
+    margin: 0 0 var(--s-1);
+    font-size: var(--f-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--c-text-muted);
+  }
+  .source-cell__hint {
+    margin: 0 0 var(--s-3);
+    font-size: var(--f-size-sm);
+  }
+  .source-cell ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .source-cell li + li {
+    margin-top: var(--s-2);
+  }
+  .source-cell__feel {
+    display: block;
+    font-size: var(--f-size-xs);
+    color: var(--c-text-muted);
+  }
+  .source-cell__empty {
+    margin: 0;
+    font-size: var(--f-size-sm);
+    color: var(--c-text-faint);
+  }
+  .source-map__note {
+    margin: var(--s-4) 0 0;
+    font-size: var(--f-size-sm);
+    color: var(--c-text-muted);
+    max-width: var(--measure);
+  }
+</style>
