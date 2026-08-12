@@ -20,7 +20,7 @@ plainLanguageGloss: The calf muscle you can see, which starts above the knee and
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-388.png
+  file: gerrish-1902-fig-388.webp
   alt: Line drawing of the gastrocnemius, showing its two heads originating above the knee on the
     thigh bone and joining to the heel.
   caption: "Gastrocnemius: outline and attachment areas."

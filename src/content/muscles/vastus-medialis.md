@@ -23,7 +23,7 @@ sources:
   - neumann-kinesiology-2016
   - aaos-knee-arthritis
 illustration:
-  file: gerrish-1902-fig-379.png
+  file: gerrish-1902-fig-379.webp
   alt: Line drawing of the vastus medialis on the inner thigh, with its attachment areas shaded
     along the thigh bone.
   caption: "Vastus medialis (1902: vastus internus): outline and attachment areas."

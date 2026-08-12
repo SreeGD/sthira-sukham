@@ -19,7 +19,7 @@ plainLanguageGloss: The broad, flat hamstring lying underneath the stringy one o
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-374.png
+  file: gerrish-1902-fig-374.webp
   alt: Line drawing of the semimembranosus, the broad flat inner hamstring, with its attachment
     areas shaded.
   caption: "Semimembranosus: outline and attachment areas."

@@ -20,7 +20,7 @@ plainLanguageGloss: The muscle on the side of your hip that stops your pelvis dr
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-352.png
+  file: gerrish-1902-fig-352.webp
   alt: Line drawing of the gluteus medius on the side of the hip, with its attachment areas shaded
     on the pelvis.
   caption: "Gluteus medius: outline and attachment areas."

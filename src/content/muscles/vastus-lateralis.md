@@ -18,7 +18,7 @@ plainLanguageGloss: The big muscle on the outside of your thigh.
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-378.png
+  file: gerrish-1902-fig-378.webp
   alt: Line drawing of the vastus lateralis on the outer thigh, with its attachment areas shaded
     along the thigh bone.
   caption: "Vastus lateralis (1902: vastus externus): outline and attachment areas."

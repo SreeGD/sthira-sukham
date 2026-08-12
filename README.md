@@ -31,16 +31,16 @@ Principle I.
 
 | | |
 |---|---|
-| ![The home page](docs/screenshots/01-home.png) | ![The red-flag gate](docs/screenshots/02-red-flag-gate.png) |
+| ![The home page](docs/screenshots/01-home.webp) | ![The red-flag gate](docs/screenshots/02-red-flag-gate.webp) |
 | **Home.** Four sections, and framing that says up front the reference cannot assess your knee. | **The gate.** Deep-link to any exercise on a first visit and this comes first. It is server-rendered and visible by default — with JavaScript disabled it stays up. |
-| ![An exercise page](docs/screenshots/03-exercise.png) | ![The one-page sheet](docs/screenshots/07-sheet.png) |
+| ![An exercise page](docs/screenshots/03-exercise.webp) | ![The one-page sheet](docs/screenshots/07-sheet.webp) |
 | **An exercise.** Short steps in large type, the one thing that matters, where you should feel it, and the common mistake — with a diagram derived from the exercise's own target muscles. | **The sheet.** A whole routine on one page: every movement's steps and stop-criteria inline, so nothing needs clicking mid-session. |
-| ![The muscle action map](docs/screenshots/04-muscle-map.png) | ![Sources of stiffness](docs/screenshots/08-stiffness-sources.png) |
+| ![The muscle action map](docs/screenshots/04-muscle-map.webp) | ![Sources of stiffness](docs/screenshots/08-stiffness-sources.webp) |
 | **What acts on a joint.** Generated per joint from the content: solid regions act directly, hatched ones act through a neighbouring joint. | **Why it stiffens.** The six mechanisms sorted by *behaviour* — all six feel like "stiff", so what separates them is whether they ease with movement and vary by day. |
-| ![A muscle page](docs/screenshots/05-anatomy-plate.png) | ![Dark theme](docs/screenshots/09-dark.png) |
+| ![A muscle page](docs/screenshots/05-anatomy-plate.webp) | ![Dark theme](docs/screenshots/09-dark.webp) |
 | **A structure.** Where it sits, plus a public-domain plate with its licence and source shown, not merely stored. | **Both themes.** Light and dark are fully supported, and every diagram is drawn from theme tokens rather than a second asset. |
 
-![The exercise library](docs/screenshots/06-library.png)
+![The exercise library](docs/screenshots/06-library.webp)
 
 **The library.** 63 movements across four traditions, filterable by tradition, goal, difficulty, equipment and target structure. With JavaScript disabled it renders the complete list unfiltered — degraded, never broken.
 
@@ -98,6 +98,10 @@ src/content/
 `stopIf`, or an `evidenceLabel` fails the build. A record without a source fails the build. A
 reference to a nonexistent muscle fails `pnpm validate`. This is intended: there is no override
 flag, and adding one would defeat the point.
+
+Anatomical plates are public-domain scans stored as WebP (the set is 1.8MB; as PNG it was
+8MB, with no visible difference at display size). A policy gate rejects PNG illustrations —
+convert new ones with `cwebp -q 90 in.png -o out.webp`.
 
 Every citation must be one you have actually opened. `title`, `authorOrBody`, `year`, and a
 locator (`url`, `doi`, or `isbn`) are all required, because a citation nobody can find is

@@ -19,7 +19,7 @@ plainLanguageGloss: A small deep muscle behind the knee whose job is to release 
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-375.png
+  file: gerrish-1902-fig-375.webp
   alt: Line drawing of the popliteus, a small deep muscle crossing behind the knee, with its
     attachment areas shaded.
   caption: "Popliteus: outline and attachment areas."

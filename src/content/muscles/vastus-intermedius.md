@@ -18,7 +18,7 @@ plainLanguageGloss: The quad muscle you cannot see or feel, sitting underneath t
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-381.png
+  file: gerrish-1902-fig-381.webp
   alt: Line drawing of the vastus intermedius lying against the front of the thigh bone, with its
     attachment areas shaded.
   caption: "Vastus intermedius: outline and attachment areas."

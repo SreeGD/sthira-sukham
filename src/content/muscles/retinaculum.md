@@ -17,7 +17,7 @@ plainLanguageGloss: Sheets of tough tissue either side of your kneecap that stop
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gray-1918-plate-345.png
+  file: gray-1918-plate-345.webp
   alt: Anatomical drawing of the right knee joint seen from the front, showing the kneecap and the
     tissue holding it in position either side.
   caption: Right knee joint, anterior view, showing the patella and its surrounding tissue.

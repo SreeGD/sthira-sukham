@@ -25,7 +25,7 @@ noExercisesNote: "The IT band is dense connective tissue and does not meaningful
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-350.png
+  file: gerrish-1902-fig-350.webp
   alt: Line drawing of the tensor fasciae latae, the muscle that tensions the iliotibial band,
     with its attachment areas shaded on the pelvis.
   caption: Tensor fasciae latae, the muscle that tensions the iliotibial tract, with its

@@ -25,7 +25,7 @@ jointInfluences:
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-383.png
+  file: gerrish-1902-fig-383.webp
   alt: Line drawing of tibialis anterior running down the front of the shin to the inner side of
     the foot, with its attachment areas shaded.
   caption: "Tibialis anterior: outline and attachment areas."

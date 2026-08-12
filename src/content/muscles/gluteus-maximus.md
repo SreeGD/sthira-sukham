@@ -21,7 +21,7 @@ plainLanguageGloss: The large muscle of your buttock, which drives your hip back
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-349.png
+  file: gerrish-1902-fig-349.webp
   alt: Line drawing of the gluteus maximus covering the buttock, with its attachment areas shaded
     on the pelvis and thigh bone.
   caption: "Gluteus maximus: outline and attachment areas."

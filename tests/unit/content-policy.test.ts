@@ -307,3 +307,17 @@ describe('instruction clarity', () => {
     expect(problems(c).join()).not.toMatch(/change sides|per side/);
   });
 });
+
+describe('illustration format', () => {
+  it('rejects a plate left as PNG', () => {
+    // The full set was 8MB as PNG and is 1.8MB as WebP. One plate added back as PNG
+    // undoes part of that without anyone noticing.
+    const c = valid();
+    c.muscles[0]!.data.illustration = {
+      file: 'gerrish-1902-fig-376.png',
+      alt: 'a', caption: 'a', credit: 'a', year: 1902,
+      licence: 'Public domain', sourceUrl: 'https://commons.wikimedia.org/x',
+    };
+    expect(problems(c).join()).toMatch(/should be WebP/);
+  });
+});

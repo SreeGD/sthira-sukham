@@ -385,6 +385,17 @@ export function checkContent(c: Collections): PolicyResult {
     if (ill.file && !existsSync(join('public/anatomy', String(ill.file)))) {
       fail(`${muscle.file}: illustration file "public/anatomy/${String(ill.file)}" does not exist.`);
     }
+    /*
+     * These plates are scans of line drawings, where WebP is roughly a sixth the size
+     * of PNG with no visible loss at the size they are displayed. The whole set was 8MB
+     * as PNG and is 1.8MB as WebP; one plate added back as PNG undoes a chunk of that
+     * quietly. Convert with: cwebp -q 90 in.png -o out.webp
+     */
+    if (typeof ill.file === 'string' && /\.(png|jpe?g)$/i.test(ill.file)) {
+      fail(
+        `${muscle.file}: illustration "${ill.file}" should be WebP — convert with \`cwebp -q 90\`. PNG plates are ~6x larger for no visible gain.`,
+      );
+    }
   }
   {
     const withPlate = c.muscles.filter((m) => m.data.illustration).length;

@@ -22,7 +22,7 @@ plainLanguageGloss: The long muscle down the front of the thigh that both straig
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-376.png
+  file: gerrish-1902-fig-376.webp
   alt: Line drawing of the rectus femoris muscle, running down the front of the thigh from the
     pelvis to the kneecap, with its attachment areas shaded on the underlying bone.
   caption: "Rectus femoris: outline and attachment areas."

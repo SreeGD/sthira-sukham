@@ -18,7 +18,7 @@ plainLanguageGloss: The smallest and deepest of the three buttock muscles, worki
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-354.png
+  file: gerrish-1902-fig-354.webp
   alt: Line drawing of the gluteus minimus, the deepest of the three buttock muscles, with its
     attachment areas shaded.
   caption: "Gluteus minimus: outline and attachment areas."

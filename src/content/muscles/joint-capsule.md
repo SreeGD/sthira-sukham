@@ -18,7 +18,7 @@ sources:
   - neumann-kinesiology-2016
   - aaos-knee-arthritis
 illustration:
-  file: gray-1918-plate-346.png
+  file: gray-1918-plate-346.webp
   alt: Anatomical drawing of the right knee joint seen from behind, showing the joint capsule and
     the ligaments at the back of the joint.
   caption: Right knee joint, posterior view.

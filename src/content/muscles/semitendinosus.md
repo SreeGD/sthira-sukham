@@ -18,7 +18,7 @@ plainLanguageGloss: One of the two hamstrings on the inner side of the back of y
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-371.png
+  file: gerrish-1902-fig-371.webp
   alt: Line drawing of the semitendinosus running down the inner side of the back of the thigh,
     showing its long cord-like tendon.
   caption: "Semitendinosus: outline and attachment areas."

@@ -21,7 +21,7 @@ plainLanguageGloss: A small muscle at the front of your hip that acts like a tun
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-350.png
+  file: gerrish-1902-fig-350.webp
   alt: Line drawing of the tensor fasciae latae at the front of the hip, with its attachment areas
     shaded on the pelvis.
   caption: "Tensor fasciae latae (1902: tensor vaginae femoris): outline and attachment areas."

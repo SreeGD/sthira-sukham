@@ -19,7 +19,7 @@ plainLanguageGloss: The group of muscles along your inner thigh that pull your l
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-356.png
+  file: gerrish-1902-fig-356.webp
   alt: Line drawing of the adductor magnus, the largest inner-thigh muscle, with its attachment
     areas shaded on the pelvis and thigh bone.
   caption: "Adductor magnus, the largest of the adductor group: outline and attachment areas."

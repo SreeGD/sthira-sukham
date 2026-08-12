@@ -32,7 +32,7 @@ jointInfluences:
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-365.png
+  file: gerrish-1902-fig-365.webp
   alt: Line drawing of piriformis, running from the sacrum across to the top of the thigh bone,
     with its attachment areas shaded.
   caption: "Piriformis, the best known of the deep hip rotators: outline and attachment areas."

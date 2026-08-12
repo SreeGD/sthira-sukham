@@ -44,6 +44,17 @@ presents *there*.
 - The joint→structures edge is derived in `src/lib/chain.ts`, never stored — same rule as
   `cross-links.ts`.
 
+## Anatomy plates
+
+Public-domain scans in `public/anatomy/`, referenced by each muscle's `illustration`
+field with its licence and source recorded and rendered.
+
+- **WebP, not PNG.** The set was 8MB as PNG and is 1.8MB as WebP at q90, with no visible
+  loss at display size. A policy gate rejects `.png`/`.jpg` illustrations. New plates
+  download as PNG from Commons — convert with `cwebp -q 90 in.png -o out.webp`.
+- Verify a licence through the Commons API before downloading. Wikimedia rate-limits
+  hard; use a descriptive User-Agent and back off.
+
 ## Things that will bite you
 
 - **The build failing on content is correct behaviour**, not a bug to work around. Unsourced

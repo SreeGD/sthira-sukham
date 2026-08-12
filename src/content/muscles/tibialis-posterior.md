@@ -32,7 +32,7 @@ jointInfluences:
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-390.png
+  file: gerrish-1902-fig-390.webp
   alt: Line drawing of tibialis posterior lying deep in the calf, its tendon passing behind the
     inner ankle bone to the arch of the foot.
   caption: "Tibialis posterior: outline and attachment areas."

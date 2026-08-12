@@ -18,7 +18,7 @@ plainLanguageGloss: The flat calf muscle underneath the visible one, which does 
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-386.png
+  file: gerrish-1902-fig-386.webp
   alt: Line drawing of the soleus lying beneath the calf, running from the shin bones to the heel
     without crossing the knee.
   caption: "Soleus: outline and attachment areas."

@@ -24,7 +24,7 @@ jointInfluences:
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-392.png
+  file: gerrish-1902-fig-392.webp
   alt: Line drawing of peroneus longus running down the outer side of the lower leg, its tendon
     passing behind the outer ankle bone.
   caption: "Peroneus longus, the larger of the peroneal group: outline and attachment areas."

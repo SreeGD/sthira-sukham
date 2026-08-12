@@ -20,7 +20,7 @@ plainLanguageGloss: The deep muscle running from your lower spine and pelvis to 
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-346.png
+  file: gerrish-1902-fig-346.webp
   alt: Line drawing of the psoas major running from the lower spine to the top of the thigh bone,
     with its attachment areas shaded.
   caption: "Psoas major, the larger half of iliopsoas: outline and attachment areas."

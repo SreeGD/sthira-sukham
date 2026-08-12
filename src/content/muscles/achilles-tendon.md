@@ -25,7 +25,7 @@ jointInfluences:
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gray-1918-plate-438.png
+  file: gray-1918-plate-438.webp
   alt: Anatomical drawing of the superficial calf muscles converging into the Achilles tendon at
     the heel.
   caption: The superficial calf and the Achilles tendon running to the heel.

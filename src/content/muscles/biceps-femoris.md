@@ -19,7 +19,7 @@ plainLanguageGloss: The hamstring on the outer side of the back of your thigh.
 sources:
   - neumann-kinesiology-2016
 illustration:
-  file: gerrish-1902-fig-370.png
+  file: gerrish-1902-fig-370.webp
   alt: Line drawing of the biceps femoris running down the back of the thigh to the outer side of
     the knee, with its attachment areas shaded.
   caption: "Biceps femoris (1902: biceps flexor cruris): outline and attachment areas."
