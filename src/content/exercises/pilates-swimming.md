@@ -6,6 +6,17 @@ modality: pilates
 startPosition: prone
 targets: [gluteus-maximus, biceps-femoris, semitendinosus, semimembranosus]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie face down, arms overhead.
+  - Draw the lower ribs toward the floor.
+  - Lift one arm and the opposite leg an inch.
+  - Lower, swap sides slowly.
+keyPoint: >-
+  An inch is enough. More range comes from arching the back, not the hip.
+feelItIn: >-
+  The buttock and the back of the thigh.
+commonMistake: >-
+  Arching the low back to lift higher.
 instructions:
   - Lie face down with your arms extended overhead and your forehead resting down.
   - Draw your lower ribs gently toward the floor so the lower back does not arch.

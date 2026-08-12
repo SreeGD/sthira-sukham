@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [vastus-medialis, vastus-lateralis, gluteus-medius, soleus]
 goal: [strength, motor-control]
+quickSteps:
+  - Step one foot a short way forward.
+  - Shift almost all weight onto the back leg.
+  - Rest only the front toe on the floor.
+  - Hold, then swap.
+keyPoint: >-
+  You should be able to lift the front foot without shifting first.
+feelItIn: >-
+  The back thigh and the side of that hip.
+commonMistake: >-
+  Leaving a third of your weight on the front foot without realising.
 instructions:
   - Stand with feet about shoulder-width apart, then step one foot a short way forward.
   - Shift almost all your weight onto the back leg, bending that knee, and rest only the toe or ball of the front foot lightly on the floor.

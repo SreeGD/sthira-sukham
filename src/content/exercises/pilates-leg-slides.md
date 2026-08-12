@@ -6,6 +6,17 @@ modality: pilates
 startPosition: supine
 targets: [iliopsoas, rectus-femoris, vastus-intermedius]
 goal: [motor-control]
+quickSteps:
+  - Lie down, knees bent, spine in its natural curve.
+  - Slide one heel out until the leg is straight.
+  - Slide it back. Pelvis does not move.
+  - Swap sides.
+keyPoint: >-
+  The pelvis staying still is the exercise. The leg is just the challenge.
+feelItIn: >-
+  The deep abdomen working to keep you still.
+commonMistake: >-
+  Letting the back arch as the leg straightens. Shorten the slide.
 instructions:
   - Lie on your back with both knees bent, feet flat, spine in its natural resting curve.
   - Find and keep that neutral spine position — neither flattened into the floor nor arched away from it.

@@ -6,6 +6,17 @@ modality: yoga
 startPosition: kneeling
 targets: [rectus-femoris, vastus-lateralis, vastus-medialis, vastus-intermedius]
 goal: [mobility]
+quickSteps:
+  - Kneel, knees together, feet just wider than hips.
+  - Put a cushion or block between your feet.
+  - Sit down onto it, not the floor.
+  - Sit tall and breathe.
+keyPoint: >-
+  Sit on enough height that it is easy. Most stiff knees need more than expected.
+feelItIn: >-
+  The front of the thighs.
+commonMistake: >-
+  Sitting too low. That compresses the joint instead of stretching the thigh.
 instructions:
   - Kneel with your knees together and your feet slightly wider than your hips, tops of the feet on the floor.
   - Place a block, cushion, or folded blanket between your feet, high enough that you sit on it without strain.

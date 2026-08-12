@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: standing-supported
 targets: [gastrocnemius]
 goal: [mobility]
+quickSteps:
+  - Hands on a wall, step one leg back.
+  - Keep that knee straight, heel down.
+  - Lean your hips toward the wall.
+  - Hold, then swap.
+keyPoint: >-
+  Back knee straight and heel down. Both, or you are stretching nothing.
+feelItIn: >-
+  The upper calf, the fleshy part.
+commonMistake: >-
+  Letting the back heel lift, which ends the stretch entirely.
 instructions:
   - Stand facing a wall with your hands on it at shoulder height.
   - Step the leg you want to stretch back, keeping that knee straight and the heel down.

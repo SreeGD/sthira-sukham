@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [vastus-intermedius, vastus-lateralis, vastus-medialis, soleus, gluteus-medius]
 goal: [strength, motor-control]
+quickSteps:
+  - Stand, feet shoulder-width and parallel.
+  - Soften the knees a few degrees only.
+  - Let the arms hang or rest in front.
+  - Stand and breathe.
+keyPoint: >-
+  A few degrees of bend, held for minutes. Not a squat.
+feelItIn: >-
+  The thighs working steadily to hold you up.
+commonMistake: >-
+  Bending deeper instead of standing longer.
 instructions:
   - Stand with your feet shoulder-width apart and parallel, weight even between them.
   - Soften the knees very slightly — a few degrees, not a squat — and let the tailbone drop.

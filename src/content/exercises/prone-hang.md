@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: prone
 targets: [biceps-femoris, semitendinosus, semimembranosus, popliteus, joint-capsule]
 goal: [mobility]
+quickSteps:
+  - Lie face down, shins off the end of the bed.
+  - Let the legs hang. Do not push.
+  - Rest there and breathe.
+  - Come off slowly.
+keyPoint: >-
+  Do nothing. Gravity and time are the whole exercise.
+feelItIn: >-
+  A gentle pull behind the knee as it settles toward straight.
+commonMistake: >-
+  Adding weight too early. If you want it to end, the load is already too high.
 instructions:
   - Lie face down on a bed or bench with your thighs supported and both shins hanging off the end from the knees down.
   - Let the legs hang. Do not push, pull, or bounce — the weight of the lower leg is the entire load.

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import MuscleActionMap from '../../components/diagrams/MuscleActionMap.astro';
 
 const muscles = (await getCollection('muscles')).sort((a, b) => a.data.order - b.data.order);
 const groups = [...new Set(muscles.map((m) => m.data.group ?? 'Other'))];
@@ -19,6 +20,8 @@ const REGION_NOTE: Record<string, string> = {
     {muscles.length} structures, each with what it does at the knee and how it contributes to
     stiffness. Several of them are not at the knee at all.
   </p>
+
+  <MuscleActionMap />
 
   <div class="callout">
     <p>

@@ -14,11 +14,15 @@
 import type { DiagramZone } from '../../lib/diagram-zones.ts';
 
 interface Props {
-  zone: DiagramZone;
-  /** Structure name, for the accessible description. */
+  /** One zone (a muscle page) or several (where an exercise should be felt). */
+  zone: DiagramZone | DiagramZone[];
+  /** Structure or exercise name, for the accessible description. */
   name: string;
+  /** Overrides the caption when several zones are lit. */
+  caption?: string;
 }
-const { zone, name } = Astro.props;
+const { zone, name, caption } = Astro.props;
+const zones: DiagramZone[] = Array.isArray(zone) ? zone : [zone];
 
 const SHAPES: Record<DiagramZone, { view: 'front' | 'back'; d: string; plain: string }> = {
   'hip-front': {
@@ -78,15 +82,22 @@ const SHAPES: Record<DiagramZone, { view: 'front' | 'back'; d: string; plain: st
   },
 };
 
-const active = SHAPES[zone];
-const cls = (z: DiagramZone) => (z === zone ? 'leg-zone is-active' : 'leg-zone');
+const cls = (z: DiagramZone) => (zones.includes(z) ? 'leg-zone is-active' : 'leg-zone');
+
+/** Join the plain-language names so the caption reads as a sentence, never as ids. */
+const plainList = zones.map((z) => SHAPES[z].plain);
+const plain =
+  plainList.length === 1
+    ? plainList[0]!
+    : plainList.slice(0, -1).join(', ') + ' and ' + plainList[plainList.length - 1];
+const captionText = caption ?? plain.charAt(0).toUpperCase() + plain.slice(1);
 ---
 
 <figure class="diagram diagram--locator">
   <svg viewBox="0 0 300 320" role="img" aria-labelledby="loc-title loc-desc" class="diagram__svg">
     <title id="loc-title">Where {name} sits</title>
     <desc id="loc-desc">
-      Simplified front and back views of a leg, with {active.plain} highlighted.
+      Simplified front and back views of a leg, with {plain} highlighted.
     </desc>
 
     <g aria-hidden="true">
@@ -105,7 +116,7 @@ const cls = (z: DiagramZone) => (z === zone ? 'leg-zone is-active' : 'leg-zone')
   <figcaption>
     <span class="leg-badge">
       <span aria-hidden="true">◆</span>
-      {active.plain.charAt(0).toUpperCase() + active.plain.slice(1)}
+      {captionText}
     </span>
   </figcaption>
 </figure>

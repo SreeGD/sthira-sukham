@@ -96,6 +96,34 @@ test.describe('mechanics diagrams', () => {
   });
 });
 
+test.describe('at a glance panel', () => {
+  test('leads with short steps and the three things that matter', async ({ page }) => {
+    await page.goto('/exercises/step-down/');
+    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.reload();
+    const glance = page.locator('.glance');
+    await expect(glance).toContainText('The one thing that matters');
+    await expect(glance).toContainText('You should feel it in');
+    await expect(glance).toContainText('Most common mistake');
+    const steps = glance.locator('.glance__steps > li');
+    expect(await steps.count()).toBeGreaterThanOrEqual(2);
+    // Short enough to read at arm's length mid-movement.
+    for (const text of await steps.allInnerTexts()) expect(text.length).toBeLessThanOrEqual(80);
+  });
+
+  test('appears above the detailed instructions, not below', async ({ page }) => {
+    await page.goto('/exercises/heel-slide/');
+    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.reload();
+    const order = await page.evaluate(() => {
+      const g = document.querySelector('.glance');
+      const d = [...document.querySelectorAll('h2')].find((h) => /more detail/i.test(h.textContent ?? ''));
+      return g && d ? g.compareDocumentPosition(d) & Node.DOCUMENT_POSITION_FOLLOWING : 0;
+    });
+    expect(order).toBeTruthy();
+  });
+});
+
 test.describe('exercise position figures', () => {
   const ONE_PER_POSITION = {
     supine: 'heel-slide',
@@ -109,15 +137,17 @@ test.describe('exercise position figures', () => {
   } as const;
 
   for (const [position, id] of Object.entries(ONE_PER_POSITION)) {
-    test(`${id} shows the ${position} figure with a text label`, async ({ page }) => {
+    test(`${id} names its ${position} position and shows where to feel it`, async ({ page }) => {
       await page.goto(`/exercises/${id}/`);
       await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
       await page.reload();
-      const fig = page.locator('figure.position').first();
-      await expect(fig).toBeVisible();
-      // The label is what carries the meaning; the drawing supports it.
-      await expect(fig.locator('figcaption')).toHaveText(/\w/);
-      await expect(fig.getByRole('img')).toHaveAccessibleName(/Starting position:/);
+      const glance = page.locator('.glance');
+      await expect(glance).toBeVisible();
+      // The position is stated in words rather than drawn — the drawing that
+      // replaced it answers "where should I feel this", which the text cannot.
+      await expect(glance.locator('.glance__position')).toHaveText(/\w/);
+      await expect(glance.getByRole('img')).toHaveAccessibleName(/Where .+ sits/);
+      await expect(glance.locator('.leg-badge')).toContainText(/feel it/i);
     });
   }
 

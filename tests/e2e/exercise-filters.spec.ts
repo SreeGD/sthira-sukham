@@ -37,9 +37,10 @@ test.describe('filtering (SC-008)', () => {
   });
 
   test('shows an explicit empty state with a clear action, not a bare empty list', async ({ page }) => {
-    // Reaching a no-match combination via the URL, since the UI disables
-    // zero-count options to prevent getting here by clicking.
-    await openLibrary(page, '?modality=yoga&goal=strength&difficulty=advanced&equipment=reformer');
+    // Reaching a no-match combination via the URL, since the UI disables zero-count
+    // options to prevent getting here by clicking. Both values must be ones the content
+    // actually uses — unknown values are ignored by design, so they would NOT be empty.
+    await openLibrary(page, '?modality=taichi-qigong&equipment=strap');
     const callout = page.locator('.callout', { hasText: 'No exercises match' });
     await expect(callout).toBeVisible();
     await expect(callout.getByRole('button', { name: /clear all filters/i })).toBeVisible();

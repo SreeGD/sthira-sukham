@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [rectus-femoris, vastus-lateralis, vastus-medialis, vastus-intermedius, popliteus]
 goal: [strength, motor-control]
+quickSteps:
+  - Stand, feet shoulder-width.
+  - Sink slowly by bending both knees.
+  - Take at least five seconds down.
+  - Rise just as slowly, no locking out.
+keyPoint: >-
+  The slow descent is the valuable half.
+feelItIn: >-
+  The front of the thighs working continuously.
+commonMistake: >-
+  Going deeper than you can control. Depth is the dial; use it.
 instructions:
   - Stand with feet shoulder-width apart, hands resting easily at your sides or in front of you.
   - Sink slowly by bending both knees, as though lowering into a very high chair. Keep your torso upright and your weight over the middle of your feet.

@@ -48,6 +48,12 @@ modality: clinical-rom
 startPosition: supine
 targets: [rectus-femoris]
 goal: [mobility]
+quickSteps:
+  - Step one.
+  - Step two.
+keyPoint: Not a real exercise.
+feelItIn: Nowhere.
+commonMistake: Doing it.
 instructions:
   - Step one.
   - Step two.

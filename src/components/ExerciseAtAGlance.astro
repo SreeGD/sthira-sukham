@@ -1,0 +1,110 @@
+---
+import LegLocator from './diagrams/LegLocator.astro';
+import type { DiagramZone } from '../lib/diagram-zones.ts';
+import { POSITION_LABEL, type StartPosition } from '../lib/positions.ts';
+
+/*
+ * The panel a reader actually uses while moving.
+ *
+ * It sits above the detailed instructions because the detail is read once, beforehand,
+ * and this is read repeatedly, on a floor, at arm's length. The old layout had it the
+ * other way round and led with a drawing of the starting position — which step one of
+ * the instructions already stated in words.
+ *
+ * The locator is derived from the exercise's target muscles, so "where you should feel
+ * it" needs no separate authoring and cannot disagree with the targets.
+ */
+
+interface Props {
+  quickSteps: string[];
+  keyPoint: string;
+  feelItIn: string;
+  commonMistake: string;
+  position: StartPosition;
+  feelZones: DiagramZone[];
+  name: string;
+}
+const { quickSteps, keyPoint, feelItIn, commonMistake, position, feelZones, name } = Astro.props;
+---
+
+<section class="glance" aria-label="At a glance">
+  <div class="glance__main">
+    <p class="glance__position">
+      <span class="tag">{POSITION_LABEL[position]}</span>
+    </p>
+
+    <ol class="glance__steps">
+      {quickSteps.map((step) => <li>{step}</li>)}
+    </ol>
+
+    <dl class="glance__points">
+      <dt>The one thing that matters</dt>
+      <dd>{keyPoint}</dd>
+      <dt>You should feel it in</dt>
+      <dd>{feelItIn}</dd>
+      <dt>Most common mistake</dt>
+      <dd>{commonMistake}</dd>
+    </dl>
+  </div>
+
+  {
+    feelZones.length > 0 && (
+      <div class="glance__figure">
+        <LegLocator zone={feelZones} name={name} caption="Where you should feel it" />
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .glance {
+    display: grid;
+    gap: var(--s-4);
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding: var(--s-4);
+    border: 2px solid var(--c-accent);
+    border-radius: var(--radius);
+    background: var(--c-accent-subtle);
+    margin-bottom: var(--s-5);
+  }
+  @media (min-width: 46rem) {
+    .glance {
+      grid-template-columns: 1fr auto;
+      gap: var(--s-5);
+    }
+  }
+  .glance__position {
+    margin: 0 0 var(--s-3);
+  }
+  .glance__steps {
+    margin: 0 0 var(--s-4);
+    padding-left: var(--s-5);
+    /* Bigger than body text: this is read at arm's length, mid-movement. */
+    font-size: var(--f-size-lg);
+    line-height: 1.5;
+  }
+  .glance__steps li + li {
+    margin-top: var(--s-2);
+  }
+  .glance__points {
+    margin: 0;
+    font-size: var(--f-size-sm);
+  }
+  .glance__points dt {
+    font-weight: 700;
+    color: var(--c-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--f-size-xs);
+  }
+  .glance__points dd {
+    margin: var(--s-1) 0 var(--s-3);
+  }
+  .glance__points dd:last-child {
+    margin-bottom: 0;
+  }
+  .glance__figure {
+    justify-self: center;
+  }
+</style>

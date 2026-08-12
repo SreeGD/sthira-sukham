@@ -6,6 +6,17 @@ modality: yoga
 startPosition: standing
 targets: [rectus-femoris, vastus-lateralis, vastus-medialis, gluteus-maximus, soleus]
 goal: [strength]
+quickSteps:
+  - Stand, feet hip-width.
+  - Bend the knees and sit the hips back.
+  - Weight through the heels.
+  - Hold, then straighten.
+keyPoint: >-
+  Sit back, not down. You should still see your toes past your knees.
+feelItIn: >-
+  The front of the thighs, burning.
+commonMistake: >-
+  Knees travelling forward past the toes, which loads the kneecap.
 instructions:
   - Stand with your feet hip-width apart.
   - Bend your knees and sit your hips back, as though lowering toward a chair behind you.

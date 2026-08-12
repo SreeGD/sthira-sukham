@@ -6,6 +6,17 @@ modality: yoga
 startPosition: supine
 targets: [biceps-femoris, semitendinosus, semimembranosus, joint-capsule]
 goal: [mobility]
+quickSteps:
+  - Sit sideways to a wall.
+  - Swing the legs up as you lie back.
+  - Knees softly bent, hips a comfortable distance out.
+  - Rest for several minutes.
+keyPoint: >-
+  Move the hips further from the wall. Most people start far too close.
+feelItIn: >-
+  A mild pull behind the thighs, and nothing else.
+commonMistake: >-
+  Hips jammed against the wall with locked knees.
 instructions:
   - Sit sideways with one hip against a wall, then swing your legs up the wall as you lie back.
   - Shuffle your hips as close to the wall as is comfortable — they do not need to touch it.

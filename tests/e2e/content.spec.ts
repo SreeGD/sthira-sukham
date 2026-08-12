@@ -86,7 +86,8 @@ test.describe('exercises (US3)', () => {
   test('detail pages carry every required field', async ({ page }) => {
     await ack(page, '/exercises/supta-padangusthasana/');
     const main = page.getByRole('main');
-    await expect(page.getByRole('heading', { name: 'How to do it' })).toBeVisible();
+    await expect(page.locator('.glance')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'In more detail' })).toBeVisible();
     await expect(main).toContainText('Typical dosage');
     await expect(page.getByRole('heading', { name: 'Do not do this if' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Stop if' })).toBeVisible();

@@ -6,6 +6,17 @@ modality: pilates
 startPosition: standing-supported
 targets: [biceps-femoris, semitendinosus, semimembranosus, gastrocnemius]
 goal: [mobility, motor-control]
+quickSteps:
+  - Stand with your back on a wall, knees soft.
+  - Drop your chin and roll down slowly.
+  - Peel the spine off one part at a time.
+  - Roll back up the same way.
+keyPoint: >-
+  Knees stay clearly bent. This is a spine exercise, not a hamstring stretch.
+feelItIn: >-
+  The spine articulating, and a gentle pull behind the thighs.
+commonMistake: >-
+  Straightening the knees, which turns it into an uncontrolled stretch.
 instructions:
   - Stand with your back against a wall, feet a short step forward, knees softly bent.
   - Drop your chin and roll down one vertebra at a time, peeling your spine away from the wall.

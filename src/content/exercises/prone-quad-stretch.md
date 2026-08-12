@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: prone
 targets: [rectus-femoris, vastus-lateralis, vastus-medialis, vastus-intermedius]
 goal: [mobility]
+quickSteps:
+  - Lie face down, strap round one ankle.
+  - Bring the strap over your shoulder.
+  - Draw the heel gently toward your bottom.
+  - Keep the hip pressed down. Hold.
+keyPoint: >-
+  The hip stays down. If it lifts, the stretch has moved to your back.
+feelItIn: >-
+  The front of the thigh, from hip to knee.
+commonMistake: >-
+  Arching the low back to get more range.
 instructions:
   - Lie face down with both legs straight and a strap or towel looped around one ankle.
   - Bring the strap over the same shoulder and take up the slack.

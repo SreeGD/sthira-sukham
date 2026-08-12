@@ -6,6 +6,17 @@ modality: yoga
 startPosition: supine
 targets: [gluteus-maximus, biceps-femoris, semitendinosus, semimembranosus]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie down, knees bent, feet hip-width.
+  - Press through the heels and lift the hips.
+  - Stop in a straight line, shoulders to knees.
+  - Lower slowly.
+keyPoint: >-
+  Squeeze the buttocks to lift. Height is not what makes it work.
+feelItIn: >-
+  The buttocks and the back of the thighs.
+commonMistake: >-
+  Hamstring cramp, which means the glutes are not taking their share.
 instructions:
   - Lie on your back with your knees bent and your feet flat, hip-width apart, heels a comfortable distance from your buttocks.
   - Press through your heels and lift your hips, starting from the tailbone and peeling the spine off the floor one part at a time.

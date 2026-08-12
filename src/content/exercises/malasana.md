@@ -6,6 +6,17 @@ modality: yoga
 startPosition: standing
 targets: [adductor-group, soleus, gluteus-maximus]
 goal: [mobility]
+quickSteps:
+  - Feet a bit wider than hips, toes turned out.
+  - Squat as low as is comfortable, heels down.
+  - Let the knees travel out over the feet.
+  - Hold, then stand slowly.
+keyPoint: >-
+  Sit onto a cushion at whatever height you have. Depth is not the aim.
+feelItIn: >-
+  The inner thighs and the calves.
+commonMistake: >-
+  Going deeper than the hips and ankles allow, so the knee absorbs it.
 instructions:
   - Stand with your feet a little wider than your hips, toes turned slightly out.
   - Lower into a squat as far as is comfortable, keeping your heels on the floor.

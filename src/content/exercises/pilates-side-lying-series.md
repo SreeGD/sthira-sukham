@@ -6,6 +6,17 @@ modality: pilates
 startPosition: side-lying
 targets: [gluteus-medius, gluteus-minimus, tensor-fasciae-latae, adductor-group]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie on your side, hips stacked, lower knee bent.
+  - Top leg straight, toes pointing forward.
+  - Lift to hip height. Lower slowly.
+  - Keep the top hip stacked.
+keyPoint: >-
+  Toes forward, not turned up. Turning out hands the work to the wrong muscle.
+feelItIn: >-
+  The side of the top hip.
+commonMistake: >-
+  Rolling the hip backward to lift higher.
 instructions:
   - Lie on your side with your hips stacked directly over one another and your head supported.
   - Bend the lower leg for stability and keep the top leg straight, in line with your body.

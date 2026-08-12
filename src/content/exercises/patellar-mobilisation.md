@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: seated
 targets: [retinaculum]
 goal: [mobility]
+quickSteps:
+  - Sit with the leg straight and fully relaxed.
+  - Hold the kneecap between thumb and finger.
+  - Glide it gently in each direction.
+  - Hold a few seconds each way.
+keyPoint: >-
+  The thigh must be completely switched off. A tense quad locks the kneecap.
+feelItIn: >-
+  Movement of the kneecap itself, not a muscle stretch.
+commonMistake: >-
+  Doing it with the leg tensed. If the kneecap will not move, you are not relaxed yet.
 instructions:
   - Sit with the leg straight out in front of you and the knee fully relaxed. This only works if the quadriceps is completely off.
   - Place a thumb and finger either side of the kneecap.

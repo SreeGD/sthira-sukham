@@ -6,6 +6,17 @@ modality: pilates
 startPosition: side-lying
 targets: [gluteus-maximus, gluteus-medius, iliopsoas, adductor-group]
 goal: [motor-control]
+quickSteps:
+  - Lie on your side, top leg straight at hip height.
+  - Swing it forward as far as control allows.
+  - Then swing it behind you.
+  - Torso stays completely still.
+keyPoint: >-
+  The torso does not move. Shorten the swing until that is true.
+feelItIn: >-
+  The front and back of the hip alternately.
+commonMistake: >-
+  Rocking the pelvis to get a longer swing.
 instructions:
   - Lie on your side with hips stacked, lower knee bent for stability, top leg straight and in line with your body.
   - Lift the top leg to hip height and hold it there.

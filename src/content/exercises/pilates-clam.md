@@ -6,6 +6,17 @@ modality: pilates
 startPosition: side-lying
 targets: [gluteus-medius, gluteus-minimus, tensor-fasciae-latae]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie on your side, hips stacked, knees bent.
+  - Heels together, in line with your back.
+  - Lift the top knee. Pelvis stays still.
+  - Lower slowly.
+keyPoint: >-
+  Hand on your top hip bone. Stop the moment it starts to roll.
+feelItIn: >-
+  The side of the top hip.
+commonMistake: >-
+  Rolling the pelvis back to lift the knee higher. That is not more range.
 instructions:
   - Lie on your side with your hips stacked, knees bent to about a right angle and heels in line with your back.
   - Rest your head on your lower arm and place your top hand on the floor in front for balance.

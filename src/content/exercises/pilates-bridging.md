@@ -6,6 +6,17 @@ modality: pilates
 startPosition: supine
 targets: [gluteus-maximus, biceps-femoris, semitendinosus]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie down, knees bent, feet flat.
+  - Tilt the pelvis, then peel the spine up.
+  - One part at a time, to the shoulder blades.
+  - Roll down the same way.
+keyPoint: >-
+  One vertebra at a time, both directions. Lifting as a block is a different exercise.
+feelItIn: >-
+  The buttocks, not the hamstrings.
+commonMistake: >-
+  Hamstring cramp. Bring the heels closer to shift the work to the glutes.
 instructions:
   - Lie on your back with knees bent, feet flat and hip-width apart.
   - Tilt the pelvis first, pressing the lower back gently toward the floor.

@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: supine
 targets: [rectus-femoris, vastus-intermedius, joint-capsule]
 goal: [mobility]
+quickSteps:
+  - Lie on your back, legs straight.
+  - Slide your heel toward your bottom.
+  - Stop at a firm stretch. Hold 5 seconds.
+  - Slide slowly back out to straight.
+keyPoint: >-
+  Keep the heel touching the surface the whole way. Lifting it lets the hip do the work.
+feelItIn: >-
+  A stretch across the front of the knee as it bends.
+commonMistake: >-
+  Rushing the slide back out. That half is where straightening gets its work.
 instructions:
   - Lie on your back with both legs straight, on a surface your heel can slide along.
   - Slide the heel of the stiff leg toward your buttock, keeping the heel in contact with the surface throughout.

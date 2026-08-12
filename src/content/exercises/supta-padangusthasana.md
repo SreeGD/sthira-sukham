@@ -6,6 +6,17 @@ modality: yoga
 startPosition: supine
 targets: [biceps-femoris, semitendinosus, semimembranosus, gastrocnemius]
 goal: [mobility]
+quickSteps:
+  - Lie on your back, strap round one foot.
+  - Raise that leg, knee softly bent.
+  - Straighten only as far as the pelvis stays down.
+  - Hold, then lower with a bent knee.
+keyPoint: >-
+  A straight leg is not the goal. A hamstring under gentle tension is.
+feelItIn: >-
+  The back of the raised thigh.
+commonMistake: >-
+  Straightening hard until the pelvis rolls back. Then it is a back stretch.
 instructions:
   - Lie on your back with both legs extended along the floor.
   - Loop a strap around the arch of one foot and raise that leg toward the ceiling, keeping the knee softly bent to begin with.

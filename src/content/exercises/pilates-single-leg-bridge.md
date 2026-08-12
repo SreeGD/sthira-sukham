@@ -6,6 +6,17 @@ modality: pilates
 startPosition: supine
 targets: [gluteus-maximus, gluteus-medius, biceps-femoris, semitendinosus]
 goal: [strength, motor-control]
+quickSteps:
+  - Bridge up with both feet down.
+  - Keeping hips level, lift one foot slightly.
+  - Hold. Replace it.
+  - Swap sides, then lower.
+keyPoint: >-
+  The hips staying level is the exercise. The lift is only the test.
+feelItIn: >-
+  The buttock of the standing side.
+commonMistake: >-
+  The pelvis dropping on the lifted side.
 instructions:
   - Lie on your back with knees bent and feet flat, hip-width apart.
   - Lift your hips into a bridge with both feet down, and settle there.

@@ -6,6 +6,17 @@ modality: yoga
 startPosition: quadruped
 targets: [gastrocnemius, biceps-femoris, semitendinosus, semimembranosus]
 goal: [mobility]
+quickSteps:
+  - From hands and knees, lift the hips up and back.
+  - Keep the knees generously bent.
+  - Lengthen the spine first.
+  - Only then ease the heels down.
+keyPoint: >-
+  Long spine first, straight legs second. Reversing that reaches nothing.
+feelItIn: >-
+  The back of the thighs and the calves.
+commonMistake: >-
+  Straightening the legs early, which rounds the back.
 instructions:
   - Start on hands and knees, hands slightly ahead of your shoulders.
   - Tuck your toes and lift your hips upward and backward, keeping your knees generously bent to begin with.

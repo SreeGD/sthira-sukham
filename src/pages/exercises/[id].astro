@@ -2,7 +2,8 @@
 import GatedLayout from '../../layouts/GatedLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import EvidenceBadge from '../../components/EvidenceBadge.astro';
-import PositionFigure from '../../components/diagrams/PositionFigure.astro';
+import ExerciseAtAGlance from '../../components/ExerciseAtAGlance.astro';
+import VideoSearchLink from '../../components/VideoSearchLink.astro';
 import { getCollection, getEntries, getEntry, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -33,6 +34,10 @@ const GOAL_LABEL: Record<string, string> = {
   'motor-control': 'Motor control',
 };
 const kit = d.equipment.filter((e) => e !== 'none');
+
+/* Zones come from the targets, deduplicated and capped: lighting up six regions
+   communicates less than lighting up two. */
+const feelZones = [...new Set(targets.map((m) => m.data.diagramZone))].slice(0, 3);
 ---
 <GatedLayout
   title={d.name}
@@ -57,15 +62,20 @@ const kit = d.equipment.filter((e) => e !== 'none');
     <p class="prose"><small>“{label.data.label}” means: {label.data.definition}</small></p>
   )}
 
+  <ExerciseAtAGlance
+    quickSteps={d.quickSteps}
+    keyPoint={d.keyPoint}
+    feelItIn={d.feelItIn}
+    commonMistake={d.commonMistake}
+    position={d.startPosition}
+    feelZones={feelZones}
+    name={d.name}
+  />
+
   <section class="section">
-    <h2>How to do it</h2>
-    <div class="how-to">
-      <div>
-        <ol class="steps">{d.instructions.map((step) => <li>{step}</li>)}</ol>
-        <p><strong>Typical dosage.</strong> {d.dosage}</p>
-      </div>
-      <PositionFigure position={d.startPosition} />
-    </div>
+    <h2>In more detail</h2>
+    <ol class="steps">{d.instructions.map((step) => <li>{step}</li>)}</ol>
+    <p><strong>Typical dosage.</strong> {d.dosage}</p>
   </section>
 
   {d.modifications.length > 0 && (
@@ -135,6 +145,8 @@ const kit = d.equipment.filter((e) => e !== 'none');
       )}
     </section>
   )}
+
+  <VideoSearchLink exercise={{ name: d.name, traditionalName: d.traditionalName, modality: d.modality }} />
 
   <SourceList refs={d.sources} />
 </GatedLayout>

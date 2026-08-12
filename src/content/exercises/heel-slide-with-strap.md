@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: supine
 targets: [rectus-femoris, vastus-intermedius, joint-capsule]
 goal: [mobility]
+quickSteps:
+  - Loop a strap around your foot.
+  - Slide the heel back as far as it goes.
+  - Pull gently with the strap. Hold.
+  - Release, then slide out slowly.
+keyPoint: >-
+  The strap adds a little at the end, not a lot throughout. Small pulls only.
+feelItIn: >-
+  A stretch at the front of the knee, never inside the joint.
+commonMistake: >-
+  Pulling hard. Your own muscles stop at pain; a strap will not.
 instructions:
   - Lie on your back with a strap, belt, or towel looped around the foot of the stiff leg.
   - Slide the heel toward your buttock as far as it will go on its own.

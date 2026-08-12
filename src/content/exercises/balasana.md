@@ -6,6 +6,17 @@ modality: yoga
 startPosition: kneeling
 targets: [rectus-femoris, vastus-intermedius, joint-capsule, gluteus-maximus]
 goal: [mobility]
+quickSteps:
+  - Kneel, knees hip-width, big toes together.
+  - Sit your hips back toward your heels.
+  - Walk the hands forward and rest down.
+  - Breathe.
+keyPoint: >-
+  A rolled towel behind the knees changes everything for a stiff knee.
+feelItIn: >-
+  The front of the thighs and the low back.
+commonMistake: >-
+  Kneeling on a hard floor with nothing behind the knees.
 instructions:
   - Kneel with your knees roughly hip-width apart and your big toes touching behind you.
   - Sit your hips back toward your heels, going only as far as the knees comfortably allow.

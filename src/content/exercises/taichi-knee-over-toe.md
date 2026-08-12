@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [vastus-medialis, gluteus-medius, gluteus-minimus]
 goal: [motor-control]
+quickSteps:
+  - Stand where you can see your knees.
+  - Bend both knees slowly, a short way.
+  - Watch each knee track over the middle of the foot.
+  - Straighten slowly, same tracking.
+keyPoint: >-
+  Watch. This fault is invisible from the inside.
+feelItIn: >-
+  The thigh working, with the knee staying in line.
+commonMistake: >-
+  Letting the knee drift inward, usually without noticing.
 instructions:
   - Stand with feet hip-width apart, near a mirror or somewhere you can see your knees.
   - Bend both knees slowly a short way, watching that each knee travels forward over the middle of the foot rather than drifting inward.

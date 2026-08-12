@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [gluteus-medius, gluteus-minimus, soleus, adductor-group]
 goal: [motor-control, strength]
+quickSteps:
+  - Stand, feet shoulder-width, knees soft.
+  - Shift your weight slowly onto one foot.
+  - Pause, then shift just as slowly back.
+  - Ten seconds per shift is not too slow.
+keyPoint: >-
+  Slowness is the exercise. Speed lets momentum do the work.
+feelItIn: >-
+  The side of the hip of the loaded leg.
+commonMistake: >-
+  Shifting quickly, so the stabilising muscles only get a brief pulse.
 instructions:
   - Stand with your feet shoulder-width apart, knees very slightly bent, weight even between them.
   - Slowly transfer your weight onto the right foot until the left is nearly unweighted, keeping your torso upright and not swaying sideways.

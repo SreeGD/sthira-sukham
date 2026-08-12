@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [gluteus-medius, gluteus-minimus, soleus, gastrocnemius, vastus-medialis]
 goal: [motor-control]
+quickSteps:
+  - Weight on one leg. Step the other heel down lightly.
+  - No weight on it yet.
+  - Transfer weight slowly, heel through to whole foot.
+  - Step the back foot through.
+keyPoint: >-
+  Place the heel with no weight on it. The standing leg stays in charge longer.
+feelItIn: >-
+  The side of the hip of the standing leg.
+commonMistake: >-
+  Walking normally but slower, instead of controlling each transfer.
 instructions:
   - Stand with your weight on one leg, near a wall or worktop you can touch if needed.
   - Step the other foot forward and place the heel down lightly, with no weight on it yet.

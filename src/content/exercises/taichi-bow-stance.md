@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [gluteus-maximus, iliopsoas, adductor-group, soleus]
 goal: [strength, motor-control]
+quickSteps:
+  - Step one foot forward, back foot turned out.
+  - Both heels stay down.
+  - Shift slowly forward onto the front leg.
+  - Shift slowly back. Swap sides.
+keyPoint: >-
+  The back heel stays down. Lifting it removes most of the point.
+feelItIn: >-
+  The front thigh, and the back hip and calf lengthening.
+commonMistake: >-
+  Lifting the back heel to make the shift easier.
 instructions:
   - Step one foot forward into a comfortable stride, front foot pointing ahead and back foot turned out about 45 degrees.
   - Keep both heels on the floor and your torso upright over your hips.

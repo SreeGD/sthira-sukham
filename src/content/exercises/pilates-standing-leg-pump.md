@@ -6,6 +6,17 @@ modality: pilates
 startPosition: standing-supported
 targets: [vastus-medialis, vastus-lateralis, gastrocnemius, soleus]
 goal: [strength, motor-control]
+quickSteps:
+  - Hold a chair. Feet hip-width.
+  - Bend both knees a small way.
+  - Straighten without locking out.
+  - Then rise onto your toes and lower slowly.
+keyPoint: >-
+  A small bend done well beats a deep one with the knees drifting.
+feelItIn: >-
+  The thighs on the bend, the calves on the raise.
+commonMistake: >-
+  Going too deep and losing the knee alignment.
 instructions:
   - Stand with your feet hip-width apart, holding a chair back or worktop lightly for balance.
   - Bend both knees a small way, keeping your heels down and your knees tracking over your second toes.

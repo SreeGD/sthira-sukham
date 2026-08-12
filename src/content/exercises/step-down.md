@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: standing-supported
 targets: [vastus-medialis, vastus-lateralis, gluteus-medius, gluteus-maximus]
 goal: [strength, motor-control]
+quickSteps:
+  - Stand on a low step, one foot free.
+  - Bend the standing knee slowly.
+  - Touch the free heel down lightly.
+  - Push back up. Repeat.
+keyPoint: >-
+  Lower slowly. The descent is the whole exercise.
+feelItIn: >-
+  The front of the standing thigh, and the side of that hip.
+commonMistake: >-
+  Starting too high. Begin with a single book.
 instructions:
   - Stand on a low step with one foot, the other foot free over the edge, holding a rail or wall for balance.
   - Bend the standing knee slowly to lower the free heel toward the floor, keeping the knee tracking over the middle of the foot.

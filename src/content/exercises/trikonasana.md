@@ -6,6 +6,17 @@ modality: yoga
 startPosition: standing
 targets: [biceps-femoris, semimembranosus, adductor-group, tensor-fasciae-latae]
 goal: [mobility]
+quickSteps:
+  - Feet wide, front foot turned out.
+  - Keep a small bend in the front knee.
+  - Reach out, then tip sideways from the hip.
+  - Lower hand to shin or a block.
+keyPoint: >-
+  Keep the front knee softly bent. Never let it lock backward.
+feelItIn: >-
+  The back and inner side of the front thigh.
+commonMistake: >-
+  Pushing the front knee past straight into hyperextension.
 instructions:
   - Stand with your feet wide apart, the front foot turned out and the back foot turned in slightly.
   - Keep both legs straight but do not lock the front knee — leave a small softness in it.

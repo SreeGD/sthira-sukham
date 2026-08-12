@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: seated
 targets: [rectus-femoris, vastus-intermedius, biceps-femoris, joint-capsule, gastrocnemius]
 goal: [mobility]
+quickSteps:
+  - Set the saddle high. Resistance very low.
+  - Rock the pedals if you cannot do a full turn.
+  - Once looser, lower the saddle a little.
+  - Keep it easy throughout.
+keyPoint: >-
+  Saddle height is the dial. High asks less bend; lower asks more.
+feelItIn: >-
+  The knee moving more freely, not the thigh burning.
+commonMistake: >-
+  Adding resistance. This is about range, not effort.
 instructions:
   - Set the saddle high enough that the knee never has to bend further than is comfortable, then sit on the bike.
   - If a full revolution is not available, rock the pedals back and forth through the range you have rather than forcing a circle.

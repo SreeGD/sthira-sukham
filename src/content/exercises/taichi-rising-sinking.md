@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [rectus-femoris, vastus-intermedius, soleus, gluteus-maximus, popliteus]
 goal: [mobility, motor-control]
+quickSteps:
+  - Stand, knees soft, arms hanging.
+  - 'Breathe in: straighten, arms float up.'
+  - 'Breathe out: sink, arms settle down.'
+  - Keep it continuous.
+keyPoint: >-
+  Tie it to the breath. That sets a pace slow enough to matter.
+feelItIn: >-
+  The knee moving freely through a small range.
+commonMistake: >-
+  Speeding up, so momentum carries the movement.
 instructions:
   - Stand with feet shoulder-width apart, knees soft, arms hanging.
   - As you breathe in, straighten the legs slowly and let the arms float up in front of you to about shoulder height.

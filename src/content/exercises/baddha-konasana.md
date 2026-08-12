@@ -6,6 +6,17 @@ modality: yoga
 startPosition: seated
 targets: [adductor-group, gluteus-medius, gluteus-minimus]
 goal: [mobility]
+quickSteps:
+  - Sit, soles of the feet together.
+  - Sit up tall on a cushion.
+  - Let the knees fall out. Do not push them.
+  - Hold, then bring the knees together by hand.
+keyPoint: >-
+  Never push the knees down. Support them on cushions instead.
+feelItIn: >-
+  The inner thighs and the hips.
+commonMistake: >-
+  Pressing the knees toward the floor, which levers the knee joint.
 instructions:
   - Sit on the floor with the soles of your feet together and your knees falling out to the sides.
   - Sit up tall, lifting through the crown of the head rather than rounding the lower back.

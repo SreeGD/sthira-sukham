@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: supine
 targets: [vastus-medialis, vastus-lateralis, vastus-intermedius]
 goal: [strength, motor-control]
+quickSteps:
+  - Put a rolled towel under the knee.
+  - Lift only the heel to straighten the knee.
+  - Squeeze the thigh. Hold 5 seconds.
+  - Lower the heel slowly.
+keyPoint: >-
+  The back of the knee stays pressed into the roll throughout.
+feelItIn: >-
+  The muscle just above and inside the kneecap tightening.
+commonMistake: >-
+  Lifting the whole leg instead of just the heel.
 instructions:
   - Sit or lie with a rolled towel or small cushion under the knee so it rests slightly bent.
   - Straighten the knee by lifting only the heel, keeping the back of the knee pressed down onto the roll.

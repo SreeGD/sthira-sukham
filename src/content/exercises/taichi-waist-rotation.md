@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [gluteus-medius, gluteus-minimus, adductor-group, tensor-fasciae-latae, popliteus]
 goal: [mobility, motor-control]
+quickSteps:
+  - Stand, feet shoulder-width, knees slightly bent.
+  - Turn the waist and hips slowly to one side.
+  - Let the knees turn with the hips.
+  - Turn slowly to the other side.
+keyPoint: >-
+  The knees turn with the hips. Never twist against planted feet.
+feelItIn: >-
+  The hips rotating, not the knees.
+commonMistake: >-
+  Keeping the feet and knees fixed while turning, which twists the knee joint.
 instructions:
   - Stand with feet shoulder-width apart, knees very slightly bent, arms hanging loosely.
   - Turn your waist and hips slowly to one side, letting the arms swing along without effort.

@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: supine
 targets: [vastus-medialis, vastus-lateralis, vastus-intermedius, rectus-femoris]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie down, towel under your ankle.
+  - Tighten the thigh, press the knee down.
+  - Hold 5 to 10 seconds. Keep breathing.
+  - Release fully before the next one.
+keyPoint: >-
+  Feel the muscle actually tighten. If nothing happens, nothing is being trained.
+feelItIn: >-
+  The whole front of the thigh firming up.
+commonMistake: >-
+  Holding your breath. Breathe normally throughout.
 instructions:
   - Lie on your back with the leg straight out in front of you and a small rolled towel under your ankle, so the knee is unsupported.
   - Tighten the muscle on the front of the thigh, pressing the back of the knee gently down toward the floor.

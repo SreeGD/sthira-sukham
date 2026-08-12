@@ -6,6 +6,17 @@ modality: pilates
 startPosition: supine
 targets: [vastus-medialis, vastus-lateralis, soleus, gluteus-maximus]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie down, feet on a wall, knees bent.
+  - Knees point over your second toes.
+  - Press part-way straight.
+  - Bend back slowly, watching the knees.
+keyPoint: >-
+  Watch the knees the whole time. They must not drift inward.
+feelItIn: >-
+  The front of the thighs and the buttocks.
+commonMistake: >-
+  Rushing the return, which is where the control is trained.
 instructions:
   - Lie on your back with your knees bent and your feet flat on a wall, hip-width apart, knees at roughly a right angle.
   - Check that your knees point in the same direction as your second toe, and keep them there.

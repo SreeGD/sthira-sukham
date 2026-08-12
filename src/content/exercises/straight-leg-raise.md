@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: supine
 targets: [rectus-femoris, vastus-intermedius, iliopsoas]
 goal: [strength, motor-control]
+quickSteps:
+  - Lie down, other knee bent, foot flat.
+  - Lock the working knee straight first.
+  - Lift the straight leg to knee height.
+  - Lower slowly.
+keyPoint: >-
+  Lock the knee before you lift. Lifting first makes it a hip exercise.
+feelItIn: >-
+  The front of the thigh, working hard.
+commonMistake: >-
+  The knee sagging into a bend partway up. Lower the height instead.
 instructions:
   - Lie on your back with the working leg straight and the other knee bent, foot flat on the floor.
   - Tighten the thigh muscle first and lock the knee straight — this comes before any lifting.

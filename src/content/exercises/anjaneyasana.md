@@ -6,6 +6,17 @@ modality: yoga
 startPosition: kneeling
 targets: [iliopsoas, rectus-femoris, gluteus-maximus]
 goal: [mobility]
+quickSteps:
+  - Kneel, step one foot forward, shin upright.
+  - Pad the back knee well.
+  - Tuck your tailbone under.
+  - Ease forward a little. Hold.
+keyPoint: >-
+  The tailbone tuck is what stretches the hip. Not lunging further.
+feelItIn: >-
+  The front of the back hip.
+commonMistake: >-
+  Feeling it in the low back, which means the tuck is missing.
 instructions:
   - From kneeling, step one foot forward so that shin is roughly vertical, with the back knee resting on the floor.
   - Pad the back knee with a folded blanket.

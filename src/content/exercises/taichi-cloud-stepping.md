@@ -6,6 +6,17 @@ modality: taichi-qigong
 startPosition: standing
 targets: [gluteus-medius, gluteus-minimus, adductor-group, tensor-fasciae-latae]
 goal: [motor-control]
+quickSteps:
+  - Shift fully onto one foot.
+  - Step the other foot out to the side, lightly.
+  - Transfer weight slowly onto it.
+  - Draw the first foot in. Continue.
+keyPoint: >-
+  Place the moving foot with no weight on it at all.
+feelItIn: >-
+  The side of the hip of the standing leg.
+commonMistake: >-
+  Falling onto the new foot, which turns it into ordinary walking.
 instructions:
   - Stand with feet hip-width apart, knees softly bent, near a wall or worktop you can touch if needed.
   - Shift your weight fully onto the left foot, then step the right foot out to the side, placing it lightly without weight.

@@ -216,7 +216,20 @@ const exercises = defineCollection({
       startPosition: z.enum(START_POSITIONS),
       targets: z.array(reference('muscles')).min(1),
       goal: z.array(z.enum(GOALS)).min(1),
+      /*
+       * Two levels, deliberately. `quickSteps` is what a reader follows while actually
+       * doing the movement — short imperatives, readable at arm's length on a phone.
+       * `instructions` carries the detail they read once beforehand. A single level
+       * cannot serve both: detailed enough to be correct is too long to follow on a mat.
+       */
+      quickSteps: z.array(z.string().min(1).max(80)).min(2).max(5),
       instructions: z.array(z.string().min(1)).min(2),
+      /** The single thing that decides whether the movement does anything. */
+      keyPoint: z.string().min(1),
+      /** Where it should be felt — the answer to "am I doing this right?". */
+      feelItIn: z.string().min(1),
+      /** The characteristic fault. Every exercise has one; naming it prevents it. */
+      commonMistake: z.string().min(1),
       dosage: z.string().min(1),
       difficulty: z.enum(DIFFICULTIES),
       regressions: z.array(reference('exercises')).default([]),

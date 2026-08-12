@@ -4,6 +4,17 @@ modality: clinical-rom
 startPosition: supine
 targets: [rectus-femoris, vastus-medialis, vastus-intermedius, joint-capsule]
 goal: [mobility]
+quickSteps:
+  - Lie on your back with a leg up the wall.
+  - Let the heel slide slowly down.
+  - Rest at a firm stretch.
+  - Push the heel back up with your hands.
+keyPoint: >-
+  Let gravity bend the knee. If you are gripping, nothing is stretching.
+feelItIn: >-
+  A stretch at the front of the knee.
+commonMistake: >-
+  Tensing the thigh to control the slide, which fights the stretch.
 instructions:
   - Lie on your back close to a wall, with the leg you are working resting up against it, heel on the wall.
   - Let the heel slide slowly down the wall, allowing the knee to bend, using gravity rather than muscle.
