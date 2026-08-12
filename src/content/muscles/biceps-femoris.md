@@ -1,23 +1,32 @@
 ---
 anatomicalName: Biceps femoris
 commonName: The outer hamstring
-abbreviations: [BF]
+abbreviations:
+  - BF
 region: knee
 group: Hamstrings
 isContractile: true
 diagramZone: thigh-back
 order: 21
-roleInKneeMotion: >-
-  Bends the knee and rotates the lower leg outward. Its long head also extends the hip,
-  crossing both joints.
+roleInKneeMotion: Bends the knee and rotates the lower leg outward. Its long head also extends
+  the hip, crossing both joints.
 stiffnessContribution:
-  whenTight: >-
-    Resists full knee straightening and tilts the pelvis backward, which is felt as
+  whenTight: Resists full knee straightening and tilts the pelvis backward, which is felt as
     tightness behind the knee and often as a knee that will not quite straighten.
   whenWeak: Reduces control of the leg as it swings forward while walking.
   whenInhibited: Common after hamstring injury; the muscle stays quiet well after the tissue heals.
 plainLanguageGloss: The hamstring on the outer side of the back of your thigh.
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
+illustration:
+  file: gerrish-1902-fig-370.png
+  alt: Line drawing of the biceps femoris running down the back of the thigh to the outer side of
+    the knee, with its attachment areas shaded.
+  caption: "Biceps femoris (1902: biceps flexor cruris): outline and attachment areas."
+  credit: Frederick Henry Gerrish, Text-book of Anatomy
+  year: 1902
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._370.png
 ---
 
 The lateral hamstring, and the one people most often notice, because its tendon stands out

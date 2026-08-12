@@ -1,7 +1,8 @@
 ---
 anatomicalName: Semitendinosus
 commonName: The inner hamstring, the stringy one
-abbreviations: [ST]
+abbreviations:
+  - ST
 region: knee
 group: Hamstrings
 isContractile: true
@@ -12,8 +13,19 @@ stiffnessContribution:
   whenTight: Resists full knee straightening and pulls the pelvis into a backward tilt.
   whenWeak: Reduces hip extension power and control of the leg during walking.
   whenInhibited: Often quiet after injury or surgery, particularly where its tendon has been used as a graft.
-plainLanguageGloss: One of the two hamstrings on the inner side of the back of your thigh, with a long cord-like tendon.
-sources: [neumann-kinesiology-2016]
+plainLanguageGloss: One of the two hamstrings on the inner side of the back of your thigh, with
+  a long cord-like tendon.
+sources:
+  - neumann-kinesiology-2016
+illustration:
+  file: gerrish-1902-fig-371.png
+  alt: Line drawing of the semitendinosus running down the inner side of the back of the thigh,
+    showing its long cord-like tendon.
+  caption: "Semitendinosus: outline and attachment areas."
+  credit: Frederick Henry Gerrish, Text-book of Anatomy
+  year: 1902
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._371.png
 ---
 
 Named for its unusually long tendon, which you can feel as a distinct cord on the inner side

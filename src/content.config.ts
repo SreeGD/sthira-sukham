@@ -166,6 +166,26 @@ const muscles = defineCollection({
       presentsAsKneeStiffness: z.string().optional(),
       plainLanguageGloss: z.string().min(1),
       noExercisesNote: z.string().optional(),
+      /*
+       * Historical anatomical plate, bundled locally.
+       *
+       * Constitution Content Standards: illustration must be originally authored or
+       * carry a licence permitting redistribution, RECORDED IN THE RECORD. So every
+       * provenance field is required — an image whose licence lives only in a commit
+       * message or someone's memory is indistinguishable from one taken without
+       * permission. `credit` and `licence` are rendered to the reader, not just stored.
+       */
+      illustration: z
+        .object({
+          file: z.string().min(1),
+          alt: z.string().min(1),
+          caption: z.string().min(1),
+          credit: z.string().min(1),
+          year: z.number().int(),
+          licence: z.string().min(1),
+          sourceUrl: z.string().url(),
+        })
+        .optional(),
       sources: z.array(reference('sources')).min(1),
     })
     .superRefine((m, ctx) => {

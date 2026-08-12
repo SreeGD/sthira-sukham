@@ -7,16 +7,25 @@ group: Non-contractile structures
 isContractile: false
 diagramZone: knee-front
 order: 61
-roleInKneeMotion: >-
-  Not a muscle and cannot pull. It encloses the joint, holds the lubricating fluid in, and
-  passively limits the extremes of the range.
+roleInKneeMotion: Not a muscle and cannot pull. It encloses the joint, holds the lubricating
+  fluid in, and passively limits the extremes of the range.
 stiffnessContribution:
-  whenTight: >-
-    Restricts range in a firm, springy, consistent way that does not change much with
-    warming up — the signature of a passive restriction rather than a muscular one. It
-    tightens after prolonged immobilisation and with arthritic change.
+  whenTight: Restricts range in a firm, springy, consistent way that does not change much with
+    warming up — the signature of a passive restriction rather than a muscular one. It tightens
+    after prolonged immobilisation and with arthritic change.
 plainLanguageGloss: The fibrous bag that surrounds the knee joint and holds its lubricating fluid.
-sources: [neumann-kinesiology-2016, aaos-knee-arthritis]
+sources:
+  - neumann-kinesiology-2016
+  - aaos-knee-arthritis
+illustration:
+  file: gray-1918-plate-346.png
+  alt: Anatomical drawing of the right knee joint seen from behind, showing the joint capsule and
+    the ligaments at the back of the joint.
+  caption: Right knee joint, posterior view.
+  credit: Henry Vandyke Carter, Gray's Anatomy
+  year: 1918
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gray346.png
 ---
 
 The capsule is passive tissue, which changes what can be done about it. It cannot be

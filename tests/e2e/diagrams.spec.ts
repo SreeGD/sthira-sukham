@@ -173,3 +173,44 @@ test.describe('exercise position figures', () => {
     expect(islandLabels.sort()).toEqual(staticLabels.sort());
   });
 });
+
+test.describe('anatomical plates', () => {
+  const MUSCLES = [
+    'rectus-femoris', 'vastus-lateralis', 'vastus-medialis', 'vastus-intermedius',
+    'biceps-femoris', 'semitendinosus', 'semimembranosus', 'gastrocnemius', 'soleus',
+    'popliteus', 'tensor-fasciae-latae', 'adductor-group', 'gluteus-maximus',
+    'gluteus-medius', 'gluteus-minimus', 'iliopsoas', 'joint-capsule', 'retinaculum',
+    'iliotibial-band',
+  ];
+
+  for (const id of MUSCLES) {
+    test(`${id} shows its plate with visible attribution`, async ({ page }) => {
+      await page.goto(`/muscles/${id}/`);
+      const plate = page.locator('figure.plate');
+      await expect(plate).toBeVisible();
+
+      const img = plate.locator('img');
+      // A broken image under a perfectly correct credit is still a broken image.
+      // A real description, not a filename or a stub. `\w{20,}` would demand 20
+      // CONSECUTIVE word characters, which no real sentence has.
+      const alt = await img.getAttribute('alt');
+      expect(alt?.length ?? 0).toBeGreaterThan(40);
+      expect(alt).toMatch(/\s/);
+      // These load lazily, so they must be scrolled into view before naturalWidth
+      // means anything — otherwise this asserts nothing and passes on a 404.
+      await img.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() => img.evaluate((el: HTMLImageElement) => el.naturalWidth), { timeout: 10_000 })
+        .toBeGreaterThan(0);
+
+      // The licence must be readable by the reader, not merely stored in the data.
+      await expect(plate.locator('.plate__credit')).toContainText(/Public domain/);
+      await expect(plate.locator('.plate__credit a')).toHaveAttribute('href', /commons\.wikimedia\.org/);
+    });
+  }
+
+  test('plates are lazily loaded so they do not block the page', async ({ page }) => {
+    await page.goto('/muscles/soleus/');
+    await expect(page.locator('figure.plate img')).toHaveAttribute('loading', 'lazy');
+  });
+});

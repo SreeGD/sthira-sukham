@@ -672,3 +672,18 @@ html[data-ack='1'] [data-testid='red-flag-gate'] {
   color: var(--c-text-muted);
   max-width: var(--measure);
 }
+
+/* Locator and historical plate stack on narrow screens, sit side by side when there
+   is room. The locator answers "where is it"; the plate shows what it looks like. */
+.muscle-figures {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+@media (min-width: 62rem) {
+  .muscle-figures {
+    grid-template-columns: auto auto;
+    align-items: start;
+  }
+}

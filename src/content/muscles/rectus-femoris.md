@@ -1,28 +1,35 @@
 ---
 anatomicalName: Rectus femoris
 commonName: The middle quad, the one that crosses the hip too
-abbreviations: [RF]
+abbreviations:
+  - RF
 region: knee
 group: Quadriceps
 isContractile: true
 diagramZone: thigh-front
 order: 11
-roleInKneeMotion: >-
-  Straightens the knee, and is the only quadriceps head that also flexes the hip — it
-  crosses both joints.
+roleInKneeMotion: Straightens the knee, and is the only quadriceps head that also flexes the hip
+  — it crosses both joints.
 stiffnessContribution:
-  whenTight: >-
-    Because it spans hip and knee, it pulls at both ends. Tightness limits knee bending
-    most obviously when the hip is straight — which is why the same knee bends further
-    when you are lying on your side than face down.
-  whenWeak: >-
-    Loses the last part of knee straightening, so the knee sits slightly bent at rest and
+  whenTight: Because it spans hip and knee, it pulls at both ends. Tightness limits knee bending
+    most obviously when the hip is straight — which is why the same knee bends further when you
+    are lying on your side than face down.
+  whenWeak: Loses the last part of knee straightening, so the knee sits slightly bent at rest and
     the leg is worked harder on stairs and hills.
-  whenInhibited: >-
-    Switches off readily when the knee is swollen or painful, and does not automatically
-    switch back on when the swelling settles.
+  whenInhibited: Switches off readily when the knee is swollen or painful, and does not
+    automatically switch back on when the swelling settles.
 plainLanguageGloss: The long muscle down the front of the thigh that both straightens the knee and lifts the thigh.
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
+illustration:
+  file: gerrish-1902-fig-376.png
+  alt: Line drawing of the rectus femoris muscle, running down the front of the thigh from the
+    pelvis to the kneecap, with its attachment areas shaded on the underlying bone.
+  caption: "Rectus femoris: outline and attachment areas."
+  credit: Frederick Henry Gerrish, Text-book of Anatomy
+  year: 1902
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._376.png
 ---
 
 Rectus femoris matters out of proportion to its size because it is the only one of the four

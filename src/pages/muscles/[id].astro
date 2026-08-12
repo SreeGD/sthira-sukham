@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import LegLocator from '../../components/diagrams/LegLocator.astro';
+import AnatomyPlate from '../../components/AnatomyPlate.astro';
 import ExerciseCard from '../../components/ExerciseCard.astro';
 import RedFlagGate from '../../components/RedFlagGate.astro';
 import ClinicianFraming from '../../components/ClinicianFraming.astro';
@@ -41,7 +42,10 @@ const targeting = exercisesForMuscle(index, entry.id).map((x) => x.entry);
       <h2>What it does at the knee</h2>
       <p>{d.roleInKneeMotion}</p>
     </div>
-    <LegLocator zone={d.diagramZone} name={d.anatomicalName} />
+    <div class="muscle-figures">
+      <LegLocator zone={d.diagramZone} name={d.anatomicalName} />
+      {d.illustration && <AnatomyPlate illustration={d.illustration} />}
+    </div>
   </section>
 
   {d.presentsAsKneeStiffness && (

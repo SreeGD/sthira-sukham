@@ -18,6 +18,8 @@
  *    over the whole collection (SC-005, SC-006, FR-004, FR-009, FR-011, FR-026).
  */
 
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import type { Record_ } from './content-loader.ts';
 
 export interface Collections {
@@ -241,7 +243,27 @@ export function checkContent(c: Collections): PolicyResult {
     fail(`Expected at least ${MIN_ROUTINES} routines, found ${c.routines.length} (FR-026).`);
   }
 
-  // 10. Source hygiene.
+  // 10. Illustration provenance (Constitution Content Standards).
+  //     An image whose licence is not recorded beside it is indistinguishable from one
+  //     taken without permission, so the licence, credit and source URL are all required
+  //     — and the file must actually exist, or the page renders a broken image with a
+  //     perfectly correct attribution under it.
+  for (const muscle of c.muscles) {
+    const ill = muscle.data.illustration as Record<string, unknown> | undefined;
+    if (!ill) continue;
+    for (const field of ['file', 'alt', 'caption', 'credit', 'year', 'licence', 'sourceUrl']) {
+      if (!ill[field]) fail(`${muscle.file}: illustration is missing "${field}".`);
+    }
+    if (ill.file && !existsSync(join('public/anatomy', String(ill.file)))) {
+      fail(`${muscle.file}: illustration file "public/anatomy/${String(ill.file)}" does not exist.`);
+    }
+  }
+  {
+    const withPlate = c.muscles.filter((m) => m.data.illustration).length;
+    notes.push(`Anatomical plates: ${withPlate} of ${c.muscles.length} muscles illustrated`);
+  }
+
+  // 11. Source hygiene.
   const seen = new Set<string>();
   for (const source of c.sources) {
     if (seen.has(source.id)) fail(`Duplicate source id "${source.id}" (${source.file}).`);

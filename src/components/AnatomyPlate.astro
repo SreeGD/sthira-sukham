@@ -1,0 +1,86 @@
+---
+/*
+ * A historical anatomical plate with its provenance shown, not merely stored.
+ *
+ * These are public-domain scans bundled into the build — Principle V forbids fetching
+ * them at runtime, and the Content Standards require the licence to be recorded in the
+ * record. Attribution renders beneath the image because a licence nobody can see is a
+ * licence nobody can check.
+ *
+ * The plates are period drawings and use period names (vastus externus, tensor vaginae
+ * femoris). The caption says which modern structure is shown, so a reader is never left
+ * matching an unfamiliar Latin label to the page they are on.
+ */
+
+interface Props {
+  illustration: {
+    file: string;
+    alt: string;
+    caption: string;
+    credit: string;
+    year: number;
+    licence: string;
+    sourceUrl: string;
+  };
+}
+const { illustration: i } = Astro.props;
+---
+
+<figure class="plate">
+  <img
+    src={`/anatomy/${i.file}`}
+    alt={i.alt}
+    loading="lazy"
+    decoding="async"
+    width="620"
+  />
+  <figcaption>
+    <p class="plate__caption">{i.caption}</p>
+    <p class="plate__credit">
+      {i.credit}, {i.year}. <span class="plate__licence">{i.licence}</span> —
+      <a href={i.sourceUrl} target="_blank" rel="noopener noreferrer">source<span
+          aria-hidden="true">↗</span></a>
+    </p>
+  </figcaption>
+</figure>
+
+<style>
+  .plate {
+    margin: 0 0 var(--s-5);
+    padding: var(--s-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    background: var(--c-diagram-bg);
+    max-width: 22rem;
+  }
+  .plate img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    /* The scans are on white paper; in dark mode they would glare. A slight knock-back
+       keeps them legible without inverting anatomy, which would look wrong. */
+    background: #fff;
+  }
+  :root[data-theme='dark'] .plate img,
+  :root:not([data-theme='light']) .plate img {
+    filter: brightness(0.92);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme='dark']) .plate img {
+      filter: none;
+    }
+  }
+  .plate__caption {
+    margin: var(--s-3) 0 var(--s-1);
+    font-size: var(--f-size-sm);
+  }
+  .plate__credit {
+    margin: 0;
+    font-size: var(--f-size-xs);
+    color: var(--c-text-muted);
+  }
+  .plate__licence {
+    font-weight: 600;
+  }
+</style>

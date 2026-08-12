@@ -7,16 +7,24 @@ group: Non-contractile structures
 isContractile: false
 diagramZone: knee-front
 order: 62
-roleInKneeMotion: >-
-  Not a muscle. Sheets of fibrous tissue either side of the kneecap that hold it in its
-  groove and passively restrain how far it can slide sideways.
+roleInKneeMotion: Not a muscle. Sheets of fibrous tissue either side of the kneecap that hold it
+  in its groove and passively restrain how far it can slide sideways.
 stiffnessContribution:
-  whenTight: >-
-    A tight lateral retinaculum holds the kneecap slightly outward in its groove and resists
-    it moving inward. This shows as front-of-knee stiffness, most noticeable after sitting
-    with the knee bent for a long time.
+  whenTight: A tight lateral retinaculum holds the kneecap slightly outward in its groove and
+    resists it moving inward. This shows as front-of-knee stiffness, most noticeable after
+    sitting with the knee bent for a long time.
 plainLanguageGloss: Sheets of tough tissue either side of your kneecap that stop it sliding out of its groove.
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
+illustration:
+  file: gray-1918-plate-345.png
+  alt: Anatomical drawing of the right knee joint seen from the front, showing the kneecap and the
+    tissue holding it in position either side.
+  caption: Right knee joint, anterior view, showing the patella and its surrounding tissue.
+  credit: Henry Vandyke Carter, Gray's Anatomy
+  year: 1918
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gray345.png
 ---
 
 The retinaculum is what keeps the kneecap tracking where it should, and it is passive — it

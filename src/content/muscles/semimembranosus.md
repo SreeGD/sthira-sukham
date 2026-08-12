@@ -1,23 +1,32 @@
 ---
 anatomicalName: Semimembranosus
 commonName: The deep inner hamstring
-abbreviations: [SM]
+abbreviations:
+  - SM
 region: knee
 group: Hamstrings
 isContractile: true
 diagramZone: thigh-back
 order: 23
-roleInKneeMotion: >-
-  Bends the knee, rotates the lower leg inward, extends the hip, and pulls the back of the
-  joint capsule clear as the knee bends.
+roleInKneeMotion: Bends the knee, rotates the lower leg inward, extends the hip, and pulls the
+  back of the joint capsule clear as the knee bends.
 stiffnessContribution:
-  whenTight: >-
-    Restricts full straightening. Because it attaches into the back of the joint capsule,
+  whenTight: Restricts full straightening. Because it attaches into the back of the joint capsule,
     tightness here pulls on the capsule directly.
   whenWeak: Reduces hip extension and medial knee stability.
   whenInhibited: Shares the hamstring group's post-injury quietness.
 plainLanguageGloss: The broad, flat hamstring lying underneath the stringy one on the inner side of your thigh.
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
+illustration:
+  file: gerrish-1902-fig-374.png
+  alt: Line drawing of the semimembranosus, the broad flat inner hamstring, with its attachment
+    areas shaded.
+  caption: "Semimembranosus: outline and attachment areas."
+  credit: Frederick Henry Gerrish, Text-book of Anatomy
+  year: 1902
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._374.png
 ---
 
 Broad and flat where semitendinosus is cord-like, and sitting underneath it.
