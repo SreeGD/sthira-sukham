@@ -747,3 +747,11 @@ html[data-ack='1'] [data-testid='red-flag-gate'] {
 .influence p:last-child {
   margin-bottom: 0;
 }
+
+/* Joint label on a red-flag sign. Shown only when the sign is joint-specific —
+   tagging every line with all three would add noise to the one list that has to
+   stay readable. */
+.flag-joint {
+  margin-left: var(--s-2);
+  vertical-align: middle;
+}

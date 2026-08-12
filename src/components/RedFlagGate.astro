@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntries } from 'astro:content';
 
 /*
  * The red-flag gate (Constitution Principle I, FR-001).
@@ -12,7 +12,14 @@ import { getCollection } from 'astro:content';
  * is always in the DOM.
  */
 
-const redFlags = (await getCollection('redFlags')).sort((a, b) => a.data.order - b.data.order);
+const redFlags = await Promise.all(
+  (await getCollection('redFlags'))
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(async (f) => ({ ...f, jointNames: (await getEntries(f.data.joints)).map((j) => j.data.name) })),
+);
+/* Only label a sign when it does NOT apply to all three — labelling every line
+   'knee, hip and ankle' would add noise to the one list that must stay readable. */
+const allJoints = 3;
 ---
 
 <section class="gate" aria-labelledby="gate-heading" data-testid="red-flag-gate">
@@ -30,6 +37,9 @@ const redFlags = (await getCollection('redFlags')).sort((a, b) => a.data.order -
         redFlags.map((flag) => (
           <li>
             <strong>{flag.data.sign}.</strong> {flag.data.description}
+            {flag.jointNames.length < allJoints && (
+              <span class="tag flag-joint">{flag.jointNames.join(' · ')}</span>
+            )}
           </li>
         ))
       }

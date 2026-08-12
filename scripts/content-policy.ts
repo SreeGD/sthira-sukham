@@ -49,6 +49,10 @@ export const REQUIRED_RED_FLAGS = [
   'sudden-severe-pain',
   'night-pain',
   'pain-after-trauma',
+  // Feature 002: joint-specific signs. Exercise content for a joint must not ship
+  // before that joint's warning signs (FR-119).
+  'hip-groin-pain-after-fall',
+  'ankle-cannot-weight-bear-after-inversion',
 ];
 
 export const REQUIRED_MUSCLE_GROUPS: Record<string, string[]> = {

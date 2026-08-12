@@ -1,3 +1,15 @@
+- id: cannot-bear-weight
+  order: 10
+  sign: You cannot put weight through the leg
+  description: You are unable to stand or walk on the leg, or can only do so with severe pain.
+    This needs assessment before any exercise.
+  sources:
+    - aaos-knee-arthritis
+    - nice-ng226-osteoarthritis-2022
+  joints: &a1
+    - knee
+    - hip
+    - ankle
 - id: locking
   order: 20
   sign: The knee locks or catches
@@ -7,10 +19,7 @@
   sources:
     - aaos-knee-arthritis
     - nice-ng226-osteoarthritis-2022
-  joints: &a1
-    - knee
-    - hip
-    - ankle
+  joints: *a1
 - id: giving-way
   order: 30
   sign: The knee gives way
@@ -19,15 +28,27 @@
   sources:
     - aaos-knee-arthritis
   joints: *a1
-- id: cannot-bear-weight
-  order: 10
-  sign: You cannot put weight through the leg
-  description: You are unable to stand or walk on the leg, or can only do so with severe pain.
-    This needs assessment before any exercise.
+- id: hip-groin-pain-after-fall
+  order: 34
+  joints:
+    - hip
+  sign: Groin pain after a fall, especially if you cannot weight-bear
+  description: Hip fractures can follow a fall that seemed minor, particularly in older adults,
+    and pain is often felt in the groin rather than over the hip. Do not try to walk it off.
   sources:
-    - aaos-knee-arthritis
     - nice-ng226-osteoarthritis-2022
-  joints: *a1
+    - neumann-kinesiology-2016
+- id: hip-referred-thigh-pain
+  order: 36
+  joints:
+    - hip
+    - knee
+  sign: Deep thigh or knee pain with no knee findings
+  description: Hip problems commonly refer pain down the thigh to the knee. A knee that hurts but
+    examines normally is a reason to have the hip looked at rather than to keep working on the
+    knee.
+  sources:
+    - nice-ng226-osteoarthritis-2022
 - id: hot-swollen-joint
   order: 40
   sign: The knee is hot, red, and swollen
@@ -37,6 +58,26 @@
     - nice-ng226-osteoarthritis-2022
     - aaos-knee-arthritis
   joints: *a1
+- id: ankle-cannot-weight-bear-after-inversion
+  order: 44
+  joints:
+    - ankle
+  sign: Cannot take four steps after rolling the ankle
+  description: Being unable to weight-bear immediately after an ankle injury, or tenderness over
+    the bony points at either side, is a recognised reason to have it assessed for fracture
+    rather than treated as a sprain.
+  sources:
+    - neumann-kinesiology-2016
+- id: ankle-sudden-calf-pop
+  order: 46
+  joints:
+    - ankle
+  sign: A sudden pop or snap at the back of the ankle
+  description: A sharp pop at the back of the ankle with sudden weakness pushing off can indicate
+    an Achilles tendon rupture. It is sometimes surprisingly painless afterwards, which is why
+    it gets ignored.
+  sources:
+    - neumann-kinesiology-2016
 - id: fever-with-joint-pain
   order: 50
   sign: Fever alongside knee pain or swelling
@@ -53,14 +94,6 @@
   sources:
     - aaos-knee-arthritis
   joints: *a1
-- id: night-pain
-  order: 80
-  sign: Pain that wakes you at night
-  description: Pain that is present at rest or that reliably wakes you from sleep is a different
-    pattern from mechanical stiffness and should be assessed.
-  sources:
-    - nice-ng226-osteoarthritis-2022
-  joints: *a1
 - id: pain-after-trauma
   order: 70
   sign: Pain following a fall or injury
@@ -68,4 +101,12 @@
     out fracture or ligament injury before you start moving it deliberately.
   sources:
     - aaos-knee-arthritis
+  joints: *a1
+- id: night-pain
+  order: 80
+  sign: Pain that wakes you at night
+  description: Pain that is present at rest or that reliably wakes you from sleep is a different
+    pattern from mechanical stiffness and should be assessed.
+  sources:
+    - nice-ng226-osteoarthritis-2022
   joints: *a1

@@ -138,3 +138,30 @@ test.describe('clinician framing (FR-003)', () => {
     expect(await framing.locator('[aria-label*="close" i]').count()).toBe(0);
   });
 });
+
+test.describe('joint-specific signs (feature 002)', () => {
+  test('hip and ankle signs are present and identifiable by joint', async ({ page }) => {
+    await page.goto('/safety/');
+    const list = page.locator('.danger-list');
+    await expect(list).toContainText(/groin pain after a fall/i);
+    await expect(list).toContainText(/cannot take four steps/i);
+    await expect(list).toContainText(/pop or snap at the back of the ankle/i);
+
+    // A joint-specific sign says which joint; a general one is not labelled, because
+    // tagging every line "knee · hip · ankle" would add noise to a list that must be read.
+    const labels = await list.locator('.flag-joint').allInnerTexts();
+    expect(labels.length).toBeGreaterThanOrEqual(3);
+    expect(labels.join(' ')).toMatch(/hip|ankle/i);
+  });
+
+  test('the gate still fires on joint pages that lead to exercise content', async ({ page }) => {
+    await page.goto('/joints/ankle/');
+    await page.evaluate(() => localStorage.clear());
+    await page.reload();
+    // Joint pages are educational and ungated, but must still reach safety in one step.
+    const link = page.getByRole('link', { name: /when to see a clinician/i }).first();
+    await expect(link).toBeVisible();
+    await link.click();
+    await expect(page).toHaveURL(/\/safety\/$/);
+  });
+});
