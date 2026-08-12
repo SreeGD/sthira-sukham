@@ -4,27 +4,41 @@ traditionalName: Single Leg Shoulder Bridge
 tradition: Pilates (mat repertoire)
 modality: pilates
 startPosition: supine
-targets: [gluteus-maximus, gluteus-medius, biceps-femoris, semitendinosus]
-goal: [strength, motor-control]
+targets:
+  - gluteus-maximus
+  - gluteus-medius
+  - biceps-femoris
+  - semitendinosus
+goal:
+  - strength
+  - motor-control
 quickSteps:
   - Bridge up with both feet down.
   - Keeping hips level, lift one foot slightly.
   - Hold. Replace it.
   - Swap sides, then lower.
-keyPoint: >-
-  The hips staying level is the exercise. The lift is only the test.
-feelItIn: >-
-  The buttock of the standing side.
-commonMistake: >-
-  The pelvis dropping on the lifted side.
+keyPoint: The hips staying level is the exercise. The lift is only the test.
+feelItIn: The buttock of the standing side.
+commonMistake: The pelvis dropping on the lifted side.
 instructions:
-  - Lie on your back with knees bent and feet flat, hip-width apart.
-  - Lift your hips into a bridge with both feet down, and settle there.
-  - Keeping the hips level, lift one foot a small way off the floor without letting that side drop.
-  - Hold briefly, replace the foot, and change sides. Lower the hips at the end.
-dosage: Commonly described as 6 to 10 alternating lifts, one to two sets.
+  - label: Bridge with both feet
+    detail: Lie on your back with knees bent and feet flat, hip-width apart.
+  - label: Level the hips
+    detail: Lift your hips into a bridge with both feet down, and settle there.
+  - label: Lift one foot slightly
+    detail: Keeping the hips level, lift one foot a small way off the floor without letting that
+      side drop.
+  - label: Replace and swap
+    detail: Hold briefly, replace the foot, and change sides. Lower the hips at the end.
+dosage:
+  reps: 8 to 12 repetitions
+  sets: 1 to 2 sets per session
+  frequency: Once daily
+  note: Commonly described as 6 to 10 alternating lifts, one to two sets.
 difficulty: advanced
-regressions: [pilates-bridging, setu-bandha]
+regressions:
+  - pilates-bridging
+  - setu-bandha
 contraindications:
   - Recent spinal surgery
   - Acute low back pain
@@ -33,15 +47,21 @@ stopIf:
   - The pelvis drops on the unsupported side and you cannot hold it level
   - Low back pain
   - Hamstring cramp
-equipment: [none]
+equipment:
+  - none
 modifications:
-  - Keep the lifted foot just barely off the floor rather than raising the leg. Height adds nothing here.
-  - Lift only the heel, leaving the toes down, which reduces the demand considerably while still shifting the load.
+  - Keep the lifted foot just barely off the floor rather than raising the leg. Height adds
+    nothing here.
+  - Lift only the heel, leaving the toes down, which reduces the demand considerably while still
+    shifting the load.
   - Stay with the two-footed bridge until you can hold the hips level for several breaths.
 props:
   - A folded blanket under the shoulders if the neck feels compressed.
 evidenceLabel: mechanistic-rationale
-sources: [nascimento-hip-knee-pfp-2018, neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+sources:
+  - nascimento-hip-knee-pfp-2018
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
 ---
 
 A bridge that asks one hip to do the work of two, which is what walking asks on every step.

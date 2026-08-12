@@ -2,27 +2,37 @@
 name: Patellar mobilisation
 modality: clinical-rom
 startPosition: seated
-targets: [retinaculum]
-goal: [mobility]
+targets:
+  - retinaculum
+goal:
+  - mobility
 quickSteps:
   - Sit with the leg straight and fully relaxed.
   - Hold the kneecap between thumb and finger.
   - Glide it gently in each direction.
   - Hold a few seconds each way.
-keyPoint: >-
-  The thigh must be completely switched off. A tense quad locks the kneecap.
-feelItIn: >-
-  Movement of the kneecap itself, not a muscle stretch.
-commonMistake: >-
-  Doing it with the leg tensed. If the kneecap will not move, you are not relaxed yet.
+keyPoint: The thigh must be completely switched off. A tense quad locks the kneecap.
+feelItIn: Movement of the kneecap itself, not a muscle stretch.
+commonMistake: Doing it with the leg tensed. If the kneecap will not move, you are not relaxed yet.
 instructions:
-  - Sit with the leg straight out in front of you and the knee fully relaxed. This only works if the quadriceps is completely off.
-  - Place a thumb and finger either side of the kneecap.
-  - Glide it gently toward the inside of the knee and hold for a few seconds, then release.
-  - Repeat gliding it outward, then upward toward the thigh, then downward.
-dosage: Commonly described as 5 to 10 gentle glides in each direction, once or twice a day.
+  - label: Relax the leg completely
+    detail: Sit with the leg straight out in front of you and the knee fully relaxed. This only
+      works if the quadriceps is completely off.
+  - label: Take hold of the kneecap
+    detail: Place a thumb and finger either side of the kneecap.
+  - label: Glide it side to side
+    detail: Glide it gently toward the inside of the knee and hold for a few seconds, then release.
+  - label: Glide it up and down
+    detail: Repeat gliding it outward, then upward toward the thigh, then downward.
+dosage:
+  reps: 10 to 20 repetitions
+  sets: 1 to 3 sets per session
+  frequency: 2 to 3 times a day
+  hold: 5 seconds at the end of range
+  note: Commonly described as 5 to 10 gentle glides in each direction, once or twice a day.
 difficulty: beginner
-progressions: [terminal-knee-extension]
+progressions:
+  - terminal-knee-extension
 contraindications:
   - Recent knee surgery, unless your surgeon or physiotherapist has shown you this specifically
   - History of kneecap dislocation
@@ -31,9 +41,11 @@ stopIf:
   - The movement is painful rather than simply unfamiliar
   - The kneecap feels like it wants to slip out of its groove
   - Any grinding that is painful
-equipment: [none]
+equipment:
+  - none
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
 ---
 
 The kneecap has to glide in its groove for the knee to bend and straighten. When the tissue

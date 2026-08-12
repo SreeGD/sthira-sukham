@@ -2,27 +2,40 @@
 name: Heel slide
 modality: clinical-rom
 startPosition: supine
-targets: [rectus-femoris, vastus-intermedius, joint-capsule]
-goal: [mobility]
+targets:
+  - rectus-femoris
+  - vastus-intermedius
+  - joint-capsule
+goal:
+  - mobility
 quickSteps:
   - Lie on your back, legs straight.
   - Slide your heel toward your bottom.
   - Stop at a firm stretch. Hold 5 seconds.
   - Slide slowly back out to straight.
-keyPoint: >-
-  Keep the heel touching the surface the whole way. Lifting it lets the hip do the work.
-feelItIn: >-
-  A stretch across the front of the knee as it bends.
-commonMistake: >-
-  Rushing the slide back out. That half is where straightening gets its work.
+keyPoint: Keep the heel touching the surface the whole way. Lifting it lets the hip do the work.
+feelItIn: A stretch across the front of the knee as it bends.
+commonMistake: Rushing the slide back out. That half is where straightening gets its work.
 instructions:
-  - Lie on your back with both legs straight, on a surface your heel can slide along.
-  - Slide the heel of the stiff leg toward your buttock, keeping the heel in contact with the surface throughout.
-  - Slide until you feel a firm stretch — not pain — and hold there briefly.
-  - Slide the heel back out to straight, under control rather than letting it drop.
-dosage: Commonly described as 10 to 20 slides, two or three times a day, with holds of around 5 seconds at the end of the range.
+  - label: Get into position
+    detail: Lie on your back with both legs straight, on a surface your heel can slide along.
+  - label: Slide inward
+    detail: Slide the heel of the stiff leg toward your buttock, keeping the heel in contact with
+      the surface throughout.
+  - label: Find your limit
+    detail: Slide until you feel a firm stretch — not pain — and hold there briefly.
+  - label: Slide outward
+    detail: Slide the heel back out to straight, under control rather than letting it drop.
+dosage:
+  reps: 10 to 20 repetitions
+  sets: 1 to 3 sets per session
+  frequency: 2 to 3 times a day
+  hold: 5 seconds at the end of range
+  note: Commonly described as 10 to 20 slides, two or three times a day, with holds of around 5
+    seconds at the end of the range.
 difficulty: beginner
-progressions: [heel-slide-with-strap]
+progressions:
+  - heel-slide-with-strap
 contraindications:
   - Recent knee surgery where your surgeon has set a range-of-motion limit
   - A knee that is locking or catching
@@ -31,9 +44,12 @@ stopIf:
   - The stretch turns into sharp pain
   - The knee catches or locks part-way through the slide
   - Swelling increases during or after the session
-equipment: [none]
+equipment:
+  - none
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, aaos-knee-arthritis]
+sources:
+  - neumann-kinesiology-2016
+  - aaos-knee-arthritis
 ---
 
 The heel slide is usually the first knee-bending exercise anyone is given, and its value is

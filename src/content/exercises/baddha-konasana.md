@@ -4,27 +4,39 @@ traditionalName: Baddha Konasana
 tradition: Hatha yoga
 modality: yoga
 startPosition: seated
-targets: [adductor-group, gluteus-medius, gluteus-minimus]
-goal: [mobility]
+targets:
+  - adductor-group
+  - gluteus-medius
+  - gluteus-minimus
+goal:
+  - mobility
 quickSteps:
   - Sit, soles of the feet together.
   - Sit up tall on a cushion.
   - Let the knees fall out. Do not push them.
   - Hold, then bring the knees together by hand.
-keyPoint: >-
-  Never push the knees down. Support them on cushions instead.
-feelItIn: >-
-  The inner thighs and the hips.
-commonMistake: >-
-  Pressing the knees toward the floor, which levers the knee joint.
+keyPoint: Never push the knees down. Support them on cushions instead.
+feelItIn: The inner thighs and the hips.
+commonMistake: Pressing the knees toward the floor, which levers the knee joint.
 instructions:
-  - Sit on the floor with the soles of your feet together and your knees falling out to the sides.
-  - Sit up tall, lifting through the crown of the head rather than rounding the lower back.
-  - Let gravity do the work at the hips. Do not push the knees down with your hands.
-  - Hold, breathing steadily, then bring the knees together with your hands to come out.
-dosage: Commonly held for 30 seconds to a few minutes.
+  - label: Sit with the soles together
+    detail: Sit on the floor with the soles of your feet together and your knees falling out to the
+      sides.
+  - label: Sit up on a cushion
+    detail: Sit up tall, lifting through the crown of the head rather than rounding the lower back.
+  - label: Let the knees fall out
+    detail: Let gravity do the work at the hips. Do not push the knees down with your hands.
+  - label: Hold, then close by hand
+    detail: Hold, breathing steadily, then bring the knees together with your hands to come out.
+dosage:
+  reps: 2 to 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 30 to 60 seconds
+  note: Commonly held for 30 seconds to a few minutes.
 difficulty: beginner
-progressions: [malasana]
+progressions:
+  - malasana
 contraindications:
   - Groin strain
   - Knee pain on the inner side in this position
@@ -33,15 +45,21 @@ stopIf:
   - Pain on the inner side of the knee — that is the joint being levered, not the hip stretching
   - Groin pain rather than a broad stretch
   - Numbness in the feet
-equipment: [cushion, chair]
+equipment:
+  - cushion
+  - chair
 modifications:
-  - Sit up on a firm cushion or a folded blanket. This tips the pelvis forward and does more for the stretch than any amount of effort.
-  - Support each knee on a cushion so the leg is not hanging. Hanging weight puts the leverage into the knee rather than the hip.
+  - Sit up on a firm cushion or a folded blanket. This tips the pelvis forward and does more for
+    the stretch than any amount of effort.
+  - Support each knee on a cushion so the leg is not hanging. Hanging weight puts the leverage
+    into the knee rather than the hip.
   - Move the feet further from the body, which reduces the demand considerably.
 props:
   - A firm cushion to sit on, and one under each knee.
 evidenceLabel: traditional-practice
-sources: [yoga-knee-oa-meta-2024, neumann-kinesiology-2016]
+sources:
+  - yoga-knee-oa-meta-2024
+  - neumann-kinesiology-2016
 ---
 
 A hip opener that gets misapplied to the knee more than almost any other position.

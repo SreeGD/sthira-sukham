@@ -4,27 +4,41 @@ traditionalName: Standing Footwork
 tradition: Pilates (adapted from the reformer repertoire)
 modality: pilates
 startPosition: standing-supported
-targets: [vastus-medialis, vastus-lateralis, gastrocnemius, soleus]
-goal: [strength, motor-control]
+targets:
+  - vastus-medialis
+  - vastus-lateralis
+  - gastrocnemius
+  - soleus
+goal:
+  - strength
+  - motor-control
 quickSteps:
   - Hold a chair. Feet hip-width.
   - Bend both knees a small way.
   - Straighten without locking out.
   - Then rise onto your toes and lower slowly.
-keyPoint: >-
-  A small bend done well beats a deep one with the knees drifting.
-feelItIn: >-
-  The thighs on the bend, the calves on the raise.
-commonMistake: >-
-  Going too deep and losing the knee alignment.
+keyPoint: A small bend done well beats a deep one with the knees drifting.
+feelItIn: The thighs on the bend, the calves on the raise.
+commonMistake: Going too deep and losing the knee alignment.
 instructions:
-  - Stand with your feet hip-width apart, holding a chair back or worktop lightly for balance.
-  - Bend both knees a small way, keeping your heels down and your knees tracking over your second toes.
-  - Straighten back up without locking the knees sharply at the top.
-  - Then rise onto the balls of both feet, hold for a moment, and lower slowly.
-dosage: Commonly described as 10 to 15 small bends and 10 to 15 heel raises, once daily.
+  - label: Take hold of support
+    detail: Stand with your feet hip-width apart, holding a chair back or worktop lightly for balance.
+  - label: Bend both knees
+    detail: Bend both knees a small way, keeping your heels down and your knees tracking over your
+      second toes.
+  - label: Straighten without locking
+    detail: Straighten back up without locking the knees sharply at the top.
+  - label: Add the heel raise
+    detail: Then rise onto the balls of both feet, hold for a moment, and lower slowly.
+dosage:
+  reps: 10 to 15 repetitions
+  sets: 1 to 3 sets per session
+  frequency: Once daily
+  note: Commonly described as 10 to 15 small bends and 10 to 15 heel raises, once daily.
 difficulty: intermediate
-regressions: [terminal-knee-extension, pilates-footwork]
+regressions:
+  - terminal-knee-extension
+  - pilates-footwork
 contraindications:
   - Balance problems without something secure to hold
   - Recent Achilles injury
@@ -33,15 +47,21 @@ stopIf:
   - Front-of-knee pain during the bend
   - Calf or Achilles pain during the heel raise
   - You cannot control the lowering phase
-equipment: [chair, wall]
+equipment:
+  - chair
+  - wall
 modifications:
-  - Bend only a few degrees. A shallow bend with the knee tracking over the foot is worth more than a deeper one with the knee drifting inward.
-  - Do the heel raises with both hands on a worktop and rise only part-way if the calf or Achilles is sensitive.
+  - Bend only a few degrees. A shallow bend with the knee tracking over the foot is worth more
+    than a deeper one with the knee drifting inward.
+  - Do the heel raises with both hands on a worktop and rise only part-way if the calf or
+    Achilles is sensitive.
   - Separate the two halves onto different days if doing both is too much in one go.
 props:
   - A sturdy chair back, worktop, or wall for balance.
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+sources:
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
 ---
 
 Loaded work in standing, which is where the knee actually has to function. Lying-down

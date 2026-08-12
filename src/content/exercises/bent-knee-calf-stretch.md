@@ -2,37 +2,51 @@
 name: Bent-knee calf stretch
 modality: clinical-rom
 startPosition: standing-supported
-targets: [soleus]
-goal: [mobility]
+targets:
+  - soleus
+goal:
+  - mobility
 quickSteps:
   - Hands on a wall, step one leg back.
   - Bend that back knee, heel stays down.
   - Let the knee travel forward over the foot.
   - Hold, then swap.
-keyPoint: >-
-  Bend the back knee. That is what reaches the deeper calf muscle.
-feelItIn: >-
-  Low down the calf, close to the ankle.
-commonMistake: >-
-  Pinching at the front of the ankle means you have hit the joint, not the muscle.
+keyPoint: Bend the back knee. That is what reaches the deeper calf muscle.
+feelItIn: Low down the calf, close to the ankle.
+commonMistake: Pinching at the front of the ankle means you have hit the joint, not the muscle.
 instructions:
-  - Stand facing a wall with your hands on it, and step the leg you want to stretch back.
-  - This time bend the back knee, keeping the heel down on the floor.
-  - Let the knee travel forward over the foot rather than letting the hips drop.
-  - You should feel this lower down the calf, closer to the ankle, than the straight-leg version. Hold.
-dosage: Commonly described as 3 repetitions of 30 seconds per side, once or twice a day.
+  - label: Get into position
+    detail: Stand facing a wall with your hands on it, and step the leg you want to stretch back.
+  - label: Bend the back knee
+    detail: This time bend the back knee, keeping the heel down on the floor.
+  - label: Let the knee travel forward
+    detail: Let the knee travel forward over the foot rather than letting the hips drop.
+  - label: Notice where you feel it
+    detail: You should feel this lower down the calf, closer to the ankle, than the straight-leg
+      version. Hold.
+dosage:
+  reps: 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once or twice a day
+  hold: 30 seconds
+  note: Commonly described as 3 repetitions of 30 seconds per side, once or twice a day.
 difficulty: beginner
-regressions: [straight-leg-calf-stretch]
-progressions: [malasana]
+regressions:
+  - straight-leg-calf-stretch
+progressions:
+  - malasana
 contraindications:
   - Recent Achilles tendon injury or rupture
   - Acute ankle sprain
 stopIf:
-  - Sharp pain at the front of the ankle — a pinching there means the joint, not the muscle, is the restriction
+  - Sharp pain at the front of the ankle — a pinching there means the joint, not the muscle, is
+    the restriction
   - Pain at the back of the heel
-equipment: [wall]
+equipment:
+  - wall
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
 ---
 
 Bending the back knee takes gastrocnemius out of the picture, leaving soleus — the deeper

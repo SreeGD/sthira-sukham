@@ -4,27 +4,40 @@ traditionalName: Roll Down
 tradition: Pilates (mat repertoire)
 modality: pilates
 startPosition: standing-supported
-targets: [biceps-femoris, semitendinosus, semimembranosus, gastrocnemius]
-goal: [mobility, motor-control]
+targets:
+  - biceps-femoris
+  - semitendinosus
+  - semimembranosus
+  - gastrocnemius
+goal:
+  - mobility
+  - motor-control
 quickSteps:
   - Stand with your back on a wall, knees soft.
   - Drop your chin and roll down slowly.
   - Peel the spine off one part at a time.
   - Roll back up the same way.
-keyPoint: >-
-  Knees stay clearly bent. This is a spine exercise, not a hamstring stretch.
-feelItIn: >-
-  The spine articulating, and a gentle pull behind the thighs.
-commonMistake: >-
-  Straightening the knees, which turns it into an uncontrolled stretch.
+keyPoint: Knees stay clearly bent. This is a spine exercise, not a hamstring stretch.
+feelItIn: The spine articulating, and a gentle pull behind the thighs.
+commonMistake: Straightening the knees, which turns it into an uncontrolled stretch.
 instructions:
-  - Stand with your back against a wall, feet a short step forward, knees softly bent.
-  - Drop your chin and roll down one vertebra at a time, peeling your spine away from the wall.
-  - Let your arms hang. Go only as far as you can while keeping the knees soft and the movement controlled.
-  - Roll back up the same way, restacking the spine from the bottom.
-dosage: Commonly described as 3 to 6 slow roll-downs.
+  - label: Set up against the wall
+    detail: Stand with your back against a wall, feet a short step forward, knees softly bent.
+  - label: Drop the chin
+    detail: Drop your chin and roll down one vertebra at a time, peeling your spine away from the wall.
+  - label: Peel the spine away
+    detail: Let your arms hang. Go only as far as you can while keeping the knees soft and the
+      movement controlled.
+  - label: Restack on the way up
+    detail: Roll back up the same way, restacking the spine from the bottom.
+dosage:
+  reps: 8 to 12 repetitions
+  sets: 1 to 2 sets per session
+  frequency: Once daily
+  note: Commonly described as 3 to 6 slow roll-downs.
 difficulty: beginner
-progressions: [adho-mukha-svanasana]
+progressions:
+  - adho-mukha-svanasana
 contraindications:
   - Acute low back pain
   - Disc-related symptoms reproduced by bending forward
@@ -33,15 +46,20 @@ stopIf:
   - Low back pain rather than a hamstring stretch
   - Symptoms running down the leg
   - Light-headedness on the way back up
-equipment: [wall]
+equipment:
+  - wall
 modifications:
-  - Keep the knees clearly bent throughout. Straight legs turn this into a hamstring stretch you cannot control; bent knees keep it about the spine.
-  - Roll down only as far as your chest, not to the floor. A short controlled range is the exercise.
-  - Rest your hands on your thighs and slide them down as you go, which gives the arms somewhere to be.
+  - Keep the knees clearly bent throughout. Straight legs turn this into a hamstring stretch you
+    cannot control; bent knees keep it about the spine.
+  - Roll down only as far as your chest, not to the floor. A short controlled range is the
+    exercise.
+  - Rest your hands on your thighs and slide them down as you go, which gives the arms somewhere
+    to be.
 props:
   - A wall, which does most of the work of teaching the movement.
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
 ---
 
 The wall turns a vague instruction into a concrete one. "Roll down one vertebra at a time"

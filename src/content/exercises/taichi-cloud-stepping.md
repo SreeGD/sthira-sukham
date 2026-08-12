@@ -4,27 +4,42 @@ traditionalName: Yun Shou stepping (cloud hands footwork)
 tradition: Tai chi (Yang-style form)
 modality: taichi-qigong
 startPosition: standing
-targets: [gluteus-medius, gluteus-minimus, adductor-group, tensor-fasciae-latae]
-goal: [motor-control]
+targets:
+  - gluteus-medius
+  - gluteus-minimus
+  - adductor-group
+  - tensor-fasciae-latae
+goal:
+  - motor-control
 quickSteps:
   - Shift fully onto one foot.
   - Step the other foot out to the side, lightly.
   - Transfer weight slowly onto it.
   - Draw the first foot in. Continue.
-keyPoint: >-
-  Place the moving foot with no weight on it at all.
-feelItIn: >-
-  The side of the hip of the standing leg.
-commonMistake: >-
-  Falling onto the new foot, which turns it into ordinary walking.
+keyPoint: Place the moving foot with no weight on it at all.
+feelItIn: The side of the hip of the standing leg.
+commonMistake: Falling onto the new foot, which turns it into ordinary walking.
 instructions:
-  - Stand with feet hip-width apart, knees softly bent, near a wall or worktop you can touch if needed.
-  - Shift your weight fully onto the left foot, then step the right foot out to the side, placing it lightly without weight.
-  - Transfer your weight slowly onto the right foot, then draw the left foot in toward it, again placing it lightly.
-  - Continue stepping sideways this way, then reverse. Keep the torso upright and the movement continuous.
-dosage: Commonly practised as 5 to 10 steps in each direction, moving slowly.
+  - label: Shift onto one foot
+    detail: Stand with feet hip-width apart, knees softly bent, near a wall or worktop you can touch
+      if needed.
+  - label: Step out lightly
+    detail: Shift your weight fully onto the left foot, then step the right foot out to the side,
+      placing it lightly without weight.
+  - label: Transfer the weight
+    detail: Transfer your weight slowly onto the right foot, then draw the left foot in toward it,
+      again placing it lightly.
+  - label: Draw the other foot in
+    detail: Continue stepping sideways this way, then reverse. Keep the torso upright and the
+      movement continuous.
+dosage:
+  reps: 8 to 12 slow cycles
+  sets: 1 to 2 sets per session
+  frequency: Once daily
+  note: Commonly practised as 5 to 10 steps in each direction, moving slowly.
 difficulty: intermediate
-regressions: [taichi-weight-shifting]
+regressions:
+  - taichi-weight-shifting
 contraindications:
   - Balance problems without a wall or rail within reach
   - Acute hip pain on single-leg loading
@@ -32,9 +47,13 @@ stopIf:
   - You feel unsteady with nothing to hold
   - Hip or groin pain during the transfer
   - The pelvis drops sharply on the unloaded side and you cannot control it
-equipment: [none, wall]
+equipment:
+  - none
+  - wall
 evidenceLabel: moderate-evidence
-sources: [wang-taichi-knee-oa-2016, neumann-kinesiology-2016]
+sources:
+  - wang-taichi-knee-oa-2016
+  - neumann-kinesiology-2016
 ---
 
 Weight shifting with a step added, which raises the demand considerably because there is a

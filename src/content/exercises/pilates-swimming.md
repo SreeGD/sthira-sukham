@@ -4,27 +4,39 @@ traditionalName: Swimming
 tradition: Pilates (mat repertoire)
 modality: pilates
 startPosition: prone
-targets: [gluteus-maximus, biceps-femoris, semitendinosus, semimembranosus]
-goal: [strength, motor-control]
+targets:
+  - gluteus-maximus
+  - biceps-femoris
+  - semitendinosus
+  - semimembranosus
+goal:
+  - strength
+  - motor-control
 quickSteps:
   - Lie face down, arms overhead.
   - Draw the lower ribs toward the floor.
   - Lift one arm and the opposite leg an inch.
   - Lower, swap sides slowly.
-keyPoint: >-
-  An inch is enough. More range comes from arching the back, not the hip.
-feelItIn: >-
-  The buttock and the back of the thigh.
-commonMistake: >-
-  Arching the low back to lift higher.
+keyPoint: An inch is enough. More range comes from arching the back, not the hip.
+feelItIn: The buttock and the back of the thigh.
+commonMistake: Arching the low back to lift higher.
 instructions:
-  - Lie face down with your arms extended overhead and your forehead resting down.
-  - Draw your lower ribs gently toward the floor so the lower back does not arch.
-  - Lift one arm and the opposite leg a small way off the floor, keeping both legs straight.
-  - Lower and change sides, moving slowly and steadily rather than fluttering.
-dosage: Commonly described as 8 to 12 alternations per side, moving slowly.
+  - label: Lie face down
+    detail: Lie face down with your arms extended overhead and your forehead resting down.
+  - label: Anchor the ribs
+    detail: Draw your lower ribs gently toward the floor so the lower back does not arch.
+  - label: Lift opposite arm and leg
+    detail: Lift one arm and the opposite leg a small way off the floor, keeping both legs straight.
+  - label: Lower and swap
+    detail: Lower and change sides, moving slowly and steadily rather than fluttering.
+dosage:
+  reps: 8 to 12 repetitions
+  sets: 1 to 2 sets per session
+  frequency: Once daily
+  note: Commonly described as 8 to 12 alternations per side, moving slowly.
 difficulty: intermediate
-regressions: [pilates-bridging]
+regressions:
+  - pilates-bridging
 contraindications:
   - Acute low back pain
   - Any condition where lying face down is uncomfortable
@@ -33,15 +45,20 @@ stopIf:
   - Low back pain or pinching
   - Neck discomfort
   - Cramping in the hamstring or buttock
-equipment: [cushion, towel]
+equipment:
+  - cushion
+  - towel
 modifications:
-  - Lift only the leg, leaving both arms down. This is a complete exercise on its own and much easier to control.
+  - Lift only the leg, leaving both arms down. This is a complete exercise on its own and much
+    easier to control.
   - Lift barely an inch. The height is not the point — the lower back staying quiet is.
   - Place a folded towel under the hips if the low back feels compressed.
 props:
   - A folded towel under the hips or the forehead.
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+sources:
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
 ---
 
 Hip extension with the hip already straight, which is a position the glutes rarely get asked

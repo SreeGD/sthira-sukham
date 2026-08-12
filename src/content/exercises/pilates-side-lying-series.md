@@ -4,28 +4,43 @@ traditionalName: Side Leg Series
 tradition: Pilates (mat repertoire)
 modality: pilates
 startPosition: side-lying
-targets: [gluteus-medius, gluteus-minimus, tensor-fasciae-latae, adductor-group]
-goal: [strength, motor-control]
+targets:
+  - gluteus-medius
+  - gluteus-minimus
+  - tensor-fasciae-latae
+  - adductor-group
+goal:
+  - strength
+  - motor-control
 quickSteps:
   - Lie on your side, hips stacked, lower knee bent.
   - Top leg straight, toes pointing forward.
   - Lift to hip height. Lower slowly.
   - Keep the top hip stacked.
-keyPoint: >-
-  Toes forward, not turned up. Turning out hands the work to the wrong muscle.
-feelItIn: >-
-  The side of the top hip.
-commonMistake: >-
-  Rolling the hip backward to lift higher.
+keyPoint: Toes forward, not turned up. Turning out hands the work to the wrong muscle.
+feelItIn: The side of the top hip.
+commonMistake: Rolling the hip backward to lift higher.
 instructions:
-  - Lie on your side with your hips stacked directly over one another and your head supported.
-  - Bend the lower leg for stability and keep the top leg straight, in line with your body.
-  - Lift the top leg to about hip height, leading with the heel and keeping the toes pointing forward rather than up to the ceiling.
-  - Lower slowly. Keep the top hip stacked — rolling backward means another muscle has taken over.
-dosage: Commonly described as 10 to 15 repetitions per side.
+  - label: Stack the hips
+    detail: Lie on your side with your hips stacked directly over one another and your head supported.
+  - label: Set the top leg
+    detail: Bend the lower leg for stability and keep the top leg straight, in line with your body.
+  - label: Lift to hip height
+    detail: Lift the top leg to about hip height, leading with the heel and keeping the toes
+      pointing forward rather than up to the ceiling.
+  - label: Lower under control
+    detail: Lower slowly. Keep the top hip stacked — rolling backward means another muscle has taken
+      over.
+dosage:
+  reps: 10 to 15 repetitions
+  sets: 1 to 3 sets per session
+  frequency: Once daily
+  note: Commonly described as 10 to 15 repetitions per side.
 difficulty: beginner
-regressions: [pilates-bridging]
-progressions: [taichi-weight-shifting]
+regressions:
+  - pilates-bridging
+progressions:
+  - taichi-weight-shifting
 contraindications:
   - Recent hip surgery without clearance
   - Acute hip or groin pain
@@ -33,14 +48,19 @@ stopIf:
   - Pinching at the side or front of the hip
   - Low back pain
   - You cannot stop the hip rolling backward even over a small range
-equipment: [cushion]
+equipment:
+  - cushion
 modifications:
-  - Lift the top leg only a few inches. Done accurately the range is small — if it feels easy, check the alignment before adding height.
-  - Place a cushion under the waist to keep the spine level if your hips are much wider than your waist.
+  - Lift the top leg only a few inches. Done accurately the range is small — if it feels easy,
+    check the alignment before adding height.
+  - Place a cushion under the waist to keep the spine level if your hips are much wider than
+    your waist.
 props:
   - A cushion for under the head, and another for under the waist.
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+sources:
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
 ---
 
 This is the most direct way to reach gluteus medius, and gluteus medius is the muscle that

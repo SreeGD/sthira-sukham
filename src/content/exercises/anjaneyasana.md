@@ -4,27 +4,41 @@ traditionalName: Anjaneyasana
 tradition: Hatha yoga
 modality: yoga
 startPosition: kneeling
-targets: [iliopsoas, rectus-femoris, gluteus-maximus]
-goal: [mobility]
+targets:
+  - iliopsoas
+  - rectus-femoris
+  - gluteus-maximus
+goal:
+  - mobility
 quickSteps:
   - Kneel, step one foot forward, shin upright.
   - Pad the back knee well.
   - Tuck your tailbone under.
   - Ease forward a little. Hold.
-keyPoint: >-
-  The tailbone tuck is what stretches the hip. Not lunging further.
-feelItIn: >-
-  The front of the back hip.
-commonMistake: >-
-  Feeling it in the low back, which means the tuck is missing.
+keyPoint: The tailbone tuck is what stretches the hip. Not lunging further.
+feelItIn: The front of the back hip.
+commonMistake: Feeling it in the low back, which means the tuck is missing.
 instructions:
-  - From kneeling, step one foot forward so that shin is roughly vertical, with the back knee resting on the floor.
-  - Pad the back knee with a folded blanket.
-  - Tuck your tailbone slightly under, so the front of the back hip lengthens rather than the lower back arching.
-  - Ease your weight gently forward until you feel a stretch at the front of the back hip. Hold, then swap sides.
-dosage: Commonly held for 30 to 60 seconds per side, repeated two or three times.
+  - label: Step into the lunge
+    detail: From kneeling, step one foot forward so that shin is roughly vertical, with the back
+      knee resting on the floor.
+  - label: Pad the back knee
+    detail: Pad the back knee with a folded blanket.
+  - label: Tuck the tailbone
+    detail: Tuck your tailbone slightly under, so the front of the back hip lengthens rather than
+      the lower back arching.
+  - label: Ease forward and hold
+    detail: Ease your weight gently forward until you feel a stretch at the front of the back hip.
+      Hold, then swap sides.
+dosage:
+  reps: 2 to 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 30 to 60 seconds
+  note: Commonly held for 30 to 60 seconds per side, repeated two or three times.
 difficulty: beginner
-progressions: [taichi-bow-stance]
+progressions:
+  - taichi-bow-stance
 contraindications:
   - Knee pain on kneeling that padding does not resolve
   - Recent hip surgery without clearance
@@ -33,16 +47,23 @@ stopIf:
   - Pain in the kneeling knee
   - The stretch is felt in the lower back rather than the front of the hip
   - Pinching at the front of the hip crease
-equipment: [cushion, towel]
+equipment:
+  - cushion
+  - towel
 modifications:
-  - Pad the back knee generously. A folded blanket, a cushion, or a doubled mat — kneeling directly on a hard floor is not part of the exercise.
-  - Rest your hands on a chair seat or blocks either side of the front foot so you are not reaching all the way to the floor.
-  - Keep the movement small. The stretch comes from the tailbone tuck, not from lunging further forward, and most people get everything they need from a very short range.
+  - Pad the back knee generously. A folded blanket, a cushion, or a doubled mat — kneeling
+    directly on a hard floor is not part of the exercise.
+  - Rest your hands on a chair seat or blocks either side of the front foot so you are not
+    reaching all the way to the floor.
+  - Keep the movement small. The stretch comes from the tailbone tuck, not from lunging further
+    forward, and most people get everything they need from a very short range.
 props:
   - A folded blanket or cushion for the back knee.
   - A chair or blocks for the hands.
 evidenceLabel: traditional-practice
-sources: [yoga-knee-oa-meta-2024, neumann-kinesiology-2016]
+sources:
+  - yoga-knee-oa-meta-2024
+  - neumann-kinesiology-2016
 ---
 
 This is the counterpart to everything sitting does to you. Hours in a chair hold the hip

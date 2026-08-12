@@ -73,9 +73,31 @@ const feelZones = [...new Set(targets.map((m) => m.data.diagramZone))].slice(0, 
   />
 
   <section class="section">
-    <h2>In more detail</h2>
-    <ol class="steps">{d.instructions.map((step) => <li>{step}</li>)}</ol>
-    <p><strong>Typical dosage.</strong> {d.dosage}</p>
+    <h2>How to perform it correctly</h2>
+    <ol class="steps steps--labelled">
+      {
+        d.instructions.map((step) => (
+          <li>
+            <strong>{step.label}:</strong> {step.detail}
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>Recommended routine</h2>
+    <p class="prose">
+      Typical starting figures as they are commonly described. They are a general starting
+      point, not a prescription — what suits your knee is a question for a clinician.
+    </p>
+    <dl class="routine">
+      <div><dt>Repetitions</dt><dd>{d.dosage.reps}</dd></div>
+      <div><dt>Sets</dt><dd>{d.dosage.sets}</dd></div>
+      <div><dt>Frequency</dt><dd>{d.dosage.frequency}</dd></div>
+      {d.dosage.hold && (<div><dt>Hold</dt><dd>{d.dosage.hold}</dd></div>)}
+    </dl>
+    {d.dosage.note && <p class="routine__note">{d.dosage.note}</p>}
   </section>
 
   {d.modifications.length > 0 && (

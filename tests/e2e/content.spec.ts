@@ -87,8 +87,10 @@ test.describe('exercises (US3)', () => {
     await ack(page, '/exercises/supta-padangusthasana/');
     const main = page.getByRole('main');
     await expect(page.locator('.glance')).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'In more detail' })).toBeVisible();
-    await expect(main).toContainText('Typical dosage');
+    await expect(page.getByRole('heading', { name: 'How to perform it correctly' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Recommended routine' })).toBeVisible();
+    await expect(page.locator('.routine')).toContainText('Repetitions');
+    await expect(page.locator('.routine')).toContainText('Frequency');
     await expect(page.getByRole('heading', { name: 'Do not do this if' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Stop if' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'What this targets' })).toBeVisible();
@@ -164,5 +166,30 @@ test.describe('search (US6)', () => {
     const callout = page.locator('.callout', { hasText: 'Nothing matched' });
     await expect(callout).toBeVisible();
     await expect(callout.getByRole('link', { name: /muscle catalogue/i })).toBeVisible();
+  });
+});
+
+test.describe('instruction format', () => {
+  test('every step carries a label naming what it is for', async ({ page }) => {
+    await page.goto('/exercises/heel-slide/');
+    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.reload();
+    const steps = page.locator('.steps--labelled > li');
+    expect(await steps.count()).toBeGreaterThanOrEqual(2);
+    for (let i = 0; i < (await steps.count()); i++) {
+      // A bare list of sentences is hard to resume part-way through; the label is
+      // what makes a step findable again.
+      await expect(steps.nth(i).locator('strong')).toHaveText(/\w+.*:/);
+    }
+  });
+
+  test('routine figures are separate fields, not a prose sentence', async ({ page }) => {
+    await page.goto('/exercises/step-down/');
+    await page.evaluate(() => localStorage.setItem('fixknee:red-flags-ack', '1'));
+    await page.reload();
+    const routine = page.locator('.routine');
+    for (const label of ['Repetitions', 'Sets', 'Frequency']) {
+      await expect(routine.getByText(label, { exact: true })).toBeVisible();
+    }
   });
 });

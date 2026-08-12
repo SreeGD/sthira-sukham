@@ -4,27 +4,42 @@ traditionalName: Zhuan Yao (turning the waist)
 tradition: Qigong (a warm-up common across styles)
 modality: taichi-qigong
 startPosition: standing
-targets: [gluteus-medius, gluteus-minimus, adductor-group, tensor-fasciae-latae, popliteus]
-goal: [mobility, motor-control]
+targets:
+  - gluteus-medius
+  - gluteus-minimus
+  - adductor-group
+  - tensor-fasciae-latae
+  - popliteus
+goal:
+  - mobility
+  - motor-control
 quickSteps:
   - Stand, feet shoulder-width, knees slightly bent.
   - Turn the waist and hips slowly to one side.
   - Let the knees turn with the hips.
   - Turn slowly to the other side.
-keyPoint: >-
-  The knees turn with the hips. Never twist against planted feet.
-feelItIn: >-
-  The hips rotating, not the knees.
-commonMistake: >-
-  Keeping the feet and knees fixed while turning, which twists the knee joint.
+keyPoint: The knees turn with the hips. Never twist against planted feet.
+feelItIn: The hips rotating, not the knees.
+commonMistake: Keeping the feet and knees fixed while turning, which twists the knee joint.
 instructions:
-  - Stand with feet shoulder-width apart, knees very slightly bent, arms hanging loosely.
-  - Turn your waist and hips slowly to one side, letting the arms swing along without effort.
-  - Let the knees turn with the hips rather than staying fixed — the whole leg rotates, so the knee is not twisted against a planted foot.
-  - Turn slowly to the other side. Keep the movement unhurried and continuous.
-dosage: Commonly practised for 1 to 3 minutes of continuous slow turning.
+  - label: Set your stance
+    detail: Stand with feet shoulder-width apart, knees very slightly bent, arms hanging loosely.
+  - label: Turn to one side
+    detail: Turn your waist and hips slowly to one side, letting the arms swing along without effort.
+  - label: Let the knees turn too
+    detail: Let the knees turn with the hips rather than staying fixed — the whole leg rotates, so
+      the knee is not twisted against a planted foot.
+  - label: Turn to the other side
+    detail: Turn slowly to the other side. Keep the movement unhurried and continuous.
+dosage:
+  reps: Continuous practice
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 2 to 5 minutes
+  note: Commonly practised for 1 to 3 minutes of continuous slow turning.
 difficulty: beginner
-progressions: [taichi-weight-shifting]
+progressions:
+  - taichi-weight-shifting
 contraindications:
   - Acute low back pain reproduced by rotation
   - Knee pain on turning
@@ -33,9 +48,12 @@ stopIf:
   - Knee pain, particularly a twisting sensation in the joint
   - Low back pain
   - Dizziness
-equipment: [none]
+equipment:
+  - none
 evidenceLabel: mechanistic-rationale
-sources: [wang-taichi-knee-oa-2016, neumann-kinesiology-2016]
+sources:
+  - wang-taichi-knee-oa-2016
+  - neumann-kinesiology-2016
 ---
 
 Rotation is the direction most people never deliberately move in, and the hip is built for

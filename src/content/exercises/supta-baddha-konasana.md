@@ -4,28 +4,41 @@ traditionalName: Supta Baddha Konasana
 tradition: Hatha yoga
 modality: yoga
 startPosition: supine
-targets: [adductor-group, iliopsoas, gluteus-medius]
-goal: [mobility]
+targets:
+  - adductor-group
+  - iliopsoas
+  - gluteus-medius
+goal:
+  - mobility
 quickSteps:
   - Lie down, soles of the feet together.
   - Put a cushion under each thigh.
   - Arms out to the sides.
   - Rest for several minutes.
-keyPoint: >-
-  Support both thighs. Unsupported legs lever the knee rather than stretch the hip.
-feelItIn: >-
-  A broad, gentle opening across the inner thighs.
-commonMistake: >-
-  Letting the legs hang unsupported.
+keyPoint: Support both thighs. Unsupported legs lever the knee rather than stretch the hip.
+feelItIn: A broad, gentle opening across the inner thighs.
+commonMistake: Letting the legs hang unsupported.
 instructions:
-  - Lie on your back with the soles of your feet together and your knees falling out to the sides.
-  - Place a cushion under each thigh so the legs are supported rather than hanging.
-  - Rest your arms out to the sides and let the position settle rather than pushing into it.
-  - Stay and breathe. Come out by bringing the knees together with your hands.
-dosage: Commonly held for 2 to 10 minutes.
+  - label: Lie down, soles together
+    detail: Lie on your back with the soles of your feet together and your knees falling out to the
+      sides.
+  - label: Support both thighs
+    detail: Place a cushion under each thigh so the legs are supported rather than hanging.
+  - label: Settle the arms
+    detail: Rest your arms out to the sides and let the position settle rather than pushing into it.
+  - label: Rest and breathe
+    detail: Stay and breathe. Come out by bringing the knees together with your hands.
+dosage:
+  reps: 1 repetition
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 2 to 10 minutes
+  note: Commonly held for 2 to 10 minutes.
 difficulty: beginner
-regressions: [viparita-karani]
-progressions: [baddha-konasana]
+regressions:
+  - viparita-karani
+progressions:
+  - baddha-konasana
 contraindications:
   - Groin strain
   - Pain on the inner side of the knee in this position
@@ -34,16 +47,22 @@ stopIf:
   - Pain on the inner side of the knee
   - Groin pain rather than a broad stretch
   - Low back discomfort
-equipment: [cushion, strap]
+equipment:
+  - cushion
+  - strap
 modifications:
-  - Support each thigh on a cushion or folded blanket. Unsupported legs hang, and hanging weight levers the knee rather than stretching the hip.
+  - Support each thigh on a cushion or folded blanket. Unsupported legs hang, and hanging weight
+    levers the knee rather than stretching the hip.
   - Move the feet further from the body, which reduces the demand substantially.
-  - Place a folded blanket under the head, and one lengthways under the spine if the low back is uncomfortable.
+  - Place a folded blanket under the head, and one lengthways under the spine if the low back is
+    uncomfortable.
 props:
   - Two cushions or folded blankets for under the thighs.
   - A folded blanket for the head.
 evidenceLabel: traditional-practice
-sources: [yoga-knee-oa-meta-2024, neumann-kinesiology-2016]
+sources:
+  - yoga-knee-oa-meta-2024
+  - neumann-kinesiology-2016
 ---
 
 The seated bound angle taken to the floor, which removes the need to hold yourself upright and

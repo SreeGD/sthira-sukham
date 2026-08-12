@@ -55,9 +55,14 @@ keyPoint: Not a real exercise.
 feelItIn: Nowhere.
 commonMistake: Doing it.
 instructions:
-  - Step one.
-  - Step two.
-dosage: Not a real exercise.
+  - label: Step one
+    detail: Do the first thing.
+  - label: Step two
+    detail: Do the second thing.
+dosage:
+  reps: 10 repetitions
+  sets: 1 set
+  frequency: Once daily
 difficulty: beginner
 progressions: [heel-slide]
 contraindications: [Not a real exercise]

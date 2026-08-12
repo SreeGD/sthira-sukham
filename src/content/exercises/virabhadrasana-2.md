@@ -4,27 +4,45 @@ traditionalName: Virabhadrasana II
 tradition: Hatha yoga
 modality: yoga
 startPosition: standing
-targets: [vastus-lateralis, vastus-medialis, gluteus-medius, gluteus-maximus, adductor-group]
-goal: [strength, motor-control]
+targets:
+  - vastus-lateralis
+  - vastus-medialis
+  - gluteus-medius
+  - gluteus-maximus
+  - adductor-group
+goal:
+  - strength
+  - motor-control
 quickSteps:
   - Feet wide, front foot turned out.
   - Bend the front knee over the middle of the foot.
   - Keep the knee behind the ankle.
   - Arms out. Hold, then swap.
-keyPoint: >-
-  The front knee tracks over the foot and stays behind the ankle.
-feelItIn: >-
-  The front thigh of the bent leg, and the side of that hip.
-commonMistake: >-
-  Bending deep and letting the knee cave inward.
+keyPoint: The front knee tracks over the foot and stays behind the ankle.
+feelItIn: The front thigh of the bent leg, and the side of that hip.
+commonMistake: Bending deep and letting the knee cave inward.
 instructions:
-  - Step your feet wide apart, turn the front foot out to point forward and angle the back foot slightly in.
-  - Bend the front knee, keeping it tracking over the middle of that foot rather than drifting inward.
-  - Check that the front knee stays behind the ankle rather than travelling past the toes.
-  - Extend the arms out to the sides and look over the front hand. Hold, then straighten and change sides.
-dosage: Commonly held for 20 to 60 seconds per side.
+  - label: Set a wide stance
+    detail: Step your feet wide apart, turn the front foot out to point forward and angle the back
+      foot slightly in.
+  - label: Bend the front knee
+    detail: Bend the front knee, keeping it tracking over the middle of that foot rather than
+      drifting inward.
+  - label: Check the knee tracking
+    detail: Check that the front knee stays behind the ankle rather than travelling past the toes.
+  - label: Extend the arms and hold
+    detail: Extend the arms out to the sides and look over the front hand. Hold, then straighten and
+      change sides.
+dosage:
+  reps: 2 to 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 30 to 60 seconds
+  note: Commonly held for 20 to 60 seconds per side.
 difficulty: intermediate
-regressions: [taichi-bow-stance, utkatasana]
+regressions:
+  - taichi-bow-stance
+  - utkatasana
 contraindications:
   - Front-of-knee pain in a lunge position
   - Recent knee or hip surgery without clearance
@@ -33,15 +51,23 @@ stopIf:
   - Front-of-knee pain
   - The front knee drifts inward and you cannot correct it
   - Groin pain on the back leg
-equipment: [none, chair, wall]
+equipment:
+  - none
+  - chair
+  - wall
 modifications:
-  - Bend the front knee only a little. Depth is not what makes this pose work — the knee tracking over the foot under load is.
-  - Shorten the stance. A wide stance with a collapsing knee is worse than a narrow one with good alignment.
+  - Bend the front knee only a little. Depth is not what makes this pose work — the knee
+    tracking over the foot under load is.
+  - Shorten the stance. A wide stance with a collapsing knee is worse than a narrow one with
+    good alignment.
   - Practise near a wall, or with a chair under the front thigh to take some of the weight.
 props:
   - A wall for the back foot and hand, or a chair to rest the front thigh on.
 evidenceLabel: traditional-practice
-sources: [yoga-knee-oa-meta-2024, nascimento-hip-knee-pfp-2018, neumann-kinesiology-2016]
+sources:
+  - yoga-knee-oa-meta-2024
+  - nascimento-hip-knee-pfp-2018
+  - neumann-kinesiology-2016
 ---
 
 A sustained single-leg-dominant hold with the hip in an open position — quadriceps endurance

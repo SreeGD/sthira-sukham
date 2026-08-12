@@ -4,27 +4,43 @@ traditionalName: Gong Bu (bow stance)
 tradition: Tai chi (a fundamental stance across styles)
 modality: taichi-qigong
 startPosition: standing
-targets: [gluteus-maximus, iliopsoas, adductor-group, soleus]
-goal: [strength, motor-control]
+targets:
+  - gluteus-maximus
+  - iliopsoas
+  - adductor-group
+  - soleus
+goal:
+  - strength
+  - motor-control
 quickSteps:
   - Step one foot forward, back foot turned out.
   - Both heels stay down.
   - Shift slowly forward onto the front leg.
   - Shift slowly back. Swap sides.
-keyPoint: >-
-  The back heel stays down. Lifting it removes most of the point.
-feelItIn: >-
-  The front thigh, and the back hip and calf lengthening.
-commonMistake: >-
-  Lifting the back heel to make the shift easier.
+keyPoint: The back heel stays down. Lifting it removes most of the point.
+feelItIn: The front thigh, and the back hip and calf lengthening.
+commonMistake: Lifting the back heel to make the shift easier.
 instructions:
-  - Step one foot forward into a comfortable stride, front foot pointing ahead and back foot turned out about 45 degrees.
-  - Keep both heels on the floor and your torso upright over your hips.
-  - Shift your weight slowly forward onto the front leg, letting the front knee bend while keeping it above the middle of the foot.
-  - Shift slowly back onto the rear leg, letting the front knee straighten but not lock. Repeat, then change sides.
-dosage: Commonly practised as 8 to 12 slow shifts per side.
+  - label: Step into the stance
+    detail: Step one foot forward into a comfortable stride, front foot pointing ahead and back foot
+      turned out about 45 degrees.
+  - label: Keep both heels down
+    detail: Keep both heels on the floor and your torso upright over your hips.
+  - label: Shift forward slowly
+    detail: Shift your weight slowly forward onto the front leg, letting the front knee bend while
+      keeping it above the middle of the foot.
+  - label: Shift back slowly
+    detail: Shift slowly back onto the rear leg, letting the front knee straighten but not lock.
+      Repeat, then change sides.
+dosage:
+  reps: 8 to 12 slow cycles
+  sets: 1 to 2 sets per session
+  frequency: Once daily
+  note: Commonly practised as 8 to 12 slow shifts per side.
 difficulty: intermediate
-regressions: [taichi-knee-over-toe, anjaneyasana]
+regressions:
+  - taichi-knee-over-toe
+  - anjaneyasana
 contraindications:
   - Balance problems without support within reach
   - Knee pain in a lunge position
@@ -33,9 +49,13 @@ stopIf:
   - Knee pain on the front leg as you shift forward
   - The front knee drifts inward past your control
   - Groin pain on the back leg
-equipment: [none, chair]
+equipment:
+  - none
+  - chair
 evidenceLabel: moderate-evidence
-sources: [wang-taichi-knee-oa-2016, neumann-kinesiology-2016]
+sources:
+  - wang-taichi-knee-oa-2016
+  - neumann-kinesiology-2016
 ---
 
 The bow stance is where tai chi's weight shifting meets a split stance, and it is close to

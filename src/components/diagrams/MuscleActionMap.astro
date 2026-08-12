@@ -19,6 +19,8 @@ const muscles = (await getCollection('muscles')).sort((a, b) => a.data.order - b
 
 interface ZoneSpec {
   zone: DiagramZone;
+  /** Short group name shown on the figure. Two or three words maximum. */
+  group: string;
   /** What this group does to the knee, in one line. */
   action: string;
   /** Whether the structure acts on the knee directly or via another joint. */
@@ -34,78 +36,88 @@ interface ZoneSpec {
 const ZONES: ZoneSpec[] = [
   {
     zone: 'hip-front',
+    group: 'Hip flexors',
     action: 'Bends the hip. Tight, and you stand with a bent knee all day.',
     reach: 'referred',
-    marker: [140, 44],
-    leader: [152, 44, 168, 44],
+    marker: [126, 44],
+    leader: [138, 44, 258, 44],
   },
   {
     zone: 'thigh-front',
+    group: 'Quadriceps',
     action: 'Straightens the knee.',
     reach: 'direct',
-    marker: [140, 92],
-    leader: [152, 92, 190, 108],
+    marker: [126, 92],
+    leader: [138, 92, 280, 108],
   },
   {
     zone: 'thigh-inner',
+    group: 'Adductors',
     action: 'Draws the thigh in. Tight, and the knee falls inward under load.',
     reach: 'referred',
-    marker: [140, 134],
-    leader: [152, 134, 204, 130],
+    marker: [126, 134],
+    leader: [138, 134, 294, 130],
   },
   {
     zone: 'thigh-outer',
+    group: 'IT band',
     action: 'Transmits hip tension to the outer knee.',
     reach: 'referred',
-    marker: [140, 176],
-    leader: [152, 176, 176, 140],
+    marker: [126, 176],
+    leader: [138, 176, 266, 140],
   },
   {
     zone: 'knee-front',
+    group: 'Capsule',
     action: 'Passive tissue. Restricts range; cannot be strengthened.',
     reach: 'direct',
-    marker: [140, 220],
-    leader: [152, 220, 180, 190],
+    marker: [126, 220],
+    leader: [138, 220, 270, 190],
   },
   {
     zone: 'hip-back',
+    group: 'Glute max',
     action: 'Straightens the hip. Weak, and the hamstrings take over.',
     reach: 'referred',
-    marker: [398, 44],
-    leader: [386, 44, 368, 40],
+    marker: [500, 44],
+    leader: [488, 44, 458, 40],
   },
   {
     zone: 'hip-side',
+    group: 'Glute med/min',
     action: 'Holds the pelvis level. Weak, and the thigh rolls inward.',
     reach: 'referred',
-    marker: [398, 86],
-    leader: [386, 86, 372, 52],
+    marker: [500, 86],
+    leader: [488, 86, 462, 52],
   },
   {
     zone: 'thigh-back',
+    group: 'Hamstrings',
     action: 'Bends the knee. Tight, and it will not straighten fully.',
     reach: 'direct',
-    marker: [398, 130],
-    leader: [386, 130, 356, 112],
+    marker: [500, 130],
+    leader: [488, 130, 446, 112],
   },
   {
     zone: 'knee-back',
+    group: 'Popliteus',
     action: 'Unlocks a fully straight knee so it can start bending.',
     reach: 'direct',
-    marker: [398, 178],
-    leader: [386, 178, 370, 188],
+    marker: [500, 178],
+    leader: [488, 178, 460, 188],
   },
   {
     zone: 'calf',
+    group: 'Calf',
     action: 'Points the foot. Tight, and the shin cannot travel forward.',
     reach: 'referred',
-    marker: [398, 232],
-    leader: [386, 232, 364, 236],
+    marker: [500, 232],
+    leader: [488, 232, 454, 236],
   },
 ];
 
 /** Shapes mirror LegLocator's, shifted right to leave room for labels either side. */
-const DX = 118;
+const DX = 208;
 const SHAPES: Record<DiagramZone, string> = {
   'hip-front': `M ${50 + DX} 26 Q ${50 + DX} 20 ${56 + DX} 20 L ${96 + DX} 20 Q ${102 + DX} 20 ${102 + DX} 26 L ${102 + DX} 62 L ${50 + DX} 62 Z`,
   'thigh-front': `M ${68 + DX} 64 L ${84 + DX} 64 L ${82 + DX} 168 L ${70 + DX} 168 Z`,
@@ -130,7 +142,7 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
 ---
 
 <figure class="diagram action-map">
-  <svg viewBox="0 0 440 332" role="img" aria-labelledby="map-title map-desc" class="diagram__svg">
+  <svg viewBox="0 0 620 332" role="img" aria-labelledby="map-title map-desc" class="diagram__svg">
     <title id="map-title">What each muscle group does to the knee</title>
     <desc id="map-desc">
       Front and back views of a leg with ten regions labelled. The front shows the hip flexors,
@@ -161,6 +173,15 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
             >
               {i + 1}
             </text>
+            <text
+              x={z.marker[0] < 300 ? z.marker[0] - 17 : z.marker[0] + 17}
+              y={z.marker[1]}
+              class="map-group"
+              text-anchor={z.marker[0] < 300 ? 'end' : 'start'}
+              dominant-baseline="central"
+            >
+              {z.group}
+            </text>
           </>
         ))
       }
@@ -187,7 +208,7 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
               </span>
               <span class={`map-key__dot map-key__dot--${z.reach}`} aria-hidden="true" />
               <span>
-                <strong>{z.action}</strong>{' '}
+                <strong>{z.group}.</strong> {z.action}{' '}
                 <span class="map-key__reach">
                   {z.reach === 'direct' ? 'Acts on the knee directly.' : 'Acts through another joint.'}
                 </span>
@@ -225,7 +246,7 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
     height: auto;
     /* Wide and label-heavy: it needs its own overflow container on small screens
        rather than shrinking the text to illegibility (SC-014). */
-    min-width: 24rem;
+    min-width: 34rem;
   }
   .action-map .diagram__svg {
     margin-inline: auto;
@@ -262,6 +283,12 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
     fill: var(--c-diagram-bg);
     stroke: var(--c-diagram-active);
     stroke-width: 2.5;
+  }
+  .map-group {
+    fill: var(--c-diagram-label);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--f-body);
   }
   .map-num {
     fill: var(--c-diagram-active);

@@ -2,27 +2,39 @@
 name: Heel slide with a strap
 modality: clinical-rom
 startPosition: supine
-targets: [rectus-femoris, vastus-intermedius, joint-capsule]
-goal: [mobility]
+targets:
+  - rectus-femoris
+  - vastus-intermedius
+  - joint-capsule
+goal:
+  - mobility
 quickSteps:
   - Loop a strap around your foot.
   - Slide the heel back as far as it goes.
   - Pull gently with the strap. Hold.
   - Release, then slide out slowly.
-keyPoint: >-
-  The strap adds a little at the end, not a lot throughout. Small pulls only.
-feelItIn: >-
-  A stretch at the front of the knee, never inside the joint.
-commonMistake: >-
-  Pulling hard. Your own muscles stop at pain; a strap will not.
+keyPoint: The strap adds a little at the end, not a lot throughout. Small pulls only.
+feelItIn: A stretch at the front of the knee, never inside the joint.
+commonMistake: Pulling hard. Your own muscles stop at pain; a strap will not.
 instructions:
-  - Lie on your back with a strap, belt, or towel looped around the foot of the stiff leg.
-  - Slide the heel toward your buttock as far as it will go on its own.
-  - Use the strap to draw the heel a small amount further, to a firm stretch rather than pain.
-  - Hold, then release the strap tension and let the leg slide back out under control.
-dosage: Commonly described as 8 to 12 repetitions with holds of 10 to 30 seconds, once or twice a day.
+  - label: Get into position
+    detail: Lie on your back with a strap, belt, or towel looped around the foot of the stiff leg.
+  - label: Slide as far as you can
+    detail: Slide the heel toward your buttock as far as it will go on its own.
+  - label: Add gentle assistance
+    detail: Use the strap to draw the heel a small amount further, to a firm stretch rather than pain.
+  - label: Release and return
+    detail: Hold, then release the strap tension and let the leg slide back out under control.
+dosage:
+  reps: 10 to 20 repetitions
+  sets: 1 to 3 sets per session
+  frequency: 2 to 3 times a day
+  hold: 5 seconds at the end of range
+  note: Commonly described as 8 to 12 repetitions with holds of 10 to 30 seconds, once or twice a
+    day.
 difficulty: intermediate
-regressions: [heel-slide]
+regressions:
+  - heel-slide
 contraindications:
   - Recent knee surgery where your surgeon has set a range-of-motion limit
   - A knee that is locking or catching
@@ -31,9 +43,13 @@ stopIf:
   - You feel a sharp or pinching pain rather than a stretch
   - Pain persists for more than an hour afterwards
   - Swelling increases after the session
-equipment: [strap, towel]
+equipment:
+  - strap
+  - towel
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, aaos-knee-arthritis]
+sources:
+  - neumann-kinesiology-2016
+  - aaos-knee-arthritis
 ---
 
 The same movement as the plain heel slide, with a strap adding a small amount of assistance

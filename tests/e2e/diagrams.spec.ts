@@ -117,7 +117,7 @@ test.describe('at a glance panel', () => {
     await page.reload();
     const order = await page.evaluate(() => {
       const g = document.querySelector('.glance');
-      const d = [...document.querySelectorAll('h2')].find((h) => /more detail/i.test(h.textContent ?? ''));
+      const d = [...document.querySelectorAll('h2')].find((h) => /how to perform/i.test(h.textContent ?? ''));
       return g && d ? g.compareDocumentPosition(d) & Node.DOCUMENT_POSITION_FOLLOWING : 0;
     });
     expect(order).toBeTruthy();

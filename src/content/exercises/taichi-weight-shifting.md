@@ -4,27 +4,42 @@ traditionalName: Zhan Zhuang weight transfer
 tradition: Tai chi (Yang-style foundational practice)
 modality: taichi-qigong
 startPosition: standing
-targets: [gluteus-medius, gluteus-minimus, soleus, adductor-group]
-goal: [motor-control, strength]
+targets:
+  - gluteus-medius
+  - gluteus-minimus
+  - soleus
+  - adductor-group
+goal:
+  - motor-control
+  - strength
 quickSteps:
   - Stand, feet shoulder-width, knees soft.
   - Shift your weight slowly onto one foot.
   - Pause, then shift just as slowly back.
   - Ten seconds per shift is not too slow.
-keyPoint: >-
-  Slowness is the exercise. Speed lets momentum do the work.
-feelItIn: >-
-  The side of the hip of the loaded leg.
-commonMistake: >-
-  Shifting quickly, so the stabilising muscles only get a brief pulse.
+keyPoint: Slowness is the exercise. Speed lets momentum do the work.
+feelItIn: The side of the hip of the loaded leg.
+commonMistake: Shifting quickly, so the stabilising muscles only get a brief pulse.
 instructions:
-  - Stand with your feet shoulder-width apart, knees very slightly bent, weight even between them.
-  - Slowly transfer your weight onto the right foot until the left is nearly unweighted, keeping your torso upright and not swaying sideways.
-  - Pause there, then transfer just as slowly to the left.
-  - Keep the movement continuous and unhurried. Ten seconds per shift is not too slow.
-dosage: Commonly practised for 2 to 5 minutes of continuous slow shifting.
+  - label: Set your stance
+    detail: Stand with your feet shoulder-width apart, knees very slightly bent, weight even between
+      them.
+  - label: Shift onto one foot
+    detail: Slowly transfer your weight onto the right foot until the left is nearly unweighted,
+      keeping your torso upright and not swaying sideways.
+  - label: Pause at the end
+    detail: Pause there, then transfer just as slowly to the left.
+  - label: Shift slowly back
+    detail: Keep the movement continuous and unhurried. Ten seconds per shift is not too slow.
+dosage:
+  reps: Continuous practice
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 2 to 5 minutes
+  note: Commonly practised for 2 to 5 minutes of continuous slow shifting.
 difficulty: beginner
-progressions: [taichi-knee-over-toe]
+progressions:
+  - taichi-knee-over-toe
 contraindications:
   - Balance problems without something within reach to steady yourself on
   - Acute hip or knee pain on single-leg loading
@@ -32,9 +47,13 @@ stopIf:
   - You feel unsteady and there is nothing to hold
   - Knee pain on the loaded side
   - The hip on the unloaded side drops sharply and you cannot control it
-equipment: [none, chair]
+equipment:
+  - none
+  - chair
 evidenceLabel: moderate-evidence
-sources: [wang-taichi-knee-oa-2016, neumann-kinesiology-2016]
+sources:
+  - wang-taichi-knee-oa-2016
+  - neumann-kinesiology-2016
 ---
 
 The foundational tai chi practice, and the one that most directly addresses the hip control

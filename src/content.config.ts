@@ -223,14 +223,32 @@ const exercises = defineCollection({
        * cannot serve both: detailed enough to be correct is too long to follow on a mat.
        */
       quickSteps: z.array(z.string().min(1).max(80)).min(2).max(5),
-      instructions: z.array(z.string().min(1)).min(2),
+      /*
+       * Labelled steps rather than a bare list. The label names what the step is FOR
+       * ("Find your limit"), which is what makes a numbered instruction scannable when
+       * you are part-way through it and looking back to check where you were.
+       */
+      instructions: z
+        .array(z.object({ label: z.string().min(1), detail: z.string().min(1) }))
+        .min(2),
       /** The single thing that decides whether the movement does anything. */
       keyPoint: z.string().min(1),
       /** Where it should be felt — the answer to "am I doing this right?". */
       feelItIn: z.string().min(1),
       /** The characteristic fault. Every exercise has one; naming it prevents it. */
       commonMistake: z.string().min(1),
-      dosage: z.string().min(1),
+      /*
+       * Structured rather than prose. "10 reps, 1-3 sets, 2-3 times a day" is four
+       * separate facts, and a reader checking one of them should not have to parse a
+       * sentence to find it. `note` carries anything that does not fit the grid.
+       */
+      dosage: z.object({
+        reps: z.string().min(1),
+        sets: z.string().min(1),
+        frequency: z.string().min(1),
+        hold: z.string().optional(),
+        note: z.string().optional(),
+      }),
       difficulty: z.enum(DIFFICULTIES),
       regressions: z.array(reference('exercises')).default([]),
       progressions: z.array(reference('exercises')).default([]),

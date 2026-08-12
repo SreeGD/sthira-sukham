@@ -4,27 +4,43 @@ traditionalName: Virasana
 tradition: Hatha yoga
 modality: yoga
 startPosition: kneeling
-targets: [rectus-femoris, vastus-lateralis, vastus-medialis, vastus-intermedius]
-goal: [mobility]
+targets:
+  - rectus-femoris
+  - vastus-lateralis
+  - vastus-medialis
+  - vastus-intermedius
+goal:
+  - mobility
 quickSteps:
   - Kneel, knees together, feet just wider than hips.
   - Put a cushion or block between your feet.
   - Sit down onto it, not the floor.
   - Sit tall and breathe.
-keyPoint: >-
-  Sit on enough height that it is easy. Most stiff knees need more than expected.
-feelItIn: >-
-  The front of the thighs.
-commonMistake: >-
-  Sitting too low. That compresses the joint instead of stretching the thigh.
+keyPoint: Sit on enough height that it is easy. Most stiff knees need more than expected.
+feelItIn: The front of the thighs.
+commonMistake: Sitting too low. That compresses the joint instead of stretching the thigh.
 instructions:
-  - Kneel with your knees together and your feet slightly wider than your hips, tops of the feet on the floor.
-  - Place a block, cushion, or folded blanket between your feet, high enough that you sit on it without strain.
-  - Lower yourself onto the support, keeping the weight even and the knees comfortable.
-  - Sit upright and breathe. Come out by leaning forward onto your hands and straightening one leg at a time.
-dosage: Commonly held for 30 seconds to a few minutes, building gradually over weeks rather than within a session.
+  - label: Kneel and set the feet
+    detail: Kneel with your knees together and your feet slightly wider than your hips, tops of the
+      feet on the floor.
+  - label: Add enough height
+    detail: Place a block, cushion, or folded blanket between your feet, high enough that you sit on
+      it without strain.
+  - label: Lower onto the support
+    detail: Lower yourself onto the support, keeping the weight even and the knees comfortable.
+  - label: Sit upright and breathe
+    detail: Sit upright and breathe. Come out by leaning forward onto your hands and straightening
+      one leg at a time.
+dosage:
+  reps: 2 to 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 30 to 60 seconds
+  note: Commonly held for 30 seconds to a few minutes, building gradually over weeks rather than
+    within a session.
 difficulty: advanced
-regressions: [heel-slide]
+regressions:
+  - heel-slide
 contraindications:
   - Any knee that has been surgically reconstructed, without clearance from your surgeon
   - Meniscal injury
@@ -35,17 +51,25 @@ stopIf:
   - Pain at the front of the ankle
   - Pins and needles in the feet
   - The knees feel like they are being wedged apart or pulled
-equipment: [cushion, chair]
+equipment:
+  - cushion
+  - chair
 modifications:
-  - Use enough height that you sit with no strain at all. Most stiff knees need considerably more than expected — a firm cushion or two stacked blocks is a normal starting point, not a failure.
-  - Roll a small towel and place it behind the knees, in the crease, to reduce how far the joint has to fold.
-  - If kneeling is not available at all, sit on a chair and slide one foot back underneath it — the same stretch through the front of the thigh, with the knee bearing no weight.
+  - Use enough height that you sit with no strain at all. Most stiff knees need considerably
+    more than expected — a firm cushion or two stacked blocks is a normal starting point, not a
+    failure.
+  - Roll a small towel and place it behind the knees, in the crease, to reduce how far the joint
+    has to fold.
+  - If kneeling is not available at all, sit on a chair and slide one foot back underneath it —
+    the same stretch through the front of the thigh, with the knee bearing no weight.
 props:
   - Yoga blocks, a firm cushion, or a stack of books.
   - A rolled towel for behind the knees.
   - A folded blanket under the shins if the ankles complain.
 evidenceLabel: traditional-practice
-sources: [yoga-knee-oa-meta-2024, neumann-kinesiology-2016]
+sources:
+  - yoga-knee-oa-meta-2024
+  - neumann-kinesiology-2016
 ---
 
 Virasana asks for deep knee flexion under body weight, and that combination makes it the

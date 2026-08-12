@@ -2,28 +2,44 @@
 name: Banded supine leg press
 modality: clinical-rom
 startPosition: supine
-targets: [vastus-medialis, vastus-lateralis, vastus-intermedius, gluteus-maximus, soleus]
-goal: [strength]
+targets:
+  - vastus-medialis
+  - vastus-lateralis
+  - vastus-intermedius
+  - gluteus-maximus
+  - soleus
+goal:
+  - strength
 quickSteps:
   - Lie down, band round one foot, ends in hands.
   - Draw the knee toward your chest.
   - Press the foot away until nearly straight.
   - Bend back in slowly.
-keyPoint: >-
-  You hold both ends, so you can always just let go.
-feelItIn: >-
-  The front of the thigh and the buttock.
-commonMistake: >-
-  Letting the band snap the knee back in.
+keyPoint: You hold both ends, so you can always just let go.
+feelItIn: The front of the thigh and the buttock.
+commonMistake: Letting the band snap the knee back in.
 instructions:
-  - Lie on your back and loop a resistance band around the arch of one foot, holding both ends in your hands.
-  - Draw that knee toward your chest so the band is taut.
-  - Press the foot away from you until the leg is nearly straight, against the band's resistance.
-  - Bend the knee back in slowly, letting the band pull only as fast as you allow.
-dosage: Commonly described as 10 to 15 repetitions per side, one to three sets.
+  - label: Loop the band around your foot
+    detail: Lie on your back and loop a resistance band around the arch of one foot, holding both
+      ends in your hands.
+  - label: Draw the knee in
+    detail: Draw that knee toward your chest so the band is taut.
+  - label: Press the foot away
+    detail: Press the foot away from you until the leg is nearly straight, against the band's
+      resistance.
+  - label: Bend back in slowly
+    detail: Bend the knee back in slowly, letting the band pull only as fast as you allow.
+dosage:
+  reps: 10 to 15 repetitions
+  sets: 1 to 3 sets per session
+  frequency: Once daily
+  note: Commonly described as 10 to 15 repetitions per side, one to three sets.
 difficulty: beginner
-regressions: [pilates-footwork, quad-sets]
-progressions: [band-terminal-knee-extension]
+regressions:
+  - pilates-footwork
+  - quad-sets
+progressions:
+  - band-terminal-knee-extension
 contraindications:
   - Recent knee surgery where your surgeon has set a range limit
   - Knee pain as the knee comes toward the chest
@@ -31,9 +47,12 @@ stopIf:
   - Knee pain at either end of the movement
   - The band slips off the foot
   - Cramping in the foot or calf
-equipment: [resistance-band]
+equipment:
+  - resistance-band
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+sources:
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
 ---
 
 A leg press without a leg press machine, and one of the few ways to load the quadriceps

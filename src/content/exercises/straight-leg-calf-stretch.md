@@ -2,36 +2,47 @@
 name: Straight-leg calf stretch
 modality: clinical-rom
 startPosition: standing-supported
-targets: [gastrocnemius]
-goal: [mobility]
+targets:
+  - gastrocnemius
+goal:
+  - mobility
 quickSteps:
   - Hands on a wall, step one leg back.
   - Keep that knee straight, heel down.
   - Lean your hips toward the wall.
   - Hold, then swap.
-keyPoint: >-
-  Back knee straight and heel down. Both, or you are stretching nothing.
-feelItIn: >-
-  The upper calf, the fleshy part.
-commonMistake: >-
-  Letting the back heel lift, which ends the stretch entirely.
+keyPoint: Back knee straight and heel down. Both, or you are stretching nothing.
+feelItIn: The upper calf, the fleshy part.
+commonMistake: Letting the back heel lift, which ends the stretch entirely.
 instructions:
-  - Stand facing a wall with your hands on it at shoulder height.
-  - Step the leg you want to stretch back, keeping that knee straight and the heel down.
-  - Keep the back foot pointing forward, not turned out.
-  - Lean your hips toward the wall until you feel a stretch through the upper calf. Hold.
-dosage: Commonly described as 3 repetitions of 30 seconds per side, once or twice a day.
+  - label: Get into position
+    detail: Stand facing a wall with your hands on it at shoulder height.
+  - label: Set the back leg
+    detail: Step the leg you want to stretch back, keeping that knee straight and the heel down.
+  - label: Check the foot direction
+    detail: Keep the back foot pointing forward, not turned out.
+  - label: Lean and hold
+    detail: Lean your hips toward the wall until you feel a stretch through the upper calf. Hold.
+dosage:
+  reps: 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once or twice a day
+  hold: 30 seconds
+  note: Commonly described as 3 repetitions of 30 seconds per side, once or twice a day.
 difficulty: beginner
-progressions: [bent-knee-calf-stretch]
+progressions:
+  - bent-knee-calf-stretch
 contraindications:
   - Recent Achilles tendon injury or rupture
   - Acute calf strain
 stopIf:
   - Sharp pain in the calf or at the back of the heel rather than a stretch
   - Any pins and needles or numbness in the foot
-equipment: [wall]
+equipment:
+  - wall
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016]
+sources:
+  - neumann-kinesiology-2016
 ---
 
 Straightening the back knee is what makes this a gastrocnemius stretch specifically, because

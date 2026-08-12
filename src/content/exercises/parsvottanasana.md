@@ -4,27 +4,43 @@ traditionalName: Parsvottanasana
 tradition: Hatha yoga
 modality: yoga
 startPosition: standing
-targets: [biceps-femoris, semimembranosus, semitendinosus, gastrocnemius, iliopsoas]
-goal: [mobility]
+targets:
+  - biceps-femoris
+  - semimembranosus
+  - semitendinosus
+  - gastrocnemius
+  - iliopsoas
+goal:
+  - mobility
 quickSteps:
   - One foot a stride in front, hips square.
   - Soft bend in the front knee.
   - Hinge forward over the front leg.
   - Hands to a chair or blocks.
-keyPoint: >-
-  The front knee stays softly bent, never locked.
-feelItIn: >-
-  The back of the front thigh, and the front of the back hip.
-commonMistake: >-
-  Locking the front knee, which drives it into hyperextension under load.
+keyPoint: The front knee stays softly bent, never locked.
+feelItIn: The back of the front thigh, and the front of the back hip.
+commonMistake: Locking the front knee, which drives it into hyperextension under load.
 instructions:
-  - Stand with one foot a stride in front of the other, back foot turned out slightly, hips facing forward.
-  - Keep a soft bend in the front knee rather than locking it straight.
-  - Hinge forward over the front leg from the hips, keeping the spine long.
-  - Rest your hands on blocks or a chair. Hold, then press through the back foot to come up. Change sides.
-dosage: Commonly held for 30 to 60 seconds per side.
+  - label: Step into the stance
+    detail: Stand with one foot a stride in front of the other, back foot turned out slightly, hips
+      facing forward.
+  - label: Square the hips forward
+    detail: Keep a soft bend in the front knee rather than locking it straight.
+  - label: Hinge over the front leg
+    detail: Hinge forward over the front leg from the hips, keeping the spine long.
+  - label: Support the hands and hold
+    detail: Rest your hands on blocks or a chair. Hold, then press through the back foot to come up.
+      Change sides.
+dosage:
+  reps: 2 to 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 30 to 60 seconds
+  note: Commonly held for 30 to 60 seconds per side.
 difficulty: intermediate
-regressions: [uttanasana, supta-padangusthasana]
+regressions:
+  - uttanasana
+  - supta-padangusthasana
 contraindications:
   - Acute hamstring strain
   - Balance problems without support within reach
@@ -33,16 +49,22 @@ stopIf:
   - Pain behind the front knee
   - The front knee locks backward and you cannot soften it
   - Low back pain rather than a hamstring stretch
-equipment: [chair, wall]
+equipment:
+  - chair
+  - wall
 modifications:
-  - Keep a clear bend in the front knee. A hyperextending front knee in this pose takes the stretch out of the hamstring and puts it into the back of the joint.
+  - Keep a clear bend in the front knee. A hyperextending front knee in this pose takes the
+    stretch out of the hamstring and puts it into the back of the joint.
   - Hands on a chair seat rather than the floor, so the spine stays long and the pelvis can tip.
-  - Shorten the stance considerably. A short stride with a long spine does more than a long one with a rounded back.
+  - Shorten the stance considerably. A short stride with a long spine does more than a long one
+    with a rounded back.
 props:
   - A chair or two blocks for the hands.
   - A wall behind the back heel for stability.
 evidenceLabel: traditional-practice
-sources: [yoga-knee-oa-meta-2024, neumann-kinesiology-2016]
+sources:
+  - yoga-knee-oa-meta-2024
+  - neumann-kinesiology-2016
 ---
 
 A one-legged hamstring stretch with the pelvis squared, which makes it more specific than a

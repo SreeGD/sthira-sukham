@@ -4,41 +4,60 @@ traditionalName: Leg Slides
 tradition: Pilates (mat repertoire)
 modality: pilates
 startPosition: supine
-targets: [iliopsoas, rectus-femoris, vastus-intermedius]
-goal: [motor-control]
+targets:
+  - iliopsoas
+  - rectus-femoris
+  - vastus-intermedius
+goal:
+  - motor-control
 quickSteps:
   - Lie down, knees bent, spine in its natural curve.
   - Slide one heel out until the leg is straight.
   - Slide it back. Pelvis does not move.
   - Swap sides.
-keyPoint: >-
-  The pelvis staying still is the exercise. The leg is just the challenge.
-feelItIn: >-
-  The deep abdomen working to keep you still.
-commonMistake: >-
-  Letting the back arch as the leg straightens. Shorten the slide.
+keyPoint: The pelvis staying still is the exercise. The leg is just the challenge.
+feelItIn: The deep abdomen working to keep you still.
+commonMistake: Letting the back arch as the leg straightens. Shorten the slide.
 instructions:
-  - Lie on your back with both knees bent, feet flat, spine in its natural resting curve.
-  - Find and keep that neutral spine position — neither flattened into the floor nor arched away from it.
-  - Slide one heel slowly along the floor until the leg is straight, without letting the pelvis tip or the back change shape.
-  - Slide it slowly back. The pelvis staying still is the exercise; the leg is only how you challenge it.
-dosage: Commonly described as 5 to 10 slides per leg, moving slowly, once daily.
+  - label: Find neutral spine
+    detail: Lie on your back with both knees bent, feet flat, spine in its natural resting curve.
+  - label: Slide one heel out
+    detail: Find and keep that neutral spine position — neither flattened into the floor nor arched
+      away from it.
+  - label: Keep the pelvis still
+    detail: Slide one heel slowly along the floor until the leg is straight, without letting the
+      pelvis tip or the back change shape.
+  - label: Slide back in
+    detail: Slide it slowly back. The pelvis staying still is the exercise; the leg is only how you
+      challenge it.
+dosage:
+  reps: 8 to 12 repetitions
+  sets: 1 to 2 sets per session
+  frequency: Once daily
+  note: Commonly described as 5 to 10 slides per leg, moving slowly, once daily.
 difficulty: beginner
-progressions: [pilates-bridging]
+progressions:
+  - pilates-bridging
 contraindications:
   - Acute low back pain
   - Recent abdominal surgery
 stopIf:
   - Low back pain
-  - You cannot keep the pelvis still even over a short range — shorten the range rather than pushing on
-equipment: [none]
+  - You cannot keep the pelvis still even over a short range — shorten the range rather than
+    pushing on
+equipment:
+  - none
 modifications:
-  - Slide the heel only part-way out. The range is not the exercise — the pelvis staying still is, and a short slide you control beats a long one you do not.
-  - Rest your hands lightly on your hip bones so you can feel the moment the pelvis starts to tip.
+  - Slide the heel only part-way out. The range is not the exercise — the pelvis staying still
+    is, and a short slide you control beats a long one you do not.
+  - Rest your hands lightly on your hip bones so you can feel the moment the pelvis starts to
+    tip.
 props:
   - A folded towel under the head if the chin lifts toward the ceiling.
 evidenceLabel: mechanistic-rationale
-sources: [neumann-kinesiology-2016, cochrane-exercise-knee-oa-2024]
+sources:
+  - neumann-kinesiology-2016
+  - cochrane-exercise-knee-oa-2024
 ---
 
 This looks like almost nothing and is harder than it looks, which is characteristic of the

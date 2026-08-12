@@ -633,3 +633,42 @@ html[data-ack='1'] [data-testid='red-flag-gate'] {
   gap: var(--s-2);
   align-items: center;
 }
+
+/* Labelled instruction steps: the label names what the step is FOR, so a reader
+   part-way through can find their place again without re-reading. */
+.steps--labelled li strong {
+  color: var(--c-text);
+}
+
+/* Routine figures as a grid rather than a sentence — four separate facts, and
+   someone checking one of them should not have to parse prose to find it. */
+.routine {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--s-3);
+  margin: 0 0 var(--s-3);
+  padding: 0;
+  max-width: var(--measure);
+}
+.routine > div {
+  padding: var(--s-3);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+}
+.routine dt {
+  font-size: var(--f-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--c-text-muted);
+}
+.routine dd {
+  margin: var(--s-1) 0 0;
+  font-weight: 600;
+}
+.routine__note {
+  font-size: var(--f-size-sm);
+  color: var(--c-text-muted);
+  max-width: var(--measure);
+}

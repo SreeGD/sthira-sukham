@@ -4,27 +4,41 @@ traditionalName: Trikonasana
 tradition: Hatha yoga
 modality: yoga
 startPosition: standing
-targets: [biceps-femoris, semimembranosus, adductor-group, tensor-fasciae-latae]
-goal: [mobility]
+targets:
+  - biceps-femoris
+  - semimembranosus
+  - adductor-group
+  - tensor-fasciae-latae
+goal:
+  - mobility
 quickSteps:
   - Feet wide, front foot turned out.
   - Keep a small bend in the front knee.
   - Reach out, then tip sideways from the hip.
   - Lower hand to shin or a block.
-keyPoint: >-
-  Keep the front knee softly bent. Never let it lock backward.
-feelItIn: >-
-  The back and inner side of the front thigh.
-commonMistake: >-
-  Pushing the front knee past straight into hyperextension.
+keyPoint: Keep the front knee softly bent. Never let it lock backward.
+feelItIn: The back and inner side of the front thigh.
+commonMistake: Pushing the front knee past straight into hyperextension.
 instructions:
-  - Stand with your feet wide apart, the front foot turned out and the back foot turned in slightly.
-  - Keep both legs straight but do not lock the front knee — leave a small softness in it.
-  - Reach out over the front leg, then tip sideways from the hip, bringing the lower hand to your shin or a block.
-  - Hold, then come up by pressing through the back foot. Change sides.
-dosage: Commonly held for 30 to 60 seconds per side.
+  - label: Set a wide stance
+    detail: Stand with your feet wide apart, the front foot turned out and the back foot turned in
+      slightly.
+  - label: Soften the front knee
+    detail: Keep both legs straight but do not lock the front knee — leave a small softness in it.
+  - label: Tip sideways from the hip
+    detail: Reach out over the front leg, then tip sideways from the hip, bringing the lower hand to
+      your shin or a block.
+  - label: Rest the hand and hold
+    detail: Hold, then come up by pressing through the back foot. Change sides.
+dosage:
+  reps: 2 to 3 repetitions per side
+  sets: 1 set per session
+  frequency: Once daily
+  hold: 30 to 60 seconds
+  note: Commonly held for 30 to 60 seconds per side.
 difficulty: intermediate
-regressions: [supta-padangusthasana]
+regressions:
+  - supta-padangusthasana
 contraindications:
   - Acute hamstring strain
   - Low back pain reproduced by side bending
@@ -33,16 +47,23 @@ stopIf:
   - Pain behind the front knee
   - The front knee locks backward and you cannot soften it
   - Low back or neck pain
-equipment: [chair, wall]
+equipment:
+  - chair
+  - wall
 modifications:
-  - Rest your lower hand on a chair seat or a block rather than reaching for the shin. Reaching lower is not the goal and rounds the spine.
-  - Keep a clear bend in the front knee throughout. A hyperextending knee in this pose takes the load into the joint rather than the hamstring.
-  - Practise with your back against a wall so you can feel whether you are tipping sideways rather than forward.
+  - Rest your lower hand on a chair seat or a block rather than reaching for the shin. Reaching
+    lower is not the goal and rounds the spine.
+  - Keep a clear bend in the front knee throughout. A hyperextending knee in this pose takes the
+    load into the joint rather than the hamstring.
+  - Practise with your back against a wall so you can feel whether you are tipping sideways
+    rather than forward.
 props:
   - A block or chair for the lower hand.
   - A wall to work against.
 evidenceLabel: traditional-practice
-sources: [yoga-knee-oa-meta-2024, neumann-kinesiology-2016]
+sources:
+  - yoga-knee-oa-meta-2024
+  - neumann-kinesiology-2016
 ---
 
 A wide-stance stretch that reaches the back and inner thigh of the front leg at once.
