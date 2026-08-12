@@ -64,13 +64,7 @@ const routine = (await getCollection('routines')).find((r) => r.data.goal?.id ==
     </ul>
   </section>
 
-  {
-    d.romNote && (
-      <p class="tag-row">
-        <span class="tag">{d.romNote}</span>
-      </p>
-    )
-  }
+  {d.romNote && <p class="rom-note">{d.romNote}</p>}
 
   <section class="section prose"><Content /></section>
 

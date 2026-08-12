@@ -16,6 +16,11 @@ export const DIAGRAM_ZONES = [
   'knee-front',
   'knee-back',
   'calf',
+  // Ankle zones. Without these every lower-leg structure collapses into "calf" and
+  // the ankle's map has one region, which communicates nothing.
+  'shin',
+  'lower-leg-outer',
+  'foot',
 ] as const;
 
 export type DiagramZone = (typeof DIAGRAM_ZONES)[number];

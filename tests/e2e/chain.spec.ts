@@ -138,3 +138,28 @@ test.describe('new structures are covered (feature 002, SC-105)', () => {
     }
   });
 });
+
+test.describe('extensibility (SC-114)', () => {
+  test('the action map is generated per joint, not hardcoded for the knee', async ({ page }) => {
+    // If this ever regresses to one shared map, every joint page silently asserts
+    // relationships its content never claimed.
+    const counts: Record<string, number> = {};
+    for (const joint of ['knee', 'hip', 'ankle']) {
+      await page.goto(`/joints/${joint}/`);
+      counts[joint] = await page.locator('.action-map .map-zone').count();
+    }
+    expect(counts.knee).toBeGreaterThan(counts.hip!);
+    expect(counts.hip).toBeGreaterThan(counts.ankle!);
+    expect(counts.ankle).toBeGreaterThanOrEqual(3);
+  });
+
+  test('each joint map names only regions that influence that joint', async ({ page }) => {
+    await page.goto('/joints/ankle/');
+    // allInnerTexts() returns '' for SVG <text> — textContent is what reads it.
+    const groups = await page.locator('.action-map .map-group').allTextContents();
+    expect(groups).toContain('Calf');
+    expect(groups).toContain('Shin');
+    // Quadriceps do not act on the ankle and must not appear on its map.
+    expect(groups).not.toContain('Quadriceps');
+  });
+});

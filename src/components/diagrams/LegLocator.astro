@@ -80,6 +80,21 @@ const SHAPES: Record<DiagramZone, { view: 'front' | 'back'; d: string; plain: st
     d: 'M 206 204 L 242 204 Q 247 216 244 242 L 235 286 L 214 286 Q 203 242 206 204 Z',
     plain: 'the calf',
   },
+  shin: {
+    view: 'front',
+    d: 'M 68 204 L 94 204 L 87 286 L 72 286 Z',
+    plain: 'the front of the shin',
+  },
+  'lower-leg-outer': {
+    view: 'front',
+    d: 'M 58 204 L 68 204 L 72 286 L 66 286 Z',
+    plain: 'the outer side of the lower leg',
+  },
+  foot: {
+    view: 'front',
+    d: 'M 66 288 L 87 288 L 106 302 L 66 302 Z',
+    plain: 'the sole of the foot',
+  },
 };
 
 const cls = (z: DiagramZone) => (zones.includes(z) ? 'leg-zone is-active' : 'leg-zone');
@@ -102,8 +117,6 @@ const captionText = caption ?? plain.charAt(0).toUpperCase() + plain.slice(1);
 
     <g aria-hidden="true">
       <!-- Structural outlines that are never highlighted -->
-      <path d="M 58 204 L 94 204 L 87 286 L 66 286 Z" class="leg-base" />
-      <path d="M 66 288 L 87 288 L 106 302 L 66 302 Z" class="leg-base" />
       <path d="M 214 288 L 235 288 L 254 302 L 214 302 Z" class="leg-base" />
 
       {Object.entries(SHAPES).map(([id, s]) => <path d={s.d} class={cls(id as DiagramZone)} />)}

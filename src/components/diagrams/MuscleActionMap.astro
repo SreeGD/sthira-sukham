@@ -15,7 +15,25 @@ import type { DiagramZone } from '../../lib/diagram-zones.ts';
  * what governs a knee is not at the knee. Six of the ten zones are hip or ankle.
  */
 
-const muscles = (await getCollection('muscles')).sort((a, b) => a.data.order - b.data.order);
+interface Props {
+  /** Which joint to draw the map for. Defaults to the knee. */
+  joint?: 'knee' | 'hip' | 'ankle';
+}
+const { joint = 'knee' } = Astro.props;
+
+const allMuscles = (await getCollection('muscles')).sort((a, b) => a.data.order - b.data.order);
+
+/*
+ * A structure appears on this map only if it influences THIS joint, and its action
+ * marker comes from that influence — so the same structure can be solid on one joint's
+ * map and hatched on another's. Drawing the knee's regions on the ankle page would
+ * assert relationships the content never claimed.
+ */
+const influenceAt = (m: (typeof allMuscles)[number]) =>
+  m.data.jointInfluences.find((i) => i.joint.id === joint);
+const muscles = allMuscles.filter((m) => influenceAt(m));
+
+const jointEntry = (await getCollection('joints')).find((j) => j.id === joint)!;
 
 interface ZoneSpec {
   zone: DiagramZone;
@@ -107,6 +125,30 @@ const ZONES: ZoneSpec[] = [
     leader: [488, 178, 460, 188],
   },
   {
+    zone: 'shin',
+    group: 'Shin',
+    action: 'Lifts the foot. Weak, and the toes catch as the leg swings through.',
+    reach: 'direct',
+    marker: [126, 262],
+    leader: [138, 262, 268, 250],
+  },
+  {
+    zone: 'lower-leg-outer',
+    group: 'Outer lower leg',
+    action: 'Stops the ankle rolling over. Slow to respond after a sprain.',
+    reach: 'direct',
+    marker: [500, 262],
+    leader: [488, 262, 282, 250],
+  },
+  {
+    zone: 'foot',
+    group: 'Sole of the foot',
+    action: 'Stiffens the foot into a lever for push-off.',
+    reach: 'direct',
+    marker: [126, 296],
+    leader: [138, 296, 268, 296],
+  },
+  {
     zone: 'calf',
     group: 'Calf',
     action: 'Points the foot. Tight, and the shin cannot travel forward.',
@@ -129,23 +171,31 @@ const SHAPES: Record<DiagramZone, string> = {
   'thigh-back': `M ${199 + DX} 64 L ${249 + DX} 64 L ${242 + DX} 168 L ${206 + DX} 168 Z`,
   'knee-back': `M ${206 + DX} 170 L ${242 + DX} 170 Q ${246 + DX} 170 ${246 + DX} 176 L ${246 + DX} 196 Q ${246 + DX} 202 ${242 + DX} 202 L ${206 + DX} 202 Q ${202 + DX} 202 ${202 + DX} 196 L ${202 + DX} 176 Q ${202 + DX} 170 ${206 + DX} 170 Z`,
   calf: `M ${206 + DX} 204 L ${242 + DX} 204 Q ${247 + DX} 216 ${244 + DX} 242 L ${235 + DX} 286 L ${214 + DX} 286 Q ${203 + DX} 242 ${206 + DX} 204 Z`,
+  shin: `M ${68 + DX} 204 L ${94 + DX} 204 L ${87 + DX} 286 L ${72 + DX} 286 Z`,
+  'lower-leg-outer': `M ${58 + DX} 204 L ${68 + DX} 204 L ${72 + DX} 286 L ${66 + DX} 286 Z`,
+  foot: `M ${66 + DX} 288 L ${87 + DX} 288 L ${106 + DX} 302 L ${66 + DX} 302 Z`,
 };
 
-const BASE = [
-  `M ${58 + DX} 204 L ${94 + DX} 204 L ${87 + DX} 286 L ${66 + DX} 286 Z`,
-  `M ${66 + DX} 288 L ${87 + DX} 288 L ${106 + DX} 302 L ${66 + DX} 302 Z`,
-  `M ${214 + DX} 288 L ${235 + DX} 288 L ${254 + DX} 302 L ${214 + DX} 302 Z`,
-];
+const BASE = [`M ${214 + DX} 288 L ${235 + DX} 288 L ${254 + DX} 302 L ${214 + DX} 302 Z`];
 
 const inZone = (zone: DiagramZone) => muscles.filter((m) => m.data.diagramZone === zone);
-const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
+
+/* Only zones with a structure influencing this joint are drawn. */
+const activeZones = ZONES.filter((z) => inZone(z.zone).length > 0).map((z) => {
+  const members = inZone(z.zone);
+  // Solid if anything in the zone acts on this joint directly; hatched only when the
+  // whole zone reaches it through somewhere else.
+  const reach = members.some((m) => influenceAt(m)!.action === 'direct') ? 'direct' : 'referred';
+  return { ...z, reach: reach as 'direct' | 'referred' };
+});
+const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
 ---
 
 <figure class="diagram action-map">
   <svg viewBox="0 0 620 332" role="img" aria-labelledby="map-title map-desc" class="diagram__svg">
     <title id="map-title">What each muscle group does to the knee</title>
     <desc id="map-desc">
-      Front and back views of a leg with ten regions labelled. The front shows the hip flexors,
+      Front and back views of a leg showing the regions that influence this joint. The front shows the hip flexors,
       the front, inner and outer thigh, and the front of the knee. The back shows the buttock,
       the side of the hip, the back of the thigh, behind the knee, and the calf. Each label
       states what that group does to the knee. Six of the ten act on the knee indirectly, through
@@ -154,13 +204,14 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
 
     <g aria-hidden="true">
       {BASE.map((d) => <path d={d} class="map-base" />)}
+      {Object.values(SHAPES).map((d) => <path d={d} class="map-base" />)}
       {
-        ZONES.map((z) => (
+        activeZones.map((z) => (
           <path d={SHAPES[z.zone]} class={`map-zone map-zone--${z.reach}`} />
         ))
       }
       {
-        ZONES.map((z, i) => (
+        activeZones.map((z, i) => (
           <>
             <line x1={z.leader[0]} y1={z.leader[1]} x2={z.leader[2]} y2={z.leader[3]} class="map-leader" />
             <circle cx={z.marker[0]} cy={z.marker[1]} r="12" class="map-marker" />
@@ -192,14 +243,16 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
 
   <figcaption>
     <p class="map-lede">
-      <strong>Six of these ten act on the knee indirectly</strong>, through the hip or the ankle.
-      That is why so much of this reference is about muscles that are nowhere near the joint that
-      hurts.
+      <strong>
+        {referredCount} of these {activeZones.length} act on {jointEntry.data.name.toLowerCase()}{' '}
+        indirectly
+      </strong>, through a neighbouring joint. That is why so much of this reference is about
+      muscles that are nowhere near the joint that hurts.
     </p>
 
     <ol class="map-key">
       {
-        ZONES.map((z, i) => {
+        activeZones.map((z, i) => {
           const members = inZone(z.zone);
           return (
             <li>
@@ -227,7 +280,7 @@ const referredCount = ZONES.filter((z) => z.reach === 'referred').length;
     </ol>
     <p class="map-note">
       Solid regions act on the knee directly; hatched regions act through the hip or the ankle
-      ({referredCount} of {ZONES.length}).
+      ({referredCount} of {activeZones.length}).
     </p>
   </figcaption>
 </figure>

@@ -5,6 +5,10 @@ const ROUTES = [
   '/', '/safety/', '/understanding/', '/understanding/mechanics/',
   '/muscles/', '/muscles/iliopsoas/', '/exercises/', '/exercises/virasana/',
   '/routines/', '/routines/desk-worker/', '/search/',
+  // Feature 002 routes, plus the sheet, which is the widest page in the app.
+  '/joints/knee/', '/joints/hip/', '/joints/ankle/',
+  '/muscles/tibialis-posterior/', '/start/', '/start/dandavat/',
+  '/routines/goal-dandavat/sheet/',
 ];
 
 test.describe('360px viewport (SC-014)', () => {

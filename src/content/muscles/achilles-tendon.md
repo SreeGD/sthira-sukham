@@ -7,26 +7,32 @@ group: Non-contractile structures
 isContractile: false
 diagramZone: calf
 order: 74
-roleInKneeMotion: >-
-  Not a muscle. It is the tendon carrying the force of both calf muscles to the heel — the
-  strongest tendon in the body, and the route through which every push-off passes.
+roleInKneeMotion: Not a muscle. It is the tendon carrying the force of both calf muscles to the
+  heel — the strongest tendon in the body, and the route through which every push-off passes.
 stiffnessContribution:
-  whenTight: >-
-    Restricts how far the shin can travel forward over the foot, in the same way a tight calf
-    does, and it does not lengthen readily. What changes is more often the muscle above it.
+  whenTight: Restricts how far the shin can travel forward over the foot, in the same way a tight
+    calf does, and it does not lengthen readily. What changes is more often the muscle above it.
 plainLanguageGloss: The thick cord you can feel at the back of your ankle, joining your calf muscles to your heel.
-noExercisesNote: >-
-  The Achilles is dense tendon and does not stretch in the way a muscle does. What responds is
-  the calf above it and the tendon's tolerance for load — so the relevant work is the calf
-  stretching and loading listed under gastrocnemius and soleus, rather than anything aimed at
-  the tendon itself.
+noExercisesNote: The Achilles is dense tendon and does not stretch in the way a muscle does.
+  What responds is the calf above it and the tendon's tolerance for load — so the relevant work
+  is the calf stretching and loading listed under gastrocnemius and soleus, rather than anything
+  aimed at the tendon itself.
 jointInfluences:
   - joint: ankle
     action: direct
-    presentsAs: >-
-      Tightness through the tendon limits forward travel of the shin over the foot, and pain
-      here is felt on push-off rather than as a restriction in range.
-sources: [neumann-kinesiology-2016]
+    presentsAs: Tightness through the tendon limits forward travel of the shin over the foot, and
+      pain here is felt on push-off rather than as a restriction in range.
+sources:
+  - neumann-kinesiology-2016
+illustration:
+  file: gray-1918-plate-438.png
+  alt: Anatomical drawing of the superficial calf muscles converging into the Achilles tendon at
+    the heel.
+  caption: The superficial calf and the Achilles tendon running to the heel.
+  credit: Henry Vandyke Carter, Gray's Anatomy
+  year: 1918
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gray438.png
 ---
 
 The strongest tendon in the body, and the one people are most likely to have heard of going

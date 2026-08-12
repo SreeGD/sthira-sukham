@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceList from '../../components/SourceList.astro';
+import MuscleActionMap from '../../components/diagrams/MuscleActionMap.astro';
 import { getCollection, render } from 'astro:content';
 import { buildJointStructureIndex, structuresAtJoint } from '../../lib/chain.ts';
 
@@ -92,6 +93,7 @@ const { direct, indirect } = structuresAtJoint(index, entry.id);
 
   <section class="section">
     <h2>What influences this joint</h2>
+    <MuscleActionMap joint={entry.id as 'knee' | 'hip' | 'ankle'} />
     <h3>Acting on it directly</h3>
     <ul class="grid">
       {

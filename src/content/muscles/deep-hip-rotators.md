@@ -7,33 +7,39 @@ group: Hip
 isContractile: true
 diagramZone: hip-back
 order: 57
-roleInKneeMotion: >-
-  No direct action at the knee. They rotate the thigh outward and hold the ball steady in its
-  socket — which determines what the knee below is sitting on top of.
+roleInKneeMotion: No direct action at the knee. They rotate the thigh outward and hold the ball
+  steady in its socket — which determines what the knee below is sitting on top of.
 stiffnessContribution:
-  whenTight: >-
-    Limits inward rotation of the hip, so movements needing the thigh to turn in are taken from
-    elsewhere. Piriformis tightness can also irritate the sciatic nerve running beneath it.
-  whenWeak: >-
-    The ball sits less securely in its socket during movement, and the larger muscles compensate
-    with more effort than the job needs.
-  whenInhibited: >-
-    Often quiet after hip injury or surgery, leaving rotation control to muscles poorly suited
-    to the fine work.
-plainLanguageGloss: A group of small muscles deep behind the hip that turn the thigh outward and hold the joint steady.
+  whenTight: Limits inward rotation of the hip, so movements needing the thigh to turn in are
+    taken from elsewhere. Piriformis tightness can also irritate the sciatic nerve running
+    beneath it.
+  whenWeak: The ball sits less securely in its socket during movement, and the larger muscles
+    compensate with more effort than the job needs.
+  whenInhibited: Often quiet after hip injury or surgery, leaving rotation control to muscles
+    poorly suited to the fine work.
+plainLanguageGloss: A group of small muscles deep behind the hip that turn the thigh outward and
+  hold the joint steady.
 jointInfluences:
   - joint: hip
     action: direct
-    presentsAs: >-
-      Tightness restricts inward rotation, which shows up as difficulty crossing one leg over
-      the other or turning the foot inward while the knee stays still.
+    presentsAs: Tightness restricts inward rotation, which shows up as difficulty crossing one leg
+      over the other or turning the foot inward while the knee stays still.
   - joint: knee
     action: indirect
-    presentsAs: >-
-      These muscles do not cross the knee. They control how the thigh bone is turned, and the
-      kneecap's groove is cut into that bone — so when rotation control is poor, the track moves
-      under the kneecap even though the kneecap itself has not shifted.
-sources: [neumann-kinesiology-2016]
+    presentsAs: These muscles do not cross the knee. They control how the thigh bone is turned, and
+      the kneecap's groove is cut into that bone — so when rotation control is poor, the track
+      moves under the kneecap even though the kneecap itself has not shifted.
+sources:
+  - neumann-kinesiology-2016
+illustration:
+  file: gerrish-1902-fig-365.png
+  alt: Line drawing of piriformis, running from the sacrum across to the top of the thigh bone,
+    with its attachment areas shaded.
+  caption: "Piriformis, the best known of the deep hip rotators: outline and attachment areas."
+  credit: Frederick Henry Gerrish, Text-book of Anatomy
+  year: 1902
+  licence: Public domain
+  sourceUrl: https://commons.wikimedia.org/wiki/File:Gerrish%27s_Text-book_of_Anatomy_(1902)_-_Fig._365.png
 ---
 
 Six small muscles running from the pelvis to the top of the thigh bone, doing at the hip roughly

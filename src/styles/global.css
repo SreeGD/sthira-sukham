@@ -755,3 +755,15 @@ html[data-ack='1'] [data-testid='red-flag-gate'] {
   margin-left: var(--s-2);
   vertical-align: middle;
 }
+
+/* A range-of-motion note is a sentence, not a label. It was previously rendered in a
+   .tag, which is white-space:nowrap, and pushed the page 278px wide at 360px. */
+.rom-note {
+  padding: var(--s-2) var(--s-3);
+  border-left: 3px solid var(--c-border-strong);
+  background: var(--c-surface-sunken);
+  border-radius: var(--radius-sm);
+  font-size: var(--f-size-sm);
+  color: var(--c-text-muted);
+  max-width: var(--measure);
+}

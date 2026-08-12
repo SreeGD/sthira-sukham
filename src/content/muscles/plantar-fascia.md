@@ -5,7 +5,7 @@ abbreviations: []
 region: ankle
 group: Non-contractile structures
 isContractile: false
-diagramZone: calf
+diagramZone: foot
 order: 75
 roleInKneeMotion: >-
   Not a muscle. A thick band of connective tissue running from the heel to the base of the toes,
