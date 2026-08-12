@@ -1,8 +1,14 @@
 # Sthira Sukham
 
-A locally-run, static educational reference on stiff knee pain: how the knee joint works, the
-muscles and structures that govern how freely it moves, and the movements commonly used to address
-them — drawn from clinical range-of-motion work, yoga, Pilates, and tai chi.
+A locally-run, static educational reference on stiff joints — knee, hip and ankle as a connected
+chain: how each joint works, the muscles and structures that govern how freely it moves, and the
+movements commonly used to address them, drawn from clinical range-of-motion work, yoga, Pilates,
+and tai chi.
+
+The organising idea is that a stiff joint is frequently another joint's problem. Every structure
+declares which joints it influences and whether it acts on them **directly** or **through a
+neighbouring joint**, so that relationship is validated data you can follow in both directions —
+not prose that happens to mention it.
 
 It runs entirely on your machine. No server, no accounts, no tracking, no network requests.
 
@@ -142,7 +148,7 @@ it is a required step in `pnpm verify`.
 ## Status
 
 The application is complete and all gates pass. The content library is **seeded rather than
-exhaustive**: 19 muscles and structures (the full catalogue the spec requires), **44 exercises**
+exhaustive**: 3 joints, 25 muscles and structures, **63 exercises**
 across all four modalities (clinical 13, yoga 11, Pilates 10, tai chi 10), 3 routines, 6 stiffness
 sources, 4 patterns, 8 red flags.
 

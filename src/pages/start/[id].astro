@@ -32,6 +32,7 @@ const matching = allExercises
   .sort((a, b) => RANK[a.data.difficulty] - RANK[b.data.difficulty]);
 
 const muscles = await getEntries(d.targets);
+const joints = await getEntries(d.dependsOnJoints);
 
 const routine = (await getCollection('routines')).find((r) => r.data.goal?.id === entry.id);
 ---
@@ -42,6 +43,26 @@ const routine = (await getCollection('routines')).find((r) => r.data.goal?.id ==
   description={`What ${d.shortLabel.toLowerCase()} asks of a knee, and the movements that work it.`}
 >
   <p><a href="/start/">← Where to start</a></p>
+
+  <section class="section">
+    <h2>Which joints this depends on</h2>
+    <p>
+      Named in the order they matter for this activity — and worth noticing when the joint that
+      hurts is not the first one listed.
+    </p>
+    <ul class="grid">
+      {
+        joints.map((j) => (
+          <li>
+            <a class="card stack" href={`/joints/${j.id}/`}>
+              <h3>{j.data.name}</h3>
+              <p>{j.data.plainDescription}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
   {
     d.romNote && (

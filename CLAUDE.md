@@ -28,6 +28,22 @@ pnpm check:isolation  # assert dist/ has no external origins
 pnpm verify           # all of the above — this is the gate
 ```
 
+## The joint model (feature 002)
+
+Knee, hip and ankle are first-class joints in `src/content/joints/`. Each structure declares
+`jointInfluences[]` — the joint, whether it acts `direct` or `indirect`, and how restriction
+presents *there*.
+
+- **`region` and `jointInfluences` are different facts.** `region` is where a structure lives and
+  drives the leg locator diagram; `jointInfluences` is what it changes. Gastrocnemius lives at the
+  ankle and crosses the knee. Do not merge them.
+- **`indirect` is authored, never inferred.** Gluteus medius influences the knee without crossing
+  it. Deriving that would need attachment data these records do not hold.
+- **`presentsAsKneeStiffness` is gone.** If you find yourself re-adding a knee-specific field,
+  the answer is another entry in `jointInfluences`.
+- The joint→structures edge is derived in `src/lib/chain.ts`, never stored — same rule as
+  `cross-links.ts`.
+
 ## Things that will bite you
 
 - **The build failing on content is correct behaviour**, not a bug to work around. Unsourced

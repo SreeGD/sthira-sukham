@@ -97,3 +97,44 @@ test.describe('reachability', () => {
     }
   });
 });
+
+test.describe('new structures are covered (feature 002, SC-105)', () => {
+  const NEW = [
+    'deep-hip-rotators', 'tibialis-anterior', 'tibialis-posterior', 'peroneals',
+    'achilles-tendon', 'plantar-fascia',
+  ];
+
+  for (const id of NEW) {
+    test(`${id} is either targeted by an exercise or says why not`, async ({ page }) => {
+      await page.goto(`/muscles/${id}/`);
+      await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
+      await page.reload();
+      const section = page.locator('#exercises');
+      await expect(section).toBeVisible();
+      const cards = section.locator('.grid > li');
+      const count = await cards.count();
+      if (count === 0) {
+        // A structure with no exercise must explain itself — the Achilles and plantar
+        // fascia do not lengthen under any self-applied stretch, and saying so is more
+        // useful than inventing a movement aimed at tendon.
+        // Length, not /\w{40,}/ — that would need 40 CONSECUTIVE word characters,
+        // which no sentence has. Made this mistake once already on the plate alt text.
+        const note = await section.innerText();
+        expect(note.length).toBeGreaterThan(60);
+        expect(note).toMatch(/\s/);
+      } else {
+        expect(count).toBeGreaterThanOrEqual(1);
+      }
+    });
+  }
+
+  test('every goal names the joints it depends on (FR-118)', async ({ page }) => {
+    for (const goal of ['stairs', 'seated-meditation', 'long-walk']) {
+      await page.goto(`/start/${goal}/`);
+      await page.evaluate(() => localStorage.setItem('sthira:red-flags-ack', '1'));
+      await page.reload();
+      await expect(page.getByRole('heading', { name: 'Which joints this depends on' })).toBeVisible();
+      expect(await page.locator('a[href^="/joints/"]').count()).toBeGreaterThanOrEqual(1);
+    }
+  });
+});
