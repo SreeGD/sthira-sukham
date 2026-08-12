@@ -120,6 +120,23 @@ export function checkContent(c: Collections): PolicyResult {
   checkRefs(c.functionalGoals ?? [], 'sources', sourceIds, 'sources');
   checkRefs(c.functionalGoals ?? [], 'targets', muscleIds, 'muscles');
 
+  // Routine -> goal links, and the inverse: a goal offering no session is a dead end
+  // for a reader who came in via "where do I start".
+  {
+    const goalIds = idsOf(c.functionalGoals ?? []);
+    const linked = new Set<string>();
+    for (const routine of c.routines) {
+      const g = routine.data.goal;
+      if (!g) continue;
+      const id = typeof g === 'string' ? g : String((g as Record<string, unknown>)?.id ?? g);
+      if (!goalIds.has(id)) fail(`${routine.file}: goal -> "${id}" does not exist.`);
+      else linked.add(id);
+    }
+    for (const goal of c.functionalGoals ?? []) {
+      if (!linked.has(goal.id)) fail(`${goal.file}: no routine is linked to this goal.`);
+    }
+  }
+
   for (const exercise of c.exercises) {
     const label = exercise.data.evidenceLabel;
     const id = typeof label === 'string' ? label : (label as Record<string, unknown>)?.id;

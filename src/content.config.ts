@@ -376,6 +376,13 @@ const routines = defineCollection({
       )
       .min(1),
     orderRationale: z.string().min(1),
+    /** Set when this routine belongs to a functional goal, so each links to the other. */
+    goal: reference('functionalGoals').optional(),
+    /**
+     * How to spread the session across a week. Present because "30 minutes weekly" is a
+     * schedule, and a schedule is a different fact from a sequence.
+     */
+    weeklyPlan: z.string().optional(),
     sources: z.array(reference('sources')).default([]),
   }),
 });

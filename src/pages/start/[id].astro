@@ -32,6 +32,8 @@ const matching = allExercises
   .sort((a, b) => RANK[a.data.difficulty] - RANK[b.data.difficulty]);
 
 const muscles = await getEntries(d.targets);
+
+const routine = (await getCollection('routines')).find((r) => r.data.goal?.id === entry.id);
 ---
 <GatedLayout
   title={d.title}
@@ -66,6 +68,22 @@ const muscles = await getEntries(d.targets);
       }
     </ul>
   </section>
+
+  {
+    routine && (
+      <section class="section">
+        <h2>A ready-made session</h2>
+        <a class="card stack routine-cta" href={`/routines/${routine.id}/`}>
+          <h3>{routine.data.title}</h3>
+          <p>{routine.data.purpose}</p>
+          <p class="tag-row">
+            <span class="tag">about {routine.data.approxDurationMinutes} min</span>
+            <span class="tag">{routine.data.steps.length} movements</span>
+          </p>
+        </a>
+      </section>
+    )
+  }
 
   <section class="section">
     <h2>Movements that work it</h2>

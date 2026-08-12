@@ -16,8 +16,19 @@ const steps = await Promise.all(
   d.steps.map(async (step) => ({ note: step.note, exercise: await getEntry(step.exercise) })),
 );
 const kit = d.equipment.filter((e) => e !== 'none');
+const goal = d.goal ? await getEntry(d.goal) : undefined;
 ---
 <GatedLayout title={d.title} heading={d.title} lede={d.purpose} description={d.purpose}>
+  <p>
+    <a href="/routines/">← Routines</a>
+    {goal && (
+      <>
+        {' · '}
+        <a href={`/start/${goal.id}/`}>Goal: {goal.data.title}</a>
+      </>
+    )}
+  </p>
+
   <p class="tag-row">
     <span class="tag">about {d.approxDurationMinutes} minutes</span>
     <span class="tag">{kit.length === 0 ? 'no equipment' : kit.join(', ')}</span>
@@ -41,6 +52,15 @@ const kit = d.equipment.filter((e) => e !== 'none');
       than the order.
     </p>
   </section>
+
+  {
+    d.weeklyPlan && (
+      <section class="section">
+        <h2>Fitting it into a week</h2>
+        <p class="prose">{d.weeklyPlan}</p>
+      </section>
+    )
+  }
 
   <section class="section">
     <h2>Why this order</h2>

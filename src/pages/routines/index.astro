@@ -1,7 +1,9 @@
 ---
 import GatedLayout from '../../layouts/GatedLayout.astro';
 import { getCollection } from 'astro:content';
-const routines = (await getCollection('routines')).sort((a, b) => a.data.order - b.data.order);
+const all = (await getCollection('routines')).sort((a, b) => a.data.order - b.data.order);
+const routines = all.filter((r) => !r.data.goal);
+const goalRoutines = all.filter((r) => r.data.goal);
 ---
 <GatedLayout
   title="Routines"
@@ -23,4 +25,27 @@ const routines = (await getCollection('routines')).sort((a, b) => a.data.order -
       </li>
     ))}
   </ul>
+  <section class="section">
+    <h2>Sessions for a specific goal</h2>
+    <p>
+      Half-hour sessions tied to something you want to be able to do again. Each explains what
+      that activity asks of a knee — see <a href="/start/">where to start</a>.
+    </p>
+    <ul class="grid">
+      {
+        goalRoutines.map((r) => (
+          <li>
+            <a class="card stack" href={`/routines/${r.id}/`}>
+              <h3>{r.data.title}</h3>
+              <p>{r.data.purpose}</p>
+              <p class="tag-row">
+                <span class="tag">about {r.data.approxDurationMinutes} min</span>
+                <span class="tag">{r.data.steps.length} movements</span>
+              </p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </GatedLayout>
