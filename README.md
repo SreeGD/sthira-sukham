@@ -1,8 +1,13 @@
 # Sthira Sukham
 
 [![verify](https://github.com/SreeGD/sthira-sukham/actions/workflows/verify.yml/badge.svg)](https://github.com/SreeGD/sthira-sukham/actions/workflows/verify.yml)
-![no runtime dependencies](https://img.shields.io/badge/runtime-no%20network%2C%20no%20backend-informational)
-![content](https://img.shields.io/badge/content-63%20exercises%20%C2%B7%2025%20structures%20%C2%B7%203%20joints-informational)
+![no network, no backend](https://img.shields.io/badge/runtime-no%20network%2C%20no%20backend-informational)
+
+<sub>The verify badge runs the full `pnpm verify` gate — build, content policy, network
+isolation, unit and e2e. While this repository is private, GitHub only renders that badge for
+viewers who have access; elsewhere it will show as a broken image. The runtime badge states a
+property that `pnpm check:isolation` enforces on every build, so it cannot quietly stop being
+true.</sub>
 
 > *sthira sukham āsanam* — "the posture should be steady and comfortable." Yoga Sūtra 2.46
 
