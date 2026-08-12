@@ -1,0 +1,96 @@
+---
+import GatedLayout from '../../layouts/GatedLayout.astro';
+import SourceList from '../../components/SourceList.astro';
+import ExerciseCard from '../../components/ExerciseCard.astro';
+import { getCollection, getEntries, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const goals = await getCollection('functionalGoals');
+  return goals.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const targetIds = new Set(d.targets.map((t) => t.id));
+const allExercises = await getCollection('exercises');
+
+/*
+ * Selection is a filter, not a recommendation engine: an exercise qualifies if it
+ * targets one of the structures this activity depends on AND trains one of the
+ * qualities the activity asks for. No symptom is consulted, and no cause is implied.
+ * Ordered easiest first so the list is usable rather than merely correct.
+ */
+const RANK = { beginner: 0, intermediate: 1, advanced: 2 } as const;
+const matching = allExercises
+  .filter(
+    (e) =>
+      e.data.targets.some((t) => targetIds.has(t.id)) &&
+      e.data.goal.some((g) => d.emphasis.includes(g)),
+  )
+  .sort((a, b) => RANK[a.data.difficulty] - RANK[b.data.difficulty]);
+
+const muscles = await getEntries(d.targets);
+---
+<GatedLayout
+  title={d.title}
+  heading={d.title}
+  lede={d.needs}
+  description={`What ${d.shortLabel.toLowerCase()} asks of a knee, and the movements that work it.`}
+>
+  <p><a href="/start/">← Where to start</a></p>
+
+  {
+    d.romNote && (
+      <p class="tag-row">
+        <span class="tag">{d.romNote}</span>
+      </p>
+    )
+  }
+
+  <section class="section prose"><Content /></section>
+
+  <section class="section">
+    <h2>What this activity depends on</h2>
+    <ul class="grid">
+      {
+        muscles.map((m) => (
+          <li>
+            <a class="card" href={`/muscles/${m.id}/`}>
+              <strong>{m.data.anatomicalName}</strong>
+              <p class="card__traditional">{m.data.commonName}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Movements that work it</h2>
+    <p>
+      {matching.length} of the {allExercises.length} movements in the library target these
+      structures and train what this activity asks for. Easiest first — and every one still
+      carries its own cautions, which matter more than the order.
+    </p>
+    <ul class="grid">
+      {
+        matching.map((e) => (
+          <ExerciseCard
+            id={e.id}
+            name={e.data.name}
+            traditionalName={e.data.traditionalName}
+            modality={e.data.modality}
+            difficulty={e.data.difficulty}
+            equipment={e.data.equipment}
+            startPosition={e.data.startPosition}
+            evidenceLabel={e.data.evidenceLabel}
+          />
+        ))
+      }
+    </ul>
+  </section>
+
+  <SourceList refs={d.sources} />
+</GatedLayout>

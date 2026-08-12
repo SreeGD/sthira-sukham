@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import MuscleActionMap from '../../components/diagrams/MuscleActionMap.astro';
 
 const sources = (await getCollection('stiffnessSources')).sort(
   (a, b) => a.data.order - b.data.order,
@@ -16,6 +17,15 @@ const patterns = (await getCollection('stiffnessPatterns')).sort(
     "Stiff" is a single word covering at least six physically different situations. Which one you
     have determines what helps — so it is worth knowing what they are.
   </p>
+
+  <section class="section">
+    <h2>Every muscle that acts on the knee, and what it does</h2>
+    <p>
+      One picture of the whole system. Ten regions, what each does to the knee, and — the point
+      worth noticing — how many of them are not at the knee at all.
+    </p>
+    <MuscleActionMap />
+  </section>
 
   <section class="section">
     <h2><a href="/understanding/mechanics/">How the knee moves</a></h2>

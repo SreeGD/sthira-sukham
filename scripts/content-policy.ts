@@ -21,6 +21,7 @@
 import type { Record_ } from './content-loader.ts';
 
 export interface Collections {
+  functionalGoals?: Record_[];
   muscles: Record_[];
   exercises: Record_[];
   routines: Record_[];
@@ -114,6 +115,8 @@ export function checkContent(c: Collections): PolicyResult {
   checkRefs(c.stiffnessPatterns, 'typicallyInvolves', muscleIds, 'muscles');
   checkRefs(c.stiffnessPatterns, 'relatedSources', stiffnessSourceIds, 'stiffnessSources');
   checkRefs(c.redFlags, 'sources', sourceIds, 'sources');
+  checkRefs(c.functionalGoals ?? [], 'sources', sourceIds, 'sources');
+  checkRefs(c.functionalGoals ?? [], 'targets', muscleIds, 'muscles');
 
   for (const exercise of c.exercises) {
     const label = exercise.data.evidenceLabel;

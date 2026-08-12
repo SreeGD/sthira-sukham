@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const goals = (await getCollection('functionalGoals')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout
+  title="Where to start"
+  description="Pick what you want to be able to do again, and see which movements work that range."
+>
+  <h1>Where do you want to start?</h1>
+  <p class="lede">
+    Pick something you want to be able to do again. Each one explains what that activity asks
+    of a knee, and which movements work that particular demand.
+  </p>
+
+  <div class="callout">
+    <p>
+      <strong>This asks what you want to do, not what hurts.</strong> It is a way of narrowing
+      58 movements down to a relevant handful — not a way of working out what is wrong with your
+      knee. Nothing here can do that, and anything that claims to should be treated with
+      suspicion. If your knee has any of <a href="/safety/">these signs</a>, that comes first.
+    </p>
+  </div>
+
+  <ul class="grid">
+    {
+      goals.map((g) => (
+        <li>
+          <a class="card stack" href={`/start/${g.id}/`}>
+            <h2>{g.data.title}</h2>
+            <p>{g.data.needs}</p>
+            {g.data.romNote && <p class="tag-row"><span class="tag">{g.data.shortLabel}</span></p>}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <section class="section prose">
+    <h2>Or browse instead</h2>
+    <p>
+      If none of these is quite it, the <a href="/exercises/">full library</a> filters by muscle,
+      goal, difficulty and equipment, and the <a href="/routines/">routines</a> are ready-made
+      sequences.
+    </p>
+  </section>
+</BaseLayout>

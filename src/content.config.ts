@@ -287,6 +287,37 @@ const exercises = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
+// functionalGoals — "what do you want to be able to do again?"
+//
+// Principle I boundary, stated here because it is the whole reason this collection
+// is shaped the way it is. These records describe ACTIVITIES and what they require
+// of a knee. They deliberately carry no symptom field, no cause field, and nothing
+// that could be matched against a description of a reader's pain.
+//
+// Goal -> movement requirement -> relevant exercises is a filter.
+// Symptom -> likely cause -> protocol is a diagnosis, and is forbidden (FR-005).
+// The difference is not cosmetic: getting a filter wrong wastes someone's time,
+// getting a diagnosis wrong sends an injured knee into the wrong exercise.
+// ---------------------------------------------------------------------------
+
+const functionalGoals = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/functional-goals' }),
+  schema: z.object({
+    /** The activity, phrased as the reader would say it. */
+    title: z.string().min(1),
+    shortLabel: z.string().min(1),
+    order: z.number().int().default(100),
+    /** What this activity asks of a knee. */
+    needs: z.string().min(1),
+    /** Degrees of flexion the activity requires, where research gives a figure. */
+    romNote: z.string().optional(),
+    targets: z.array(reference('muscles')).min(1),
+    emphasis: z.array(z.enum(GOALS)).min(1),
+    sources: z.array(reference('sources')).min(1),
+  }),
+});
+
+// ---------------------------------------------------------------------------
 // routines — FR-026 to FR-029
 // ---------------------------------------------------------------------------
 
@@ -347,6 +378,7 @@ const stiffnessPatterns = defineCollection({
 
 export const collections = {
   sources,
+  functionalGoals,
   evidenceLabels,
   redFlags,
   muscles,
