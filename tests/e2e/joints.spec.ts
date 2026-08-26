@@ -1,4 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { readdirSync } from 'node:fs';
+
+/* Joint ids and their count, read from the content the site is built from. */
+const JOINTS = readdirSync('src/content/joints')
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => f.replace(/\.md$/, ''));
+const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six'];
+const JOINT_WORD = NUMBER_WORDS[JOINTS.length] ?? String(JOINTS.length);
 
 /*
  * Joints as first-class subjects (feature 002, US1 and US2).
@@ -49,8 +57,16 @@ test.describe('no knee-only framing (FR-107)', () => {
 
   test('the home page presents the reference as covering more than one joint', async ({ page }) => {
     await page.goto('/understanding/');
-    await expect(page.getByRole('heading', { name: 'The three joints' })).toBeVisible();
-    for (const joint of ['knee', 'hip', 'ankle']) {
+    /*
+     * Derived from the content, not hardcoded. This asserted the literal heading "The
+     * three joints" and a literal list of three, so adding the foot broke a test that
+     * was checking last year's content rather than the invariant — which is that the
+     * overview names every joint and calls itself by the right number.
+     */
+    await expect(
+      page.getByRole('heading', { name: `The ${JOINT_WORD} joints` }),
+    ).toBeVisible();
+    for (const joint of JOINTS) {
       await expect(page.locator(`a[href="/joints/${joint}/"]`).first()).toBeVisible();
     }
   });

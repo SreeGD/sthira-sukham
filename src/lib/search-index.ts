@@ -1,3 +1,4 @@
+import { withBase } from '../lib/paths.ts';
 import type { SearchRecord } from './search.ts';
 
 /**
@@ -48,7 +49,7 @@ export function buildSearchIndex(
       names: [m.data.anatomicalName, m.data.commonName, ...m.data.abbreviations],
       title: m.data.anatomicalName,
       subtitle: m.data.group,
-      url: `/muscles/${m.id}/`,
+      url: withBase(`/muscles/${m.id}/`),
     });
   }
 
@@ -61,7 +62,7 @@ export function buildSearchIndex(
       names,
       title: e.data.name,
       subtitle: MODALITY_LABEL[e.data.modality] ?? e.data.modality,
-      url: `/exercises/${e.id}/`,
+      url: withBase(`/exercises/${e.id}/`),
     });
   }
 

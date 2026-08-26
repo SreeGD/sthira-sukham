@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import GatedLayout from '../../layouts/GatedLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import ExerciseCard from '../../components/ExerciseCard.astro';
@@ -42,7 +43,7 @@ const routine = (await getCollection('routines')).find((r) => r.data.goal?.id ==
   lede={d.needs}
   description={`What ${d.shortLabel.toLowerCase()} asks of a knee, and the movements that work it.`}
 >
-  <p><a href="/start/">← Where to start</a></p>
+  <p><a href={withBase('/start/')}>← Where to start</a></p>
 
   <section class="section">
     <h2>Which joints this depends on</h2>
@@ -54,7 +55,7 @@ const routine = (await getCollection('routines')).find((r) => r.data.goal?.id ==
       {
         joints.map((j) => (
           <li>
-            <a class="card stack" href={`/joints/${j.id}/`}>
+            <a class="card stack" href={withBase(`/joints/${j.id}/`)}>
               <h3>{j.data.name}</h3>
               <p>{j.data.plainDescription}</p>
             </a>
@@ -74,7 +75,7 @@ const routine = (await getCollection('routines')).find((r) => r.data.goal?.id ==
       {
         muscles.map((m) => (
           <li>
-            <a class="card" href={`/muscles/${m.id}/`}>
+            <a class="card" href={withBase(`/muscles/${m.id}/`)}>
               <strong>{m.data.anatomicalName}</strong>
               <p class="card__traditional">{m.data.commonName}</p>
             </a>
@@ -88,7 +89,7 @@ const routine = (await getCollection('routines')).find((r) => r.data.goal?.id ==
     routine && (
       <section class="section">
         <h2>A ready-made session</h2>
-        <a class="card stack routine-cta" href={`/routines/${routine.id}/`}>
+        <a class="card stack routine-cta" href={withBase(`/routines/${routine.id}/`)}>
           <h3>{routine.data.title}</h3>
           <p>{routine.data.purpose}</p>
           <p class="tag-row">

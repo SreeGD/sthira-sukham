@@ -1,22 +1,62 @@
 ---
+import { withBase } from '../../../lib/paths.ts';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-const sources = (await getCollection('stiffnessSources')).sort((a, b) => a.data.order - b.data.order);
+import { inWords } from '../../../lib/numbers.ts';
+
+/*
+ * Grouped by joint, because the six mechanisms recur at each one. Ungrouped, this page
+ * listed "Capsular restriction" four times with nothing to tell the entries apart —
+ * four identical cards going to four different pages. The count in the heading is
+ * derived for the same reason the badge for content counts was rejected: a number
+ * written by hand goes stale the moment a joint is added, and nothing checks it.
+ */
+const sources = (await getCollection('stiffnessSources')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const joints = (await getCollection('joints')).sort((a, b) => a.data.order - b.data.order);
+
+const byJoint = joints.map((joint) => ({
+  joint,
+  entries: sources.filter((s) => s.data.joint.id === joint.id),
+}));
+
+/* The number of distinct mechanisms, not the number of records. */
+const mechanismCount = new Set(sources.map((s) => s.data.clinicalTerm)).size;
 ---
-<BaseLayout title="Sources of stiffness" description="The six physically different reasons a knee stiffens.">
-  <h1>The six sources of stiffness</h1>
+
+<BaseLayout
+  title="Sources of stiffness"
+  description="The physically different reasons a joint stiffens, at each joint in the chain."
+>
+  <h1>The {inWords(mechanismCount)} sources of stiffness</h1>
   <p class="lede">
     Stiffness is a symptom, not a cause. These are the physically distinct situations that
     produce it — they feel different, and they respond to different things.
   </p>
-  <ul class="grid">
-    {sources.map((s) => (
-      <li>
-        <a class="card stack" href={`/understanding/sources/${s.id}/`}>
-          <h2>{s.data.clinicalTerm}</h2>
-          <p>{s.data.plainLanguageGloss}</p>
-        </a>
-      </li>
-    ))}
-  </ul>
+  <p>
+    The same {inWords(mechanismCount)} mechanisms recur at every joint, which is the useful part: learn
+    them once and they apply at the {joints.length === 1 ? 'joint' : `${inWords(joints.length)} joints`}
+    {' '}below. What differs is how each one presents, so they are described separately.
+  </p>
+
+  {
+    byJoint.map(({ joint, entries }) => (
+      <section class="section">
+        <h2>
+          <a href={withBase(`/joints/${joint.id}/`)}>{joint.data.name}</a>
+        </h2>
+        <ul class="grid">
+          {entries.map((s) => (
+            <li>
+              <a class="card stack" href={withBase(`/understanding/sources/${s.id}/`)}>
+                <h3>{s.data.clinicalTerm}</h3>
+                <p>{s.data.plainLanguageGloss}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
 </BaseLayout>

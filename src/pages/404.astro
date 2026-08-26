@@ -1,14 +1,15 @@
 ---
+import { withBase } from '../lib/paths.ts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Page not found">
   <h1>That page does not exist</h1>
   <p class="lede">The link may be out of date, or the address may have a typo in it.</p>
   <ul class="grid">
-    <li><a class="card" href="/"><strong>Home</strong></a></li>
-    <li><a class="card" href="/understanding/"><strong>Understanding stiffness</strong></a></li>
-    <li><a class="card" href="/muscles/"><strong>Muscles &amp; structures</strong></a></li>
-    <li><a class="card" href="/exercises/"><strong>Exercise library</strong></a></li>
-    <li><a class="card" href="/search/"><strong>Search</strong></a></li>
+    <li><a class="card" href={withBase('/')}><strong>Home</strong></a></li>
+    <li><a class="card" href={withBase('/understanding/')}><strong>Understanding stiffness</strong></a></li>
+    <li><a class="card" href={withBase('/muscles/')}><strong>Muscles &amp; structures</strong></a></li>
+    <li><a class="card" href={withBase('/exercises/')}><strong>Exercise library</strong></a></li>
+    <li><a class="card" href={withBase('/search/')}><strong>Search</strong></a></li>
   </ul>
 </BaseLayout>

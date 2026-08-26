@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../../lib/paths.ts';
 import GatedLayout from '../../../layouts/GatedLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import { POSITION_LABEL } from '../../../lib/positions.ts';
@@ -50,8 +51,8 @@ const MODALITY_LABEL: Record<string, string> = {
   description={`The complete ${d.title} sequence on a single page.`}
 >
   <p class="sheet-nav">
-    <a href={`/routines/${entry.id}/`}>← Back to the routine</a>
-    {goal && (<> · <a href={`/start/${goal.id}/`}>Goal: {goal.data.title}</a></>)}
+    <a href={withBase(`/routines/${entry.id}/`)}>← Back to the routine</a>
+    {goal && (<> · <a href={withBase(`/start/${goal.id}/`)}>Goal: {goal.data.title}</a></>)}
   </p>
 
   <div class="sheet-meta">
@@ -67,7 +68,7 @@ const MODALITY_LABEL: Record<string, string> = {
       <strong>Stop and see a clinician</strong> if your knee locks, gives way, will not take
       weight, is hot or swollen, or hurts after a fall. Each movement below lists its own
       reasons to stop — those are not optional extras.{' '}
-      <a href="/safety/">Full list</a>.
+      <a href={withBase('/safety/')}>Full list</a>.
     </p>
   </div>
 
@@ -106,7 +107,7 @@ const MODALITY_LABEL: Record<string, string> = {
             </div>
 
             <p class="sheet-step__more">
-              <a href={`/exercises/${exercise!.id}/`}>Full detail, cautions and sources →</a>
+              <a href={withBase(`/exercises/${exercise!.id}/`)}>Full detail, cautions and sources →</a>
             </p>
           </li>
         );

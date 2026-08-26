@@ -1,3 +1,4 @@
+import { withBase } from '../lib/paths.ts';
 import { useEffect, useMemo, useState } from 'preact/hooks';
 import { search, type SearchRecord } from '../lib/search.ts';
 
@@ -46,8 +47,8 @@ export default function Search({ index }: Props) {
         <div class="callout">
           <h3>Nothing matched “{query}”</h3>
           <p>
-            Try a shorter word, or browse instead — the <a href="/muscles/">muscle catalogue</a>{' '}
-            and the <a href="/exercises/">exercise library</a> both list everything.
+            Try a shorter word, or browse instead — the <a href={withBase('/muscles/')}>muscle catalogue</a>{' '}
+            and the <a href={withBase('/exercises/')}>exercise library</a> both list everything.
           </p>
         </div>
       )}

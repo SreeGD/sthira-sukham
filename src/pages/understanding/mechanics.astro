@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import KneeJoints from '../../components/diagrams/KneeJoints.astro';
@@ -51,7 +52,7 @@ const refs = [
     </p>
     <p>
       That lock has to be released before the knee can bend again, and{' '}
-      <a href="/muscles/popliteus/">a small muscle behind the knee</a> does it by rotating the
+      <a href={withBase('/muscles/popliteus/')}>a small muscle behind the knee</a> does it by rotating the
       shin inward a few degrees.
     </p>
     <p>
@@ -99,13 +100,13 @@ const refs = [
       A knee can be short of range for several unrelated reasons, and they feel different. A
       restriction that eases as you warm up and varies day to day is behaving like muscle. One
       that arrives at the same firm point every time regardless is behaving like{' '}
-      <a href="/understanding/sources/capsular-restriction/">passive tissue</a>. One that feels
+      <a href={withBase('/understanding/sources/capsular-restriction/')}>passive tissue</a>. One that feels
       like fullness or pressure rather than tightness is behaving like{' '}
-      <a href="/understanding/sources/effusion/">fluid</a>.
+      <a href={withBase('/understanding/sources/effusion/')}>fluid</a>.
     </p>
     <p>
       And frequently the restriction is not at the knee at all. See{' '}
-      <a href="/understanding/sources/">the six sources of stiffness</a> for the rest.
+      <a href={withBase('/understanding/sources/')}>the six sources of stiffness</a> for the rest.
     </p>
   </section>
 

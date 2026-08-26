@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
@@ -19,7 +20,7 @@ const goals = (await getCollection('functionalGoals')).sort((a, b) => a.data.ord
       <strong>This asks what you want to do, not what hurts.</strong> It is a way of narrowing
       58 movements down to a relevant handful — not a way of working out what is wrong with your
       knee. Nothing here can do that, and anything that claims to should be treated with
-      suspicion. If your knee has any of <a href="/safety/">these signs</a>, that comes first.
+      suspicion. If your knee has any of <a href={withBase('/safety/')}>these signs</a>, that comes first.
     </p>
   </div>
 
@@ -27,7 +28,7 @@ const goals = (await getCollection('functionalGoals')).sort((a, b) => a.data.ord
     {
       goals.map((g) => (
         <li>
-          <a class="card stack" href={`/start/${g.id}/`}>
+          <a class="card stack" href={withBase(`/start/${g.id}/`)}>
             <h2>{g.data.title}</h2>
             <p>{g.data.needs}</p>
             {g.data.romNote && <p class="tag-row"><span class="tag">{g.data.shortLabel}</span></p>}
@@ -40,8 +41,8 @@ const goals = (await getCollection('functionalGoals')).sort((a, b) => a.data.ord
   <section class="section prose">
     <h2>Or browse instead</h2>
     <p>
-      If none of these is quite it, the <a href="/exercises/">full library</a> filters by muscle,
-      goal, difficulty and equipment, and the <a href="/routines/">routines</a> are ready-made
+      If none of these is quite it, the <a href={withBase('/exercises/')}>full library</a> filters by muscle,
+      goal, difficulty and equipment, and the <a href={withBase('/routines/')}>routines</a> are ready-made
       sequences.
     </p>
   </section>

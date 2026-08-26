@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/paths.ts';
 import '../styles/global.css';
 import ThemeToggle from '../islands/ThemeToggle.tsx';
 
@@ -11,12 +12,12 @@ const { title, description } = Astro.props;
 const path = Astro.url.pathname;
 
 const NAV = [
-  { href: '/start/', label: 'Start here' },
-  { href: '/understanding/', label: 'Understanding' },
-  { href: '/muscles/', label: 'Muscles' },
-  { href: '/exercises/', label: 'Exercises' },
-  { href: '/routines/', label: 'Routines' },
-  { href: '/search/', label: 'Search' },
+  { href: withBase('/start/'), label: 'Start here' },
+  { href: withBase('/understanding/'), label: 'Understanding' },
+  { href: withBase('/muscles/'), label: 'Muscles' },
+  { href: withBase('/exercises/'), label: 'Exercises' },
+  { href: withBase('/routines/'), label: 'Routines' },
+  { href: withBase('/search/'), label: 'Search' },
 ];
 
 const isCurrent = (href: string) => path === href || path.startsWith(href);
@@ -63,7 +64,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(href);
 
     <header class="site-header">
       <div class="shell site-header__inner">
-        <a class="site-header__brand" href="/">
+        <a class="site-header__brand" href={withBase('/')}>
           Sthira Sukham
           <span class="site-header__gloss">steady and comfortable</span>
         </a>
@@ -77,7 +78,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(href);
           }
         </nav>
         {/* FR-002: reachable in one interaction from every screen. */}
-        <a class="safety-link" href="/safety/">
+        <a class="safety-link" href={withBase('/safety/')}>
           <span aria-hidden="true">▲</span> When to see a clinician
         </a>
         <div class="js-only"><ThemeToggle client:idle /></div>
@@ -93,7 +94,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(href);
         <p>
           Sthira Sukham is general educational information about how the knee works. It is not medical
           advice, it cannot assess your knee, and it is no substitute for a clinician or
-          physiotherapist who can. See <a href="/safety/">when to see a clinician</a>.
+          physiotherapist who can. See <a href={withBase('/safety/')}>when to see a clinician</a>.
         </p>
         <p>Runs entirely on your device. Nothing you do here is recorded or sent anywhere.</p>
       </div>

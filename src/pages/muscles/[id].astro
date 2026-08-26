@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import LegLocator from '../../components/diagrams/LegLocator.astro';
@@ -29,7 +30,7 @@ const influences = await Promise.all(
 );
 ---
 <BaseLayout title={d.anatomicalName} description={d.plainLanguageGloss}>
-  <p><a href="/muscles/">← Muscles &amp; structures</a></p>
+  <p><a href={withBase('/muscles/')}>← Muscles &amp; structures</a></p>
 
   <h1>{d.anatomicalName}</h1>
   <p class="lede">{d.plainLanguageGloss}</p>
@@ -61,7 +62,7 @@ const influences = await Promise.all(
         influences.map(({ joint, action, presentsAs }) => (
           <li class={`influence influence--${action}`}>
             <p class="influence__head">
-              <a href={`/joints/${joint!.id}/`}>{joint!.data.name}</a>
+              <a href={withBase(`/joints/${joint!.id}/`)}>{joint!.data.name}</a>
               <span class="tag">
                 {action === 'direct' ? 'acts on it directly' : 'acts through another joint'}
               </span>

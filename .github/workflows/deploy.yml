@@ -1,0 +1,82 @@
+name: deploy
+
+# Publishes the built site to GitHub Pages.
+#
+# The base path is the whole reason this is a separate build from `pnpm verify`'s.
+# A project site is served from /<repo>/, so every internal link needs that prefix —
+# and a link that lacks it renders perfectly, throws nothing, and 404s only when a
+# reader clicks it. `check:base-paths` inspects the built output under the real base
+# and fails the deploy rather than shipping a site whose navigation is quietly broken.
+#
+# Deploying is gated on verify passing. A build that fails the content policy — an
+# unsourced claim, an exercise missing its contraindications — must not reach the web,
+# which is the same rule the local gate enforces, applied at the point of publication.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Allow one deploy at a time; don't cancel a run that is mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      # Version comes from package.json's "packageManager" field.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm exec playwright install --with-deps chromium
+
+      - name: Lint
+        run: pnpm lint
+
+      # The full gate, at the root base — this is what the local `pnpm verify` runs.
+      - name: Verify
+        run: pnpm verify
+
+      - uses: actions/configure-pages@v5
+        id: pages
+
+      # Rebuild under the base path Pages will actually serve from.
+      - name: Build for Pages
+        run: pnpm build:pages
+
+      - name: Assert every internal link carries the base path
+        run: pnpm check:base-paths
+
+      # Principle V, checked again on the artefact that ships.
+      - name: Assert no external origins
+        run: pnpm check:isolation
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import GatedLayout from '../../layouts/GatedLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import EvidenceBadge from '../../components/EvidenceBadge.astro';
@@ -153,7 +154,7 @@ const feelZones = [...new Set(targets.map((m) => m.data.diagramZone))].slice(0, 
     <ul class="grid">
       {targets.map((m) => (
         <li>
-          <a class="card" href={`/muscles/${m.id}/`}>
+          <a class="card" href={withBase(`/muscles/${m.id}/`)}>
             <strong>{m.data.anatomicalName}</strong>
             <p class="card__traditional">{m.data.commonName}</p>
           </a>
@@ -170,7 +171,7 @@ const feelZones = [...new Set(targets.map((m) => m.data.diagramZone))].slice(0, 
           <h3>Easier</h3>
           <ul class="grid">
             {regressions.map((e) => (
-              <li><a class="card" href={`/exercises/${e.id}/`}><strong>{e.data.name}</strong></a></li>
+              <li><a class="card" href={withBase(`/exercises/${e.id}/`)}><strong>{e.data.name}</strong></a></li>
             ))}
           </ul>
         </>
@@ -180,7 +181,7 @@ const feelZones = [...new Set(targets.map((m) => m.data.diagramZone))].slice(0, 
           <h3>Harder</h3>
           <ul class="grid">
             {progressions.map((e) => (
-              <li><a class="card" href={`/exercises/${e.id}/`}><strong>{e.data.name}</strong></a></li>
+              <li><a class="card" href={withBase(`/exercises/${e.id}/`)}><strong>{e.data.name}</strong></a></li>
             ))}
           </ul>
         </>

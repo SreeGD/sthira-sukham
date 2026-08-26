@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../../lib/paths.ts';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import SourceList from '../../../components/SourceList.astro';
 import { getCollection, getEntries, render } from 'astro:content';
@@ -15,7 +16,7 @@ const structures = entry.data.relatedStructures.length
   : [];
 ---
 <BaseLayout title={entry.data.clinicalTerm} description={entry.data.plainLanguageGloss}>
-  <p><a href="/understanding/sources/">← Sources of stiffness</a></p>
+  <p><a href={withBase('/understanding/sources/')}>← Sources of stiffness</a></p>
   <h1>{entry.data.clinicalTerm}</h1>
   <p class="lede">{entry.data.plainLanguageGloss}</p>
   <div class="prose"><Content /></div>
@@ -26,7 +27,7 @@ const structures = entry.data.relatedStructures.length
       <ul class="grid">
         {structures.map((m) => (
           <li>
-            <a class="card" href={`/muscles/${m.id}/`}>
+            <a class="card" href={withBase(`/muscles/${m.id}/`)}>
               <strong>{m.data.anatomicalName}</strong>
               <p class="card__traditional">{m.data.commonName}</p>
             </a>

@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../../lib/paths.ts';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import SourceList from '../../../components/SourceList.astro';
 import { getCollection, getEntries, render } from 'astro:content';
@@ -18,7 +19,7 @@ const related = entry.data.relatedSources.length
   : [];
 ---
 <BaseLayout title={entry.data.name} description={`${entry.data.name} — a general description.`}>
-  <p><a href="/understanding/patterns/">← Stiffness patterns</a></p>
+  <p><a href={withBase('/understanding/patterns/')}>← Stiffness patterns</a></p>
   <h1>{entry.data.name}</h1>
   <div class="prose"><Content /></div>
 
@@ -27,7 +28,7 @@ const related = entry.data.relatedSources.length
       <h2>Underlying sources of stiffness</h2>
       <ul class="grid">
         {related.map((s) => (
-          <li><a class="card" href={`/understanding/sources/${s.id}/`}><strong>{s.data.clinicalTerm}</strong></a></li>
+          <li><a class="card" href={withBase(`/understanding/sources/${s.id}/`)}><strong>{s.data.clinicalTerm}</strong></a></li>
         ))}
       </ul>
     </section>
@@ -39,7 +40,7 @@ const related = entry.data.relatedSources.length
       <ul class="grid">
         {involved.map((m) => (
           <li>
-            <a class="card" href={`/muscles/${m.id}/`}>
+            <a class="card" href={withBase(`/muscles/${m.id}/`)}>
               <strong>{m.data.anatomicalName}</strong>
               <p class="card__traditional">{m.data.commonName}</p>
             </a>

@@ -1,24 +1,60 @@
 ---
+import { withBase } from '../../../lib/paths.ts';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-const patterns = (await getCollection('stiffnessPatterns')).sort((a, b) => a.data.order - b.data.order);
+
+/*
+ * Grouped by joint, and counted from the content. The heading said "Four presentations
+ * of knee stiffness" while the page rendered thirteen across four joints — the kind of
+ * hand-written number that goes stale silently. Unlike the sources, patterns do not
+ * recur between joints: patellofemoral pain has no ankle analogue, and the stiff big
+ * toe has no analogue anywhere. So the grouping is the content, not a convenience.
+ */
+const patterns = (await getCollection('stiffnessPatterns')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const joints = (await getCollection('joints')).sort((a, b) => a.data.order - b.data.order);
+
+const byJoint = joints.map((joint) => ({
+  joint,
+  entries: patterns.filter((p) => p.data.joint.id === joint.id),
+}));
 ---
-<BaseLayout title="Stiffness patterns" description="Four commonly described general presentations of knee stiffness.">
+
+<BaseLayout
+  title="Stiffness patterns"
+  description="Commonly described presentations of stiffness, joint by joint."
+>
   <h1>Commonly described patterns</h1>
   <p class="lede">
-    Four presentations that come up often in discussions of knee stiffness, described generally.
+    {patterns.length} presentations that come up often in discussions of stiffness, described
+    generally and grouped by the joint they concern.
   </p>
   <div class="callout">
     <p>
       <strong>These are not a checklist to sort yourself into.</strong> They overlap, more than
       one can be true at once, and telling them apart is a clinical judgement based on examining
-      the knee. They are here so the vocabulary makes sense, not so you can arrive at a
+      the joint. They are here so the vocabulary makes sense, not so you can arrive at a
       diagnosis.
     </p>
   </div>
-  <ul class="grid">
-    {patterns.map((p) => (
-      <li><a class="card" href={`/understanding/patterns/${p.id}/`}><h2>{p.data.name}</h2></a></li>
-    ))}
-  </ul>
+
+  {
+    byJoint.map(({ joint, entries }) => (
+      <section class="section">
+        <h2>
+          <a href={withBase(`/joints/${joint.id}/`)}>{joint.data.name}</a>
+        </h2>
+        <ul class="grid">
+          {entries.map((p) => (
+            <li>
+              <a class="card" href={withBase(`/understanding/patterns/${p.id}/`)}>
+                <h3>{p.data.name}</h3>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
 </BaseLayout>

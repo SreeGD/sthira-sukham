@@ -1,3 +1,4 @@
+import { withBase } from '../lib/paths.ts';
 import { useEffect, useMemo, useState } from 'preact/hooks';
 import {
   GROUND,
@@ -169,7 +170,7 @@ export default function ExerciseFilters({ exercises, dimensions }: Props) {
           <ul class="grid">
             {results.map((e) => (
               <li key={e.id}>
-                <a class="card stack" href={`/exercises/${e.id}/`}>
+                <a class="card stack" href={withBase(`/exercises/${e.id}/`)}>
                   <h3>{e.name}</h3>
                   {e.traditionalName && <p class="card__traditional">{e.traditionalName}</p>}
                   <p class="tag-row">

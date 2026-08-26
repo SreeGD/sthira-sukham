@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import MuscleActionMap from '../../components/diagrams/MuscleActionMap.astro';
@@ -39,7 +40,7 @@ const REGION_NOTE: Record<string, string> = {
           .filter((m) => (m.data.group ?? 'Other') === group)
           .map((m) => (
             <li>
-              <a class="card stack" href={`/muscles/${m.id}/`}>
+              <a class="card stack" href={withBase(`/muscles/${m.id}/`)}>
                 <h3>{m.data.anatomicalName}</h3>
                 <p class="card__traditional">{m.data.commonName}</p>
                 <p class="tag-row">

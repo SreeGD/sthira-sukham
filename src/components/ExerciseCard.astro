@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/paths.ts';
 import EvidenceBadge from './EvidenceBadge.astro';
 import PositionFigure from './diagrams/PositionFigure.astro';
 import type { StartPosition } from '../lib/positions.ts';
@@ -26,7 +27,7 @@ const needsKit = equipment.filter((e) => e !== 'none');
 ---
 
 <li>
-  <a class="card stack" href={`/exercises/${id}/`}>
+  <a class="card stack" href={withBase(`/exercises/${id}/`)}>
     <h3>{name}</h3>
     {traditionalName && <p class="card__traditional">{traditionalName}</p>}
     <p class="tag-row">

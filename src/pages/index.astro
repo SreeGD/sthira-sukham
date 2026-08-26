@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/paths.ts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
@@ -26,7 +27,7 @@ const [muscles, exercises, routines] = await Promise.all([
       Everything here is general information. It does not know anything about your knee and
       cannot tell you what is wrong with it — that is what a clinician or physiotherapist is
       for. Some knee symptoms need looking at rather than stretching:{' '}
-      <a href="/safety/">read which ones first</a>.
+      <a href={withBase('/safety/')}>read which ones first</a>.
     </p>
   </div>
 
@@ -34,7 +35,7 @@ const [muscles, exercises, routines] = await Promise.all([
     <h2>Start here</h2>
     <ul class="grid">
       <li>
-        <a class="card stack" href="/start/">
+        <a class="card stack" href={withBase('/start/')}>
           <h3>Pick something you want to do again</h3>
           <p>
             Stairs, kneeling, getting out of a car. Each explains what that activity asks of a
@@ -43,7 +44,7 @@ const [muscles, exercises, routines] = await Promise.all([
         </a>
       </li>
       <li>
-        <a class="card stack" href="/understanding/">
+        <a class="card stack" href={withBase('/understanding/')}>
           <h3>Understanding stiffness</h3>
           <p>
             What the knee actually does, the six different physical reasons it stiffens, and how
@@ -52,7 +53,7 @@ const [muscles, exercises, routines] = await Promise.all([
         </a>
       </li>
       <li>
-        <a class="card stack" href="/muscles/">
+        <a class="card stack" href={withBase('/muscles/')}>
           <h3>Muscles &amp; structures</h3>
           <p>
             {muscles.length} muscles and structures, what each does at the knee, and how it
@@ -61,7 +62,7 @@ const [muscles, exercises, routines] = await Promise.all([
         </a>
       </li>
       <li>
-        <a class="card stack" href="/exercises/">
+        <a class="card stack" href={withBase('/exercises/')}>
           <h3>Exercise library</h3>
           <p>
             {exercises.length} movements across four traditions, filterable by muscle, goal,
@@ -70,7 +71,7 @@ const [muscles, exercises, routines] = await Promise.all([
         </a>
       </li>
       <li>
-        <a class="card stack" href="/routines/">
+        <a class="card stack" href={withBase('/routines/')}>
           <h3>Routines</h3>
           <p>{routines.length} ready-made sequences, with the reasoning behind their order.</p>
         </a>
@@ -83,9 +84,9 @@ const [muscles, exercises, routines] = await Promise.all([
     <p>
       A stiff-feeling knee is frequently not a knee problem. The hip and the ankle both change
       what the knee has to do, and restriction at either one gets felt at the joint in between.
-      That is why this reference spends as much time on <a href="/muscles/iliopsoas/">hip
-      flexors</a>, <a href="/muscles/gluteus-medius/">gluteal muscles</a>, and{' '}
-      <a href="/muscles/soleus/">the calf</a> as it does on the knee itself.
+      That is why this reference spends as much time on <a href={withBase('/muscles/iliopsoas/')}>hip
+      flexors</a>, <a href={withBase('/muscles/gluteus-medius/')}>gluteal muscles</a>, and{' '}
+      <a href={withBase('/muscles/soleus/')}>the calf</a> as it does on the knee itself.
     </p>
   </section>
 </BaseLayout>

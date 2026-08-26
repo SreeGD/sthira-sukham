@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/paths.ts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Search from '../islands/Search.tsx';
 import { getCollection } from 'astro:content';
@@ -23,8 +24,8 @@ const index = buildSearchIndex(muscles, exercises);
   <div class="nojs-only">
     <p>Search needs JavaScript. Everything is reachable by browsing instead:</p>
     <ul class="grid">
-      <li><a class="card" href="/muscles/"><strong>All {muscles.length} muscles &amp; structures</strong></a></li>
-      <li><a class="card" href="/exercises/"><strong>All {exercises.length} exercises</strong></a></li>
+      <li><a class="card" href={withBase('/muscles/')}><strong>All {muscles.length} muscles &amp; structures</strong></a></li>
+      <li><a class="card" href={withBase('/exercises/')}><strong>All {exercises.length} exercises</strong></a></li>
     </ul>
   </div>
 </BaseLayout>

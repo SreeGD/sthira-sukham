@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceList from '../../components/SourceList.astro';
 import MuscleActionMap from '../../components/diagrams/MuscleActionMap.astro';
@@ -37,7 +38,7 @@ const { direct, indirect } = structuresAtJoint(index, entry.id);
 ---
 
 <BaseLayout title={d.name} description={d.plainDescription}>
-  <p><a href="/understanding/">← Understanding</a></p>
+  <p><a href={withBase('/understanding/')}>← Understanding</a></p>
 
   <h1>{d.name}</h1>
   <p class="lede">{d.plainDescription}</p>
@@ -68,7 +69,7 @@ const { direct, indirect } = structuresAtJoint(index, entry.id);
       {
         sources.map((s) => (
           <li>
-            <a class="card stack" href={`/understanding/sources/${s.id}/`}>
+            <a class="card stack" href={withBase(`/understanding/sources/${s.id}/`)}>
               <h3>{s.data.clinicalTerm}</h3>
               <p>{s.data.plainLanguageGloss}</p>
             </a>
@@ -84,7 +85,7 @@ const { direct, indirect } = structuresAtJoint(index, entry.id);
       {
         patterns.map((p) => (
           <li>
-            <a class="card" href={`/understanding/patterns/${p.id}/`}>
+            <a class="card" href={withBase(`/understanding/patterns/${p.id}/`)}>
               <h3>{p.data.name}</h3>
             </a>
           </li>
@@ -101,7 +102,7 @@ const { direct, indirect } = structuresAtJoint(index, entry.id);
       {
         direct.map(({ structure }) => (
           <li>
-            <a class="card" href={`/muscles/${structure.id}/`}>
+            <a class="card" href={withBase(`/muscles/${structure.id}/`)}>
               <strong>{structure.entry.data.anatomicalName}</strong>
               <p class="card__traditional">{structure.entry.data.commonName}</p>
             </a>
@@ -121,7 +122,7 @@ const { direct, indirect } = structuresAtJoint(index, entry.id);
           <ul class="grid">
             {indirect.map(({ structure, presentsAs }) => (
               <li>
-                <a class="card stack" href={`/muscles/${structure.id}/`}>
+                <a class="card stack" href={withBase(`/muscles/${structure.id}/`)}>
                   <strong>{structure.entry.data.anatomicalName}</strong>
                   <p>{presentsAs}</p>
                 </a>

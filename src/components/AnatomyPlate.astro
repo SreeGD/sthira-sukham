@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/paths.ts';
 /*
  * A historical anatomical plate with its provenance shown, not merely stored.
  *
@@ -28,7 +29,7 @@ const { illustration: i } = Astro.props;
 
 <figure class="plate">
   <img
-    src={`/anatomy/${i.file}`}
+    src={withBase(`/anatomy/${i.file}`)}
     alt={i.alt}
     loading="lazy"
     decoding="async"

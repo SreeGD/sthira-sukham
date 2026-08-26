@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import { getCollection } from 'astro:content';
 import type { DiagramZone } from '../../lib/diagram-zones.ts';
 
@@ -345,7 +346,7 @@ const zoneNameList =
                 {members.map((m, i) => (
                   <>
                     {i > 0 && ', '}
-                    <a href={`/muscles/${m.id}/`}>{m.data.anatomicalName}</a>
+                    <a href={withBase(`/muscles/${m.id}/`)}>{m.data.anatomicalName}</a>
                   </>
                 ))}
               </span>

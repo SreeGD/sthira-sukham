@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths.ts';
 import { getCollection } from 'astro:content';
 
 /*
@@ -73,7 +74,7 @@ const QUADRANTS = [
               <ul>
                 {members.map((r) => (
                   <li>
-                    <a href={`/understanding/sources/${r.entry.id}/`}>
+                    <a href={withBase(`/understanding/sources/${r.entry.id}/`)}>
                       <strong>{r.entry.data.clinicalTerm}</strong>
                     </a>
                     <span class="source-cell__feel">{r.feel}</span>
