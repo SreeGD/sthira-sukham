@@ -1,17 +1,20 @@
 # Sthira Sukham
 
 [![verify](https://github.com/SreeGD/sthira-sukham/actions/workflows/verify.yml/badge.svg)](https://github.com/SreeGD/sthira-sukham/actions/workflows/verify.yml)
+[![deploy](https://github.com/SreeGD/sthira-sukham/actions/workflows/deploy.yml/badge.svg)](https://github.com/SreeGD/sthira-sukham/actions/workflows/deploy.yml)
 ![no network, no backend](https://img.shields.io/badge/runtime-no%20network%2C%20no%20backend-informational)
 
+**Read it: <https://sreegd.github.io/sthira-sukham/>**
+
 <sub>The verify badge runs the full `pnpm verify` gate — build, content policy, network
-isolation, unit and e2e. While this repository is private, GitHub only renders that badge for
-viewers who have access; elsewhere it will show as a broken image. The runtime badge states a
-property that `pnpm check:isolation` enforces on every build, so it cannot quietly stop being
-true.</sub>
+isolation, unit and e2e. The deploy badge covers the published build, which additionally
+asserts that every internal link carries the base path GitHub Pages serves from. The runtime
+badge states a property that `pnpm check:isolation` enforces on every build, so it cannot
+quietly stop being true — the hosted copy fetches nothing at runtime either.</sub>
 
 > *sthira sukham āsanam* — "the posture should be steady and comfortable." Yoga Sūtra 2.46
 
-A locally-run, static educational reference on stiff joints — knee, hip and ankle as a connected
+A static educational reference on stiff joints — hip, knee, ankle and foot as a connected
 chain: how each joint works, the muscles and structures that govern how freely it moves, and the
 movements commonly used to address them, drawn from clinical range-of-motion work, yoga, Pilates,
 and tai chi.
