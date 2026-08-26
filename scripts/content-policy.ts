@@ -68,7 +68,7 @@ export const REQUIRED_MUSCLE_GROUPS: Record<string, string[]> = {
     'gluteus-minimus',
     'iliopsoas',
   ],
-  'non-contractile': ['joint-capsule', 'retinaculum', 'iliotibial-band'],
+  'non-contractile': ['knee-capsule', 'retinaculum', 'iliotibial-band'],
 };
 
 export const MODALITIES = ['clinical-rom', 'yoga', 'pilates', 'taichi-qigong'];
@@ -333,6 +333,51 @@ export function checkContent(c: Collections): PolicyResult {
       const v = record.data.jointInfluences;
       return Array.isArray(v) ? (v as Array<Record<string, unknown>>) : [];
     };
+
+    /*
+     * A joint-scoped record must not point at a structure that has nothing to do with
+     * its joint. This is not hypothetical: every hip and ankle stiffness source shipped
+     * pointing at `joint-capsule`, which was the *knee* capsule and declared no hip or
+     * ankle influence — so "capsular restriction" on the hip page linked to a page about
+     * the patella. The schema could not catch it (both are valid `muscles` references)
+     * and no test asserted it, which is exactly the gap this script exists to close.
+     */
+    const structureInfluences = new Map<string, Set<string>>(
+      c.muscles.map((m) => [
+        m.id,
+        new Set(
+          influencesOf(m).map((i) =>
+            typeof i.joint === 'string'
+              ? i.joint
+              : String((i.joint as Record<string, unknown>)?.id ?? i.joint),
+          ),
+        ),
+      ]),
+    );
+    const checkJointScopedStructures = (records: Record_[], field: string) => {
+      for (const record of records) {
+        const joint = record.data.joint;
+        const jid =
+          typeof joint === 'string'
+            ? joint
+            : String((joint as Record<string, unknown>)?.id ?? joint);
+        const refs = record.data[field];
+        if (!Array.isArray(refs)) continue;
+        for (const raw of refs as unknown[]) {
+          const sid =
+            typeof raw === 'string' ? raw : String((raw as Record<string, unknown>)?.id ?? raw);
+          const influences = structureInfluences.get(sid);
+          if (influences && !influences.has(jid)) {
+            fail(
+              `${record.file}: ${field} -> "${sid}" does not influence the ${jid}, so this ` +
+                `record sends a ${jid} reader to a page about a different joint.`,
+            );
+          }
+        }
+      }
+    };
+    checkJointScopedStructures(c.stiffnessSources ?? [], 'relatedStructures');
+    checkJointScopedStructures(c.stiffnessPatterns ?? [], 'typicallyInvolves');
 
     for (const muscle of c.muscles) {
       const inf = influencesOf(muscle);

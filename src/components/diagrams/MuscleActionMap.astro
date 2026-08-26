@@ -15,7 +15,7 @@ import type { DiagramZone } from '../../lib/diagram-zones.ts';
  * what governs a knee is not at the knee. Six of the ten zones are hip or ankle.
  */
 
-type Joint = 'knee' | 'hip' | 'ankle';
+type Joint = 'knee' | 'hip' | 'ankle' | 'foot';
 
 interface Props {
   /** Which joint to draw the map for. Defaults to the knee. */
@@ -131,35 +131,51 @@ const ZONES: ZoneSpec[] = [
   },
   {
     zone: 'shin',
-    group: { knee: 'Shin', ankle: 'Shin' },
-    action: { knee: "Lifts the foot. Weak, and the toes catch as the leg swings through.", ankle: "Lifts the foot. Weak, and the toes catch as the leg swings through." },
+    group: { knee: 'Shin', ankle: 'Shin', foot: 'Toe lifters' },
+    action: { knee: "Lifts the foot. Weak, and the toes catch as the leg swings through.", ankle: "Lifts the foot. Weak, and the toes catch as the leg swings through.", foot: "Lift the toes. Prominent and cordy when they are covering for a weak shin." },
     reach: 'direct',
     marker: [218, 262],
     leader: [230, 262, 360, 250],
   },
   {
     zone: 'lower-leg-outer',
-    group: { knee: 'Outer lower leg', ankle: 'Outer lower leg' },
-    action: { knee: "Stops the ankle rolling over. Slow to respond after a sprain.", ankle: "Stops the ankle rolling over. Slow to respond after a sprain." },
+    group: { knee: 'Outer lower leg', ankle: 'Outer lower leg', foot: 'Outer lower leg' },
+    action: { knee: "Stops the ankle rolling over. Slow to respond after a sprain.", ankle: "Stops the ankle rolling over. Slow to respond after a sprain.", foot: "Anchors the inner edge of the foot down so the big toe can take load." },
     reach: 'direct',
     marker: [592, 262],
     leader: [580, 262, 374, 250],
   },
   {
     zone: 'foot',
-    group: { knee: 'Sole of the foot', ankle: 'Sole of the foot' },
-    action: { knee: "Stiffens the foot into a lever for push-off.", ankle: "Stiffens the foot into a lever for push-off." },
+    group: { knee: 'Sole of the foot', ankle: 'Sole of the foot', foot: 'Arch and sole' },
+    action: { knee: "Stiffens the foot into a lever for push-off.", ankle: "Stiffens the foot into a lever for push-off.", foot: "Hold the arch up — actively by muscle, passively by the fascia." },
     reach: 'direct',
     marker: [218, 296],
     leader: [230, 296, 360, 296],
   },
   {
     zone: 'calf',
-    group: { knee: 'Calf', ankle: 'Calf' },
-    action: { knee: "Points the foot. Tight, and the shin cannot travel forward.", ankle: "Points the foot down. Tight, and the shin cannot travel forward over it." },
+    group: { knee: 'Calf', ankle: 'Calf', foot: 'Calf and deep toe flexor' },
+    action: { knee: "Points the foot. Tight, and the shin cannot travel forward.", ankle: "Points the foot down. Tight, and the shin cannot travel forward over it.", foot: "Tight, and the heel lifts early — loading the big toe for longer than it should carry." },
     reach: 'referred',
     marker: [592, 232],
     leader: [580, 232, 546, 236],
+  },
+  {
+    zone: 'ankle',
+    group: { knee: 'Ankle joint', ankle: 'Ankle joint', foot: 'Ankle joint' },
+    action: { knee: "Passive tissue. Restricts how far the shin can travel forward.", ankle: "Passive tissue. Restricts dorsiflexion whether the knee is bent or straight.", foot: "Sits behind the foot. Restriction here changes how the foot is loaded." },
+    reach: 'direct',
+    marker: [218, 282],
+    leader: [230, 282, 358, 286],
+  },
+  {
+    zone: 'toes',
+    group: { knee: 'Big toe joint', ankle: 'Big toe joint', foot: 'Big toe joint' },
+    action: { knee: "Where the foot rolls off at the end of every step.", ankle: "Where the foot rolls off at the end of every step.", foot: "Bends up ~65° at push-off. Lose it and the foot rolls off its inner edge." },
+    reach: 'direct',
+    marker: [592, 300],
+    leader: [580, 300, 402, 304],
   },
 ];
 
@@ -171,43 +187,75 @@ const SHAPES: Record<DiagramZone, string> = {
   'thigh-inner': `M ${84 + DX} 64 L ${101 + DX} 64 L ${94 + DX} 168 L ${82 + DX} 168 Z`,
   'thigh-outer': `M ${51 + DX} 64 L ${68 + DX} 64 L ${70 + DX} 168 L ${58 + DX} 168 Z`,
   'knee-front': `M ${58 + DX} 170 L ${94 + DX} 170 Q ${98 + DX} 170 ${98 + DX} 176 L ${98 + DX} 196 Q ${98 + DX} 202 ${94 + DX} 202 L ${58 + DX} 202 Q ${54 + DX} 202 ${54 + DX} 196 L ${54 + DX} 176 Q ${54 + DX} 170 ${58 + DX} 170 Z`,
+  ankle: `M ${67 + DX} 280 L ${88 + DX} 280 L ${89 + DX} 294 L ${66 + DX} 294 Z`,
+  toes: `M ${98 + DX} 298 L ${112 + DX} 298 Q ${117 + DX} 304 ${112 + DX} 310 L ${98 + DX} 310 Z`,
   'hip-side': `M ${236 + DX} 20 L ${244 + DX} 20 Q ${250 + DX} 20 ${250 + DX} 26 L ${250 + DX} 62 L ${236 + DX} 62 Z`,
   'hip-back': `M ${198 + DX} 26 Q ${198 + DX} 20 ${204 + DX} 20 L ${236 + DX} 20 L ${236 + DX} 62 L ${198 + DX} 62 Z`,
   'thigh-back': `M ${199 + DX} 64 L ${249 + DX} 64 L ${242 + DX} 168 L ${206 + DX} 168 Z`,
   'knee-back': `M ${206 + DX} 170 L ${242 + DX} 170 Q ${246 + DX} 170 ${246 + DX} 176 L ${246 + DX} 196 Q ${246 + DX} 202 ${242 + DX} 202 L ${206 + DX} 202 Q ${202 + DX} 202 ${202 + DX} 196 L ${202 + DX} 176 Q ${202 + DX} 170 ${206 + DX} 170 Z`,
   calf: `M ${206 + DX} 204 L ${242 + DX} 204 Q ${247 + DX} 216 ${244 + DX} 242 L ${235 + DX} 286 L ${214 + DX} 286 Q ${203 + DX} 242 ${206 + DX} 204 Z`,
-  shin: `M ${68 + DX} 204 L ${94 + DX} 204 L ${87 + DX} 286 L ${72 + DX} 286 Z`,
-  'lower-leg-outer': `M ${58 + DX} 204 L ${68 + DX} 204 L ${72 + DX} 286 L ${66 + DX} 286 Z`,
-  foot: `M ${66 + DX} 288 L ${87 + DX} 288 L ${106 + DX} 302 L ${66 + DX} 302 Z`,
+  shin: `M ${68 + DX} 204 L ${94 + DX} 204 L ${88 + DX} 278 L ${73 + DX} 278 Z`,
+  'lower-leg-outer': `M ${58 + DX} 204 L ${68 + DX} 204 L ${73 + DX} 278 L ${67 + DX} 278 Z`,
+  foot: `M ${66 + DX} 296 L ${89 + DX} 296 L ${98 + DX} 310 L ${66 + DX} 310 Z`,
 };
 
-const BASE = [`M ${214 + DX} 288 L ${235 + DX} 288 L ${254 + DX} 302 L ${214 + DX} 302 Z`];
+const BASE = [`M ${214 + DX} 288 L ${235 + DX} 288 L ${254 + DX} 310 L ${214 + DX} 310 Z`];
 
 const inZone = (zone: DiagramZone) => muscles.filter((m) => m.data.diagramZone === zone);
 
 /* Only zones with a structure influencing this joint are drawn. */
+const jointName = jointEntry.data.name.toLowerCase();
 const label = (z: ZoneSpec) => z.group[joint] ?? z.group.knee;
 const actionText = (z: ZoneSpec) => z.action[joint] ?? z.action.knee;
 
 const activeZones = ZONES.filter((z) => inZone(z.zone).length > 0).map((z) => {
   const members = inZone(z.zone);
-  // Solid if anything in the zone acts on this joint directly; hatched only when the
-  // whole zone reaches it through somewhere else.
-  const reach = members.some((m) => influenceAt(m)!.action === 'direct') ? 'direct' : 'referred';
-  return { ...z, reach: reach as 'direct' | 'referred' };
+  /*
+   * A zone can hold structures that reach this joint differently, and collapsing that to
+   * one verdict overstates it. On the foot map the calf zone holds two structures that act
+   * directly and three that act through the ankle; calling the whole zone "direct" claimed
+   * a relationship the content never made for gastrocnemius, soleus or the Achilles.
+   * Mixed zones are drawn solid — something there is direct — but say so in words.
+   */
+  const direct = members.filter((m) => influenceAt(m)!.action === 'direct').length;
+  const reach = direct === 0 ? 'referred' : direct === members.length ? 'direct' : 'mixed';
+  return { ...z, reach: reach as 'direct' | 'referred' | 'mixed', direct };
 });
 const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
+/* Zones holding at least one structure that reaches this joint through another. Distinct
+   from referredCount, which is only the fully-indirect zones (the ones drawn hatched).
+   Using referredCount in prose claimed "everything here acts directly" on the ankle and
+   foot maps while a mixed zone sat in the legend saying otherwise. */
+const zonesWithIndirect = activeZones.filter((z) => z.reach !== 'direct').length;
+
+/* Names of the regions actually drawn, for the accessible description. Derived, because
+   the hardcoded version described the knee's ten regions on every joint's map — including
+   the foot's, which draws five and shares none of the wording. */
+/* Lowercase the first letter only. A blanket toLowerCase() turned "Outer quad · IT band"
+   into "it band" and "Glute med/min · TFL" into "tfl". */
+const zoneNames = activeZones.map((z) => {
+  const l = label(z);
+  // Leave it alone when the label opens with an acronym: "IT band" must not become
+  // "iT band", and a blanket toLowerCase() made it "it band".
+  const opensWithAcronym = /^[A-Z]{2}/.test(l);
+  return opensWithAcronym ? l : l.charAt(0).toLowerCase() + l.slice(1);
+});
+const zoneNameList =
+  zoneNames.length === 1
+    ? zoneNames[0]
+    : zoneNames.slice(0, -1).join(', ') + ' and ' + zoneNames[zoneNames.length - 1];
 ---
 
 <figure class="diagram action-map">
-  <svg viewBox="0 0 800 332" role="img" aria-labelledby="map-title map-desc" class="diagram__svg">
-    <title id="map-title">What each muscle group does to the knee</title>
+  <svg viewBox="0 0 800 340" role="img" aria-labelledby="map-title map-desc" class="diagram__svg">
+    <title id="map-title">What each muscle group does to {jointName}</title>
     <desc id="map-desc">
-      Front and back views of a leg showing the regions that influence this joint. The front shows the hip flexors,
-      the front, inner and outer thigh, and the front of the knee. The back shows the buttock,
-      the side of the hip, the back of the thigh, behind the knee, and the calf. Each label
-      states what that group does to the knee. Six of the ten act on the knee indirectly, through
-      the hip or the ankle. The same information is listed as text below the diagram.
+      Front and back views of a leg showing the {activeZones.length} regions that influence{' '}
+      {jointName}: {zoneNameList}. Each label states what that group does to {jointName}.{' '}
+      {zonesWithIndirect > 0
+        ? `${zonesWithIndirect} of the ${activeZones.length} ${zonesWithIndirect === 1 ? 'contains a structure that acts' : 'contain structures that act'} on it indirectly, through a neighbouring joint.`
+        : 'All of them act on it directly.'}{' '}
+      The same information is listed as text below the diagram.
     </desc>
 
     <g aria-hidden="true">
@@ -215,7 +263,7 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
       {Object.values(SHAPES).map((d) => <path d={d} class="map-base" />)}
       {
         activeZones.map((z) => (
-          <path d={SHAPES[z.zone]} class={`map-zone map-zone--${z.reach}`} />
+          <path d={SHAPES[z.zone]} class={`map-zone map-zone--${z.reach === 'referred' ? 'referred' : 'direct'}`} />
         ))
       }
       {
@@ -252,7 +300,7 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
   <figcaption>
     <p class="map-lede">
       {
-        referredCount === 0 ? (
+        zonesWithIndirect === 0 ? (
           <>
             Everything shown here acts on {jointEntry.data.name.toLowerCase()} directly. What it
             does to the joints <em>above</em> it is on each structure's own page — restriction
@@ -261,8 +309,8 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
         ) : (
           <>
             <strong>
-              {referredCount} of these {activeZones.length}{' '}
-              {referredCount === 1 ? 'acts' : 'act'} on {jointEntry.data.name.toLowerCase()}{' '}
+              {zonesWithIndirect} of these {activeZones.length}{' '}
+              {zonesWithIndirect === 1 ? 'region reaches' : 'regions reach'} {jointName}{' '}
               indirectly
             </strong>, through a neighbouring joint. That is why so much of this reference is
             about muscles that are nowhere near the joint that hurts.
@@ -280,13 +328,18 @@ const referredCount = activeZones.filter((z) => z.reach === 'referred').length;
               <span class="map-key__num" aria-hidden="true">
                 {i + 1}
               </span>
-              <span class={`map-key__dot map-key__dot--${z.reach}`} aria-hidden="true" />
+              <span
+                class={`map-key__dot map-key__dot--${z.reach === 'referred' ? 'referred' : 'direct'}`}
+                aria-hidden="true"
+              />
               <span>
                 <strong>{label(z)}.</strong> {actionText(z)}{' '}
                 <span class="map-key__reach">
                   {z.reach === 'direct'
-                    ? `Acts on ${jointEntry.data.name.toLowerCase()} directly.`
-                    : 'Acts through another joint.'}
+                    ? `Acts on ${jointName} directly.`
+                    : z.reach === 'referred'
+                      ? 'Acts through another joint.'
+                      : `${z.direct} of these ${z.direct === 1 ? 'acts' : 'act'} on ${jointName} directly; the rest act through a neighbouring joint.`}
                 </span>
                 <br />
                 {members.map((m, i) => (

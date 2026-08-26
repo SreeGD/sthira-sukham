@@ -37,6 +37,12 @@ jointInfluences:
     action: direct
     presentsAs: Its two heads originate above the knee on the thigh bone, so tightness resists full
       knee straightening while the foot is flexed upward.
+  - joint: foot
+    action: indirect
+    presentsAs: >-
+      Does not attach to the forefoot. A short calf lifts the heel earlier in
+      the step, so the ball of the foot and the big toe joint carry load for longer than
+      they are meant to.
 ---
 
 Gastrocnemius belongs in a knee reference for one reason: its two heads originate on the

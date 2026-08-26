@@ -10,13 +10,14 @@ targets:
   - gluteus-medius
   - gluteus-minimus
   - iliopsoas
-  - joint-capsule
+  - knee-capsule
 emphasis:
   - mobility
 sources:
   - neumann-kinesiology-2016
   - yoga-knee-oa-meta-2024
 dependsOnJoints:
+  - foot
   - hip
   - knee
 ---

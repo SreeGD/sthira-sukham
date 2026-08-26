@@ -22,6 +22,7 @@ sources:
   - nascimento-hip-knee-pfp-2018
   - neumann-kinesiology-2016
 dependsOnJoints:
+  - foot
   - hip
   - ankle
   - knee

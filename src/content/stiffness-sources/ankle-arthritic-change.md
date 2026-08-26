@@ -3,7 +3,7 @@ joint: ankle
 clinicalTerm: Arthritic change
 plainLanguageGloss: The joint surfaces and their edges have altered
 order: 50
-relatedStructures: [joint-capsule]
+relatedStructures: [ankle-capsule]
 sources: [neumann-kinesiology-2016, nice-ng226-osteoarthritis-2022]
 ---
 

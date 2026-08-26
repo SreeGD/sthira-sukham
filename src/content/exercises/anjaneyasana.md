@@ -6,6 +6,7 @@ modality: yoga
 startPosition: kneeling
 targets:
   - iliopsoas
+  - sartorius
   - rectus-femoris
   - gluteus-maximus
 goal:

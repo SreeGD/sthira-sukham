@@ -21,6 +21,11 @@ jointInfluences:
     action: direct
     presentsAs: Weakness or delayed response leaves the ankle unable to catch itself as it starts to
       roll, which is felt as unreliability on uneven ground rather than as stiffness.
+  - joint: foot
+    action: direct
+    presentsAs: >-
+      Peroneus longus crosses under the sole to anchor the inner edge of the foot down, so
+      weakness lets that edge lift and unloads the big toe at push-off.
 sources:
   - neumann-kinesiology-2016
 illustration:

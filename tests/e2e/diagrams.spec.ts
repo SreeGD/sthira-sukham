@@ -13,7 +13,7 @@ const ALL_MUSCLES = [
   'rectus-femoris', 'vastus-lateralis', 'vastus-medialis', 'vastus-intermedius',
   'biceps-femoris', 'semitendinosus', 'semimembranosus', 'gastrocnemius', 'soleus',
   'popliteus', 'tensor-fasciae-latae', 'adductor-group', 'gluteus-maximus',
-  'gluteus-medius', 'gluteus-minimus', 'iliopsoas', 'joint-capsule', 'retinaculum',
+  'gluteus-medius', 'gluteus-minimus', 'iliopsoas', 'knee-capsule', 'retinaculum',
   'iliotibial-band',
 ];
 
@@ -179,7 +179,7 @@ test.describe('anatomical plates', () => {
     'rectus-femoris', 'vastus-lateralis', 'vastus-medialis', 'vastus-intermedius',
     'biceps-femoris', 'semitendinosus', 'semimembranosus', 'gastrocnemius', 'soleus',
     'popliteus', 'tensor-fasciae-latae', 'adductor-group', 'gluteus-maximus',
-    'gluteus-medius', 'gluteus-minimus', 'iliopsoas', 'joint-capsule', 'retinaculum',
+    'gluteus-medius', 'gluteus-minimus', 'iliopsoas', 'knee-capsule', 'retinaculum',
     'iliotibial-band',
   ];
 

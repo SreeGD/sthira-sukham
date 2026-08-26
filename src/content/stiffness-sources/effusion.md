@@ -4,7 +4,7 @@ clinicalTerm: Joint effusion
 plainLanguageGloss: Fluid inside the joint taking up room
 order: 20
 relatedStructures:
-  - joint-capsule
+  - knee-capsule
 sources:
   - aaos-knee-arthritis
   - nice-ng226-osteoarthritis-2022

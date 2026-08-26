@@ -20,7 +20,15 @@ export const DIAGRAM_ZONES = [
   // the ankle's map has one region, which communicates nothing.
   'shin',
   'lower-leg-outer',
+  // The ankle joint itself, distinct from the calf above it and the foot below. The
+  // talocrural capsule and the lateral ligaments live here and nowhere else — before
+  // this zone existed they had to borrow 'foot', which put them in the wrong place.
+  'ankle',
   'foot',
+  // The forefoot and the big toe. Separate from 'foot' because the first toe joint is
+  // where the foot's most consequential stiffness sits, and highlighting the whole
+  // sole for it would point the reader at the wrong end.
+  'toes',
 ] as const;
 
 export type DiagramZone = (typeof DIAGRAM_ZONES)[number];

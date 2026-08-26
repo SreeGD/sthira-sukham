@@ -4,7 +4,7 @@ clinicalTerm: Capsular restriction
 plainLanguageGloss: The sleeve around the joint has tightened
 order: 10
 relatedStructures:
-  - joint-capsule
+  - knee-capsule
   - retinaculum
 sources:
   - neumann-kinesiology-2016

@@ -4,6 +4,7 @@ modality: clinical-rom
 startPosition: seated
 targets:
   - tibialis-anterior
+  - ankle-capsule
   - peroneals
   - tibialis-posterior
   - gastrocnemius

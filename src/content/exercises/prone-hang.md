@@ -7,7 +7,7 @@ targets:
   - semitendinosus
   - semimembranosus
   - popliteus
-  - joint-capsule
+  - knee-capsule
 goal:
   - mobility
 quickSteps:

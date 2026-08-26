@@ -7,7 +7,7 @@ startPosition: kneeling
 targets:
   - rectus-femoris
   - vastus-intermedius
-  - joint-capsule
+  - knee-capsule
   - gluteus-maximus
 goal:
   - mobility

@@ -19,6 +19,7 @@ sources:
   - nascimento-hip-knee-pfp-2018
   - cochrane-exercise-knee-oa-2024
 dependsOnJoints:
+  - foot
   - knee
   - hip
   - ankle

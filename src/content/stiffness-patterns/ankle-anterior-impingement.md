@@ -2,7 +2,7 @@
 joint: ankle
 name: Anterior impingement
 order: 220
-typicallyInvolves: [joint-capsule]
+typicallyInvolves: [ankle-capsule]
 relatedSources: [ankle-arthritic-change, ankle-adhesion-and-scar]
 sources: [neumann-kinesiology-2016]
 ---

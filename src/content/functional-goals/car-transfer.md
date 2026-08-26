@@ -10,7 +10,7 @@ targets:
   - adductor-group
   - gluteus-medius
   - biceps-femoris
-  - joint-capsule
+  - knee-capsule
 emphasis:
   - mobility
   - motor-control

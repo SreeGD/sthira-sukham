@@ -3,7 +3,7 @@ joint: ankle
 clinicalTerm: Joint effusion
 plainLanguageGloss: Fluid inside the joint taking up room
 order: 20
-relatedStructures: [joint-capsule]
+relatedStructures: [ankle-capsule]
 sources: [neumann-kinesiology-2016, nice-ng226-osteoarthritis-2022]
 ---
 

@@ -3,7 +3,7 @@ joint: hip
 clinicalTerm: Capsular restriction
 plainLanguageGloss: The sleeve around the ball and socket has tightened
 order: 10
-relatedStructures: [joint-capsule]
+relatedStructures: [hip-capsule]
 sources: [neumann-kinesiology-2016, nice-ng226-osteoarthritis-2022]
 ---
 

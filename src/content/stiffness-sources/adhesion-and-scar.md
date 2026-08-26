@@ -4,7 +4,7 @@ clinicalTerm: Adhesion and scar tissue
 plainLanguageGloss: Surfaces that should glide have stuck together
 order: 40
 relatedStructures:
-  - joint-capsule
+  - knee-capsule
   - retinaculum
   - rectus-femoris
 sources:

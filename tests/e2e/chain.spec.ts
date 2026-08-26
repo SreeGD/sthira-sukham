@@ -8,13 +8,23 @@ import { test, expect } from '@playwright/test';
  * generated from data — the thing that distinguishes this feature from more content.
  */
 
-const JOINTS = ['knee', 'hip', 'ankle'];
+/*
+ * Read from the content rather than hardcoded. The first version listed the three
+ * joints literally, and adding the foot broke four tests that were asserting the
+ * old list rather than the actual invariant — which is "every influence link points
+ * at a real joint page", not "at one of these three".
+ */
+import { readdirSync } from 'node:fs';
+const JOINTS = readdirSync('src/content/joints')
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => f.replace(/\.md$/, ''))
+  .sort();
 
 const STRUCTURES = [
   'rectus-femoris', 'vastus-lateralis', 'vastus-medialis', 'vastus-intermedius',
   'biceps-femoris', 'semitendinosus', 'semimembranosus', 'gastrocnemius', 'soleus',
   'popliteus', 'tensor-fasciae-latae', 'adductor-group', 'gluteus-maximus',
-  'gluteus-medius', 'gluteus-minimus', 'iliopsoas', 'joint-capsule', 'retinaculum',
+  'gluteus-medius', 'gluteus-minimus', 'iliopsoas', 'knee-capsule', 'retinaculum',
   'iliotibial-band',
 ];
 
@@ -28,7 +38,7 @@ test.describe('structure → joint', () => {
 
       for (let i = 0; i < count; i++) {
         const href = await links.nth(i).getAttribute('href');
-        expect(href).toMatch(/^\/joints\/(knee|hip|ankle)\/$/);
+        expect(href).toMatch(new RegExp(`^/joints/(${JOINTS.join('|')})/$`));
         const res = await page.request.get(href!);
         expect(res.status(), `${id} -> ${href}`).toBe(200);
       }

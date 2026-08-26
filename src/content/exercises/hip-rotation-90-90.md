@@ -6,6 +6,7 @@ modality: pilates
 startPosition: seated
 targets:
   - deep-hip-rotators
+  - sartorius
   - gluteus-medius
   - gluteus-minimus
   - adductor-group

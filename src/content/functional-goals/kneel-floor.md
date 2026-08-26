@@ -8,7 +8,7 @@ romNote: Kneeling and deep squatting sit at the far end of the range, around 135
 targets:
   - rectus-femoris
   - vastus-intermedius
-  - joint-capsule
+  - knee-capsule
   - soleus
   - adductor-group
 emphasis:
@@ -17,6 +17,7 @@ sources:
   - rowe-knee-functional-rom-2000
   - neumann-kinesiology-2016
 dependsOnJoints:
+  - foot
   - knee
   - ankle
   - hip

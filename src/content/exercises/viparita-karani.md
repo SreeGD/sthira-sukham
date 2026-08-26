@@ -8,7 +8,7 @@ targets:
   - biceps-femoris
   - semitendinosus
   - semimembranosus
-  - joint-capsule
+  - knee-capsule
 goal:
   - mobility
 quickSteps:

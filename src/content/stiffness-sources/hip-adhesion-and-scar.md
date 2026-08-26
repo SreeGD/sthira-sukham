@@ -3,7 +3,7 @@ joint: hip
 clinicalTerm: Adhesion and scar tissue
 plainLanguageGloss: Surfaces that should glide have stuck together
 order: 40
-relatedStructures: [joint-capsule, iliopsoas]
+relatedStructures: [hip-capsule, iliopsoas]
 sources: [neumann-kinesiology-2016, nice-ng226-osteoarthritis-2022]
 ---
 

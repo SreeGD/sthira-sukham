@@ -3,7 +3,7 @@ joint: knee
 name: Post-injury and post-surgical pattern
 order: 30
 typicallyInvolves:
-  - joint-capsule
+  - knee-capsule
   - retinaculum
   - rectus-femoris
   - vastus-medialis

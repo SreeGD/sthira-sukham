@@ -3,7 +3,7 @@ joint: knee
 name: Osteoarthritic pattern
 order: 10
 typicallyInvolves:
-  - joint-capsule
+  - knee-capsule
   - rectus-femoris
   - vastus-medialis
 relatedSources:

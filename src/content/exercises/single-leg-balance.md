@@ -4,6 +4,7 @@ modality: clinical-rom
 startPosition: standing-supported
 targets:
   - peroneals
+  - lateral-ankle-ligaments
   - tibialis-posterior
   - tibialis-anterior
   - gluteus-medius

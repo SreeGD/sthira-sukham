@@ -26,7 +26,7 @@ import { START_POSITIONS } from './lib/positions.ts';
 export const MODALITIES = ['clinical-rom', 'yoga', 'pilates', 'taichi-qigong'] as const;
 export const GOALS = ['mobility', 'strength', 'motor-control'] as const;
 export const DIFFICULTIES = ['beginner', 'intermediate', 'advanced'] as const;
-export const REGIONS = ['knee', 'hip', 'ankle'] as const;
+export const REGIONS = ['knee', 'hip', 'ankle', 'foot'] as const;
 export const SOURCE_TIERS = [
   'clinical-body',
   'peer-reviewed',

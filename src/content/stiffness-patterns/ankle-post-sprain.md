@@ -2,7 +2,7 @@
 joint: ankle
 name: Post-sprain restriction
 order: 210
-typicallyInvolves: [joint-capsule, gastrocnemius, soleus]
+typicallyInvolves: [lateral-ankle-ligaments, ankle-capsule, gastrocnemius, soleus]
 relatedSources: [ankle-muscle-guarding, ankle-adhesion-and-scar, ankle-effusion]
 sources: [neumann-kinesiology-2016]
 ---

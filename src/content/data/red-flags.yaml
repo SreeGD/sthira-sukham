@@ -110,3 +110,36 @@
   sources:
     - nice-ng226-osteoarthritis-2022
   joints: *a1
+- id: cannot-push-off-sudden
+  order: 84
+  joints:
+    - ankle
+    - foot
+  sign: A sudden snap at the back of the ankle, then no push-off
+  description: A sharp snap or a sensation of being kicked in the back of the ankle, followed by
+    being unable to rise onto the toes, can mean the Achilles tendon has ruptured. Walking may
+    still be possible, which is why this is missed. It needs same-day assessment.
+  sources:
+    - neumann-kinesiology-2016
+- id: hot-swollen-toe-joint
+  order: 86
+  joints:
+    - foot
+  sign: A hot, red, swollen big toe joint
+  description: A big toe joint that is hot, red and acutely painful — often coming on overnight —
+    is a different problem from mechanical stiffness, and can indicate gout or infection. It needs
+    assessment rather than stretching.
+  sources:
+    - aaos-hallux-rigidus
+- id: foot-numbness-or-lost-sensation
+  order: 88
+  joints:
+    - foot
+    - ankle
+  sign: Numbness, burning, or reduced feeling in the foot
+  description: Loss of sensation in the foot changes what is safe to do, because you cannot feel
+    the warning signs that would normally stop you. This is particularly important for anyone with
+    diabetes. Get it assessed before starting foot exercises.
+  sources:
+    - nice-ng226-osteoarthritis-2022
+    - jospt-heel-pain-2023

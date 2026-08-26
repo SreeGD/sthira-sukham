@@ -54,7 +54,7 @@ test.describe('muscles (US2)', () => {
     'gastrocnemius', 'soleus', 'popliteus',
     'tensor-fasciae-latae', 'adductor-group',
     'gluteus-maximus', 'gluteus-medius', 'gluteus-minimus', 'iliopsoas',
-    'joint-capsule', 'retinaculum', 'iliotibial-band',
+    'knee-capsule', 'retinaculum', 'iliotibial-band',
   ];
 
   for (const id of REQUIRED) {

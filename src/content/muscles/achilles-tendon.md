@@ -22,6 +22,11 @@ jointInfluences:
     action: direct
     presentsAs: Tightness through the tendon limits forward travel of the shin over the foot, and
       pain here is felt on push-off rather than as a restriction in range.
+  - joint: foot
+    action: indirect
+    presentsAs: >-
+      Does not attach to the forefoot, but a tight tendon lifts the heel earlier in the step,
+      loading the ball of the foot and the big toe joint for longer than they should carry.
 sources:
   - neumann-kinesiology-2016
 illustration:

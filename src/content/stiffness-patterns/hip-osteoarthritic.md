@@ -2,7 +2,7 @@
 joint: hip
 name: Osteoarthritic pattern (hip)
 order: 110
-typicallyInvolves: [joint-capsule, gluteus-medius, iliopsoas]
+typicallyInvolves: [hip-capsule, acetabular-labrum, gluteus-medius, iliopsoas]
 relatedSources: [hip-arthritic-change, hip-capsular-restriction]
 sources: [nice-ng226-osteoarthritis-2022, neumann-kinesiology-2016]
 ---

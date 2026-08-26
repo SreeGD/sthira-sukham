@@ -82,18 +82,28 @@ const SHAPES: Record<DiagramZone, { view: 'front' | 'back'; d: string; plain: st
   },
   shin: {
     view: 'front',
-    d: 'M 68 204 L 94 204 L 87 286 L 72 286 Z',
+    d: 'M 68 204 L 94 204 L 88 278 L 73 278 Z',
     plain: 'the front of the shin',
   },
   'lower-leg-outer': {
     view: 'front',
-    d: 'M 58 204 L 68 204 L 72 286 L 66 286 Z',
+    d: 'M 58 204 L 68 204 L 73 278 L 67 278 Z',
     plain: 'the outer side of the lower leg',
+  },
+  ankle: {
+    view: 'front',
+    d: 'M 67 280 L 88 280 L 89 294 L 66 294 Z',
+    plain: 'the ankle joint itself',
   },
   foot: {
     view: 'front',
-    d: 'M 66 288 L 87 288 L 106 302 L 66 302 Z',
-    plain: 'the sole of the foot',
+    d: 'M 66 296 L 89 296 L 98 310 L 66 310 Z',
+    plain: 'the arch and sole of the foot',
+  },
+  toes: {
+    view: 'front',
+    d: 'M 98 298 L 112 298 Q 117 304 112 310 L 98 310 Z',
+    plain: 'the toes and the ball of the foot',
   },
 };
 
@@ -109,7 +119,7 @@ const captionText = caption ?? plain.charAt(0).toUpperCase() + plain.slice(1);
 ---
 
 <figure class="diagram diagram--locator">
-  <svg viewBox="0 0 300 320" role="img" aria-labelledby="loc-title loc-desc" class="diagram__svg">
+  <svg viewBox="0 0 300 328" role="img" aria-labelledby="loc-title loc-desc" class="diagram__svg">
     <title id="loc-title">Where {name} sits</title>
     <desc id="loc-desc">
       Simplified front and back views of a leg, with {plain} highlighted.
@@ -117,12 +127,12 @@ const captionText = caption ?? plain.charAt(0).toUpperCase() + plain.slice(1);
 
     <g aria-hidden="true">
       <!-- Structural outlines that are never highlighted -->
-      <path d="M 214 288 L 235 288 L 254 302 L 214 302 Z" class="leg-base" />
+      <path d="M 214 288 L 235 288 L 254 310 L 214 310 Z" class="leg-base" />
 
       {Object.entries(SHAPES).map(([id, s]) => <path d={s.d} class={cls(id as DiagramZone)} />)}
 
-      <text x="76" y="316" class="leg-view" text-anchor="middle">front</text>
-      <text x="224" y="316" class="leg-view" text-anchor="middle">back</text>
+      <text x="76" y="324" class="leg-view" text-anchor="middle">front</text>
+      <text x="224" y="324" class="leg-view" text-anchor="middle">back</text>
     </g>
   </svg>
 

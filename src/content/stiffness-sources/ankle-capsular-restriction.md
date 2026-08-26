@@ -3,7 +3,7 @@ joint: ankle
 clinicalTerm: Capsular restriction
 plainLanguageGloss: The sleeve around the joint has tightened
 order: 10
-relatedStructures: [joint-capsule]
+relatedStructures: [ankle-capsule]
 sources: [neumann-kinesiology-2016, nice-ng226-osteoarthritis-2022]
 ---
 

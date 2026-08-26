@@ -11,7 +11,7 @@ targets:
   - semimembranosus
   - semitendinosus
   - popliteus
-  - joint-capsule
+  - knee-capsule
   - vastus-medialis
 emphasis:
   - mobility

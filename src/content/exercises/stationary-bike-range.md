@@ -6,7 +6,7 @@ targets:
   - rectus-femoris
   - vastus-intermedius
   - biceps-femoris
-  - joint-capsule
+  - knee-capsule
   - gastrocnemius
 goal:
   - mobility

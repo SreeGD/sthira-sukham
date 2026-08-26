@@ -50,7 +50,7 @@ the build, which is the intended behaviour.
 ---
 name: Heel slide
 modality: clinical-rom
-targets: [quadriceps-rectus-femoris, hamstrings-semitendinosus, knee-joint-capsule]
+targets: [quadriceps-rectus-femoris, hamstrings-semitendinosus, knee-knee-capsule]
 goal: [mobility]
 instructions:
   - Lie on the back with both legs extended.

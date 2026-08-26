@@ -29,6 +29,11 @@ jointInfluences:
     presentsAs: It does not cross the knee. When the arch collapses, the shin bone rotates inward
       with the foot — and the knee sits on top of that rotation, taking load at an angle it was
       not built for.
+  - joint: foot
+    action: direct
+    presentsAs: >-
+      The main active support of the arch. When it fails the arch drops progressively, and
+      the flattening is often more obvious standing than sitting.
 sources:
   - neumann-kinesiology-2016
 illustration:

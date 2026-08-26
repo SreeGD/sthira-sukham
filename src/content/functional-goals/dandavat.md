@@ -11,7 +11,7 @@ targets:
   - rectus-femoris
   - vastus-intermedius
   - vastus-medialis
-  - joint-capsule
+  - knee-capsule
   - soleus
   - gluteus-maximus
 emphasis:
@@ -22,6 +22,7 @@ sources:
   - neumann-kinesiology-2016
   - cochrane-exercise-knee-oa-2024
 dependsOnJoints:
+  - foot
   - knee
   - ankle
   - hip

@@ -5,7 +5,7 @@ startPosition: supine
 targets:
   - rectus-femoris
   - vastus-intermedius
-  - joint-capsule
+  - knee-capsule
 goal:
   - mobility
 quickSteps:

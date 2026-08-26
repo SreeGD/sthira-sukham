@@ -36,6 +36,12 @@ jointInfluences:
     presentsAs: Does not cross the knee. When bent-knee ankle range is short, the movement is taken
       from elsewhere — the heel lifts or the knee drifts — and the compensation is felt at the
       knee.
+  - joint: foot
+    action: indirect
+    presentsAs: >-
+      Does not attach to the forefoot. Being the calf muscle that stays tight when the knee
+      is bent, it keeps the heel tethered in exactly the positions — squatting, stairs,
+      sitting down — where the forefoot is already loaded.
 ---
 
 Soleus lies beneath gastrocnemius and, unlike it, does not cross the knee — it runs from the

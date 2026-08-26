@@ -6,15 +6,15 @@ import {
 } from '../../src/lib/cross-links.ts';
 
 const EXERCISES = [
-  { id: 'heel-slide', targets: ['rectus-femoris', 'joint-capsule'] },
-  { id: 'prone-hang', targets: ['biceps-femoris', 'joint-capsule'] },
+  { id: 'heel-slide', targets: ['rectus-femoris', 'knee-capsule'] },
+  { id: 'prone-hang', targets: ['biceps-femoris', 'knee-capsule'] },
   { id: 'bridge', targets: ['gluteus-maximus'] },
 ];
 
 describe('buildMuscleExerciseIndex', () => {
   it('inverts the exercise -> muscle relation', () => {
     const index = buildMuscleExerciseIndex(EXERCISES);
-    expect(index.get('joint-capsule')?.map((e) => e.id)).toEqual(['heel-slide', 'prone-hang']);
+    expect(index.get('knee-capsule')?.map((e) => e.id)).toEqual(['heel-slide', 'prone-hang']);
     expect(index.get('gluteus-maximus')?.map((e) => e.id)).toEqual(['bridge']);
   });
 

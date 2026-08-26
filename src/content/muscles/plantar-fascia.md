@@ -26,6 +26,11 @@ jointInfluences:
     presentsAs: >-
       Tightness shows up as sharp heel pain on the first steps after rest, easing as you move,
       rather than as lost ankle range.
+  - joint: foot
+    action: direct
+    presentsAs: >-
+      Loss of elasticity blunts the windlass mechanism, so the arch no longer stiffens fully
+      as the heel lifts and the foot pushes off a softer lever than it should.
 sources: [neumann-kinesiology-2016]
 ---
 

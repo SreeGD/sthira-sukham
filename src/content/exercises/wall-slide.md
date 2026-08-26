@@ -6,7 +6,7 @@ targets:
   - rectus-femoris
   - vastus-medialis
   - vastus-intermedius
-  - joint-capsule
+  - knee-capsule
 goal:
   - mobility
 quickSteps:

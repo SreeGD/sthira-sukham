@@ -50,3 +50,26 @@
   year: 2006
   doi: 10.1002/jor.20114
   tier: peer-reviewed
+
+- id: jospt-heel-pain-2023
+  title: 'Heel Pain — Plantar Fasciitis: Revision 2023 (Clinical Practice Guidelines linked to the ICF)'
+  authorOrBody: 'Koc TA Jr, Bise CG, Neville C, Carreira D, Martin RL, McDonough CM (Journal of Orthopaedic & Sports Physical Therapy 53(12):CPG1–CPG39)'
+  year: 2023
+  doi: 10.2519/jospt.2023.0303
+  tier: peer-reviewed
+
+- id: aaos-hallux-rigidus
+  title: Hallux Rigidus (Stiff Big Toe)
+  authorOrBody: American Academy of Orthopaedic Surgeons (OrthoInfo)
+  year: 2024
+  url: https://www.orthoinfo.org/en/diseases--conditions/stiff-big-toe-hallux-rigidus/
+  tier: clinical-body
+
+- id: warwick-fai-2016
+  title: >-
+    The Warwick Agreement on femoroacetabular impingement syndrome (FAI syndrome): an
+    international consensus statement
+  authorOrBody: 'Griffin DR, Dickenson EJ, O''Donnell J, et al. (British Journal of Sports Medicine 50(19):1169–1176)'
+  year: 2016
+  doi: 10.1136/bjsports-2016-096743
+  tier: peer-reviewed

@@ -3,7 +3,7 @@ joint: hip
 clinicalTerm: Joint effusion
 plainLanguageGloss: Fluid inside the joint taking up room
 order: 20
-relatedStructures: [joint-capsule]
+relatedStructures: [hip-capsule]
 sources: [neumann-kinesiology-2016, nice-ng226-osteoarthritis-2022]
 ---
 
